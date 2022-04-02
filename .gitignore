@@ -1,0 +1,15 @@
+/.vscode
+/binaries
+/build
+/cache
+/coverage
+/dist
+/node_modules
+.DS_Store
+**/*/.DS_Store
+.VSCodeCounter/
+.eslintcache
+.env
+yarn*
+/src-tauri/target
+/**/*/Cargo.lock

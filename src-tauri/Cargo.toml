@@ -1,0 +1,24 @@
+[package]
+name = "inventory-management-platform"
+version = "0.2.3"
+description = "YOUR_APPLICATION_DESCRIPTION"
+authors = ["Brandon Shockley"]
+license = ""
+repository = "https://github.com/Brandon Shockley/IMP"
+default-run = "inventory-management-platform"
+build = "src/build.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+rustfmt = { version = "0.10.0" }
+tauri-build = { version = "1.0.0-rc.5", features = [] }
+
+[dependencies]
+serde_json = "1.0.79"
+serde = { version = "1.0.136", features = ["derive"] }
+tauri = { version = "1.0.0-rc.6", features = ["updater"] }
+
+[features]
+default = [ "custom-protocol" ]
+custom-protocol = [ "tauri/custom-protocol" ]

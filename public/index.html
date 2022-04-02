@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- load layout css -->
+    <link
+      rel="stylesheet"
+      href="./App.css"
+    />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- limit where javascripts, styles, objects, and fonts can be loaded from for security purposes -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+      connect-src 'self' ws://localhost:3000/ws;
+      font-src 'self' fonts.gstatic.com fonts.googleapis.com;
+      script-src 'self';
+      style-src 'self' 'unsafe-inline' fonts.gstatic.com fonts.googleapis.com;
+      object-src 'self';
+      "
+    />
+    <!-- define viewport dimensions based on device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- description meta tag -->
+    <meta name="description" content="A mobile-friendly React Point of Sale system" />
+    <!-- manifest meta tag -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- web browser window title -->
+    <title>Inventory Managment Platform</title>
+  </head>
+  <body>
+    <!-- the div where the React application will be rendered -->
+    <div id="react-app"></div>
+  </body>
+</html>

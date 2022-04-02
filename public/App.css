@@ -1,0 +1,164 @@
+.App {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.Cart {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.CartGridItem {
+  width: 25vh;
+  height: 50vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.ContentArea {
+  height: 95%;
+  flex-direction: column;
+  overflow: auto;
+  justify-content: flex-start;
+}
+.Confirmation {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: darkslategrey;
+}
+.LoginAdmin {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: darkgreen;
+}
+.LoginEmployee {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: darkblue;
+}
+.Logout {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: darkred;
+}
+.OrderGrid {
+  height: 100vh;
+  overflow: scroll;
+  width: 90vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderGridItem {
+  width: 10vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderMiniCart {
+  overflow: scroll;
+  height: 95vh;
+  width: 10vw;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderMiniCartItem {
+  height: 29%;
+  width: 90%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderView {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderViewSizer {
+  height: 100vh;
+  overflow: auto;
+}
+.Receiving {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.Restock {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.NavBar {
+  height: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.NavBarButton {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: bold;
+  background-color: black;
+}
+.ManageInventory {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.Restock {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.RestockItem {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.SearchInput {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}

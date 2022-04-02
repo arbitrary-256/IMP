@@ -1,0 +1,168 @@
+{
+  "name": "inventory-management-platform",
+  "version": "0.2.3",
+  "description": "Inventory Management Platform",
+  "productName": "IMP",
+  "author": "Brandon Shockley <bms1991@gmail.com> (https://github.com/Zindrek)",
+  "maintainers": [
+    "Brandon Shockley", 
+    "AJ Sclove",
+    "Mark Murrell"
+  ],
+  "copyright": "© 2022",
+  "keywords": [],
+  "private": true,
+  "scripts": {
+    "setup": "npm install yarn && yarn && echo 'Frontend Setup complete' && echo run 'yarn setup-rust' (*nix / macOS) or use the installer from https://win.rustup.rs/x86_64 (64-bit Windows) or https://win.rustup.rs/i686 (32-bit Windows) to finish setup",
+    "setup-rust": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && echo 'Rust Installation complete'",
+    "win": "echo 'Windows users must install Rust using the installer from https://win.rustup.rs/x86_64 or https://win.rustup.rs/i686'",
+    "start": "tauri dev",
+    "eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                            yarn react-scripts eject' && echo",
+    "clean": "rm -rf build node_modules output src-tauri/target package-lock.json yarn.lock yarn-error-log src-tauri/Cargo.lock",
+    "sign": "tauri signer generate",
+    "build": "tauri build",
+    "test": "jest --watch",
+    "cover": "jest --coverage",
+    "make-icon": "yarn tauricon --log src-tauri/icons/app-icon.png --target src-tauri/icons",
+    "pretty": "rm -rf src-tauri/target/release && node node_modules/.bin/prettier --write .",
+    "prep-tsnode-script": "cp ./src/scripts/tsnode/scripts.tsconfig.json ./tsconfig.json",
+    "cleanup-tsnode-script": "cp ./src/scripts/tsnode/regular.tsconfig.json ./tsconfig.json",
+    "update": "yarn clean && yarn && cd src-tauri && rustup update && cargo update && cd ..",
+    "bundle": "yarn clean && yarn && yarn build && mkdir output && mv src-tauri/target/release/bundle/* output && yarn zip &&",
+    "zip": "yarn prep-tsnode-script && yarn ts-node src/scripts/utility/webzip.ts && yarn cleanup-tsnode-script"
+  },
+  "dependencies": {
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@mui/styles": "latest",
+    "@tauri-apps/api": "1.0.0-rc.3",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "mariadb": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "source-map-support": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/plugin-transform-modules-commonjs": "latest",
+    "@babel/preset-react": "latest",
+    "@mui/types": "latest",
+    "@tauri-apps/cli": "1.0.0-rc.8",
+    "@tauri-apps/tauricon": "github:tauri-apps/tauricon",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/prettier": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "async": "latest",
+    "jest": "latest",
+    "jszip": "latest",
+    "prettier": "latest",
+    "react-scripts": "latest",
+    "ts-node": "latest",
+    "typescript": "latest",
+    "yarn": "latest"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 edge version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    },
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-typescript",
+      "@babel/preset-react"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/build/",
+      "/dist/",
+      "/public/",
+      "/node_modules/",
+      "/src-tauri/",
+      "/src/index.tsx",
+      "/src/interfaces/",
+      "/src/react-app-env.d.ts",
+      "/src/scripts/",
+      "/src/tests/",
+      "/src/imageModules/",
+      "/static/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 72,
+        "functions": 48,
+        "lines": 69,
+        "statements": 65
+      }
+    },
+    "displayName": {
+      "name": "inventory-management-platform",
+      "color": "blue"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "png"
+    ],
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/src/imageModules/css.d.ts",
+      "\\.(jp?eg)$": "<rootDir>/src/imageModules/jpg.d.ts",
+      "\\.(png)$": "<rootDir>/src/imageModules/png.d.ts",
+      "\\.(svg)$": "<rootDir>/src/imageModules/svg.d.ts"
+    },
+    "transform": {
+      "^.+\\.[jt]sx?$": "babel-jest"
+    }
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "jsxBracketSameLine": true,
+    "jsxSingleQuote": true,
+    "requirePragma": true,
+    "printWidth": 200,
+    "quoteProps": "consistent",
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  }
+}
