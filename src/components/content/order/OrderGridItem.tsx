@@ -23,7 +23,7 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
   }: {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
-    } = React.useContext(ImpContext)
+  } = React.useContext(ImpContext)
   const numberAvailable: IIMPNumber = {
     id: `Available`,
     propertyName: `Available`,
@@ -44,9 +44,9 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
     <Card>
       <CardMedia>{ImageDisplayer(product.image)}</CardMedia>
       <Stack direction={`column`} spacing={2}>
-      {StringDisplayer(product.name)}
-      {NumberDisplayer(product.price)}
-      {numberAvailable.value > 0 ? NumberDisplayer(numberAvailable) : StringDisplayer(outOfStock)}
+        {StringDisplayer(product.name)}
+        {NumberDisplayer(product.price)}
+        {numberAvailable.value > 0 ? NumberDisplayer(numberAvailable) : StringDisplayer(outOfStock)}
       </Stack>
       <Button
         key={`AddToCartButton${product.upc.value}`}
