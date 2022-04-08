@@ -23,22 +23,20 @@ export const CartView: React.FC = (): React.ReactElement => {
   } = React.useContext(ImpContext)
   const totalPrices: number[] = state.cart.map((product: IIMPProduct): number => product.price.value * product.inCart.value)
   const totalPrice: number = totalPrices.reduce((accumulator: number, value: number): number => accumulator + value, 0)
-    return (
-      <Box className={`CartView`}
-        sx={{display: (state.contentAreaView === `Cart` ? `block` : `none`)}}
-      >
-        <p />
-        <PurchaseCartButton />
-        <p>{`Total Price: $${totalPrice.toFixed(2)}`}</p>
-        <p />
-        <Grid container spacing={2}>
-          {state.cart.map((eachProduct: IIMPProduct) => (
-            <Grid item key={`CartCard${eachProduct.upc.value}`} className={`CartGridItem`}>
-              {CartGridItem(eachProduct)}
-            </Grid>
-          ))}
-        </Grid>
-        <p />
-      </Box>
-    )
+  return (
+    <Box className={`CartView`} sx={{ display: state.contentAreaView === `Cart` ? `block` : `none` }}>
+      <p />
+      <PurchaseCartButton />
+      <p>{`Total Price: $${totalPrice.toFixed(2)}`}</p>
+      <p />
+      <Grid container spacing={2}>
+        {state.cart.map((eachProduct: IIMPProduct) => (
+          <Grid item key={`CartCard${eachProduct.upc.value}`} className={`CartGridItem`}>
+            {CartGridItem(eachProduct)}
+          </Grid>
+        ))}
+      </Grid>
+      <p />
+    </Box>
+  )
 }

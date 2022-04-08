@@ -1,6 +1,6 @@
 /** @format */
 import * as React from 'react'
-import { Button, Card, Table, TableHead, TableBody, TableCell, TableRow } from '@mui/material'
+import { Box, Button, Card, Table, TableHead, TableBody, TableCell, TableRow } from '@mui/material'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
@@ -20,57 +20,53 @@ export const ReceivingView: React.FC = (): React.ReactElement => {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
-  if (state.contentAreaView === `Receiving`) {
-    return (
-      <div className={`Receiving`}>
-        <Card>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell width={`30%`}>{StringChanger({ string: state.productToReceive.name, newValue: state.productToReceive.name.text, product: state.productToReceive })}</TableCell>
-                <TableCell width={`70%`}>{ImageChanger({ image: state.productToReceive.image, product: state.productToReceive })}</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableCell>{NumberChanger({ number: state.productToReceive.upc, product: state.productToReceive })}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>{NumberChanger({ number: state.productToReceive.cost, product: state.productToReceive })}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>{NumberChanger({ number: state.productToReceive.price, product: state.productToReceive })}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>{NumberChanger({ number: state.productToReceive.min, product: state.productToReceive })}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>{NumberChanger({ number: state.productToReceive.max, product: state.productToReceive })}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>{NumberChanger({ number: state.productToReceive.toReceive, product: state.productToReceive })}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  <Button
-                    variant={`contained`}
-                    onClick={() => {
-                      dispatch({
-                        type: `RECEIVE_INVENTORY`,
-                        payload: state.productToReceive
-                      })
-                    }}
-                  >
-                    Receive Inventory
-                  </Button>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </Card>
-      </div>
-    )
-  } else {
-    return <div className={`Receiving`} />
-  }
+  return (
+    <Box className={`Receiving`} sx={{ display: state.contentAreaView === `Receiving` ? `block` : `none` }}>
+      <Card>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell width={`30%`}>{StringChanger({ string: state.productToReceive.name, newValue: state.productToReceive.name.text, product: state.productToReceive })}</TableCell>
+              <TableCell width={`70%`}>{ImageChanger({ image: state.productToReceive.image, product: state.productToReceive })}</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell>{NumberChanger({ number: state.productToReceive.upc, product: state.productToReceive })}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>{NumberChanger({ number: state.productToReceive.cost, product: state.productToReceive })}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>{NumberChanger({ number: state.productToReceive.price, product: state.productToReceive })}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>{NumberChanger({ number: state.productToReceive.min, product: state.productToReceive })}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>{NumberChanger({ number: state.productToReceive.max, product: state.productToReceive })}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>{NumberChanger({ number: state.productToReceive.toReceive, product: state.productToReceive })}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Button
+                  variant={`contained`}
+                  onClick={() => {
+                    dispatch({
+                      type: `RECEIVE_INVENTORY`,
+                      payload: state.productToReceive
+                    })
+                  }}
+                >
+                  Receive Inventory
+                </Button>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </Card>
+    </Box>
+  )
 }

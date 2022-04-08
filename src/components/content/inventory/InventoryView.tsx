@@ -1,5 +1,5 @@
 /** @format */
-import { Table, TableBody } from '@mui/material'
+import { Box, Table, TableBody } from '@mui/material'
 import * as React from 'react'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
@@ -20,20 +20,16 @@ export const InventoryView: React.FC = (): React.ReactElement => {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
-  if (state.contentAreaView === `Inventory`) {
-    return (
-      <div className={`InventoryView`}>
-        {SearchInventory({})}
-        <Table>
-          <TableBody>
-            {state.filteredInventory.length === 0 && state.inventorySearch.length === 0
-              ? state.inStock.map((eachProduct: IIMPProduct) => InventoryRow(eachProduct))
-              : state.filteredInventory.map((eachProduct: IIMPProduct) => InventoryRow(eachProduct))}
-          </TableBody>
-        </Table>
-      </div>
-    )
-  } else {
-    return <div className={`InventoryView`} />
-  }
+  return (
+    <Box className={`InventoryView`} sx={{ display: state.contentAreaView === `Inventory` ? `block` : `none` }}>
+      {SearchInventory({})}
+      <Table>
+        <TableBody>
+          {state.filteredInventory.length === 0 && state.inventorySearch.length === 0
+            ? state.inStock.map((eachProduct: IIMPProduct) => InventoryRow(eachProduct))
+            : state.filteredInventory.map((eachProduct: IIMPProduct) => InventoryRow(eachProduct))}
+        </TableBody>
+      </Table>
+    </Box>
+  )
 }
