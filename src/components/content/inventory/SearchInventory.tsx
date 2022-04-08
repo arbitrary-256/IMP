@@ -1,5 +1,5 @@
 /** @format */
-import { Input } from '@mui/material'
+import { TextField } from '@mui/material'
 import * as React from 'react'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
@@ -18,10 +18,10 @@ export const SearchInventory: React.FC = (): React.ReactElement => {
   } = React.useContext(ImpContext)
   return (
     <div className={`SearchInput`}>
-      {`Search: `}
-      <Input
+      <TextField
         key={`inventorySearch`}
         type={`text`}
+        label={`Search by UPC or Name`}
         value={state.inventorySearch}
         onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
           dispatch({

@@ -29,6 +29,7 @@ export const RestockView: React.FC = (): React.ReactElement => {
   return (
     <Box className={`Restock`} sx={{ display: state.contentAreaView === `Restock` ? `block` : `none` }}>
       {SearchRestock({})}
+      <p></p>
       <Button
         size={`small`}
         variant={`contained`}

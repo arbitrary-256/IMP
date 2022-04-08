@@ -1,5 +1,5 @@
 /** @format */
-import { Button, Input, Stack } from '@mui/material'
+import { Button, TextField, Stack } from '@mui/material'
 import * as React from 'react'
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
@@ -23,6 +23,7 @@ export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIM
     <Stack direction={`row`}>
       <Button
         size={`small`}
+        style={{ maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px' }}
         variant={`contained`}
         onClick={() => {
           dispatch({
@@ -33,11 +34,11 @@ export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIM
       >
         -
       </Button>
-      <p>{`${toChange.number.id}: ${toChange.number.prefix ? toChange.number.prefix : ``}`}</p>
-      <Input
+      <TextField
         className={`NumberChanger`}
         key={`orderSearch`}
         type={`number`}
+        label={`${toChange.number.id}`}
         value={
           toChange.number.propertyName.toString() === `price` || toChange.number.propertyName.toString() === `cost` ? parseFloat(toChange.number.value.toString()).toFixed(2) : toChange.number.value
         }
@@ -52,6 +53,7 @@ export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIM
       <p />
       <Button
         size={`small`}
+        style={{ maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px' }}
         variant={`contained`}
         onClick={() => {
           dispatch({

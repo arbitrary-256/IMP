@@ -1,5 +1,5 @@
 /** @format */
-import { Input } from '@mui/material'
+import { TextField } from '@mui/material'
 import * as React from 'react'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
@@ -18,11 +18,11 @@ export const SearchOrder: React.FC = (): React.ReactElement => {
   } = React.useContext(ImpContext)
   return (
     <>
-      {`Search: `}
-      <Input
+      <TextField
         className={`SearchInput`}
         key={`orderSearch`}
         type={`text`}
+        label={`Search by UPC or Name`}
         value={state.orderSearch}
         onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
           dispatch({

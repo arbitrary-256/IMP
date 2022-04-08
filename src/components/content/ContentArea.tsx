@@ -3,11 +3,6 @@ import * as React from 'react'
 import { CartView } from './cart/CartView'
 import { InventoryView } from './inventory/InventoryView'
 import { ReceivingView } from './receiving/ReceivingView'
-import { LoginEmployeeView } from '../loginIndicators/LoginEmployeeView'
-import { LoginManagerView } from '../loginIndicators/LoginManagerView'
-import { LoginManagerConfirmation } from '../confirmations/LoginManagerConfirmation'
-import { LoginEmployeeConfirmation } from '../confirmations/LoginEmployeeConfirmation'
-import { LogoutConfirmation } from '../confirmations/LogoutConfirmation'
 import { LogoutView } from '../loginIndicators/LogoutView'
 import { OrderView } from './order/OrderView'
 import { RestockView } from './restock/RestockView'
@@ -18,11 +13,7 @@ import { RestockView } from './restock/RestockView'
 export const ContentArea: React.FC = (): React.ReactElement => {
   return (
     <div className={`ContentArea`}>
-      {LoginEmployeeConfirmation({})}
-      {LoginManagerConfirmation({})}
-      {LogoutConfirmation({})}
-      {LoginEmployeeView({})}
-      {LoginManagerView({})}
+      <p></p>
       {LogoutView({})}
       {OrderView({})}
       {ReceivingView({})}

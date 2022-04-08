@@ -1,5 +1,5 @@
 /** @format */
-import { Input } from '@mui/material'
+import { TextField } from '@mui/material'
 import * as React from 'react'
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
@@ -20,10 +20,11 @@ export const StringChanger: React.FC<IIMPProductStringToChange> = (toChange: IIM
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <Input
+    <TextField
       className={`StringChanger`}
       key={`orderSearch`}
       type={`text`}
+      label={`Product Name`}
       value={toChange.string.text}
       onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
         dispatch({
