@@ -51,6 +51,13 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+  justify-items: center;
+}
+.LogoutMessage {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
 .ManageInventory {
   text-align: center;
