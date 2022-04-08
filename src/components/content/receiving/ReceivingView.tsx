@@ -52,6 +52,7 @@ export const ReceivingView: React.FC = (): React.ReactElement => {
             <TableRow>
               <TableCell>
                 <Button
+                  size={`large`}
                   variant={`contained`}
                   onClick={() => {
                     dispatch({

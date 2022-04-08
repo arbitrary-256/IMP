@@ -20,6 +20,7 @@ export const ManagerButton: React.FC<INavBarTarget> = (target: INavBarTarget): R
   } = React.useContext(ImpContext)
   return (
     <Button
+      size={`large`}
       className={`NavBarButton`}
       variant={state.contentAreaView === target ? `text` : `contained`}
       onClick={() => {

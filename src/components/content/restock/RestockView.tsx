@@ -31,7 +31,7 @@ export const RestockView: React.FC = (): React.ReactElement => {
       {SearchRestock({})}
       <p />{' '}
       <Button
-        size={`small`}
+        size={`large`}
         variant={`contained`}
         onClick={() => {
           dispatch({

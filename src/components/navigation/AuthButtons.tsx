@@ -22,6 +22,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
     <Stack className={`AuthButtons`} direction={`row`} spacing={2}>
       <p />{' '}
       <Button
+        size={`large`}
         onClick={() => {
           dispatch({
             type: `CHANGE_LOGIN`,
@@ -34,6 +35,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
         {`Login as Manager`}
       </Button>
       <Button
+        size={`large`}
         onClick={() => {
           dispatch({
             type: `CHANGE_LOGIN`,
@@ -46,6 +48,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
         {`Login as Employee`}
       </Button>
       <Button
+        size={`large`}
         onClick={() => {
           dispatch({
             type: `CHANGE_LOGIN`,

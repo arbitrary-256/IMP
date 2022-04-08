@@ -34,6 +34,7 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
       <p />{' '}
       <Button
         variant={`contained`}
+        size={`large`}
         onClick={() => {
           dispatch({
             type: `SET_NUMBER`,

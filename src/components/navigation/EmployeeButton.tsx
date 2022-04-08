@@ -19,6 +19,7 @@ export const EmployeeButton: React.FC<INavBarTarget> = (target: INavBarTarget): 
   } = React.useContext(ImpContext)
   return (
     <Button
+      size={`large`}
       className={`NavBarButton`}
       variant={state.contentAreaView === target ? `text` : `contained`}
       onClick={() => {

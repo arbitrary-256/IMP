@@ -24,6 +24,7 @@ export const OrderGrid: React.FC = (): React.ReactElement => {
   })
   return (
     <Box className={`OrderGrid`}>
+      <p />
       <Grid container spacing={2}>
         {filteredOrder.map((eachProduct: IIMPProduct) => (
           <Grid item className={`OrderGridItem`} key={eachProduct.upc.value}>

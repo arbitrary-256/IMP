@@ -33,6 +33,7 @@ export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.
         <p>{NumberDisplayer(product.max)}</p>
         <p />{' '}
         <Button
+          size={`large`}
           variant={`contained`}
           onClick={() => {
             dispatch({

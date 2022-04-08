@@ -19,7 +19,7 @@ export const UndoButton: React.FC = (): React.ReactElement => {
   const isLoggedIn: boolean = state.loggedInUser !== `Logged Out`
   return (
     <Button
-      size={`small`}
+      size={`large`}
       className={`UndoButton`}
       onClick={() => {
         dispatch({

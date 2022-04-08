@@ -22,15 +22,14 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
   } = React.useContext(ImpContext)
   return (
     <Card>
-      <CardMedia>
-        {ImageDisplayer(product.image)}
-        <p>{`${product.name.text}`}</p>
-      </CardMedia>
+      <CardMedia>{ImageDisplayer(product.image)}</CardMedia>
+      <p>{`${product.name.text}`}</p>
       <p>{`Price: ${product.price.prefix}${product.price.value}`}</p>
       <p>{` ${product.onHand.value - product.inCart.value} available `}</p>
       <Button
         key={`AddToCartButton${product.upc.value}`}
         variant={`contained`}
+        size={`large`}
         disabled={product.onHand.value - product.inCart.value <= 0 ? true : false}
         onClick={() => {
           if (product.inCart.value < product.onHand.value) {
