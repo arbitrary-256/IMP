@@ -35,10 +35,12 @@ export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIM
       </Button>
       <p>{`${toChange.number.id}: ${toChange.number.prefix ? toChange.number.prefix : ``}`}</p>
       <Input
-        className={`StringChanger`}
+        className={`NumberChanger`}
         key={`orderSearch`}
         type={`number`}
-        value={toChange.number.value}
+        value={
+          toChange.number.propertyName.toString() === `price` || toChange.number.propertyName.toString() === `cost` ? parseFloat(toChange.number.value.toString()).toFixed(2) : toChange.number.value
+        }
         onChange={(numberChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
           dispatch({
             type: `SET_NUMBER`,
