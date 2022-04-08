@@ -25,3 +25,6 @@
 - cleanup login screen image matte
 - add menubar entries to tauri application so that it can be quit/minimized/etc via standard keyboard shortcuts
 - remove all `// TODO:` comments
+
+## Future Goals
+- mobile app builds using a later Tauri version
