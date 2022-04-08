@@ -4,7 +4,7 @@ import { IIMPState } from '../../../interfaces/IIMPState'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { ImpContext } from '../../ImpContext'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
-import { Button, Card, Grid } from '@mui/material'
+import { Button, Card } from '@mui/material'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
@@ -24,27 +24,25 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <Grid item key={`ProductInCart${product.upc.value}`}>
-      <Card className={`CartGridItem`}>
-        <p>{ImageDisplayer(product.image)}</p>
-        <p>{NumberChanger({ number: product.inCart, product: product })}</p>
-        <p>{StringDisplayer(product.name)}</p>
-        <p>{NumberDisplayer(product.upc)}</p>
-        <p>{NumberDisplayer(product.price)}</p>
-        <p>{`Total Price: ${product.price.prefix}${(product.price.value * product.inCart.value).toFixed(2)}`}</p>
-        <p />
-        <Button
-          variant={`contained`}
-          onClick={() => {
-            dispatch({
-              type: `SET_NUMBER`,
-              payload: { number: { ...product.inCart, value: 0 }, product: product }
-            })
-          }}
-        >
-          Remove from Cart
-        </Button>
-      </Card>
-    </Grid>
+    <Card>
+      <p>{ImageDisplayer(product.image)}</p>
+      <p>{NumberChanger({ number: product.inCart, product: product })}</p>
+      <p>{StringDisplayer(product.name)}</p>
+      <p>{NumberDisplayer(product.upc)}</p>
+      <p>{NumberDisplayer(product.price)}</p>
+      <p>{`Total Price: ${product.price.prefix}${(product.price.value * product.inCart.value).toFixed(2)}`}</p>
+      <p />
+      <Button
+        variant={`contained`}
+        onClick={() => {
+          dispatch({
+            type: `SET_NUMBER`,
+            payload: { number: { ...product.inCart, value: 0 }, product: product }
+          })
+        }}
+      >
+        Remove from Cart
+      </Button>
+    </Card>
   )
 }

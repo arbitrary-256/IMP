@@ -1,7 +1,7 @@
 /** @format */
 import * as React from 'react'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
-import { Card, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import { CartGridItem } from './CartGridItem'
 import { PurchaseCartButton } from './PurchaseCartButton'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
@@ -31,14 +31,11 @@ export const CartView: React.FC = (): React.ReactElement => {
         <p />
         <Grid container spacing={2}>
           {state.cart.map((eachProduct: IIMPProduct) => (
-            <Grid item key={`CartCard${eachProduct.upc.value}`}>
-              <Card>{CartGridItem(eachProduct)}</Card>
+            <Grid item key={`CartCard${eachProduct.upc.value}`} className={`CartGridItem`}>
+              {CartGridItem(eachProduct)}
             </Grid>
           ))}
         </Grid>
-        <p />
-        <PurchaseCartButton />
-        <p>{`Total Price: $${totalPrice.toFixed(2)}`}</p>
         <p />
       </div>
     )
