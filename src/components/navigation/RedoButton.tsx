@@ -20,7 +20,6 @@ export const RedoButton: React.FC = (): React.ReactElement => {
   return (
     <Button
       size={`small`}
-      variant={`outlined`}
       className={`RedoButton`}
       onClick={() => {
         dispatch({
@@ -28,6 +27,7 @@ export const RedoButton: React.FC = (): React.ReactElement => {
         })
       }}
       disabled={!isLoggedIn || state.stateFuture.length === 0}
+      variant={!isLoggedIn || state.stateFuture.length === 0 ? `contained` : `text`}
     >
       Redo
     </Button>

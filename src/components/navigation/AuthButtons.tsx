@@ -28,7 +28,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
           })
         }}
         disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
-        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `outlined` : `contained`}
+        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `text` : `contained`}
       >
         {`Login Manager`}
       </Button>
@@ -40,7 +40,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
           })
         }}
         disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
-        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `outlined` : `contained`}
+        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `text` : `contained`}
       >
         {`Login Employee`}
       </Button>
@@ -52,7 +52,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
           })
         }}
         disabled={state.loggedInUser.includes(`Logged Out`)}
-        variant={state.loggedInUser.includes(`Logged Out`) ? `outlined` : `contained`}
+        variant={state.loggedInUser.includes(`Logged Out`) ? `text` : `contained`}
       >
         Log Out
       </Button>

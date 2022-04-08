@@ -20,7 +20,6 @@ export const UndoButton: React.FC = (): React.ReactElement => {
   return (
     <Button
       size={`small`}
-      variant={`outlined`}
       className={`UndoButton`}
       onClick={() => {
         dispatch({
@@ -28,6 +27,7 @@ export const UndoButton: React.FC = (): React.ReactElement => {
         })
       }}
       disabled={!isLoggedIn || state.stateHistory.length === 0}
+      variant={!isLoggedIn || state.stateFuture.length === 0 ? `contained` : `text`}
     >
       Undo
     </Button>
