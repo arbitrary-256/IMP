@@ -1,6 +1,6 @@
 # IMP - Inventory Management Platform roadmap
 
-## 0.8.0 - local state functionality
+## 0.7.9 - local state functionality
 - create `CHANGE_IMAGE` action
 - create `ImageChanger` component
 - add `ImageChanger` to Receiving tab
