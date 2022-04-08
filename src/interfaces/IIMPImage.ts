@@ -1,6 +1,8 @@
 /** @format */
+/**
+ * an interface for an image with alternate text
+ */
 export interface IIMPImage {
-  parentUpc: number
   data: string
   altText: string
 }

@@ -1,5 +1,5 @@
 /** @format */
-import { Card, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
+import { Table, TableBody } from '@mui/material'
 import * as React from 'react'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
@@ -8,10 +8,10 @@ import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { InventoryRow } from './InventoryRow'
 import { SearchInventory } from './SearchInventory'
 /**
- * @products the IIMPProduct[] to be displayed
+ * the inventory tab
  * @returns a React.FC that displays the Inventory tab of the UI
  */
-export const InventoryView: React.FC<IIMPProduct[]> = (): React.ReactElement => {
+export const InventoryView: React.FC = (): React.ReactElement => {
   const {
     state,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -20,22 +20,20 @@ export const InventoryView: React.FC<IIMPProduct[]> = (): React.ReactElement => 
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
-  return (
-    <div className={`InventoryView`}>
-      <Card>
-        <Table stickyHeader={true}>
-          <TableHead>
-            <TableRow>
-              <TableCell>{SearchInventory(state.currentInventory)}</TableCell>
-            </TableRow>
-          </TableHead>
+  if (state.contentAreaView === `Inventory`) {
+    return (
+      <div className={`InventoryView`}>
+        {SearchInventory({})}
+        <Table>
           <TableBody>
             {state.filteredInventory.length === 0 && state.inventorySearch.length === 0
-              ? state.currentInventory.map((eachProduct: IIMPProduct) => InventoryRow(eachProduct))
+              ? state.inStock.map((eachProduct: IIMPProduct) => InventoryRow(eachProduct))
               : state.filteredInventory.map((eachProduct: IIMPProduct) => InventoryRow(eachProduct))}
           </TableBody>
         </Table>
-      </Card>
-    </div>
-  )
+      </div>
+    )
+  } else {
+    return <div className={`InventoryView`} />
+  }
 }

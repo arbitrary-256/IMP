@@ -9,7 +9,8 @@ import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
- * @product the IIMPProduct to be displayed
+ * an item in the restock tab
+ * @param product the IIMPProduct to be displayed
  * @returns a React.FC that displays a form to receive a product
  */
 export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {
@@ -22,25 +23,25 @@ export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <Grid item className={`RestockItem`} key={product.upc.currentValue}>
+    <Grid item className={`RestockItem`} key={product.upc.value}>
       <Card>
         <p>{StringDisplayer(product.name)}</p>
         <p>{ImageDisplayer(product.image)}</p>
         <p>{NumberDisplayer(product.upc)}</p>
-        <p>{NumberDisplayer(product.quantityInInventory)}</p>
-        <p>{NumberDisplayer(product.minQuantity)}</p>
-        <p>{NumberDisplayer(product.maxQuantity)}</p>
+        <p>{NumberDisplayer(product.onHand)}</p>
+        <p>{NumberDisplayer(product.min)}</p>
+        <p>{NumberDisplayer(product.max)}</p>
         <p></p>
         <Button
           variant={`contained`}
           onClick={() => {
             dispatch({
               type: `RESTOCK_INVENTORY`,
-              payload: [product]
+              payload: { inventory: state.inStock, productsToBeRestocked: [product] }
             })
           }}
         >
-          Restock {product.maxQuantity.currentValue - product.quantityInInventory.currentValue} units
+          Restock {product.max.value - product.onHand.value} units
         </Button>
       </Card>
     </Grid>

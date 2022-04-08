@@ -1,27 +1,29 @@
 /** @format */
-import { TableCell, TableRow } from '@mui/material'
+import { Stack, TableCell, TableRow } from '@mui/material'
 import * as React from 'react'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringChanger } from '../../shared/StringChanger'
 /**
+ * a row of the inventory table
  * @param product the IIMPProduct to be displayed
  * @returns a React.FC that displays one row of the Inventory tab
  */
 export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {
   return (
-    <TableRow className={`InventoryRow`} key={`InventoryRow${product.upc.currentValue}`}>
-      <TableCell key={`UPCCode${product.upc.currentValue}`}>
-        {NumberDisplayer(product.upc)}
-        {` `}
-        {StringChanger(product.name)}
+    <TableRow className={`InventoryRow`} key={`InventoryRow${product.upc.value}`}>
+      <TableCell key={`UPCCode${product.upc.value}`}>
+        <Stack>
+          {NumberDisplayer(product.upc)}
+          {StringChanger({ string: product.name, newValue: product.name.text, product: product })}
+        </Stack>
       </TableCell>
-      <TableCell key={`Min${product.upc.currentValue}`}>{NumberChanger(product.minQuantity)}</TableCell>
-      <TableCell key={`InventoryCount${product.upc.currentValue}`}>{NumberChanger(product.quantityInInventory)}</TableCell>
-      <TableCell key={`Max${product.upc.currentValue}`}>{NumberChanger(product.maxQuantity)}</TableCell>
-      <TableCell key={`SalePrice${product.upc.currentValue}`}>{NumberChanger(product.salePrice)}</TableCell>
-      <TableCell key={`PurchasePrice${product.upc.currentValue}`}>{NumberChanger(product.purchasePrice)}</TableCell>
+      <TableCell key={`min${product.upc.value}`}>{NumberChanger({ number: product.min, product: product })}</TableCell>
+      <TableCell key={`onHand${product.upc.value}`}>{NumberChanger({ number: product.onHand, product: product })}</TableCell>
+      <TableCell key={`max${product.upc.value}`}>{NumberChanger({ number: product.max, product: product })}</TableCell>
+      <TableCell key={`price${product.upc.value}`}>{NumberChanger({ number: product.price, product: product })}</TableCell>
+      <TableCell key={`cost${product.upc.value}`}>{NumberChanger({ number: product.cost, product: product })}</TableCell>
     </TableRow>
   )
 }

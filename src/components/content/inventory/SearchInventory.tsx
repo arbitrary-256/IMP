@@ -4,12 +4,11 @@ import * as React from 'react'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { ImpContext } from '../../ImpContext'
-import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 /**
- * @products the IIMPProduct[] to be filtered
+ * the search component in the inventory tab
  * @returns a React.FC that displays a search field for the inventory tab
  */
-export const SearchInventory: React.FC<IIMPProduct[]> = (products: IIMPProduct[]): React.ReactElement => {
+export const SearchInventory: React.FC = (): React.ReactElement => {
   const {
     state,
     dispatch
@@ -18,10 +17,9 @@ export const SearchInventory: React.FC<IIMPProduct[]> = (products: IIMPProduct[]
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <>
+    <div className={`SearchInput`}>
       {`Search: `}
       <Input
-        className={`SearchInput`}
         key={`inventorySearch`}
         type={`text`}
         value={state.inventorySearch}
@@ -32,6 +30,6 @@ export const SearchInventory: React.FC<IIMPProduct[]> = (products: IIMPProduct[]
           })
         }}
       />
-    </>
+    </div>
   )
 }

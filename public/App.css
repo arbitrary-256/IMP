@@ -13,19 +13,13 @@
   background-color: black;
 }
 .CartGridItem {
-  width: 25vh;
-  height: 50vh;
+  width: 10vw;
+  height: 33vh;
   text-align: center;
   align-items: center;
   justify-content: center;
   color: white;
   background-color: black;
-}
-.ContentArea {
-  height: 95%;
-  flex-direction: column;
-  overflow: auto;
-  justify-content: flex-start;
 }
 .Confirmation {
   text-align: center;
@@ -33,6 +27,12 @@
   justify-content: center;
   color: white;
   background-color: darkslategrey;
+}
+.ContentArea {
+  height: 95%;
+  flex-direction: column;
+  overflow: auto;
+  justify-content: flex-start;
 }
 .LoginAdmin {
   text-align: center;
@@ -55,63 +55,7 @@
   color: white;
   background-color: darkred;
 }
-.OrderGrid {
-  height: 100vh;
-  overflow: scroll;
-  width: 90vw;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background-color: black;
-}
-.OrderGridItem {
-  width: 10vw;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background-color: black;
-}
-.OrderMiniCart {
-  overflow: scroll;
-  height: 95vh;
-  width: 10vw;
-  text-align: center;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  color: white;
-  background-color: black;
-}
-.OrderMiniCartItem {
-  height: 29%;
-  width: 90%;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background-color: black;
-}
-.OrderView {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background-color: black;
-}
-.OrderViewSizer {
-  height: 100vh;
-  overflow: auto;
-}
-.Receiving {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background-color: black;
-}
-.Restock {
+.ManageInventory {
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -134,7 +78,56 @@
   text-decoration: bold;
   background-color: black;
 }
-.ManageInventory {
+.OrderGrid {
+  overflow-y: auto;
+  height: 100vh;
+  width: 90vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderGridItem {
+  width: 10vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderMiniCart {
+  overflow-y: auto;
+  height: 95vh;
+  width: 10vw;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderMiniCartItem {
+  height: 30%;
+  width: 90%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderView {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+}
+.OrderViewSizer {
+  height: 100vh;
+  overflow: auto;
+}
+.Receiving {
   text-align: center;
   align-items: center;
   justify-content: center;

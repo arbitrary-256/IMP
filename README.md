@@ -1,4 +1,4 @@
-# IMP - Inventory Management Program
+# IMP - Inventory Management Platform
 
 [](#table-of-contents)
 
@@ -15,33 +15,34 @@
 
 ## About IMP
 
+### What is IMP?
+
+**_IMP_** is an open-source cross-platform **_I_** nventory **_M_** anagement **_P_** latform with integrated Point of Sale (PoS) written with the goal of being entirely platform-agnostic.  To facilitate this, IMP utilizes the Tauri framework to compile lightweight and secure cross-platform binaries from a TypeScript/React frontend and a MySQL-compatible database backend for every desktop OS.  While the Tauri framework is still at the release candidate stage and does not yet support compiling mobile (iOS and Android) binaries these features are on the Tauri roadmap, so it should eventually be simple to build for all 5 platforms in the future from one codebase without any platform-specific code.
+
 ### Prerequisites
 
-You will need to install the following things to use this repository:
+You will need to install the following things to build IMP:
 
 - [VS Code](https://code.visualstudio.com/download) to edit and lint code **_OR_** a different IDE / text editor that supports both Typescript and Rust
 - [Node.js](https://nodejs.org/en/download/), as it is a prerequisite for most of the frontend code (but [Deno](https://deno.land) might also work)
 - [Rust](https://www.rust-lang.org/tools/install), as it is a prerequisite for Tauri.
 - [Docker Swarm](https://docs.docker.com/engine/swarm) **_OR_** another way to deploy MariaDB
 
-**IMP** is a cross-platform **I**nventory **M**anagement **P**rogram.
 
 #### Languages
 
-- [Rust](https://www.rust-lang.org/) - language for Tauri's backend code
-- [SQL](https://www.mysql.com/) - language for database queries
-- [Typescript](https://www.typescriptlang.org/) - language for React and Tauri's frontend code
+- [Rust version 1.6^](https://www.rust-lang.org/) - for Tauri's backend code
+- [Typescript version 4.6^](https://www.typescriptlang.org/) - for Tauri's frontend code, React.JS, and Material-UI
 
 #### Front end technologies
 
-- [React.JS](https://reactjs.org/) with [create-react-app](https://create-react-app.dev/)
-- [Material-UI](https://material-ui.com/) - styling and component creation
+- [React.JS version 18^](https://reactjs.org/) using [create-react-app](https://create-react-app.dev/) - web components library
+- [Material-UI version 5^](https://material-ui.com/) - React.JS component and styling library
 
 #### Back end technologies
 
-- [Tauri](https://tauri.studio) - cross-platform desktop and web applications
-- [create-react-app](https://create-react-app.dev/) - transpiles/minifies/obfuscates Typescript
-- [MariaDB](https://mariadb.org/) - database
+- [Tauri version 1.0.0-rc.3](https://tauri.studio) - cross-platform desktop framework for compiling web applications
+- [MariaDB version 10.7.3^](https://mariadb.org/) - MySQL-compatible database
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 

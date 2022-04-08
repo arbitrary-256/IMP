@@ -4,64 +4,63 @@ import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { adjectives } from '../../mockData/adjectives'
 import { nouns } from '../../mockData/nouns'
 import { generateProductIcon } from './generateProductIcon'
+/**
+ * generates a mocked product without using the database
+ * @returns a mocked product
+ */
 export const generateProduct: Function = (): IIMPProduct => {
-  const mockDigit: Function = (): number => Math.floor(Math.random() * 9)
+  const mockOneDigitInteger: Function = (): number => Math.floor(Math.random() * 9)
   const mockTwoDigitInteger: Function = (): number => Math.floor(Math.random() * 99)
   const mockThreeDigitInteger: Function = (): number => Math.floor(Math.random() * 999)
   const mockFourDigitInteger: Function = (): number => Math.floor(Math.random() * 9999)
   const mockPrice: Function = () => parseFloat((Math.floor(parseFloat(`${mockFourDigitInteger()}${mockTwoDigitInteger()}`)) / 100).toFixed(2))
   const randomUpc: number = Math.floor(Math.random() * 99999999999)
-  let randomIconImage: IIMPImage = generateProductIcon()
-  randomIconImage.parentUpc = randomUpc
+  const randomIconImage: IIMPImage = generateProductIcon()
   const productName: string = `${adjectives[Math.floor(Math.random() * adjectives.length)]} ${nouns[Math.floor(Math.random() * nouns.length)]}`
   const randomPriceOne: number = mockPrice(mockFourDigitInteger(), mockTwoDigitInteger())
   const randomPriceTwo: number = mockPrice(mockFourDigitInteger(), mockTwoDigitInteger())
   let randomSalePrice: number
-  let randomPurchasePrice: number
+  let randomcost: number
   if (randomPriceOne > randomPriceTwo) {
     randomSalePrice = randomPriceTwo
-    randomPurchasePrice = randomPriceOne
+    randomcost = randomPriceOne
   } else {
     randomSalePrice = randomPriceOne
-    randomPurchasePrice = randomPriceTwo
+    randomcost = randomPriceTwo
   }
-  const randomQuantityInInventory: number = mockThreeDigitInteger()
+  const randomonHand: number = mockThreeDigitInteger()
   const randomQuantityOne: number = mockThreeDigitInteger()
   const randomQuantityTwo: number = mockThreeDigitInteger()
-  let randomMinQuantity: number
-  let randomMaxQuantity: number
+  let randommin: number
+  let randommax: number
   if (randomQuantityOne > randomQuantityTwo) {
-    randomMinQuantity = randomQuantityTwo
-    randomMaxQuantity = randomQuantityOne
+    randommin = randomQuantityTwo
+    randommax = randomQuantityOne
   } else {
-    randomMinQuantity = randomQuantityOne
-    randomMaxQuantity = randomQuantityTwo
+    randommin = randomQuantityOne
+    randommax = randomQuantityTwo
   }
   return {
     upc: {
-      parentUpc: randomUpc,
+      propertyName: `upc`,
       id: `UPC`,
-      currentValue: randomUpc,
-      minValue: 0,
-      maxValue: 99999999999,
-      prefix: ``,
-      suffix: ``
+      value: randomUpc,
+      min: 0,
+      max: 99999999999
     },
     name: {
-      parentUpc: randomUpc,
+      id: `name`,
       suffix: ``,
       prefix: ``,
       text: `${productName}`
     },
     image: randomIconImage,
-    purchasePrice: { parentUpc: randomUpc, id: `Purchase Price`, currentValue: randomPurchasePrice, prefix: `$`, suffix: ``, minValue: 0.01, maxValue: 9999.99 },
-    salePrice: { parentUpc: randomUpc, id: `Sale Price`, currentValue: randomSalePrice, prefix: `$`, suffix: ``, minValue: 0.01, maxValue: 9999.99 },
-    quantityInInventory: { parentUpc: randomUpc, id: `On Hand`, currentValue: randomQuantityInInventory, prefix: ``, suffix: `units`, minValue: 0, maxValue: 9999 },
-    quantityInCart: { parentUpc: randomUpc, id: `In Cart`, currentValue: 0, prefix: ``, suffix: `units`, minValue: 0, maxValue: 9999 },
-    quantityToReceive: { parentUpc: randomUpc, id: `To Receive`, currentValue: 0, prefix: ``, suffix: `units`, minValue: 0, maxValue: 9999 },
-    quantityToRestock: { parentUpc: randomUpc, id: `To Restock`, currentValue: 0, prefix: ``, suffix: `units`, minValue: 0, maxValue: randomMaxQuantity },
-    minQuantity: { parentUpc: randomUpc, id: `Minimum Quantity`, currentValue: randomMinQuantity, prefix: ``, suffix: `units`, minValue: mockDigit(), maxValue: randomMaxQuantity },
-    maxQuantity: { parentUpc: randomUpc, id: `Maximum Quantity`, currentValue: randomMaxQuantity, prefix: ``, suffix: `units`, minValue: mockDigit(), maxValue: 9999 },
-    size: null
+    cost: { id: `Purchase Price`, propertyName: `cost`, value: randomcost, prefix: `$`, min: 0.01, max: 9999.99 },
+    price: { id: `Sale Price`, propertyName: `price`, value: randomSalePrice, prefix: `$`, min: 0.01, max: 9999.99 },
+    onHand: { id: `On Hand`, propertyName: `onHand`, value: randomonHand, min: 0, max: 9999 },
+    inCart: { id: `In Cart`, propertyName: `inCart`, value: 0, min: 0, max: 9999 },
+    toReceive: { id: `To Receive`, propertyName: `toReceive`, value: 0, min: 0, max: 9999 },
+    min: { id: `Minimum Quantity`, propertyName: `min`, value: randommin, min: mockOneDigitInteger(), max: 9999 },
+    max: { id: `Maximum Quantity`, propertyName: `max`, value: randommax, min: mockTwoDigitInteger(), max: 9999 }
   }
 }

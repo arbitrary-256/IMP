@@ -3,6 +3,11 @@ import fs from 'fs'
 import JSZip from 'jszip'
 import path from 'path'
 import * as packageJson from '../../../package.json'
+/**
+ * a node script for developrs that gets the paths to all subdirectories within a given directory
+ * @param directoryPath the root directory to be searched
+ * @returns a string[] of all subdirectories within the root directory
+ */
 const getFilePathsRecursively = (directoryPath: string): string[] => {
   let filePaths: string[] = []
   let directoryContents: string[] = fs.readdirSync(directoryPath)
@@ -20,7 +25,12 @@ const getFilePathsRecursively = (directoryPath: string): string[] => {
   }
   return filePaths
 }
-const getZipOfFolder = (directory: string): JSZip => {
+/**
+ * a node script for developrs that zips a given directory
+ * @param directory the directory to zip
+ * @returns void and writes a zip file to the output directory
+ */
+const getZipOfFolder = (directory: string): void => {
   const allPaths: string[] = getFilePathsRecursively(directory)
   let zip = new JSZip()
   for (let filePath of allPaths) {
@@ -46,6 +56,5 @@ const getZipOfFolder = (directory: string): JSZip => {
     .then(function (content) {
       fs.writeFileSync(`./output/${packageJson.productName}-${packageJson.version}-web.zip`, content)
     })
-  return zip
 }
 getZipOfFolder(`build`)

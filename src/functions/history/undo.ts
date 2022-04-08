@@ -1,8 +1,13 @@
 /** @format */
 import { IIMPState } from '../../interfaces/IIMPState'
+/**
+ * steps backwards through state.stateHistory
+ * @param state the current application state
+ * @returns the previous application state in state.stateHistory
+ */
 export const undo: Function = (state: IIMPState): IIMPState => {
-  if (state.stateHistory.length !== 0) {
-    state.stateFuture.push(state.stateHistory.pop()!)
-  }
-  return state
+  let tempState: IIMPState = { ...state }
+  tempState = tempState.stateHistory.pop()!
+  tempState.stateFuture.push(tempState)
+  return tempState
 }

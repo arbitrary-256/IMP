@@ -5,17 +5,18 @@ import { IIMPState } from '../../interfaces/IIMPState'
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { ImpContext } from '../ImpContext'
 /**
+ * a button that redoes the last change undone from the state
  * @returns a React.FC that displays a button in the navbar to step forwards in the application history
  */
 export const RedoButton: React.FC = (): React.ReactElement => {
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state,
     dispatch
   }: {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
+  const isLoggedIn: boolean = state.loggedInUser !== `Logged Out`
   return (
     <Button
       size={`small`}
@@ -26,6 +27,7 @@ export const RedoButton: React.FC = (): React.ReactElement => {
           type: `REDO`
         })
       }}
+      disabled={!isLoggedIn || state.stateFuture.length === 0}
     >
       Redo
     </Button>

@@ -3,9 +3,14 @@ import { Input } from '@mui/material'
 import * as React from 'react'
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
-import { IIMPString } from '../../interfaces/IIMPString'
+import { IIMPProductStringToChange } from '../../interfaces/productProperties/IIMPProductStringToChange'
 import { ImpContext } from '../ImpContext'
-export const StringChanger: React.FC<IIMPString> = (theString: IIMPString): React.ReactElement => {
+/**
+ * a component to change a string in a product
+ * @param toChange an IIMPString, a string primitive, and an IIMPProduct
+ * @returns a component to change a string in a product
+ */
+export const StringChanger: React.FC<IIMPProductStringToChange> = (toChange: IIMPProductStringToChange): React.ReactElement => {
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state,
@@ -15,19 +20,17 @@ export const StringChanger: React.FC<IIMPString> = (theString: IIMPString): Reac
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <>
-      <Input
-        className={`StringChanger`}
-        key={`orderSearch`}
-        type={`text`}
-        value={theString.text}
-        onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
-          dispatch({
-            type: `SET_STRING`,
-            payload: { ...theString, text: textChangeEvent.target.value }
-          })
-        }}
-      />
-    </>
+    <Input
+      className={`StringChanger`}
+      key={`orderSearch`}
+      type={`text`}
+      value={toChange.string.text}
+      onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
+        dispatch({
+          type: `SET_STRING`,
+          payload: { string: toChange.string, newValue: textChangeEvent.target.value, product: toChange.product }
+        })
+      }}
+    />
   )
 }

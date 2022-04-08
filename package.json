@@ -1,39 +1,36 @@
 {
   "name": "inventory-management-platform",
-  "version": "0.2.3",
+  "version": "0.7.9",
   "description": "Inventory Management Platform",
   "productName": "IMP",
   "author": "Brandon Shockley <bms1991@gmail.com> (https://github.com/Zindrek)",
-  "maintainers": [
-    "Brandon Shockley", 
-    "AJ Sclove",
-    "Mark Murrell"
-  ],
+  "repository": "https://github.com/Zindrek/IMP",
   "copyright": "© 2022",
   "keywords": [],
   "private": true,
   "scripts": {
-    "setup": "npm install yarn && yarn && echo 'Frontend Setup complete' && echo run 'yarn setup-rust' (*nix / macOS) or use the installer from https://win.rustup.rs/x86_64 (64-bit Windows) or https://win.rustup.rs/i686 (32-bit Windows) to finish setup",
-    "setup-rust": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && echo 'Rust Installation complete'",
-    "win": "echo 'Windows users must install Rust using the installer from https://win.rustup.rs/x86_64 or https://win.rustup.rs/i686'",
+    "setup": "npm install -g yarn && yarn && echo 'Frontend Setup complete' && echo run 'yarn setup-rust-nix' for linux / macOS or use the installer from https://win.rustup.rs/x86_64 for 64-bit Windows or https://win.rustup.rs/i686 for 32-bit Windows to finish setup",
+    "setup-rust-nix": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && echo 'Rust Installation complete'",
+    "setup-rust-win": "echo 'Windows users must install Rust using the installer from https://win.rustup.rs/x86_64 or https://win.rustup.rs/i686'",
     "start": "tauri dev",
     "eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                            yarn react-scripts eject' && echo",
-    "clean": "rm -rf build node_modules output src-tauri/target package-lock.json yarn.lock yarn-error-log src-tauri/Cargo.lock",
+    "clean": "rm -rf build coverage node_modules output src-tauri/target package-lock.json yarn.lock yarn-error-log src-tauri/Cargo.lock",
     "sign": "tauri signer generate",
     "build": "tauri build",
     "test": "jest --watch",
-    "cover": "jest --coverage",
+    "cover": "jest --coverage --passWithNoTests",
     "make-icon": "yarn tauricon --log src-tauri/icons/app-icon.png --target src-tauri/icons",
-    "pretty": "rm -rf src-tauri/target/release && node node_modules/.bin/prettier --write .",
+    "pretty": "node node_modules/.bin/prettier --write .",
     "prep-tsnode-script": "cp ./src/scripts/tsnode/scripts.tsconfig.json ./tsconfig.json",
     "cleanup-tsnode-script": "cp ./src/scripts/tsnode/regular.tsconfig.json ./tsconfig.json",
-    "update": "yarn clean && yarn && cd src-tauri && rustup update && cargo update && cd ..",
+    "update-rust": "yarn clean && yarn && cd src-tauri && rustup update && cargo update && cd ..",
     "bundle": "yarn clean && yarn && yarn build && mkdir output && mv src-tauri/target/release/bundle/* output && yarn zip &&",
-    "zip": "yarn prep-tsnode-script && yarn ts-node src/scripts/utility/webzip.ts && yarn cleanup-tsnode-script"
+    "zip": "yarn clean && yarn && yarn build && yarn prep-tsnode-script && mkdir output && yarn ts-node src/scripts/utility/webzip.ts && yarn cleanup-tsnode-script"
   },
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
+    "@fontsource/asap": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@mui/styles": "latest",
@@ -117,15 +114,14 @@
       "/src/react-app-env.d.ts",
       "/src/scripts/",
       "/src/tests/",
-      "/src/imageModules/",
-      "/static/"
+      "/src/typings/"
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 72,
-        "functions": 48,
-        "lines": 69,
-        "statements": 65
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
       }
     },
     "displayName": {
@@ -142,13 +138,17 @@
       "js",
       "jsx",
       "json",
-      "png"
+      "css",
+      "jpg",
+      "jpeg",
+      "png",
+      "svg"
     ],
     "moduleNameMapper": {
-      "\\.(css)$": "<rootDir>/src/imageModules/css.d.ts",
-      "\\.(jp?eg)$": "<rootDir>/src/imageModules/jpg.d.ts",
-      "\\.(png)$": "<rootDir>/src/imageModules/png.d.ts",
-      "\\.(svg)$": "<rootDir>/src/imageModules/svg.d.ts"
+      "\\.(css)$": "<rootDir>/src/typings/css.d.ts",
+      "\\.(jp?eg)$": "<rootDir>/src/typings/jpg.d.ts",
+      "\\.(png)$": "<rootDir>/src/typings/png.d.ts",
+      "\\.(svg)$": "<rootDir>/src/typings/svg.d.ts"
     },
     "transform": {
       "^.+\\.[jt]sx?$": "babel-jest"

@@ -2,10 +2,15 @@
 import { Button, Input, Stack } from '@mui/material'
 import * as React from 'react'
 import { IIMPAction } from '../../interfaces/IIMPAction'
-import { IIMPNumber } from '../../interfaces/IIMPNumber'
 import { IIMPState } from '../../interfaces/IIMPState'
+import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'
 import { ImpContext } from '../ImpContext'
-export const NumberChanger: React.FC<IIMPNumber> = (theNumber: IIMPNumber): React.ReactElement => {
+/**
+ * a component to change a number in a product
+ * @param toChange an IIMPNumber and an IIMPProduct
+ * @returns a component to change the numbers in a product
+ */
+export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIMPProductNumberToChange): React.ReactElement => {
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state,
@@ -22,35 +27,34 @@ export const NumberChanger: React.FC<IIMPNumber> = (theNumber: IIMPNumber): Reac
         onClick={() => {
           dispatch({
             type: `DECREMENT_NUMBER`,
-            payload: theNumber
+            payload: { number: toChange.number, product: toChange.product }
           })
         }}
       >
         -
       </Button>
-      <p>
-        {`${theNumber.id}: ${theNumber.prefix}`}
-        <Input
-          className={`StringChanger`}
-          key={`orderSearch`}
-          type={`number`}
-          value={theNumber.currentValue}
-          onChange={(numberChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
-            dispatch({
-              type: `SET_NUMBER`,
-              payload: { ...theNumber, currentValue: parseFloat(numberChangeEvent.target.value) }
-            })
-          }}
-        />
-        {`${theNumber.suffix}`}
-      </p>
+      <p>{`${toChange.number.id}: ${toChange.number.prefix ? toChange.number.prefix : ``}`}</p>
+      <Input
+        className={`StringChanger`}
+        key={`orderSearch`}
+        type={`number`}
+        value={toChange.number.value}
+        onChange={(numberChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
+          dispatch({
+            type: `SET_NUMBER`,
+            payload: { number: { ...toChange.number, value: parseFloat(numberChangeEvent.target.value) }, product: toChange.product }
+          })
+        }}
+      />
+      {`${toChange.number.suffix ? toChange.number.suffix : ``}`}
+      <p />
       <Button
         size={`small`}
         variant={`contained`}
         onClick={() => {
           dispatch({
             type: `INCREMENT_NUMBER`,
-            payload: theNumber
+            payload: { number: toChange.number, product: toChange.product }
           })
         }}
       >

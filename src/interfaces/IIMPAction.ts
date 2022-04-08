@@ -7,9 +7,9 @@ import { IRefreshDatabaseAction } from './actionInterfaces/database/IRefreshData
 import { IUpdateDatabaseAction } from './actionInterfaces/database/IUpdateDatabaseAction'
 import { IUndoAction } from './actionInterfaces/history/IUndoAction'
 import { IRedoAction } from './actionInterfaces/history/IRedoAction'
-import { ICreateInventoryEntryAction } from './actionInterfaces/inventory/ICreateInventoryEntryAction'
+import { IReceiveInventoryAction } from './actionInterfaces/inventory/IReceiveInventoryAction'
 import { IDeleteInventoryEntryAction } from './actionInterfaces/inventory/IDeleteInventoryEntryAction'
-import { IModifyInventoryEntryAction } from './actionInterfaces/inventory/IModifyInventoryEntryAction'
+import { IUpdateInventoryEntryAction } from './actionInterfaces/inventory/IUpdateInventoryEntryAction'
 import { IRestockInventoryEntryAction } from './actionInterfaces/inventory/IRestockInventoryEntryAction'
 import { IInventorySearchAction } from './actionInterfaces/search/IInventorySearchAction'
 import { IOrderSearchAction } from './actionInterfaces/search/IOrderSearchAction'
@@ -18,18 +18,23 @@ import { IDecrementNumberAction } from './actionInterfaces/shared/IDecrementNumb
 import { IIncrementNumberAction } from './actionInterfaces/shared/IIncrementNumberAction'
 import { ISetNumberAction } from './actionInterfaces/shared/ISetNumberAction'
 import { ISetStringAction } from './actionInterfaces/shared/ISetStringAction'
+import { IToggleThemeAction } from './actionInterfaces/core/IToggleThemeAction'
+import { IUpdateImageAction } from './actionInterfaces/shared/IUpdateImageAction'
+/**
+ * a union type of every interface in src/interfaces/actionInterfaces
+ */
 export type IIMPAction =
+  | IUndoAction
+  | IRedoAction
+  | IPurchaseCartAction
   | IChangeLoginAction
-  | IPurchaseCartAction // TODO: add business logic
   | IApplicationStartAction
   | IUseNavBarAction
   | IRefreshDatabaseAction // TODO: add business logic
   | IUpdateDatabaseAction // TODO: add business logic
-  | IUndoAction // TODO: add business logic
-  | IRedoAction // TODO: add business logic
-  | ICreateInventoryEntryAction // TODO: add business logic
   | IDeleteInventoryEntryAction // TODO: add business logic
-  | IModifyInventoryEntryAction // TODO: add business logic
+  | IUpdateInventoryEntryAction // TODO: add business logic
+  | IReceiveInventoryAction
   | IRestockInventoryEntryAction
   | IInventorySearchAction
   | IOrderSearchAction
@@ -38,3 +43,5 @@ export type IIMPAction =
   | IIncrementNumberAction
   | ISetNumberAction
   | ISetStringAction
+  | IToggleThemeAction
+  | IUpdateImageAction

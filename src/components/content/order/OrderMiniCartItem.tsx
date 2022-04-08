@@ -6,15 +6,16 @@ import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
+ * an item in the minicart view
  * @returns a React.FC that displays a small version of the cart
  */
-export const MiniCartItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {
+export const OrderMiniCartItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {
   return (
     <Card key={`MiniCart${product.name.text}`} className={`MiniCartItem`}>
-      <p>{ImageDisplayer(product.image)}</p>
-      <p>{StringDisplayer(product.name)}</p>
-      <p>{NumberChanger(product.quantityInCart)}</p>
-      <p>{`Total Price: ${product.salePrice.prefix}${(product.salePrice.currentValue * product.quantityInCart.currentValue).toFixed(2)}`}</p>
+      {ImageDisplayer(product.image)}
+      {StringDisplayer(product.name)}
+      {NumberChanger({ number: product.inCart, product: product })}
+      <p>{`Total Price: ${product.price.prefix}${(product.price.value * product.inCart.value).toFixed(2)}`}</p>
     </Card>
   )
 }

@@ -5,6 +5,11 @@ import { IIMPState } from '../../interfaces/IIMPState'
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { ImpContext } from '../ImpContext'
 import { ILoginValue } from '../../interfaces/unionTypes/ILoginValue'
+/**
+ * the login buttons component
+ * @param user the ILoginValue of the user to login as
+ * @returns a react component that displays the buttons used to log in or out
+ */
 export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.ReactElement => {
   const {
     state,
@@ -13,48 +18,44 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
-  const isLoggedIn: boolean = state.loggedInUser !== `Logged Out`
-  if (!isLoggedIn) {
-    return (
-      <Stack className={`AuthButtons`} direction={`row`}>
-        <Button
-          onClick={() => {
-            dispatch({
-              type: `CHANGE_LOGIN`,
-              payload: `Administrator`
-            })
-          }}
-        >
-          {`Login Administrator`}
-        </Button>
-        <p />
-        <Button
-          onClick={() => {
-            dispatch({
-              type: `CHANGE_LOGIN`,
-              payload: `Employee`
-            })
-          }}
-        >
-          {`Login Employee`}
-        </Button>
-      </Stack>
-    )
-  } else {
-    return (
-      <Stack className={`AuthButtons`} direction={`row`}>
-        <Button
-          className={`AuthBquit`}
-          onClick={() => {
-            dispatch({
-              type: `CHANGE_LOGIN`,
-              payload: user
-            })
-          }}
-        >
-          Log Out
-        </Button>
-      </Stack>
-    )
-  }
+  return (
+    <Stack className={`AuthButtons`} direction={`row`} spacing={2}>
+      <Button
+        onClick={() => {
+          dispatch({
+            type: `CHANGE_LOGIN`,
+            payload: `Manager`
+          })
+        }}
+        disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
+        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `outlined` : `contained`}
+      >
+        {`Login Manager`}
+      </Button>
+      <Button
+        onClick={() => {
+          dispatch({
+            type: `CHANGE_LOGIN`,
+            payload: `Employee`
+          })
+        }}
+        disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
+        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `outlined` : `contained`}
+      >
+        {`Login Employee`}
+      </Button>
+      <Button
+        onClick={() => {
+          dispatch({
+            type: `CHANGE_LOGIN`,
+            payload: user
+          })
+        }}
+        disabled={state.loggedInUser.includes(`Logged Out`)}
+        variant={state.loggedInUser.includes(`Logged Out`) ? `outlined` : `contained`}
+      >
+        Log Out
+      </Button>
+    </Stack>
+  )
 }

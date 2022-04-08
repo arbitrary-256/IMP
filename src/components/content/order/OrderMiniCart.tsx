@@ -5,8 +5,9 @@ import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-import { MiniCartItem } from './OrderMiniCartItem'
+import { OrderMiniCartItem } from './OrderMiniCartItem'
 /**
+ * the order tab's right div that displays a small version of the cart
  * @returns a React.FC that displays a small version of the cart
  */
 export const OrderMiniCart: React.FC = (): React.ReactElement => {
@@ -20,11 +21,11 @@ export const OrderMiniCart: React.FC = (): React.ReactElement => {
   } = React.useContext(ImpContext)
   const newCart: IIMPProduct[] = state.cart
   return (
-    <Grid className={`OrderMiniCart`} direction={`column`} spacing={2}>
+    <Grid container className={`OrderMiniCart`} spacing={2} columns={1}>
       {newCart.map(
         (product: IIMPProduct): React.ReactElement => (
-          <Grid item key={`OrderMiniCart${product.upc.currentValue}`}>
-            {MiniCartItem(product)}
+          <Grid item key={`OrderMiniCart${product.upc.value}`}>
+            {OrderMiniCartItem(product)}
           </Grid>
         )
       )}

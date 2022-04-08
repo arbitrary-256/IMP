@@ -1,8 +1,13 @@
 /** @format */
 import { IIMPState } from '../../interfaces/IIMPState'
+/**
+ * steps forward through state.stateFuture
+ * @param state the current application state
+ * @returns the next application state in state.stateFuture
+ */
 export const redo: Function = (state: IIMPState): IIMPState => {
-  if (state.stateFuture.length !== 0) {
-    state.stateHistory.push(state.stateFuture.pop()!)
-  }
-  return state
+  let tempState: IIMPState = { ...state }
+  tempState = tempState.stateFuture.pop()!
+  tempState.stateHistory.push(tempState)
+  return tempState
 }

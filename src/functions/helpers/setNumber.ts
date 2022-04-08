@@ -1,0 +1,49 @@
+/** @format */
+import { IIMPNumber } from '../../interfaces/IIMPNumber'
+import { IIMPProduct } from '../../interfaces/IIMPProduct'
+import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'
+/**
+ * changes the number in a product to a value typed in by the user
+ * @param payload number, an IIMPNumber, and product, an IIMPProduct
+ * @returns the updated product
+ */
+export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPProduct => {
+  let newProduct: IIMPProduct = payload.product
+  let newNumber: IIMPNumber = payload.number
+  const isMoreThanMin = newNumber.value >= newNumber.min
+  const isLessThanMax = newNumber.value <= newNumber.max
+  const isInRange = isMoreThanMin && isLessThanMax
+  if (isInRange) {
+    switch (payload.number.id) {
+      case `Minimum Quantity`:
+        newProduct.min.value = newNumber.value
+        break
+      case `Maximum Quantity`:
+        newProduct.max.value = newNumber.value
+        break
+      case `Purchase Price`:
+        newProduct.cost = { ...newNumber, value: parseFloat(newNumber.value.toFixed(2)) }
+        break
+      case `Sale Price`:
+        newProduct.price = { ...newNumber, value: parseFloat(newNumber.value.toFixed(2)) }
+        break
+      case `On Hand`:
+        newProduct.onHand = newNumber
+        break
+      case `UPC`:
+        newProduct.upc = newNumber
+        break
+      case `To Receive`:
+        newProduct.toReceive = newNumber
+        break
+      case `In Cart`:
+        newProduct.inCart = newNumber
+        newProduct.inCart.value > newProduct.onHand.value ? (newProduct.inCart.value = newProduct.onHand.value) : void 0
+        break
+      default:
+        console.error(`IMPError: could not find product with UPC ${newProduct.upc} while setting ${newNumber.id}`)
+        break
+    }
+  }
+  return newProduct
+}

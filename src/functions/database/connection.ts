@@ -1,5 +1,9 @@
 /** @format */
 import mariadb from 'mariadb'
+/**
+ * creates a connection to the database with appropriate credentials
+ * @returns a connection to the database
+ */
 const mariaCredentials: Function = (): mariadb.ConnectionConfig => {
   return {
     // the host address of the mariadb or mysql server - defaults to port 3306, set as ${IP}:${PORT}

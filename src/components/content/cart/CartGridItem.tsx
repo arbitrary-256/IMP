@@ -10,6 +10,7 @@ import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
+ * an item in the cart tab
  * @param product the IIMPProduct to be displayed
  * @returns a React.FC that displays a single item in the Cart tab of the UI
  */
@@ -23,21 +24,21 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <Grid item key={`ProductInCart${product.upc.currentValue}`}>
+    <Grid item key={`ProductInCart${product.upc.value}`}>
       <Card className={`CartGridItem`}>
         <p>{ImageDisplayer(product.image)}</p>
-        <p>{NumberChanger(product.quantityInCart)}</p>
+        <p>{NumberChanger({ number: product.inCart, product: product })}</p>
         <p>{StringDisplayer(product.name)}</p>
         <p>{NumberDisplayer(product.upc)}</p>
-        <p>{NumberDisplayer(product.salePrice)}</p>
-        <p>{`Total Price: ${product.salePrice.prefix}${(product.salePrice.currentValue * product.quantityInCart.currentValue).toFixed(2)}`}</p>
+        <p>{NumberDisplayer(product.price)}</p>
+        <p>{`Total Price: ${product.price.prefix}${(product.price.value * product.inCart.value).toFixed(2)}`}</p>
         <p />
         <Button
           variant={`contained`}
           onClick={() => {
             dispatch({
               type: `SET_NUMBER`,
-              payload: { ...product.quantityInCart, currentValue: 0 }
+              payload: { number: { ...product.inCart, value: 0 }, product: product }
             })
           }}
         >

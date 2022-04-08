@@ -3,11 +3,16 @@ import { generateProduct } from './generateProduct'
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { mockInventory } from '../../mockData/mockInventory'
-const receivingProduct: IIMPProduct = generateProduct()
+/**
+ * generates a mocked state for the application without using the database
+ * @returns the default state for the application
+ */
 export const generateDefaultState: Function = (): IIMPState => {
+  const receivingProduct: IIMPProduct = generateProduct()
+  const inventory: IIMPProduct[] = mockInventory(10)
   return {
     cart: [],
-    currentInventory: mockInventory(),
+    inStock: inventory,
     inventorySearch: ``,
     filteredInventory: [],
     orderSearch: ``,
@@ -18,17 +23,17 @@ export const generateDefaultState: Function = (): IIMPState => {
     loggedInUser: `Logged Out`,
     productToReceive: {
       ...receivingProduct,
-      quantityToReceive: {
-        ...receivingProduct.quantityToReceive,
-        currentValue: 0
+      toReceive: {
+        ...receivingProduct.toReceive,
+        value: 0
       },
-      quantityInInventory: {
-        ...receivingProduct.quantityInInventory,
-        currentValue: 0
+      onHand: {
+        ...receivingProduct.onHand,
+        value: 0
       },
-      quantityInCart: {
-        ...receivingProduct.quantityInCart,
-        currentValue: 0
+      inCart: {
+        ...receivingProduct.inCart,
+        value: 0
       }
     },
     stateFuture: [],
