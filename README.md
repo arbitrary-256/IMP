@@ -64,7 +64,7 @@ You will need to install the following things to build IMP:
 
 ### Build for web
 
-Run `yarn zip` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This artifact is meant for deployment to a web server.
+Run `yarn zip` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
