@@ -7,6 +7,7 @@ import { PurchaseCartButton } from './PurchaseCartButton'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
+import { Box } from '@mui/system'
 /**
  * the cart tab
  * @returns a React.FC that displays the Cart tab of the UI
@@ -22,9 +23,10 @@ export const CartView: React.FC = (): React.ReactElement => {
   } = React.useContext(ImpContext)
   const totalPrices: number[] = state.cart.map((product: IIMPProduct): number => product.price.value * product.inCart.value)
   const totalPrice: number = totalPrices.reduce((accumulator: number, value: number): number => accumulator + value, 0)
-  if (state.contentAreaView === `Cart`) {
     return (
-      <div className={`CartView`}>
+      <Box className={`CartView`}
+        sx={{display: (state.contentAreaView === `Cart` ? `block` : `none`)}}
+      >
         <p />
         <PurchaseCartButton />
         <p>{`Total Price: $${totalPrice.toFixed(2)}`}</p>
@@ -37,9 +39,6 @@ export const CartView: React.FC = (): React.ReactElement => {
           ))}
         </Grid>
         <p />
-      </div>
+      </Box>
     )
-  } else {
-    return <div className={`CartView`} />
-  }
 }
