@@ -23,33 +23,6 @@
 
 IMP uses the semantic versioning system.  The current build of IMP is version 0.7.9
 
-### Prerequisites
-
-You will need to install the following things to build IMP:
-
-- [VS Code](https://code.visualstudio.com/download) to edit and lint code **_OR_** a different IDE / text editor that supports both Typescript and Rust
-- [Node.js](https://nodejs.org/en/download/), as it is a prerequisite for most of the frontend code (but [Deno](https://deno.land) might also work)
-- [Rust](https://www.rust-lang.org/tools/install), as it is a prerequisite for Tauri.
-- [Docker Swarm](https://docs.docker.com/engine/swarm) **_OR_** another way to deploy MariaDB
-
-
-#### Languages
-
-- [Rust version 1.6^](https://www.rust-lang.org/) - for Tauri's backend code
-- [Typescript version 4.6^](https://www.typescriptlang.org/) - for Tauri's frontend code, React.JS, and Material-UI
-
-#### Front end technologies
-
-- [React.JS version 18^](https://reactjs.org/) using [create-react-app](https://create-react-app.dev/) - web components library
-- [Material-UI version 5^](https://material-ui.com/) - React.JS component and styling library
-
-#### Back end technologies
-
-- [Tauri version 1.0.0-rc.3](https://tauri.studio) - cross-platform desktop framework for compiling web applications
-- [MariaDB version 10.7.3^](https://mariadb.org/) - MySQL-compatible database
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-
 [](#develop)
 
 ## Develop
@@ -61,15 +34,41 @@ You will need to install the following things to build IMP:
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
+### Prerequisites
+
+You will need to install the following things to build IMP:
+
+- [VS Code](https://code.visualstudio.com/download) to edit and lint code **_OR_** a different IDE / text editor that supports both Typescript and Rust
+- [Node.js](https://nodejs.org/en/download/), as it is a prerequisite for most of the frontend code (but [Deno](https://deno.land) might also work)
+- [Rust](https://www.rust-lang.org/tools/install), as it is a prerequisite for Tauri.
+- [Docker Swarm](https://docs.docker.com/engine/swarm) **_OR_** another way to deploy MariaDB
+
+### Languages
+
+- [Rust version 1.6^](https://www.rust-lang.org/) - for Tauri's backend code
+- [Typescript version 4.6^](https://www.typescriptlang.org/) - for Tauri's frontend code, React.JS, and Material-UI
+
+### Front end technologies
+
+- [React.JS version 18^](https://reactjs.org/) using [create-react-app](https://create-react-app.dev/) - web components library
+- [Material-UI version 5^](https://material-ui.com/) - React.JS component and styling library
+
+### Back end technologies
+
+- [Tauri version 1.0.0-rc.3](https://tauri.studio) - cross-platform desktop framework for compiling web applications
+- [MariaDB version 10.7.3^](https://mariadb.org/) - MySQL-compatible database
+
+[ToC](#table-of-contents 'Return to Table of Contents')
+
 [](#build-for-web)
 
-## Build for web
+### Build for web
 
 Run `yarn zip` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This artifact is meant for deployment to a web server.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
-## Build for your OS
+### Build for your OS
 
 [](#build-for-your-os)
 
@@ -77,7 +76,7 @@ Run `yarn bundle` to build a double-clickable installer for your operating syste
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
-## Build cross platform
+### Build cross platform
 
 [](#build-cross-platform)
 
@@ -100,4 +99,3 @@ You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easil
 The file `mariadb-stack.yml` contains inline instructions and defines a Docker Swarm stack that deploys a MariaDB database.  This is the simplest way to deploy the database for most users.  If you happen to be a user who knows more about deploying MariaDB, feel free to deploy however you like - IMP does not discriminate.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
-
