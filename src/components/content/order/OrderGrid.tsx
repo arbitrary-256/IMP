@@ -3,7 +3,7 @@ import * as React from 'react'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { ImpContext } from '../../ImpContext'
-import { Card, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { OrderGridItem } from './OrderGridItem'
 /**
@@ -19,16 +19,17 @@ export const OrderGrid: React.FC = (): React.ReactElement => {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
+  const filteredOrder: IIMPProduct[] = state.inStock.filter((eachProduct: IIMPProduct) => {
+    return eachProduct.upc.value.toString().includes(state.orderSearch.toLowerCase()) || eachProduct.name.text.toLowerCase().includes(state.orderSearch.toLowerCase())
+  })
   return (
     <div className={`OrderGrid`}>
+      <p></p>
       <Grid container spacing={2}>
-        {state.filteredOrder.length === 0 && state.orderSearch.length === 0
-          ? state.filteredOrder.map((eachProduct: IIMPProduct) => OrderGridItem(eachProduct))
-          : state.inStock.map((eachProduct: IIMPProduct) => OrderGridItem(eachProduct))}
-        {state.inStock.map((eachProduct: IIMPProduct) => {
+        {filteredOrder.map((eachProduct: IIMPProduct) => {
           return (
-            <Grid item key={eachProduct.upc.value}>
-              <Card>{OrderGridItem(eachProduct)}</Card>
+            <Grid item className={`OrderGridItem`} key={eachProduct.upc.value}>
+              {OrderGridItem(eachProduct)}
             </Grid>
           )
         })}
