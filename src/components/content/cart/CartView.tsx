@@ -25,10 +25,9 @@ export const CartView: React.FC = (): React.ReactElement => {
   const totalPrice: number = totalPrices.reduce((accumulator: number, value: number): number => accumulator + value, 0)
   return (
     <Box className={`CartView`} sx={{ display: state.contentAreaView === `Cart` ? `block` : `none` }}>
-      <p />
-      <PurchaseCartButton />
+      <p /> <PurchaseCartButton />
       <p>{`Total Price: $${totalPrice.toFixed(2)}`}</p>
-      <p />
+      <p />{' '}
       <Grid container spacing={2}>
         {state.cart.map((eachProduct: IIMPProduct) => (
           <Grid item key={`CartCard${eachProduct.upc.value}`} className={`CartGridItem`}>
@@ -36,7 +35,7 @@ export const CartView: React.FC = (): React.ReactElement => {
           </Grid>
         ))}
       </Grid>
-      <p />
+      <p />{' '}
     </Box>
   )
 }

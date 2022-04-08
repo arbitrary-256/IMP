@@ -3,7 +3,7 @@ import * as React from 'react'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { ImpContext } from '../../ImpContext'
-import { Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { OrderGridItem } from './OrderGridItem'
 /**
@@ -23,17 +23,14 @@ export const OrderGrid: React.FC = (): React.ReactElement => {
     return eachProduct.upc.value.toString().includes(state.orderSearch.toLowerCase()) || eachProduct.name.text.toLowerCase().includes(state.orderSearch.toLowerCase())
   })
   return (
-    <div className={`OrderGrid`}>
-      <p></p>
+    <Box className={`OrderGrid`}>
       <Grid container spacing={2}>
-        {filteredOrder.map((eachProduct: IIMPProduct) => {
-          return (
-            <Grid item className={`OrderGridItem`} key={eachProduct.upc.value}>
-              {OrderGridItem(eachProduct)}
-            </Grid>
-          )
-        })}
+        {filteredOrder.map((eachProduct: IIMPProduct) => (
+          <Grid item className={`OrderGridItem`} key={eachProduct.upc.value}>
+            {OrderGridItem(eachProduct)}
+          </Grid>
+        ))}
       </Grid>
-    </div>
+    </Box>
   )
 }

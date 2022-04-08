@@ -1,6 +1,6 @@
 /** @format */
 import * as React from 'react'
-import { Stack } from '@mui/material'
+import { Box, Stack } from '@mui/material'
 import { AuthButtons } from './AuthButtons'
 import { ManagerButton } from './ManagerButton'
 import { EmployeeButton } from './EmployeeButton'
@@ -13,22 +13,18 @@ import { DarkModeSwitch } from './DarkModeSwitch'
  */
 export const NavBar: React.FC = (): React.ReactElement => {
   return (
-    <div className={`NavBar`}>
+    <Box className={`NavBar`}>
       <Stack justifyContent={`center`} direction={`row`} spacing={2}>
         {UndoButton({})}
         {RedoButton({})}
-        <p />
-        {ManagerButton(`Receiving`)}
+        <p /> {ManagerButton(`Receiving`)}
         {ManagerButton(`Inventory`)}
         {ManagerButton(`Restock`)}
-        <p />
-        {EmployeeButton(`Order`)}
+        <p /> {EmployeeButton(`Order`)}
         {EmployeeButton(`Cart`)}
-        <p />
-        {AuthButtons(`Logged Out`)}
-        <p />
-        {DarkModeSwitch({})}
+        <p /> {AuthButtons(`Logged Out`)}
+        <p /> {DarkModeSwitch({})}
       </Stack>
-    </div>
+    </Box>
   )
 }

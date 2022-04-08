@@ -17,19 +17,18 @@ export const SearchInventory: React.FC = (): React.ReactElement => {
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <div className={`SearchInput`}>
-      <TextField
-        key={`inventorySearch`}
-        type={`text`}
-        label={`Search by UPC or Name`}
-        value={state.inventorySearch}
-        onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
-          dispatch({
-            type: `INVENTORY_SEARCH`,
-            payload: textChangeEvent.target.value
-          })
-        }}
-      />
-    </div>
+    <TextField
+      className={`SearchInput`}
+      key={`inventorySearch`}
+      type={`text`}
+      label={`Search by UPC or Name`}
+      value={state.inventorySearch}
+      onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
+        dispatch({
+          type: `INVENTORY_SEARCH`,
+          payload: textChangeEvent.target.value
+        })
+      }}
+    />
   )
 }

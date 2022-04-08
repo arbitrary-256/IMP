@@ -31,7 +31,7 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
       <p>{NumberDisplayer(product.upc)}</p>
       <p>{NumberDisplayer(product.price)}</p>
       <p>{`Total Price: ${product.price.prefix}${(product.price.value * product.inCart.value).toFixed(2)}`}</p>
-      <p />
+      <p />{' '}
       <Button
         variant={`contained`}
         onClick={() => {

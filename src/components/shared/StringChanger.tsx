@@ -25,6 +25,7 @@ export const StringChanger: React.FC<IIMPProductStringToChange> = (toChange: IIM
       key={`orderSearch`}
       type={`text`}
       label={`Product Name`}
+      fullWidth
       value={toChange.string.text}
       onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
         dispatch({

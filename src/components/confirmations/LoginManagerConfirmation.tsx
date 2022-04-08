@@ -1,4 +1,5 @@
 /** @format */
+import { Box } from '@mui/material'
 import React from 'react'
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
@@ -16,5 +17,5 @@ export const LoginManagerConfirmation: React.FC = (): React.ReactElement => {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
-  return <div className={`Confirmation`}>{state.loggedInUser === `Manager` ? <p>Successfully logged into IMP as Manager.</p> : null}</div>
+  return <Box className={`Confirmation`}>{state.loggedInUser === `Manager` ? <p>Successfully logged into IMP as Manager.</p> : null}</Box>
 }

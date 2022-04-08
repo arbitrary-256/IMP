@@ -22,10 +22,10 @@ export const OrderView: React.FC = (): React.ReactElement => {
   } = React.useContext(ImpContext)
   return (
     <Box className={`OrderView`} sx={{ display: state.contentAreaView === `Order` ? `block` : `none` }}>
-      <div className={`SearchInput`}>{SearchOrder({})}</div>
+      <Box className={`SearchInput`}>{SearchOrder({})}</Box>
       <Stack className={`OrderViewSizer`} direction={`row`}>
-        <div>{OrderGrid({})}</div>
-        <div>{OrderMiniCart({})}</div>
+        <p>{OrderGrid({})}</p>
+        <p>{OrderMiniCart({})}</p>
       </Stack>
     </Box>
   )
