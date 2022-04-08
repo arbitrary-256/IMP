@@ -17,6 +17,7 @@ import { restockProducts } from './helpers/restockProducts'
 import { changeAppearance } from './helpers/changeAppearance'
 import { purchaseCart } from './helpers/purchaseCart'
 import { updateImage } from './helpers/updateImage'
+import { generateProduct } from './helpers/generateProduct'
 /**
  * Updates application state based on the passed action.
  * All business logic lives in this file or in a function this file imports.
@@ -49,7 +50,7 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       // TODO: should change the database with updateDatabaseEntry function or createDatabaseEntry function
       return reducerCleanup(newState)
     case `RECEIVE_INVENTORY`:
-      return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock) }, state)
+      return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock), productToReceive: generateProduct() }, state)
     case `UPDATE_IMAGE`:
       return reducerCleanup({ ...newState, image: updateImage(action.payload) }, state)
     case `DELETE_INVENTORY_ENTRY`: // when clicking delete item button
