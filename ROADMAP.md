@@ -5,6 +5,8 @@
 - create `ImageChanger` component
 - add `ImageChanger` to Receiving tab
 - add `ImageChanger` to inventory row
+- search component logic for restock tab
+- search component logic for order tab
 - create JSDoc comments for every function - 95% done
 
 ## 0.9.0 - database functionality
@@ -18,7 +20,7 @@
 - create submit inventory changes action
 
 ## 1.0.0 - Styling & Desktop application
-- implement light and dark themes
+- implement light and dark themes in every component
 - cleanup login screen image matte
 - add menubar entries to tauri application so that it can be quit/minimized/etc via standard keyboard shortcuts
 - remove all `// TODO:` comments
