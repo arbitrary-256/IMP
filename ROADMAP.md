@@ -8,6 +8,9 @@
 - create `ImageChanger` component - in progress
 - add `ImageChanger` component to Receiving tab
 - add `ImageChanger` component to inventory row
+- create `DeleteInventoryButton` component
+- add `DeleteInventoryButton` component to inventory row
+- create `DELETE_INVENTORY_ITEM` action
 - fix remove last copy of item from cart error
 
 ## 0.9.0 - database functionality complete
