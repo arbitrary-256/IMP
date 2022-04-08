@@ -2,4 +2,17 @@
 /**
  * a union type of all possible values for UI Labels for an IIMPNumber
  */
-export type INumberDescription = `Available` | `Minimum Quantity` | `Maximum Quantity` | `Purchase Price` | `Sale Price` | `On Hand` | `UPC` | `In Cart` | `To Cart` | `To Receive` | `To Restock`
+export type INumberDescription =
+  | `Available`
+  | `Item Total`
+  | `Cart Total`
+  | `Minimum Quantity`
+  | `Maximum Quantity`
+  | `Purchase Price`
+  | `Sale Price`
+  | `On Hand`
+  | `UPC`
+  | `In Cart`
+  | `To Cart`
+  | `To Receive`
+  | `To Restock`

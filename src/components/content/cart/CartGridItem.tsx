@@ -9,6 +9,7 @@ import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
+import { IIMPNumber } from '../../../interfaces/IIMPNumber'
 /**
  * an item in the cart tab
  * @param product the IIMPProduct to be displayed
@@ -23,6 +24,15 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
+  const itemTotal: IIMPNumber = {
+    id: `Item Total`,
+    propertyName: `Item Total`,
+    value: parseFloat((product.price.value * product.inCart.value).toFixed(2)),
+    prefix: `$`,
+    suffix: ``,
+    min: 0,
+    max: 0
+  }
   return (
     <Card>
       <p>{ImageDisplayer(product.image)}</p>
@@ -30,7 +40,7 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
       <p>{StringDisplayer(product.name)}</p>
       <p>{NumberDisplayer(product.upc)}</p>
       <p>{NumberDisplayer(product.price)}</p>
-      <p>{`Total Price: ${product.price.prefix}${(product.price.value * product.inCart.value).toFixed(2)}`}</p>
+      <p>{NumberDisplayer(itemTotal)}</p>
       <p />{' '}
       <Button
         variant={`contained`}
