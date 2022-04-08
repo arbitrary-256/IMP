@@ -7,14 +7,16 @@ import { IIMPProductNumberToChange } from '../../interfaces/productProperties/II
  * @returns the updated product
  */
 export const decrementNumber: Function = (toChange: IIMPProductNumberToChange): IIMPProduct => {
-  const isMoreThanMin: boolean = toChange.number.value > toChange.number.min
-  const isPrice: boolean = toChange.number.id.toString().endsWith(`Price`)
-  !isMoreThanMin ? (toChange.number.value = toChange.number.min) : void 0
-  isPrice && isMoreThanMin ? (toChange.number.value -= 0.01) : void 0
-  isPrice ? parseFloat(toChange.number.value.toFixed(2)) : void 0
-  !isPrice && isMoreThanMin ? toChange.number.value-- : void 0
+  let tempProductNumber: IIMPProductNumberToChange = { ...toChange }
+  const isMoreThanMin: boolean = tempProductNumber.number.value > tempProductNumber.number.min
+  const isPrice: boolean = tempProductNumber.number.propertyName.toString() === `price` || tempProductNumber.number.propertyName.toString() === `cost`
+  !isMoreThanMin ? (tempProductNumber.number.value = tempProductNumber.number.min) : void 0
+  isPrice && isMoreThanMin ? (tempProductNumber.number.value -= 0.01) : void 0
+  isPrice ? (tempProductNumber.number.value = parseFloat(tempProductNumber.number.value.toFixed(2))) : void 0
+  !isPrice && isMoreThanMin ? tempProductNumber.number.value-- : void 0
+  console.log(tempProductNumber.number.value)
   return {
     ...toChange.product,
-    [toChange.number.propertyName]: toChange.number
+    [tempProductNumber.number.propertyName]: tempProductNumber.number
   }
 }

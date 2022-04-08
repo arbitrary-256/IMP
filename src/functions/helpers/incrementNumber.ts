@@ -7,14 +7,16 @@ import { IIMPProductNumberToChange } from '../../interfaces/productProperties/II
  * @returns the updated product
  */
 export const incrementNumber: Function = (toChange: IIMPProductNumberToChange): IIMPProduct => {
-  const isMaxOrLess: boolean = toChange.number.value <= toChange.number.max
-  const isPrice: boolean = toChange.number.id.toString().endsWith(`Price`)
-  !isMaxOrLess ? (toChange.number.value = toChange.number.max) : void 0
-  isPrice && isMaxOrLess ? (toChange.number.value += 0.01) : void 0
-  isPrice ? parseFloat(toChange.number.value.toFixed(2)) : void 0
-  !isPrice && isMaxOrLess ? toChange.number.value++ : void 0
+  let tempProductNumber: IIMPProductNumberToChange = { ...toChange }
+  const isMaxOrLess: boolean = tempProductNumber.number.value <= tempProductNumber.number.max
+  const isPrice: boolean = tempProductNumber.number.propertyName.toString().includes(`price`) || tempProductNumber.number.propertyName.toString().includes(`cost`)
+  !isMaxOrLess ? (tempProductNumber.number.value = tempProductNumber.number.max) : void 0
+  isPrice && isMaxOrLess ? (tempProductNumber.number.value += 0.01) : void 0
+  isPrice ? (tempProductNumber.number.value = parseFloat(tempProductNumber.number.value.toFixed(2))) : void 0
+  !isPrice && isMaxOrLess ? tempProductNumber.number.value++ : void 0
+  console.log(tempProductNumber.number.value)
   return {
     ...toChange.product,
-    [toChange.number.propertyName]: toChange.number
+    [tempProductNumber.number.propertyName]: tempProductNumber.number
   }
 }
