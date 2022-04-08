@@ -20,6 +20,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
   } = React.useContext(ImpContext)
   return (
     <Stack className={`AuthButtons`} direction={`row`} spacing={2}>
+      <p />{' '}
       <Button
         onClick={() => {
           dispatch({
@@ -30,7 +31,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
         disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
         variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `text` : `contained`}
       >
-        {`Login Manager`}
+        {`Login as Manager`}
       </Button>
       <Button
         onClick={() => {
@@ -42,7 +43,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
         disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
         variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `text` : `contained`}
       >
-        {`Login Employee`}
+        {`Login as Employee`}
       </Button>
       <Button
         onClick={() => {

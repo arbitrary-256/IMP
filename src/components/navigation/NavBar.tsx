@@ -15,7 +15,7 @@ export const NavBar: React.FC = (): React.ReactElement => {
   return (
     <Box className={`NavBar`}>
       <Stack justifyContent={`center`} direction={`row`} spacing={2}>
-        {UndoButton({})}
+        <p /> {UndoButton({})}
         {RedoButton({})}
         <p /> {ManagerButton(`Receiving`)}
         {ManagerButton(`Inventory`)}
