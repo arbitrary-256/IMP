@@ -1,11 +1,15 @@
 /** @format */
 import * as React from 'react'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
-import { Button, Card, CardMedia } from '@mui/material'
+import { Button, Card, CardMedia, Stack } from '@mui/material'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
+import { StringDisplayer } from '../../shared/StringDisplayer'
+import { NumberDisplayer } from '../../shared/NumberDisplayer'
+import { IIMPNumber } from '../../../interfaces/IIMPNumber'
+import { IIMPString } from '../../../interfaces/IIMPString'
 /**
  * an item in the order tab's main view
  * @param product the IIMPProduct to be displayed
@@ -19,13 +23,31 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
   }: {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
-  } = React.useContext(ImpContext)
+    } = React.useContext(ImpContext)
+  const numberAvailable: IIMPNumber = {
+    id: `Available`,
+    propertyName: `Available`,
+    value: product.onHand.value - product.inCart.value,
+    prefix: ``,
+    min: 0,
+    max: 0,
+    suffix: ``
+  }
+  const outOfStock: IIMPString = {
+    id: `Out of Stock`,
+    prefix: ``,
+    text: `Out of Stock`,
+    suffix: ``
+  }
+
   return (
     <Card>
       <CardMedia>{ImageDisplayer(product.image)}</CardMedia>
-      <p>{`${product.name.text}`}</p>
-      <p>{`Price: ${product.price.prefix}${product.price.value}`}</p>
-      <p>{` ${product.onHand.value - product.inCart.value} available `}</p>
+      <Stack direction={`column`} spacing={2}>
+      {StringDisplayer(product.name)}
+      {NumberDisplayer(product.price)}
+      {numberAvailable.value > 0 ? NumberDisplayer(numberAvailable) : StringDisplayer(outOfStock)}
+      </Stack>
       <Button
         key={`AddToCartButton${product.upc.value}`}
         variant={`contained`}

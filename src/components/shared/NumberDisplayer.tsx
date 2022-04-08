@@ -13,6 +13,7 @@ export const NumberDisplayer: React.FC<IIMPNumber> = (impNumber: IIMPNumber): Re
     type={`number`}
     label={`${impNumber.id}`}
     disabled={true}
+    fullWidth={true}
     value={impNumber.propertyName.toString() === `price` || impNumber.propertyName.toString() === `cost` ? parseFloat(impNumber.value.toString()).toFixed(2) : impNumber.value}
   />
 )

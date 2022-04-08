@@ -8,6 +8,7 @@
 - create `ImageChanger` component - in progress
 - add `ImageChanger` component to Receiving tab
 - add `ImageChanger` component to inventory row
+- fix remove last copy of item from cart error
 
 ## 0.9.0 - database functionality complete
 - create TypeScript interface to represent database rows

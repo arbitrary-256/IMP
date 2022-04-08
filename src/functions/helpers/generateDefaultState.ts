@@ -10,7 +10,7 @@ import { lightTheme } from '../../components/theme/lightTheme'
  */
 export const generateDefaultState: Function = (): IIMPState => {
   const receivingProduct: IIMPProduct = generateProduct()
-  const inventory: IIMPProduct[] = mockInventory(10)
+  const inventory: IIMPProduct[] = mockInventory(30)
   return {
     cart: [],
     inStock: inventory,

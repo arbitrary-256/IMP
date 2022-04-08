@@ -13,10 +13,10 @@ import { StringChanger } from '../../shared/StringChanger'
 export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {
   return (
     <TableRow className={`InventoryRow`} key={`InventoryRow${product.upc.value}`}>
-      <TableCell key={`UPCCode${product.upc.value}`} width={`5%`}>
+      <TableCell key={`UPCCode${product.upc.value}`} width={`8%`}>
         {NumberDisplayer(product.upc)}
       </TableCell>
-      <TableCell key={`UPCCode${product.name.text}`} width={`15%`}>
+      <TableCell key={`UPCCode${product.name.text}`} width={`20%`}>
         {StringChanger({ string: product.name, newValue: product.name.text, product: product })}
       </TableCell>
       <TableCell key={`min${product.upc.value}`} width={`12%`}>
