@@ -14,7 +14,9 @@ import { setNumber } from './helpers/setNumber'
 import { receiveInventory } from './helpers/receiveInventory'
 import { setString } from './helpers/setString'
 import { restockProducts } from './helpers/restockProducts'
+import { changeAppearance } from './helpers/changeAppearance'
 import { purchaseCart } from './helpers/purchaseCart'
+import { updateImage } from './helpers/updateImage'
 /**
  * Updates application state based on the passed action.
  * All business logic lives in this file or in a function this file imports.
@@ -28,6 +30,8 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
     case `APPLICATION_START`: // at launch of application
       // TODO: should get inventory from SQL database with getDatabaseInventory function
       return generateDefaultState()
+    case `CHANGE_APPEARANCE`:
+      return reducerCleanup({ ...newState, theme: changeAppearance(action.payload) }, state)
     case `CHANGE_LOGIN`:
       return reducerCleanup({ ...newState, loggedInUser: action.payload, contentAreaView: action.payload }, state)
     case `USE_NAV_BAR`:
@@ -46,6 +50,8 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       return reducerCleanup(newState)
     case `RECEIVE_INVENTORY`:
       return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock) }, state)
+    case `UPDATE_IMAGE`:
+      return reducerCleanup({ ...newState, image: updateImage(action.payload) }, state)
     case `DELETE_INVENTORY_ENTRY`: // when clicking delete item button
       // TODO: delete item from SQL database using forgetIt function
       return reducerCleanup(newState, state)

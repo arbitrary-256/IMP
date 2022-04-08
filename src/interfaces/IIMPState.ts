@@ -2,6 +2,7 @@
 import { ILoginValue } from './unionTypes/ILoginValue'
 import { INavBarTarget } from './unionTypes/INavBarTarget'
 import { IIMPProduct } from './IIMPProduct'
+import { Theme } from '@mui/material'
 /**
  * the interface for the state of the application
  * @cart the user's current shopping cart contents
@@ -33,4 +34,5 @@ export interface IIMPState {
   restockSearch: string
   stateFuture: IIMPState[]
   stateHistory: IIMPState[]
+  theme: Theme
 }

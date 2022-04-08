@@ -5,6 +5,7 @@ import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { ImpContext } from '../../ImpContext'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { RestockItem } from './RestockItem'
+import { SearchRestock } from './SearchRestock'
 import { Button, Grid } from '@mui/material'
 /**
  * the restock tab
@@ -18,13 +19,17 @@ export const RestockView: React.FC = (): React.ReactElement => {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
-  const inStockProducts: IIMPProduct[] = state.inStock
-  const productsToRestock: IIMPProduct[] = inStockProducts.filter((product: IIMPProduct): boolean => {
-    return product.onHand.value <= product.min.value
-  })
+  const productsToRestock: IIMPProduct[] = state.inStock
+    .filter((product: IIMPProduct): boolean => {
+      return product.onHand.value < product.min.value
+    })
+    .filter((eachProduct: IIMPProduct) => {
+      return eachProduct.upc.value.toString().includes(state.restockSearch.toLowerCase()) || eachProduct.name.text.toLowerCase().includes(state.orderSearch.toLowerCase())
+    })
   if (state.contentAreaView === `Restock`) {
     return (
       <div className={`Restock`}>
+        {SearchRestock({})}
         <Button
           size={`small`}
           variant={`contained`}
@@ -35,25 +40,18 @@ export const RestockView: React.FC = (): React.ReactElement => {
             })
           }}
         >
-          Restock All Products
+          <p>Restock All Products</p>
         </Button>
         <p />
         <Grid container spacing={2}>
-          {productsToRestock.map(RestockItem)}
+          {productsToRestock.map((eachProduct: IIMPProduct) => {
+            return (
+              <Grid item className={`OrderGridItem`} key={eachProduct.upc.value}>
+                {RestockItem(eachProduct)}
+              </Grid>
+            )
+          })}
         </Grid>
-        <p />
-        <Button
-          size={`small`}
-          variant={`contained`}
-          onClick={() => {
-            dispatch({
-              type: `RESTOCK_INVENTORY`,
-              payload: { inventory: state.inStock, productsToBeRestocked: productsToRestock }
-            })
-          }}
-        >
-          Restock All Products
-        </Button>
       </div>
     )
   } else {

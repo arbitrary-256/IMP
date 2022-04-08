@@ -6,6 +6,8 @@ import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { StringChanger } from '../../shared/StringChanger'
+import { ImageChanger } from '../../shared/ImageChanger'
+// import imp from '../../../images/imp.png'
 /**
  * the receiving tab
  * @returns a React.FC that displays a form to receive a product
@@ -26,6 +28,7 @@ export const ReceivingView: React.FC = (): React.ReactElement => {
             <TableHead>
               <TableRow>
                 <TableCell width={`30%`}>{StringChanger({ string: state.productToReceive.name, newValue: state.productToReceive.name.text, product: state.productToReceive })}</TableCell>
+                <TableCell width={`70%`}>{ImageChanger({ image: state.productToReceive.image, product: state.productToReceive })}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

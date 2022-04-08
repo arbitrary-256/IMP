@@ -1,6 +1,6 @@
 {
   "name": "inventory-management-platform",
-  "version": "0.7.9",
+  "version": "0.8.0",
   "description": "Inventory Management Platform",
   "productName": "IMP",
   "author": "Brandon Shockley <bms1991@gmail.com> (https://github.com/Zindrek)",
@@ -14,7 +14,7 @@
     "setup-rust-win": "echo 'Windows users must install Rust using the installer from https://win.rustup.rs/x86_64 or https://win.rustup.rs/i686'",
     "start": "tauri dev",
     "eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                            yarn react-scripts eject' && echo",
-    "clean": "rm -rf build coverage node_modules output src-tauri/target package-lock.json yarn.lock yarn-error-log src-tauri/Cargo.lock",
+    "clean": "rm -rf .VSCodeCounter build coverage node_modules output src-tauri/target package-lock.json yarn.lock yarn-error.log src-tauri/Cargo.lock",
     "sign": "tauri signer generate",
     "build": "tauri build",
     "test": "jest --watch",
@@ -30,7 +30,7 @@
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
-    "@fontsource/asap": "latest",
+    "@fontsource/alegreya-sans-sc": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@mui/styles": "latest",
@@ -41,6 +41,7 @@
     "mariadb": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-dropzone": "latest",
     "source-map-support": "latest",
     "typescript": "latest"
   },
@@ -139,6 +140,7 @@
       "jsx",
       "json",
       "css",
+      "gif",
       "jpg",
       "jpeg",
       "png",
@@ -146,6 +148,7 @@
     ],
     "moduleNameMapper": {
       "\\.(css)$": "<rootDir>/src/typings/css.d.ts",
+      "\\.(gif)$": "<rootDir>/src/typings/gif.d.ts",
       "\\.(jp?eg)$": "<rootDir>/src/typings/jpg.d.ts",
       "\\.(png)$": "<rootDir>/src/typings/png.d.ts",
       "\\.(svg)$": "<rootDir>/src/typings/svg.d.ts"

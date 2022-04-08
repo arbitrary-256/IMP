@@ -1,4 +1,5 @@
 /** @format */
+import { Paper } from '@mui/material'
 import * as React from 'react'
 import { ContentArea } from './content/ContentArea'
 import { ImpProvider } from './ImpContext'
@@ -11,8 +12,10 @@ export const App: React.FC = (): React.ReactElement => {
   return (
     <div className={`App`}>
       <ImpProvider>
-        <NavBar />
-        <ContentArea />
+        <Paper>
+          <NavBar />
+          <ContentArea />
+        </Paper>
       </ImpProvider>
     </div>
   )

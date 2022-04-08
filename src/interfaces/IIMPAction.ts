@@ -18,7 +18,7 @@ import { IDecrementNumberAction } from './actionInterfaces/shared/IDecrementNumb
 import { IIncrementNumberAction } from './actionInterfaces/shared/IIncrementNumberAction'
 import { ISetNumberAction } from './actionInterfaces/shared/ISetNumberAction'
 import { ISetStringAction } from './actionInterfaces/shared/ISetStringAction'
-import { IToggleThemeAction } from './actionInterfaces/core/IToggleThemeAction'
+import { IChangeAppearanceAction } from './actionInterfaces/core/IChangeAppearanceAction'
 import { IUpdateImageAction } from './actionInterfaces/shared/IUpdateImageAction'
 /**
  * a union type of every interface in src/interfaces/actionInterfaces
@@ -43,5 +43,5 @@ export type IIMPAction =
   | IIncrementNumberAction
   | ISetNumberAction
   | ISetStringAction
-  | IToggleThemeAction
+  | IChangeAppearanceAction
   | IUpdateImageAction

@@ -1,4 +1,5 @@
 /** @format */
+import { ThemeProvider } from '@mui/material/styles'
 import * as React from 'react'
 import { generateDefaultState } from '../functions/helpers/generateDefaultState'
 import { ImpReducer } from '../functions/ImpReducer'
@@ -13,7 +14,11 @@ export const ImpContext: React.Context<any> = React.createContext(defaultState)
  */
 export const ImpProvider: React.FC<any> = (props: any): React.ReactElement => {
   const [state, dispatch] = React.useReducer(ImpReducer, defaultState)
-  return <ImpContext.Provider value={{ state, dispatch }}>{props.children}</ImpContext.Provider>
+  return (
+    <ImpContext.Provider value={{ state, dispatch }}>
+      <ThemeProvider theme={state.theme}>{props.children}</ThemeProvider>
+    </ImpContext.Provider>
+  )
 }
 /**
  * the React Context Consumer component

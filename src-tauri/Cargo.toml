@@ -1,6 +1,6 @@
 [package]
 name = "inventory-management-platform"
-version = "0.7.9"
+version = "0.8.0"
 description = "YOUR_APPLICATION_DESCRIPTION"
 authors = ["Brandon Shockley"]
 license = ""

@@ -3,6 +3,7 @@ import { generateProduct } from './generateProduct'
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { mockInventory } from '../../mockData/mockInventory'
+import { lightTheme } from '../../components/theme/lightTheme'
 /**
  * generates a mocked state for the application without using the database
  * @returns the default state for the application
@@ -37,6 +38,7 @@ export const generateDefaultState: Function = (): IIMPState => {
       }
     },
     stateFuture: [],
-    stateHistory: []
+    stateHistory: [],
+    theme: lightTheme
   }
 }

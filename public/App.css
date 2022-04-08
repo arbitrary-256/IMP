@@ -2,31 +2,22 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .Cart {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .CartGridItem {
-  width: 10vw;
-  height: 33vh;
+  width: 20vw;
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .Confirmation {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: darkslategrey;
 }
 .ContentArea {
   height: 95%;
@@ -38,63 +29,47 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: darkgreen;
 }
 .LoginEmployee {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: darkblue;
 }
 .Logout {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: darkred;
 }
 .ManageInventory {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .NavBar {
   height: 5%;
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .NavBarButton {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
   text-decoration: bold;
-  background-color: black;
 }
 .OrderGrid {
   overflow-y: auto;
   height: 100vh;
-  width: 90vw;
+  width: 75vw;
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .OrderGridItem {
-  width: 10vw;
+  width: 15vw;
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .OrderMiniCart {
   overflow-y: auto;
@@ -102,10 +77,8 @@
   width: 10vw;
   text-align: center;
   align-items: center;
-  align-content: center;
+  align-content: start;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .OrderMiniCartItem {
   height: 30%;
@@ -113,15 +86,11 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .OrderView {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .OrderViewSizer {
   height: 100vh;
@@ -131,27 +100,19 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .Restock {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .RestockItem {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 .SearchInput {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
