@@ -17,7 +17,11 @@
 
 ### What is IMP?
 
-**_IMP_** is an open-source cross-platform **_I_** nventory **_M_** anagement **_P_** latform with integrated Point of Sale (PoS) written with the goal of being entirely platform-agnostic.  To facilitate this, IMP utilizes the Tauri framework to compile lightweight and secure cross-platform binaries from a TypeScript/React frontend and a MySQL-compatible database backend for every desktop OS.  While the Tauri framework is still at the release candidate stage and does not yet support compiling mobile (iOS and Android) binaries these features are on the Tauri roadmap, so it should eventually be simple to build for all 5 platforms in the future from one codebase without any platform-specific code.
+**_IMP_** is an open-source cross-platform **_I_** nventory **_M_** anagement **_P_** latform with integrated Point of Sale (PoS) written with the goal of being entirely platform-agnostic.  To facilitate this, IMP utilizes the Tauri framework to create lightweight and secure cross-platform binaries from a TypeScript/React frontend for every desktop OS.  While the Tauri framework is still at the release candidate stage and does not yet support compiling mobile (iOS and Android) binaries these features are on the Tauri roadmap, so it should eventually be simple to build for all 5 platforms in the future from one codebase without any platform-specific code.
+
+### Current version
+
+IMP uses the semantic versioning system.  The current build of IMP is version 0.7.9
 
 ### Prerequisites
 
