@@ -1,5 +1,5 @@
 /** @format */
-import { Stack, TableCell, TableRow } from '@mui/material'
+import { TableCell, TableRow } from '@mui/material'
 import * as React from 'react'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { NumberChanger } from '../../shared/NumberChanger'
