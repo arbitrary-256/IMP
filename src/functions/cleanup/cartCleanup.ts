@@ -8,10 +8,9 @@ import { IIMPProduct } from '../../interfaces/IIMPProduct'
  */
 export const cartCleanup: Function = (product: IIMPProduct, cart: IIMPProduct[]): IIMPProduct[] => {
   let newCart: IIMPProduct[] = cart
-  const newProduct: IIMPProduct = product
-  const cartIndex: number = newCart.findIndex((productToCompare) => productToCompare.upc.value === newProduct.upc.value)
-  cartIndex === -1 ? newCart.push(newProduct) : void 0
-  newProduct.inCart.value <= 0 ? (newCart = newCart.filter((productInCart) => productInCart.upc !== newProduct.upc)) : void 0
-  cartIndex !== -1 ? (newCart[cartIndex] = newProduct) : void 0
+  const cartIndex: number = newCart.findIndex((productToCompare) => productToCompare.upc.value === product.upc.value)
+  cartIndex === -1 ? newCart.push(product) : void 0
+  cartIndex !== -1 ? (newCart[cartIndex] = product) : void 0
+  newCart = newCart.filter((productInCart) => productInCart.inCart.value <= 1)
   return newCart
 }
