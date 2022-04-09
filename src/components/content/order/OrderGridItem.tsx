@@ -39,7 +39,6 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
     text: `Out of Stock`,
     suffix: ``
   }
-
   return (
     <Card>
       <CardMedia>{ImageDisplayer(product.image)}</CardMedia>
