@@ -35,12 +35,18 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
   }
   return (
     <Card>
-      <p />{ImageDisplayer(product.image)}
-      <p />{NumberChanger({ number: product.inCart, product: product })}
-      <p />{StringDisplayer(product.name)}
-      <p />{NumberDisplayer(product.upc)}
-      <p />{NumberDisplayer(product.price)}
-      <p />{NumberDisplayer(itemTotal)}
+      <p />
+      {ImageDisplayer(product.image)}
+      <p />
+      {NumberChanger({ number: product.inCart, product: product })}
+      <p />
+      {StringDisplayer(product.name)}
+      <p />
+      {NumberDisplayer(product.upc)}
+      <p />
+      {NumberDisplayer(product.price)}
+      <p />
+      {NumberDisplayer(itemTotal)}
       <p />
       <Button
         variant={`contained`}

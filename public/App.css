@@ -79,7 +79,7 @@
 .OrderGrid {
   overflow-y: auto;
   height: 100%;
-  width: 90%;
+  width: 80vw;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -92,7 +92,7 @@
 }
 .OrderMiniCart {
   overflow-y: auto;
-  width: 100%;
+  width: 20vw;
   text-align: center;
   align-items: center;
   align-content: start;
