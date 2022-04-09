@@ -28,7 +28,7 @@
 
 ## 1.0.0 - UI polish & Desktop application, general code cleanup
 - add `Tauri Actions` to repo to automate builds
-- add icons to DarkModeSwitch component (maybe change switch to a Button?)
+- add icons to DarkModeSwitch component (maybe change switch to an Icon Button?)
 - cleanup login screen image matte
 - add menubar entries to tauri application so that it can be quit/minimized/etc via standard keyboard shortcuts
 - remove all `// TODO:` comments

@@ -29,19 +29,19 @@ export const LogoutView: React.FC = (): React.ReactElement => {
     suffix: ``
   }
   const authorString: IIMPString = {
-    id: `Author`,
+    id: `Coding`,
     text: `${appInfo.author.split(` `)[0]} ${appInfo.author.split(` `)[1]}`,
     prefix: ``,
     suffix: ``
   }
   const documentationString: IIMPString = {
-    id: `Documenter`,
+    id: `Documentation`,
     text: `AJ Sclove`,
     prefix: ``,
     suffix: ``
   }
   const testingString: IIMPString = {
-    id: `Tester`,
+    id: `Testing`,
     text: `Mark Murrell`,
     prefix: ``,
     suffix: ``
@@ -81,11 +81,11 @@ export const LogoutView: React.FC = (): React.ReactElement => {
       <Stack direction={`row`} spacing={1}>
         {StringDisplayer(impDescriptionString)}
         {StringDisplayer(impVersionString)}
+        {StringDisplayer(copyrightString)}
         {StringDisplayer(programmingLanguagesString)}
       </Stack>
       <p />
       <Stack direction={`row`} spacing={1}>
-        {StringDisplayer(copyrightString)}
         {StringDisplayer(authorString)}
         {StringDisplayer(documentationString)}
         {StringDisplayer(testingString)}
