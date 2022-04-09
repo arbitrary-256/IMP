@@ -37,8 +37,9 @@ export const CartView: React.FC = (): React.ReactElement => {
   }
   return (
     <Box className={`CartGrid`} sx={{ display: state.contentAreaView === `Cart` ? `block` : `none` }}>
-      <p /> <PurchaseCartButton />
-      <p>{NumberDisplayer(cartTotal)}</p>
+      <p />
+      <PurchaseCartButton />
+      {NumberDisplayer(cartTotal)}
       <p />
       <Grid container spacing={2}>
         {state.cart.map((eachProduct: IIMPProduct) => (
