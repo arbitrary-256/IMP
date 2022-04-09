@@ -20,7 +20,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
   } = React.useContext(ImpContext)
   return (
     <Stack className={`AuthButtons`} direction={`row`} spacing={2}>
-      <p />{' '}
+      <p />
       <Button
         size={`large`}
         onClick={() => {

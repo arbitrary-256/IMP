@@ -29,7 +29,7 @@ export const RestockView: React.FC = (): React.ReactElement => {
   return (
     <Box className={`Restock`} sx={{ display: state.contentAreaView === `Restock` ? `block` : `none` }}>
       {SearchRestock({})}
-      <p />{' '}
+      <p />
       <Button
         size={`large`}
         variant={`contained`}
@@ -42,7 +42,7 @@ export const RestockView: React.FC = (): React.ReactElement => {
       >
         Restock All Products
       </Button>
-      <p />{' '}
+      <p />
       <Grid container spacing={2}>
         {productsToRestock.map((eachProduct: IIMPProduct) => {
           return (

@@ -39,7 +39,7 @@ export const CartView: React.FC = (): React.ReactElement => {
     <Box className={`CartGrid`} sx={{ display: state.contentAreaView === `Cart` ? `block` : `none` }}>
       <p /> <PurchaseCartButton />
       <p>{NumberDisplayer(cartTotal)}</p>
-      <p />{' '}
+      <p />
       <Grid container spacing={2}>
         {state.cart.map((eachProduct: IIMPProduct) => (
           <Grid item key={`CartCard${eachProduct.upc.value}`} className={`CartGridItem`}>
@@ -47,7 +47,7 @@ export const CartView: React.FC = (): React.ReactElement => {
           </Grid>
         ))}
       </Grid>
-      <p />{' '}
+      <p />
     </Box>
   )
 }

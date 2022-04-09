@@ -41,7 +41,7 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
       <p>{NumberDisplayer(product.upc)}</p>
       <p>{NumberDisplayer(product.price)}</p>
       <p>{NumberDisplayer(itemTotal)}</p>
-      <p />{' '}
+      <p />
       <Button
         variant={`contained`}
         size={`large`}
