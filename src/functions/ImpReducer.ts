@@ -58,17 +58,7 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       return reducerCleanup(newState, state)
     case `UPDATE_INVENTORY`: // when clicking a submit update button in the inventory control menu
       let updatedProduct: IIMPProduct | undefined = newState.inStock.find((product) => product.upc.value === action.payload.upc.value)
-      if (!updatedProduct) {
-        newState.inStock.push(action.payload)
-      } else {
-        newState.inStock = newState.inStock.map((product) => {
-          if (product.upc.value === action.payload.upc.value) {
-            return action.payload
-          } else {
-            return product
-          }
-        })
-      }
+      !updatedProduct ? newState.inStock.push(action.payload) : (newState.inStock = newState.inStock.map((product) => (product.upc.value === action.payload.upc.value ? action.payload : product)))
       // TODO: Write item to SQL database using updateDatabaseEntry function
       return reducerCleanup(newState, state)
     case `RESTOCK_INVENTORY`: // when clicking the restock button
