@@ -14,7 +14,8 @@ import { Box } from '@mui/material'
 export const ContentArea: React.FC = (): React.ReactElement => {
   return (
     <Box className={`ContentArea`}>
-      <p /> {LogoutView({})}
+      <p />
+      {LogoutView({})}
       {OrderView({})}
       {ReceivingView({})}
       {RestockView({})}
