@@ -24,7 +24,7 @@ export const RestockView: React.FC = (): React.ReactElement => {
       return product.onHand.value < product.min.value
     })
     .filter((eachProduct: IIMPProduct) => {
-      return eachProduct.upc.value.toString().includes(state.restockSearch.toLowerCase()) || eachProduct.name.text.toLowerCase().includes(state.orderSearch.toLowerCase())
+      return eachProduct.upc.value.toString().includes(state.restockSearch.toLowerCase()) || eachProduct.name.text.toLowerCase().includes(state.restockSearch.toLowerCase())
     })
   return (
     <Box className={`Restock`} sx={{ display: state.contentAreaView === `Restock` ? `block` : `none` }}>
