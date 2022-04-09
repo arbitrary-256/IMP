@@ -11,6 +11,5 @@ export const cartCleanup: Function = (product: IIMPProduct, cart: IIMPProduct[])
   const cartIndex: number = newCart.findIndex((productToCompare) => productToCompare.upc.value === product.upc.value)
   cartIndex === -1 ? newCart.push(product) : (newCart[cartIndex] = product) // was ' : void 0
   newCart = newCart.filter((productInCart) => productInCart.inCart.value > 0)
-  console.log(`cartCleanup: newCart's filtered length: ${newCart.length}`)
   return newCart
 }
