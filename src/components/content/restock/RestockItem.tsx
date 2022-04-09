@@ -25,11 +25,17 @@ export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.
   return (
     <Grid item className={`RestockItem`} key={product.upc.value}>
       <Card>
+        <p />
         {StringDisplayer(product.name)}
+        <p />
         {ImageDisplayer(product.image)}
+        <p />
         {NumberDisplayer(product.upc)}
+        <p />
         {NumberDisplayer(product.onHand)}
+        <p />
         {NumberDisplayer(product.min)}
+        <p />
         {NumberDisplayer(product.max)}
         <p />
         <Button
