@@ -17,20 +17,18 @@ export const SearchOrder: React.FC = (): React.ReactElement => {
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <>
-      <TextField
-        className={`SearchInput`}
-        key={`orderSearch`}
-        type={`text`}
-        label={`Search by UPC or Name`}
-        value={state.orderSearch}
-        onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
-          dispatch({
-            type: `ORDER_SEARCH`,
-            payload: textChangeEvent.target.value
-          })
-        }}
-      />
-    </>
+    <TextField
+      className={`SearchInput`}
+      key={`orderSearch`}
+      type={`text`}
+      label={`Search by UPC or Name`}
+      value={state.orderSearch}
+      onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
+        dispatch({
+          type: `ORDER_SEARCH`,
+          payload: textChangeEvent.target.value
+        })
+      }}
+    />
   )
 }
