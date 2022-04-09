@@ -6,7 +6,7 @@ import { ManagerButton } from './ManagerButton'
 import { EmployeeButton } from './EmployeeButton'
 import { RedoButton } from './RedoButton'
 import { UndoButton } from './UndoButton'
-import { DarkModeSwitch } from './DarkModeSwitch'
+import { DarkModeButton } from './DarkModeButton'
 /**
  * the top div of the application that contains the navigation and authorization button components
  * @returns a React.FC that displays the navbar
@@ -23,7 +23,7 @@ export const NavBar: React.FC = (): React.ReactElement => {
         <p /> {EmployeeButton(`Order`)}
         {EmployeeButton(`Cart`)}
         <p /> {AuthButtons(`Logged Out`)}
-        <p /> {DarkModeSwitch({})}
+        <p /> {DarkModeButton({})}
       </Stack>
     </Box>
   )
