@@ -22,6 +22,7 @@ export const ManagerButton: React.FC<INavBarTarget> = (target: INavBarTarget): R
     <Button
       size={`large`}
       className={`NavBarButton`}
+      color={`info`}
       variant={state.contentAreaView === target ? `text` : `contained`}
       onClick={() => {
         dispatch({

@@ -23,6 +23,7 @@ export const DarkModeButton: React.FC = (): React.ReactElement => {
     <IconButton
       key={`ThemeButton`}
       size={`small`}
+      color={`warning`}
       // checked={state.theme === darkTheme ? true : false}
       onClick={() => {
         dispatch({

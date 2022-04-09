@@ -33,6 +33,7 @@ export const RestockView: React.FC = (): React.ReactElement => {
       <Button
         size={`large`}
         variant={`contained`}
+        color={`success`}
         onClick={() => {
           dispatch({
             type: `RESTOCK_INVENTORY`,

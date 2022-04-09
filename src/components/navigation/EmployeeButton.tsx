@@ -21,6 +21,7 @@ export const EmployeeButton: React.FC<INavBarTarget> = (target: INavBarTarget): 
     <Button
       size={`large`}
       className={`NavBarButton`}
+      color={`success`}
       variant={state.contentAreaView === target ? `text` : `contained`}
       onClick={() => {
         dispatch({

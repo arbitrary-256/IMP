@@ -51,6 +51,7 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
         key={`AddToCartButton${product.upc.value}`}
         variant={`contained`}
         size={`large`}
+        color={`success`}
         disabled={product.onHand.value - product.inCart.value <= 0 ? true : false}
         onClick={() => {
           if (product.inCart.value < product.onHand.value) {

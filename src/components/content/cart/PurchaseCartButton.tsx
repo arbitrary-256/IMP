@@ -19,6 +19,8 @@ export const PurchaseCartButton: React.FC = (): React.ReactElement => {
   return (
     <Button
       variant={`contained`}
+      color={`success`}
+      disabled={state.cart.length === 0}
       onClick={() => {
         dispatch({
           type: `PURCHASE_CART`,

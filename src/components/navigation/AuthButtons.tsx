@@ -23,6 +23,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
       <p />
       <Button
         size={`large`}
+        color={`secondary`}
         onClick={() => {
           dispatch({
             type: `CHANGE_LOGIN`,
@@ -36,6 +37,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
       </Button>
       <Button
         size={`large`}
+        color={`secondary`}
         onClick={() => {
           dispatch({
             type: `CHANGE_LOGIN`,
@@ -49,6 +51,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
       </Button>
       <Button
         size={`large`}
+        color={`error`}
         onClick={() => {
           dispatch({
             type: `CHANGE_LOGIN`,

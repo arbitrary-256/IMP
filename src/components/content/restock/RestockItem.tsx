@@ -41,6 +41,7 @@ export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.
         <Button
           size={`large`}
           variant={`contained`}
+          color={`success`}
           onClick={() => {
             dispatch({
               type: `RESTOCK_INVENTORY`,

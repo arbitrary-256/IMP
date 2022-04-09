@@ -21,6 +21,7 @@ export const UndoButton: React.FC = (): React.ReactElement => {
     <Button
       size={`large`}
       className={`UndoButton`}
+      color={`warning`}
       onClick={() => {
         dispatch({
           type: `UNDO`

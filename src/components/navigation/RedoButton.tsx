@@ -21,6 +21,7 @@ export const RedoButton: React.FC = (): React.ReactElement => {
     <Button
       size={`large`}
       className={`RedoButton`}
+      color={`warning`}
       onClick={() => {
         dispatch({
           type: `REDO`

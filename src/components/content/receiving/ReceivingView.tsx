@@ -62,6 +62,8 @@ export const ReceivingView: React.FC = (): React.ReactElement => {
         <Button
           size={`large`}
           variant={`contained`}
+          color={`success`}
+          disabled={state.productToReceive.toReceive.value > state.productToReceive.max.value || state.productToReceive.toReceive.value < state.productToReceive.min.value}
           onClick={() => {
             dispatch({
               type: `RECEIVE_INVENTORY`,
