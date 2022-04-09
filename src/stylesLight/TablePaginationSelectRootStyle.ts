@@ -1,4 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const TablePaginationSelectRootStyle: CSSProperties = {
-  margin: `1%`
+export const TablePaginationSelectRootStyle: Function = (): CSSProperties => {
+  return {
+    margin: `1%`
+  }
 }

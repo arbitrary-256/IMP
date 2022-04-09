@@ -1,4 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const FormHelperTextRootStyleDark: CSSProperties = {
+export const FormHelperTextRootStyleDark: Function = (): CSSProperties => {
+  return {
   color: `#FFFFFF`
+}
 }

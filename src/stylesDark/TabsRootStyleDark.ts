@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const TabsRootStyleDark: CSSProperties = {}
+export const TabsRootStyleDark: Function = (): CSSProperties => {
+  return {}
+}

@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const InputAdornmentRootStyleDark: CSSProperties = { color: `#212121` }
+export const InputAdornmentRootStyleDark: Function = (): CSSProperties => {
+  return { color: `#212121` }
+}

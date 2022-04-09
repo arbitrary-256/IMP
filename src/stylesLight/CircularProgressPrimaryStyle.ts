@@ -1,5 +1,7 @@
 import { CSSProperties } from '@mui/styles'
 import { grey } from '@mui/material/colors'
-export const CircularProgressPrimaryStyle: CSSProperties = {
+export const CircularProgressPrimaryStyle: Function = (): CSSProperties => {
+  return {
   color: grey[700]
+}
 }

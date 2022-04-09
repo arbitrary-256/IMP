@@ -1,5 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const AlertRootStyle: CSSProperties = {
+export const AlertRootStyle: Function = (): CSSProperties => {
+  return {
   maxWidth: `90%`,
   minWidth: `150px`,
   textOverflow: `wrap`,
@@ -12,4 +13,5 @@ export const AlertRootStyle: CSSProperties = {
     borderColor: `#F0F0F3`,
     boxShadow: `7px 7px 15px #c2c2c5, -3px -3px 7px white`
   }
+}
 }

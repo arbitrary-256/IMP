@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const InputLabelRootStyleDark: CSSProperties = {}
+export const InputLabelRootStyleDark: Function = (): CSSProperties => {
+  return {}
+}

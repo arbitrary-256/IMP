@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const AccordionExpandedStyle: CSSProperties = {}
+export const AccordionExpandedStyle: Function = (): CSSProperties => {
+    return {}
+}

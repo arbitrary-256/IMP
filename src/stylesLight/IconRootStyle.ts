@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const IconRootStyle: CSSProperties = {}
+export const IconRootStyle: Function = (): CSSProperties => {
+  return {}
+}

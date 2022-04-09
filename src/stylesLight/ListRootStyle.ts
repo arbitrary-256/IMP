@@ -1,5 +1,7 @@
 import { CSSProperties } from '@mui/styles'
-export const ListRootStyle: CSSProperties = {
-  marginTop: `.5%`,
-  marginBottom: `.5%`
+export const ListRootStyle: Function = (): CSSProperties => {
+  return {
+    marginTop: `.5%`,
+    marginBottom: `.5%`
+  }
 }

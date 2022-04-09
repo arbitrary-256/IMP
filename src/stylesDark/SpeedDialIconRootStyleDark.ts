@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const SpeedDialIconRootStyleDark: CSSProperties = {}
+export const SpeedDialIconRootStyleDark: Function = (): CSSProperties => {
+  return {}
+}

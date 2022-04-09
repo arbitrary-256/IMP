@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const SelectRootStyle: CSSProperties = {}
+export const SelectRootStyle: Function = (): CSSProperties => {
+  return {}
+}

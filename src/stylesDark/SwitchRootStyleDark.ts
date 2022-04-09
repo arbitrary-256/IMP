@@ -1,6 +1,7 @@
 import { CSSProperties } from '@mui/styles'
 import { grey } from '@mui/material/colors'
-export const SwitchRootStyleDark: CSSProperties = {
+export const SwitchRootStyleDark: Function = (): CSSProperties => {
+  return {
   root: {
     width: 42,
     height: 26,
@@ -27,4 +28,5 @@ export const SwitchRootStyleDark: CSSProperties = {
     backgroundColor: grey[200],
     opacity: 1
   }
+}
 }

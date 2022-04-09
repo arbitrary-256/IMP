@@ -1,7 +1,9 @@
 import { CSSProperties } from '@mui/styles'
-export const InputAdornmentRootStyle: CSSProperties = {
-  '&:hover': {},
-  '&$focused': {
-    '&:hover': {}
+export const InputAdornmentRootStyle: Function = (): CSSProperties => {
+  return {
+    '&:hover': {},
+    '&$focused': {
+      '&:hover': {}
+    }
   }
 }

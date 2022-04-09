@@ -1,5 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const ContainerRootStyle: CSSProperties = {
+export const ContainerRootStyle: Function = (): CSSProperties => {
+  return {
   alignContent: 'center',
   borderRadius: '24px',
   padding: '2%',
@@ -8,4 +9,5 @@ export const ContainerRootStyle: CSSProperties = {
   inset -1px -1px .5px #BFBFC1, 
   inset 1px 1px .5px white`,
   color: `#000000`
+}
 }

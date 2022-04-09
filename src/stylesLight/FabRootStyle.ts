@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const FabRootStyle: CSSProperties = {}
+export const FabRootStyle: Function = (): CSSProperties => {
+  return {}
+}

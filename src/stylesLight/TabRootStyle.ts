@@ -1,4 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const TabRootStyle: CSSProperties = {
-  borderRadius: `24px`
+export const TabRootStyle: Function = (): CSSProperties => {
+  return {
+    borderRadius: `24px`
+  }
 }

@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const ButtonIconInheritStyle: CSSProperties = {}
+export const ButtonIconInheritStyle: Function = (): CSSProperties => {
+  return {}
+}

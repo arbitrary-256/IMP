@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const CircularProgressRootStyleDark: CSSProperties = {}
+export const CircularProgressRootStyleDark: Function = (): CSSProperties => {
+  return {}
+}

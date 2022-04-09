@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const TablePaginationItemRootStyle: CSSProperties = {}
+export const TablePaginationItemRootStyle: Function = (): CSSProperties => {
+  return {}
+}

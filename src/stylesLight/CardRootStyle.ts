@@ -1,5 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const CardRootStyle: CSSProperties = {
+export const CardRootStyle: Function = (): CSSProperties => {
+  return {
   padding: '5%',
   borderRadius: '24px',
   boxShadow: `5px 5px 12px #BFBFC1, 
@@ -9,4 +10,5 @@ export const CardRootStyle: CSSProperties = {
   '&:hover': {
     boxShadow: `none`
   }
+}
 }

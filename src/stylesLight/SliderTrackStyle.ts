@@ -1,4 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const SliderTrackStyle: CSSProperties = {
-  height: 2
+export const SliderTrackStyle: Function = (): CSSProperties => {
+  return {
+    height: 2
+  }
 }

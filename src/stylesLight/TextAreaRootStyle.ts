@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const TextAreaRootStyle: CSSProperties = {}
+export const TextAreaRootStyle: Function = (): CSSProperties => {
+  return {}
+}

@@ -1,5 +1,7 @@
 import { CSSProperties } from '@mui/styles'
-export const SliderMarkActiveStyleDark: CSSProperties = {
+export const SliderMarkActiveStyleDark: Function = (): CSSProperties => {
+  return {
   opacity: 1,
   backgroundColor: 'currentColor'
+}
 }

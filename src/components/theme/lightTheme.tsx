@@ -66,68 +66,68 @@ export const lightTheme: Theme = createTheme({
   components: {
     MuiAccordion: {
       styleOverrides: {
-        root: AccordionRootStyle,
-        expanded: AccordionExpandedStyle
+        root: AccordionRootStyle(),
+        expanded: AccordionExpandedStyle()
       }
     },
     MuiAlert: {
       styleOverrides: {
-        root: AlertRootStyle
+        root: AlertRootStyle()
       }
     },
     MuiAppBar: {
       styleOverrides: {
-        root: AppBarRootStyle
+        root: AppBarRootStyle()
       }
     },
     MuiAutocomplete: {
       styleOverrides: {
-        paper: AutocompletePaperStyle,
-        option: AutocompleteOptionStyle,
-        groupLabel: ListSubheaderStyle
+        paper: AutocompletePaperStyle(),
+        option: AutocompleteOptionStyle(),
+        groupLabel: ListSubheaderStyle()
       }
     },
     MuiBottomNavigation: {
       styleOverrides: {
-        root: BottomNavigationRootStyle
+        root: BottomNavigationRootStyle()
       }
     },
     MuiBottomNavigationAction: {
       styleOverrides: {
-        root: BottomNavigationActionRootStyle
+        root: BottomNavigationActionRootStyle()
       }
     },
     MuiButton: {
       styleOverrides: {
-        root: ButtonRootStyle,
-        containedPrimary: ButtonPrimaryStyle,
-        containedSecondary: ButtonSecondaryStyle
+        root: ButtonRootStyle(),
+        containedPrimary: ButtonPrimaryStyle(),
+        containedSecondary: ButtonSecondaryStyle()
       }
     },
     MuiCard: {
       styleOverrides: {
-        root: CardRootStyle
+        root: CardRootStyle()
       }
     },
     MuiCheckbox: {
       styleOverrides: {
-        root: CheckboxRootStyle
+        root: CheckboxRootStyle()
       }
     },
     MuiChip: {
       styleOverrides: {
-        root: ButtonPrimaryStyle
+        root: ButtonPrimaryStyle()
       }
     },
     MuiCircularProgress: {
       styleOverrides: {
-        root: CircularProgressRootStyle,
-        colorPrimary: CircularProgressPrimaryStyle
+        root: CircularProgressRootStyle(),
+        colorPrimary: CircularProgressPrimaryStyle()
       }
     },
     MuiContainer: {
       styleOverrides: {
-        root: ContainerRootStyle
+        root: ContainerRootStyle()
       }
     },
     MuiCssBaseline: {
@@ -137,128 +137,128 @@ export const lightTheme: Theme = createTheme({
     },
     MuiDialog: {
       styleOverrides: {
-        root: DialogRootStyle,
-        paper: DialogPaperStyle
+        root: DialogRootStyle(),
+        paper: DialogPaperStyle()
       }
     },
     MuiDrawer: {
       styleOverrides: {
-        root: DrawerRootStyle,
-        paper: DrawerPaperStyle
+        root: DrawerRootStyle(),
+        paper: DrawerPaperStyle()
       }
     },
     MuiFab: {
       styleOverrides: {
-        root: FabRootStyle
+        root: FabRootStyle()
       }
     },
     MuiFormControl: {
       styleOverrides: {
-        root: FormControlRootStyle
+        root: FormControlRootStyle()
       }
     },
     MuiFormControlLabel: {
       styleOverrides: {
-        root: FormControlLabelRootStyle
+        root: FormControlLabelRootStyle()
       }
     },
     MuiFormHelperText: {
       styleOverrides: {
-        root: FormHelperTextRootStyle
+        root: FormHelperTextRootStyle()
       }
     },
     MuiIconButton: {
       styleOverrides: {
-        root: ButtonIconRootStyle
+        root: ButtonIconRootStyle()
       }
     },
     MuiIcon: {
       styleOverrides: {
-        root: IconRootStyle
+        root: IconRootStyle()
       }
     },
     MuiImageList: {
       styleOverrides: {
-        root: ImageListRootStyle
+        root: ImageListRootStyle()
       }
     },
     MuiImageListItemBar: {
       styleOverrides: {
-        root: ImageListItemBarRootStyle
+        root: ImageListItemBarRootStyle()
       }
     },
     MuiInputAdornment: {
       styleOverrides: {
-        root: InputAdornmentRootStyle
+        root: InputAdornmentRootStyle()
       }
     },
     MuiInputBase: {
       styleOverrides: {
-        root: InputBaseRootStyle,
-        focused: InputBaseFocusedStyle
+        root: InputBaseRootStyle(),
+        focused: InputBaseFocusedStyle()
       }
     },
     MuiInputLabel: {
       styleOverrides: {
-        root: InputLabelRootStyle
+        root: InputLabelRootStyle()
       }
     },
     MuiList: {
       styleOverrides: {
-        root: ListRootStyle,
-        subheader: ListSubheaderStyle
+        root: ListRootStyle(),
+        subheader: ListSubheaderStyle()
       }
     },
     MuiListItem: {
       styleOverrides: {
-        root: ListItemRootStyle
+        root: ListItemRootStyle()
       }
     },
     MuiMenu: {
       styleOverrides: {
-        paper: MenuRootStyle,
-        list: ListRootStyle
+        paper: MenuRootStyle(),
+        list: ListRootStyle()
       }
     },
     MuiMobileStepper: {
       styleOverrides: {
-        dot: MobileStepperDotStyle,
-        dotActive: MobileStepperDotActiveStyle,
-        progress: MobileStepperProgressStyle
+        dot: MobileStepperDotStyle(),
+        dotActive: MobileStepperDotActiveStyle(),
+        progress: MobileStepperProgressStyle()
       }
     },
     MuiNativeSelect: {
       styleOverrides: {
-        root: NativeSelectRootStyle,
-        filled: NativeSelectRootStyle,
-        select: NativeSelectRootStyle,
-        outlined: InputOutlinedRootStyle
+        root: NativeSelectRootStyle(),
+        filled: NativeSelectRootStyle(),
+        select: NativeSelectRootStyle(),
+        outlined: InputOutlinedRootStyle()
       }
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        root: InputOutlinedRootStyle,
-        multiline: OutlinedInputMultilineStyle
+        root: InputOutlinedRootStyle(),
+        multiline: OutlinedInputMultilineStyle()
       }
     },
     MuiPaginationItem: {
       styleOverrides: {
-        root: TablePaginationItemRootStyle
+        root: TablePaginationItemRootStyle()
       }
     },
     MuiPaper: {
       styleOverrides: {
-        root: PaperRootStyle
+        root: PaperRootStyle()
       }
     },
     MuiPopover: {
       styleOverrides: {
-        paper: MenuRootStyle
+        paper: MenuRootStyle()
       }
     },
     MuiRadio: {
       styleOverrides: {
-        root: RadioRootStyle
+        root: RadioRootStyle()
       }
     },
     MuiSelect: {
@@ -267,58 +267,58 @@ export const lightTheme: Theme = createTheme({
     },
     MuiSlider: {
       styleOverrides: {
-        root: SliderRootStyle,
-        thumb: SliderThumbStyle,
-        valueLabel: SliderValueLabelStyle,
-        track: SliderTrackStyle,
-        rail: SliderRailStyle,
-        mark: SliderMarkStyle,
-        markActive: SliderMarkActiveStyle
+        root: SliderRootStyle(),
+        thumb: SliderThumbStyle(),
+        valueLabel: SliderValueLabelStyle(),
+        track: SliderTrackStyle(),
+        rail: SliderRailStyle(),
+        mark: SliderMarkStyle(),
+        markActive: SliderMarkActiveStyle()
       }
     },
     MuiSpeedDial: {
       styleOverrides: {
-        root: FabRootStyle,
-        fab: SpeedDialFabStyle
+        root: FabRootStyle(),
+        fab: SpeedDialFabStyle()
       }
     },
     MuiSwitch: {
       styleOverrides: {
-        root: SwitchRootStyle
+        root: SwitchRootStyle()
       }
     },
     MuiTab: {
       styleOverrides: {
-        root: TabRootStyle,
-        selected: TabSelectedStyle,
-        labelIcon: TabLabelIconStyle
+        root: TabRootStyle(),
+        selected: TabSelectedStyle(),
+        labelIcon: TabLabelIconStyle()
       }
     },
     MuiTabs: {
       styleOverrides: {
-        root: TabsRootStyle,
-        indicator: TabSelectedStyle
+        root: TabsRootStyle(),
+        indicator: TabSelectedStyle()
       }
     },
     MuiTablePagination: {
       styleOverrides: {
-        root: TablePaginationItemRootStyle,
-        selectRoot: TablePaginationSelectRootStyle
+        root: TablePaginationItemRootStyle(),
+        selectRoot: TablePaginationSelectRootStyle()
       }
     },
     MuiTextField: {
       styleOverrides: {
-        root: TextAreaRootStyle
+        root: TextAreaRootStyle()
       }
     },
     MuiToggleButton: {
       styleOverrides: {
-        root: ToggleButtonRootStyle
+        root: ToggleButtonRootStyle()
       }
     },
     MuiToggleButtonGroup: {
       styleOverrides: {
-        root: ToggleButtonGroupRootStyle
+        root: ToggleButtonGroupRootStyle()
       }
     }
   },

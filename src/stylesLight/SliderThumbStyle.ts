@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const SliderThumbStyle: CSSProperties = {}
+export const SliderThumbStyle: Function = (): CSSProperties => {
+  return {}
+}

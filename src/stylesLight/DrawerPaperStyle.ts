@@ -1,5 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const DrawerPaperStyle: CSSProperties = {
+export const DrawerPaperStyle: Function = (): CSSProperties => {
+  return {
   width: 240,
   marginTop: 0,
   border: `none`,
@@ -8,4 +9,5 @@ export const DrawerPaperStyle: CSSProperties = {
   backdropFilter: `blur(50px)`,
   boxShadow: `inset -.5px -.5px 1px #BFBFC1, 
   inset .5px .5px 1px white`
+}
 }

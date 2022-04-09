@@ -1,4 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const InputBaseRootStyle: CSSProperties = {
-  borderRadius: `24px`
+export const InputBaseRootStyle: Function = (): CSSProperties => {
+  return {
+    borderRadius: `24px`
+  }
 }

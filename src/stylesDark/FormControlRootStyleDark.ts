@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const FormControlRootStyleDark: CSSProperties = {}
+export const FormControlRootStyleDark: Function = (): CSSProperties => {
+  return {}
+}

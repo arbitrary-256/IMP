@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const ToggleButtonGroupRootStyleDark: CSSProperties = {}
+export const ToggleButtonGroupRootStyleDark: Function = (): CSSProperties => {
+  return {}
+}

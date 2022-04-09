@@ -1,4 +1,6 @@
 import { CSSProperties } from '@mui/styles'
-export const OutlinedInputMultilineStyle: CSSProperties = {
-  borderRadius: '24px'
+export const OutlinedInputMultilineStyle: Function = (): CSSProperties => {
+  return {
+    borderRadius: '24px'
+  }
 }

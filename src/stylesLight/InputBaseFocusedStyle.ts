@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const InputBaseFocusedStyle: CSSProperties = {}
+export const InputBaseFocusedStyle: Function = (): CSSProperties => {
+  return {}
+}

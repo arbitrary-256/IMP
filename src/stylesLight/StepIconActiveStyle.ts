@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const StepIconActiveStyle: CSSProperties = {}
+export const StepIconActiveStyle: Function = (): CSSProperties => {
+  return {}
+}

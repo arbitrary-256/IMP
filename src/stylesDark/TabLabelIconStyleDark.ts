@@ -1,2 +1,4 @@
 import { CSSProperties } from '@mui/styles'
-export const TabLabelIconStyleDark: CSSProperties = {}
+export const TabLabelIconStyleDark: Function = (): CSSProperties => {
+  return {}
+}
