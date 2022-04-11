@@ -7,7 +7,7 @@ import { generateProduct } from '../helpers/generateProduct'
  * @returns a new state with a new mocked product in receiving and an empty cart, future, and history
  */
 export const logoutCleanup: Function = (state: IIMPState): IIMPState => {
-  let newState = { ...state }
+  let newState: IIMPState = { ...state }
   newState.productToReceive = generateProduct()
   newState.cart = []
   newState.stateFuture = []

@@ -7,7 +7,7 @@ import { IIMPProduct } from '../../interfaces/IIMPProduct'
  * @returns a new IIMPProduct[] with the product's inventory added
  */
 export const receiveInventory: Function = (product: IIMPProduct, inventory: IIMPProduct[]): IIMPProduct[] => {
-  let newInventory: IIMPProduct[] = inventory
+  let newInventory: IIMPProduct[] = { ...inventory }
   const productFromInventory: IIMPProduct | undefined = newInventory.find((productToFind) => productToFind.upc === product.upc)
   const inventoryIndex: number = newInventory.findIndex((productToFindIndexOf) => productToFindIndexOf.upc === product.upc)
   if (productFromInventory && inventoryIndex !== -1) {

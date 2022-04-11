@@ -8,8 +8,8 @@ import { IIMPProductStringToChange } from '../../interfaces/productProperties/II
  * @returns the updated product
  */
 export const setString: Function = (toChange: IIMPProductStringToChange): IIMPProduct => {
-  let newProduct: IIMPProduct = toChange.product
-  let newString: IIMPString = toChange.string
+  let newProduct: IIMPProduct = { ...toChange.product }
+  let newString: IIMPString = { ...toChange.string }
   newString.text = toChange.newValue
   return {
     ...newProduct,
