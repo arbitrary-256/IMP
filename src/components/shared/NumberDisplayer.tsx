@@ -12,7 +12,7 @@ export const NumberDisplayer: React.FC<IIMPNumber> = (impNumber: IIMPNumber): Re
     className={`NumberDisplayer`}
     type={`number`}
     label={`${impNumber.id}`}
-    disabled={true}
+    contentEditable={false}
     fullWidth={true}
     value={
       impNumber.propertyName.toString() === `price` ||
