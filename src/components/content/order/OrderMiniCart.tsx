@@ -21,7 +21,7 @@ export const OrderMiniCart: React.FC = (): React.ReactElement => {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
-  const newCart: IIMPProduct[] = state.cart
+  const newCart: IIMPProduct[] = [...state.cart]
   const total: number = newCart.reduce((accumulator: number, currentValue: IIMPProduct): number => {
     return accumulator + currentValue.price.value * currentValue.inCart.value
   }, 0)
