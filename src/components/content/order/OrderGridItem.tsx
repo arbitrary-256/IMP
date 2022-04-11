@@ -30,7 +30,7 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
     value: product.onHand.value - product.inCart.value,
     prefix: ``,
     min: 0,
-    max: 0,
+    max: 99999,
     suffix: ``
   }
   const outOfStock: IIMPString = {
