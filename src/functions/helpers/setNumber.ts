@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { IIMPNumber } from '../../interfaces/IIMPNumber'
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'
@@ -8,18 +9,21 @@ import { IIMPProductNumberToChange } from '../../interfaces/productProperties/II
  * @returns the updated product
  */
 export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPProduct => {
-  let newProduct: IIMPProduct = payload.product
-  let newNumber: IIMPNumber = payload.number
-  const isMoreThanMin = newNumber.value >= newNumber.min
-  const isLessThanMax = newNumber.value <= newNumber.max
-  const isInRange = isMoreThanMin && isLessThanMax
+  let newProduct: IIMPProduct = { ...payload.product }
+  let newNumber: IIMPNumber = { ...payload.number }
+  newNumber.value <= 0 || newNumber.value.toString() === `NaN` ? (newNumber.value = 0) : console.log(`Typed number not changed to 0`) // TODO: change to 'void 0'
+  console.log(newNumber.id)
+  console.log(newNumber.value)
+  const isMoreThanMin: boolean = newNumber.value >= newNumber.min
+  const isLessThanMax: boolean = newNumber.value <= newNumber.max
+  const isInRange: boolean = isMoreThanMin && isLessThanMax
   if (isInRange) {
     switch (payload.number.id) {
       case `Minimum Quantity`:
-        newProduct.min.value = newNumber.value
+        newProduct.min.value = parseInt(newNumber.value.toString())
         break
       case `Maximum Quantity`:
-        newProduct.max.value = newNumber.value
+        newProduct.max.value = parseInt(newNumber.value.toString())
         break
       case `Purchase Price`:
         newProduct.cost = { ...newNumber, value: parseFloat(newNumber.value.toFixed(2)) }
@@ -28,22 +32,23 @@ export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPPro
         newProduct.price = { ...newNumber, value: parseFloat(newNumber.value.toFixed(2)) }
         break
       case `On Hand`:
-        newProduct.onHand = newNumber
+        newProduct.onHand = { ...newNumber, value: parseInt(newNumber.value.toString()) }
         break
       case `UPC`:
-        newProduct.upc = newNumber
+        newProduct.upc = { ...newNumber, value: newNumber.value }
         break
       case `To Receive`:
-        newProduct.toReceive = newNumber
+        newProduct.toReceive = { ...newNumber, value: parseInt(newNumber.value.toString()) }
         break
       case `In Cart`:
-        newProduct.inCart = newNumber
-        newProduct.inCart.value > newProduct.onHand.value ? (newProduct.inCart.value = newProduct.onHand.value) : void 0
+        newProduct.inCart = { ...newNumber, value: parseInt(newNumber.value.toString()) }
+        newProduct.inCart.value > newProduct.onHand.value ? (newProduct.inCart.value = parseInt(newProduct.onHand.value.toString())) : void 0
         break
       default:
         console.error(`IMPError: could not find product with UPC ${newProduct.upc} while setting ${newNumber.id}`)
         break
     }
   }
+  console.log(newProduct)
   return newProduct
 }
