@@ -1,8 +1,11 @@
 /** @format */
+// libraries
 import * as React from 'react'
+// material-ui components
 import { Button } from '@mui/material'
-import { IIMPState } from '../../interfaces/IIMPState'
+// react context
 import { IIMPAction } from '../../interfaces/IIMPAction'
+import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
 /**
  * a button that undoes the last change to the state

@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { INavBarTarget } from '../../unionTypes/INavBarTarget'
 /**
  * an action interface for navigating to a different tab of the application

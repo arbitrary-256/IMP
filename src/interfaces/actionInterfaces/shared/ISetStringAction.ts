@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { IIMPProductStringToChange } from '../../productProperties/IIMPProductStringToChange'
 /**
  * an action interface for replacing the value of a string

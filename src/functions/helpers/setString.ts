@@ -1,7 +1,8 @@
 /** @format */
-import { IIMPString } from '../../interfaces/IIMPString'
+// interfaces
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPProductStringToChange } from '../../interfaces/productProperties/IIMPProductStringToChange'
+import { IIMPString } from '../../interfaces/IIMPString'
 /**
  * changes the string in a product to a value typed in by the user
  * @param toChange { string, an IIMPString, value, a string primitive, and product, an IIMPProduct }

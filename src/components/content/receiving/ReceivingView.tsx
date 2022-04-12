@@ -1,13 +1,16 @@
 /** @format */
+// libraries
 import * as React from 'react'
+// material-ui components
 import { Box, Button, Card, Table, TableHead, TableBody, TableCell, TableRow, Stack } from '@mui/material'
+// react context
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
+// custom components
+import { ImageChanger } from '../../shared/ImageChanger'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { StringChanger } from '../../shared/StringChanger'
-import { ImageChanger } from '../../shared/ImageChanger'
-// import imp from '../../../images/imp.png'
 /**
  * the receiving tab
  * @returns a React.FC that displays a form to receive a product

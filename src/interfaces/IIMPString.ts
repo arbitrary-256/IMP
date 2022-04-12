@@ -1,7 +1,6 @@
 /** @format */
-
+// interfaces
 import { IStringDescription } from './unionTypes/IStringDescription'
-
 /**
  * the interface for a string in a product
  * @param prefix a string that should be displayed before the text

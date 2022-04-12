@@ -1,9 +1,14 @@
 /** @format */
-import { ThemeProvider } from '@mui/material/styles'
+// libraries
 import * as React from 'react'
-import { generateDefaultState } from '../functions/helpers/generateDefaultState'
-import { ImpReducer } from '../functions/ImpReducer'
+// material-ui components
+import { ThemeProvider } from '@mui/material/styles'
+// interfaces
 import { IIMPState } from '../interfaces/IIMPState'
+// react context
+import { ImpReducer } from '../functions/ImpReducer'
+// helper functions
+import { generateDefaultState } from '../functions/helpers/generateDefaultState'
 const defaultState: IIMPState = generateDefaultState()
 /**
  * the React Context

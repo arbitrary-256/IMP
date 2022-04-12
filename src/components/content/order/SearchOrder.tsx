@@ -1,8 +1,11 @@
 /** @format */
-import { TextField } from '@mui/material'
+// libraries
 import * as React from 'react'
-import { IIMPState } from '../../../interfaces/IIMPState'
+// material-ui components
+import { TextField } from '@mui/material'
+// react context
 import { IIMPAction } from '../../../interfaces/IIMPAction'
+import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
 /**
  * the search component for the order tab

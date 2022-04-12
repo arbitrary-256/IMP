@@ -1,14 +1,20 @@
 /** @format */
-import imp from '../../images/imp.png'
-import appInfo from '../../../package.json'
-import React from 'react'
+// libraries
+import * as React from 'react'
+// material-ui components
+import { Box, Stack } from '@mui/material'
+// interfaces
+import { IIMPString } from '../../interfaces/IIMPString'
+// react context
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
-import { Box, Stack } from '@mui/material'
-import { IIMPString } from '../../interfaces/IIMPString'
-import { StringDisplayer } from '../shared/StringDisplayer'
+// custom components
 import { ImageDisplayer } from '../shared/ImageDisplayer'
+import { StringDisplayer } from '../shared/StringDisplayer'
+// non-TypeScript data
+import appInfo from '../../../package.json'
+import imp from '../../images/imp.png'
 /**
  * a logout confirmation
  * @returns a React.FC that indicates the user is logged out

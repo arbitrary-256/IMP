@@ -1,7 +1,9 @@
 /** @format */
+// libraries
 import fs from 'fs'
 import JSZip from 'jszip'
 import path from 'path'
+// non-TypeScript data
 import * as packageJson from '../../../package.json'
 /**
  * a node script for developrs that gets the paths to all subdirectories within a given directory

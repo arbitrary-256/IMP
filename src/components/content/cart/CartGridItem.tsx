@@ -1,15 +1,20 @@
 /** @format */
+// libraries
 import * as React from 'react'
-import { IIMPState } from '../../../interfaces/IIMPState'
-import { IIMPAction } from '../../../interfaces/IIMPAction'
-import { ImpContext } from '../../ImpContext'
-import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+// material-ui components
 import { Button, Card } from '@mui/material'
+// interfaces
+import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+import { IIMPNumber } from '../../../interfaces/IIMPNumber'
+// react context
+import { IIMPAction } from '../../../interfaces/IIMPAction'
+import { IIMPState } from '../../../interfaces/IIMPState'
+import { ImpContext } from '../../ImpContext'
+// custom components
+import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
-import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
-import { IIMPNumber } from '../../../interfaces/IIMPNumber'
 /**
  * an item in the cart tab
  * @param product the IIMPProduct to be displayed

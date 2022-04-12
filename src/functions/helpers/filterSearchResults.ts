@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /**
  * filters the array of products by matching a searchString against the product's name or upc

@@ -1,9 +1,13 @@
 /** @format */
-import { TextField } from '@mui/material'
+// libraries
 import * as React from 'react'
+// material-ui components
+import { TextField } from '@mui/material'
+// interfaces
+import { IIMPProductStringToChange } from '../../interfaces/productProperties/IIMPProductStringToChange'
+// react context
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
-import { IIMPProductStringToChange } from '../../interfaces/productProperties/IIMPProductStringToChange'
 import { ImpContext } from '../ImpContext'
 /**
  * a component to change a string in a product

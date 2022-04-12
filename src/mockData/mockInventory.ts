@@ -1,5 +1,7 @@
 /** @format */
+// interfaces
 import { IIMPProduct } from '../interfaces/IIMPProduct'
+// helper functions
 import { generateProduct } from '../functions/helpers/generateProduct'
 /**
  * generates a sample inventory of mocked products

@@ -1,9 +1,13 @@
 /** @format */
-import { Button, TextField, Stack } from '@mui/material'
+// libraries
 import * as React from 'react'
+// material-ui components
+import { Button, TextField, Stack } from '@mui/material'
+// interfaces
+import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'
+// react context
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
-import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'
 import { ImpContext } from '../ImpContext'
 /**
  * a component to change a number in a product

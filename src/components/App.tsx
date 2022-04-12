@@ -1,8 +1,12 @@
 /** @format */
-import { Paper } from '@mui/material'
+// libraries
 import * as React from 'react'
-import { ContentArea } from './content/ContentArea'
+// material-ui components
+import { Paper } from '@mui/material'
+// react context
 import { ImpProvider } from './ImpContext'
+// custom components
+import { ContentArea } from './content/ContentArea'
 import { NavBar } from './navigation/NavBar'
 /**
  * a component to render the React application

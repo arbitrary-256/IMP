@@ -1,15 +1,20 @@
 /** @format */
+// libraries
 import * as React from 'react'
-import { OrderMiniCart } from './OrderMiniCart'
-import { OrderGrid } from './OrderGrid'
+// material-ui components
 import { Box, Stack } from '@mui/material'
-import { SearchOrder } from './SearchOrder'
+// interfaces
+import { IIMPNumber } from '../../../interfaces/IIMPNumber'
+import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+// react context
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
+// custom components
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
-import { IIMPNumber } from '../../../interfaces/IIMPNumber'
-import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+import { OrderGrid } from './OrderGrid'
+import { OrderMiniCart } from './OrderMiniCart'
+import { SearchOrder } from './SearchOrder'
 /**
  * the order tab
  * @returns a React.FC that displays the order tab of the UI

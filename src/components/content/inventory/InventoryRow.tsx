@@ -1,7 +1,11 @@
 /** @format */
-import { TableCell, TableRow } from '@mui/material'
+// libraries
 import * as React from 'react'
+// material-ui components
+import { TableCell, TableRow } from '@mui/material'
+// interfaces
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+// custom components
 import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringChanger } from '../../shared/StringChanger'

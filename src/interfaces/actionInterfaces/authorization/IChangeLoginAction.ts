@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { ILoginValue } from '../../unionTypes/ILoginValue'
 /**
  * an action interface for changing the logged in user

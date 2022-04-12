@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { IChangeLoginAction } from './actionInterfaces/authorization/IChangeLoginAction'
 import { IPurchaseCartAction } from './actionInterfaces/cart/IPurchaseCartAction'
 import { IUseNavBarAction } from './actionInterfaces/core/IUseNavBarAction'

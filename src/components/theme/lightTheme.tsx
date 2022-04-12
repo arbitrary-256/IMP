@@ -1,3 +1,4 @@
+/** @format */
 import { createTheme, Theme } from '@mui/material'
 import { AccordionExpandedStyle } from '../../stylesLight/AccordionExpandedStyle'
 import { AccordionRootStyle } from '../../stylesLight/AccordionRootStyle'

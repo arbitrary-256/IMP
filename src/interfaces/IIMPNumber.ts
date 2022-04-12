@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { INumberDescription } from './unionTypes/INumberDescription'
 import { INumberPropertyName } from './unionTypes/INumberPropertyName'
 /**

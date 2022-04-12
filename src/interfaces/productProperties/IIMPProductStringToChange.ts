@@ -1,6 +1,7 @@
 /** @format */
-import { IIMPString } from '../IIMPString'
+// interfaces
 import { IIMPProduct } from '../IIMPProduct'
+import { IIMPString } from '../IIMPString'
 export interface IIMPProductStringToChange {
   string: IIMPString
   newValue: string

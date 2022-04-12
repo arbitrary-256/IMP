@@ -1,12 +1,17 @@
 /** @format */
+// libraries
 import * as React from 'react'
-import { IIMPState } from '../../../interfaces/IIMPState'
-import { IIMPAction } from '../../../interfaces/IIMPAction'
-import { ImpContext } from '../../ImpContext'
+// material-ui components
+import { Box, Button, Grid } from '@mui/material'
+// interfaces
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+// react context
+import { IIMPAction } from '../../../interfaces/IIMPAction'
+import { IIMPState } from '../../../interfaces/IIMPState'
+import { ImpContext } from '../../ImpContext'
+// custom components
 import { RestockItem } from './RestockItem'
 import { SearchRestock } from './SearchRestock'
-import { Box, Button, Grid } from '@mui/material'
 /**
  * the restock tab
  * @returns a React.FC that displays the Restock tab of the UI

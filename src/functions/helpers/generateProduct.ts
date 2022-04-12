@@ -1,8 +1,11 @@
 /** @format */
+// interfaces
 import { IIMPImage } from '../../interfaces/IIMPImage'
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
+// non-TypeScript data
 import { adjectives } from '../../mockData/adjectives'
 import { nouns } from '../../mockData/nouns'
+// helper functions
 import { generateProductIcon } from './generateProductIcon'
 /**
  * generates a mocked product without using the database

@@ -1,8 +1,10 @@
 /** @format */
+// interfaces
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
+// react context
 import { IIMPState } from '../../interfaces/IIMPState'
+// helper functions
 import { logoutCleanup } from './logoutCleanup'
-import { cartCleanup } from './cartCleanup'
 /**
  * cleans up the application state at the end of a call to ImpReducer
  * @param newState the current IIMPState to be cleaned up
@@ -12,8 +14,8 @@ import { cartCleanup } from './cartCleanup'
  */
 export const reducerCleanup: Function = (newState: IIMPState, oldState?: IIMPState, product?: IIMPProduct): IIMPState => {
   newState.loggedInUser === `Logged Out` ? (newState = logoutCleanup(newState)) : void 0
-  product ? (newState.cart = cartCleanup(product, newState.cart)) : void 0
   oldState ? newState.stateHistory.push(oldState) : void 0
-  newState.cart = newState.cart.filter((productInCart) => productInCart.inCart.value > 0)
+  product && product.upc.value === newState.productToReceive.upc.value ? (newState.productToReceive = product) : void 0
+  newState.cart = newState.inStock.filter((productInInventory) => productInInventory.inCart.value > 0)
   return newState
 }

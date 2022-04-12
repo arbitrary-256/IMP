@@ -1,7 +1,9 @@
 /** @format */
-import imp from '../../images/imp.png'
+// interfaces
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPProductImageToChange } from '../../interfaces/productProperties/IIMPProductImageToChange'
+// non-TypeScript data
+import imp from '../../images/imp.png'
 /**
  * decrements a number in a product
  * @param toChange the IIMPProductNumber to change

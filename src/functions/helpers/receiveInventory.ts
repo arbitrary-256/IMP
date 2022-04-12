@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /**
  * adds inventory to the local application state

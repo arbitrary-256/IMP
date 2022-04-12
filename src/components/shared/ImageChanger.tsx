@@ -1,10 +1,14 @@
 /** @format */
+// libraries
 import * as React from 'react'
 import Dropzone from 'react-dropzone'
+// interfaces
+import { IIMPProductImageToChange } from '../../interfaces/productProperties/IIMPProductImageToChange'
+// react context
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
-import { IIMPProductImageToChange } from '../../interfaces/productProperties/IIMPProductImageToChange'
 import { ImpContext } from '../ImpContext'
+// custom components
 import { ImageDisplayer } from './ImageDisplayer'
 /**
  * a component that uses react-dropzone to allow the user to change the image for a product

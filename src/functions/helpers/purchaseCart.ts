@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPState } from '../../interfaces/IIMPState'
 // import { updateDatabaseEntry } from '../database/updateDatabaseEntry'
@@ -14,7 +15,7 @@ export const purchaseCart: Function = (state: IIMPState): IIMPState => {
   // cart.map( async (productInCart): Promise<void> => {
   //   updateDatabaseEntry(productInCart)
   // })
-  newState.cart.forEach((product: IIMPProduct) => {
+  newState.inStock.forEach((product: IIMPProduct) => {
     product.onHand.value = product.onHand.value - product.inCart.value
     product.inCart.value = 0
   })

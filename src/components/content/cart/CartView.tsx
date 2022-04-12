@@ -1,15 +1,20 @@
 /** @format */
+// libraries
 import * as React from 'react'
+// material-ui components
+import { Box, Grid } from '@mui/material'
+// interfaces
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
-import { Grid } from '@mui/material'
-import { CartGridItem } from './CartGridItem'
-import { PurchaseCartButton } from './PurchaseCartButton'
+import { IIMPNumber } from '../../../interfaces/IIMPNumber'
+// react context
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-import { Box } from '@mui/system'
-import { IIMPNumber } from '../../../interfaces/IIMPNumber'
+// custom components
+import { CartGridItem } from './CartGridItem'
+import { PurchaseCartButton } from './PurchaseCartButton'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
+// helper functions
 /**
  * the cart tab
  * @returns a React.FC that displays the Cart tab of the UI

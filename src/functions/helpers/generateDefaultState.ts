@@ -1,9 +1,12 @@
 /** @format */
-import { generateProduct } from './generateProduct'
+// interfaces
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPState } from '../../interfaces/IIMPState'
-import { mockInventory } from '../../mockData/mockInventory'
+// css-in-TypeScript themes
 import { darkTheme } from '../../components/theme/darkTheme'
+// helper functions
+import { generateProduct } from './generateProduct'
+import { mockInventory } from '../../mockData/mockInventory'
 /**
  * generates a mocked state for the application without using the database
  * @returns the default state for the application

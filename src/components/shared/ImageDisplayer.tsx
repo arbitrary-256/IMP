@@ -1,5 +1,7 @@
 /** @format */
+// libraries
 import * as React from 'react'
+// interfaces
 import { IIMPImage } from '../../interfaces/IIMPImage'
 /**
  * a component that displays an image in a product

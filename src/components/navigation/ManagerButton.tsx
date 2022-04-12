@@ -1,9 +1,13 @@
 /** @format */
+// libraries
 import * as React from 'react'
+// material-ui components
 import { Button } from '@mui/material'
+// interfaces
 import { INavBarTarget } from '../../interfaces/unionTypes/INavBarTarget'
-import { IIMPState } from '../../interfaces/IIMPState'
+// react context
 import { IIMPAction } from '../../interfaces/IIMPAction'
+import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
 /**
  * a button accessible to users logged in as an manager

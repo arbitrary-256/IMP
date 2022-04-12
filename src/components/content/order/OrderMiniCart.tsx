@@ -1,11 +1,16 @@
 /** @format */
-import { Grid } from '@mui/material'
+// libraries
 import * as React from 'react'
-import { IIMPAction } from '../../../interfaces/IIMPAction'
+// material-ui components
+import { Grid } from '@mui/material'
+// interfaces
 import { IIMPNumber } from '../../../interfaces/IIMPNumber'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+// react context
+import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
+// custom components
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { OrderMiniCartItem } from './OrderMiniCartItem'
 /**

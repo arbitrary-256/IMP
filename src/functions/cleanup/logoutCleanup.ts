@@ -1,5 +1,7 @@
 /** @format */
+// interfaces
 import { IIMPState } from '../../interfaces/IIMPState'
+// helper functions
 import { generateProduct } from '../helpers/generateProduct'
 /**
  * empties the cart and generates a new productToReceive if the user is logged out
@@ -9,7 +11,10 @@ import { generateProduct } from '../helpers/generateProduct'
 export const logoutCleanup: Function = (state: IIMPState): IIMPState => {
   let newState: IIMPState = { ...state }
   newState.productToReceive = generateProduct()
-  newState.cart = []
+  // set the inCart.value of all products in state.inStock to 0
+  newState.inStock.forEach((product) => {
+    product.inCart.value = 0
+  })
   newState.stateFuture = []
   newState.stateHistory = []
   return newState

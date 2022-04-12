@@ -1,12 +1,17 @@
 /** @format */
-import { Button, Card, Grid } from '@mui/material'
+// libraries
 import * as React from 'react'
-import { IIMPAction } from '../../../interfaces/IIMPAction'
+// material-ui components
+import { Button, Card, Grid } from '@mui/material'
+// interfaces
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+// react context
+import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-import { NumberDisplayer } from '../../shared/NumberDisplayer'
+// custom components
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
+import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
  * an item in the restock tab

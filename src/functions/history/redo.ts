@@ -1,4 +1,5 @@
 /** @format */
+// interfaces
 import { IIMPState } from '../../interfaces/IIMPState'
 /**
  * steps forward through state.stateFuture

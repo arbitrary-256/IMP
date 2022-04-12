@@ -1,10 +1,15 @@
 /** @format */
+// libraries
 import * as React from 'react'
-import { IIMPState } from '../../../interfaces/IIMPState'
-import { IIMPAction } from '../../../interfaces/IIMPAction'
-import { ImpContext } from '../../ImpContext'
+// material-ui components
 import { Box, Grid } from '@mui/material'
+// interfaces
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+// react context
+import { IIMPAction } from '../../../interfaces/IIMPAction'
+import { IIMPState } from '../../../interfaces/IIMPState'
+import { ImpContext } from '../../ImpContext'
+// custom components
 import { OrderGridItem } from './OrderGridItem'
 /**
  * the order tab's left div that displays the products available to sell

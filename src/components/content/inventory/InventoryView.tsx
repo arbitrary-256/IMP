@@ -1,11 +1,17 @@
 /** @format */
-import { Box, Table, TableBody } from '@mui/material'
+// libraries
 import * as React from 'react'
-import { IIMPState } from '../../../interfaces/IIMPState'
-import { IIMPAction } from '../../../interfaces/IIMPAction'
-import { ImpContext } from '../../ImpContext'
+// material-ui components
+import { Box, Table, TableBody } from '@mui/material'
+// interfaces
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+// react context
+import { IIMPAction } from '../../../interfaces/IIMPAction'
+import { IIMPState } from '../../../interfaces/IIMPState'
+import { ImpContext } from '../../ImpContext'
+// custom components
 import { InventoryRow } from './InventoryRow'
+// helper functions
 import { SearchInventory } from './SearchInventory'
 /**
  * the inventory tab

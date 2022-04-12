@@ -1,5 +1,7 @@
 /** @format */
+// interfaces
 import { IIMPImage } from '../../interfaces/IIMPImage'
+// non-TypeScript data
 import impLady from '../../images/imp.png'
 /**
  * generates a default image for a product without using the database

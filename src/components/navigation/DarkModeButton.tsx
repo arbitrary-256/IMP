@@ -1,11 +1,15 @@
 /** @format */
+// libraries
 import * as React from 'react'
+// material-ui components
+import { DarkMode, LightMode } from '@mui/icons-material'
 import { IconButton, Theme } from '@mui/material'
-import { darkTheme } from '../theme/darkTheme'
+// react context
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
-import { DarkMode, LightMode } from '@mui/icons-material'
+// non-TypeScript data
+import { darkTheme } from '../theme/darkTheme'
 /**
  * a dark mode switch component that toggles the dark mode of the application
  * @returns a component to toggle the dark mode of the application

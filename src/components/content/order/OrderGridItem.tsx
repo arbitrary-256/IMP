@@ -1,15 +1,20 @@
 /** @format */
+// libraries
 import * as React from 'react'
-import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+// material-ui components
 import { Button, Card, CardMedia, Stack } from '@mui/material'
+// interfaces
+import { IIMPNumber } from '../../../interfaces/IIMPNumber'
+import { IIMPProduct } from '../../../interfaces/IIMPProduct'
+import { IIMPString } from '../../../interfaces/IIMPString'
+// react context
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
+// custom components
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
-import { StringDisplayer } from '../../shared/StringDisplayer'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
-import { IIMPNumber } from '../../../interfaces/IIMPNumber'
-import { IIMPString } from '../../../interfaces/IIMPString'
+import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
  * an item in the order tab's main view
  * @param product the IIMPProduct to be displayed

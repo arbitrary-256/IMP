@@ -1,23 +1,26 @@
 /** @format */
-import { IIMPState } from '../interfaces/IIMPState'
-import { IIMPAction } from '../interfaces/IIMPAction'
+// interfaces
 import { IIMPProduct } from '../interfaces/IIMPProduct'
+// react context
+import { IIMPAction } from '../interfaces/IIMPAction'
+import { IIMPState } from '../interfaces/IIMPState'
+// helper functions
 import { reducerCleanup } from './cleanup/reducerCleanup'
-import { generateDefaultState } from './helpers/generateDefaultState'
-import { navigateTo } from './helpers/navigateTo'
-import { filterSearchResults } from './helpers/filterSearchResults'
-import { undo } from './history/undo'
-import { redo } from './history/redo'
-import { decrementNumber } from './helpers/decrementNumber'
-import { incrementNumber } from './helpers/incrementNumber'
-import { setNumber } from './helpers/setNumber'
-import { receiveInventory } from './helpers/receiveInventory'
-import { setString } from './helpers/setString'
-import { restockProducts } from './helpers/restockProducts'
 import { changeAppearance } from './helpers/changeAppearance'
+import { decrementNumber } from './helpers/decrementNumber'
+import { filterSearchResults } from './helpers/filterSearchResults'
+import { generateDefaultState } from './helpers/generateDefaultState'
+import { generateProduct } from './helpers/generateProduct'
+import { incrementNumber } from './helpers/incrementNumber'
+import { navigateTo } from './helpers/navigateTo'
+import { receiveInventory } from './helpers/receiveInventory'
+import { restockProducts } from './helpers/restockProducts'
+import { setNumber } from './helpers/setNumber'
+import { setString } from './helpers/setString'
 import { purchaseCart } from './helpers/purchaseCart'
 import { updateImage } from './helpers/updateImage'
-import { generateProduct } from './helpers/generateProduct'
+import { redo } from './history/redo'
+import { undo } from './history/undo'
 /**
  * Updates application state based on the passed action.
  * All business logic lives in this file or in a function this file imports.
