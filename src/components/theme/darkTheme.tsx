@@ -266,8 +266,7 @@ export const darkTheme: Theme = createTheme({
       }
     },
     MuiSelect: {
-      styleOverrides: {
-      }
+      styleOverrides: {}
     },
     MuiSlider: {
       styleOverrides: {

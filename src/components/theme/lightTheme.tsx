@@ -263,8 +263,7 @@ export const lightTheme: Theme = createTheme({
       }
     },
     MuiSelect: {
-      styleOverrides: {
-      }
+      styleOverrides: {}
     },
     MuiSlider: {
       styleOverrides: {
