@@ -67,6 +67,11 @@ import { ToggleButtonRootStyle } from '../../stylesLight/ToggleButtonRootStyle'
 import { TextAreaRootStyle } from '../../stylesLight/TextAreaRootStyle'
 export const lightTheme: Theme = createTheme({
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        '@font-face': AlegreyaSansSCFont()
+      }
+    },
     MuiAccordion: {
       styleOverrides: {
         root: AccordionRootStyle(),
@@ -131,11 +136,6 @@ export const lightTheme: Theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: ContainerRootStyle()
-      }
-    },
-    MuiCssBaseline: {
-      styleOverrides: {
-        '@font-face': AlegreyaSansSCFont()
       }
     },
     MuiDialog: {

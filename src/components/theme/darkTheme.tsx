@@ -70,6 +70,11 @@ import { ToggleButtonRootStyleDark } from '../../stylesDark/ToggleButtonRootStyl
 import { TouchRippleRootStyleDark } from '../../stylesDark/TouchRippleRootStyleDark'
 export const darkTheme: Theme = createTheme({
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        '@font-face': AlegreyaSansSCFont()
+      }
+    },
     MuiAccordion: {
       styleOverrides: {
         root: AccordionRootStyleDark(),
@@ -134,11 +139,6 @@ export const darkTheme: Theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: ContainerRootStyleDark()
-      }
-    },
-    MuiCssBaseline: {
-      styleOverrides: {
-        '@font-face': AlegreyaSansSCFont()
       }
     },
     MuiDialog: {
