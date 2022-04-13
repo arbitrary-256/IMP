@@ -68,320 +68,321 @@ import { TextAreaRootStyleDark } from '../../stylesDark/TextAreaRootStyleDark'
 import { ToggleButtonGroupRootStyleDark } from '../../stylesDark/ToggleButtonGroupRootStyleDark'
 import { ToggleButtonRootStyleDark } from '../../stylesDark/ToggleButtonRootStyleDark'
 import { TouchRippleRootStyleDark } from '../../stylesDark/TouchRippleRootStyleDark'
-export const darkTheme: Function = (): Theme => createTheme({
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        '@font-face': AlegreyaSansSCFont()
+export const darkTheme: Function = (): Theme =>
+  createTheme({
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          '@font-face': AlegreyaSansSCFont()
+        }
+      },
+      MuiAccordion: {
+        styleOverrides: {
+          root: AccordionRootStyleDark(),
+          expanded: AccordionExpandedStyleDark()
+        }
+      },
+      MuiAlert: {
+        styleOverrides: {
+          root: AlertRootStyleDark()
+        }
+      },
+      MuiAppBar: {
+        styleOverrides: {
+          root: AppBarRootStyleDark()
+        }
+      },
+      MuiAutocomplete: {
+        styleOverrides: {
+          paper: AutocompletePaperStyleDark(),
+          option: AutocompleteOptionStyleDark(),
+          groupLabel: ListSubheaderStyleDark()
+        }
+      },
+      MuiBottomNavigation: {
+        styleOverrides: {
+          root: BottomNavigationRootStyleDark()
+        }
+      },
+      MuiBottomNavigationAction: {
+        styleOverrides: {
+          root: BottomNavigationActionRootStyleDark()
+        }
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: ButtonRootStyleDark(),
+          containedPrimary: ButtonPrimaryStyleDark(),
+          containedSecondary: ButtonSecondaryStyleDark()
+        }
+      },
+      MuiCard: {
+        styleOverrides: {
+          root: CardRootStyleDark()
+        }
+      },
+      MuiCheckbox: {
+        styleOverrides: {
+          root: CheckboxRootStyleDark()
+        }
+      },
+      MuiChip: {
+        styleOverrides: {
+          root: ButtonPrimaryStyleDark()
+        }
+      },
+      MuiCircularProgress: {
+        styleOverrides: {
+          root: CircularProgressRootStyleDark(),
+          colorPrimary: CircularProgressPrimaryStyleDark()
+        }
+      },
+      MuiContainer: {
+        styleOverrides: {
+          root: ContainerRootStyleDark()
+        }
+      },
+      MuiDialog: {
+        styleOverrides: {
+          root: DialogRootStyleDark(),
+          paper: DialogPaperStyleDark()
+        }
+      },
+      MuiDrawer: {
+        styleOverrides: {
+          root: DrawerRootStyleDark(),
+          paper: DrawerPaperStyleDark()
+        }
+      },
+      MuiFab: {
+        styleOverrides: {
+          root: FabRootStyleDark()
+        }
+      },
+      MuiFormControl: {
+        styleOverrides: {
+          root: FormControlRootStyleDark()
+        }
+      },
+      MuiFormControlLabel: {
+        styleOverrides: {
+          root: FormControlLabelRootStyleDark()
+        }
+      },
+      MuiFormHelperText: {
+        styleOverrides: {
+          root: FormHelperTextRootStyleDark()
+        }
+      },
+      MuiIconButton: {
+        styleOverrides: {
+          root: ButtonIconRootStyleDark()
+        }
+      },
+      MuiIcon: {
+        styleOverrides: {
+          root: IconRootStyleDark()
+        }
+      },
+      MuiImageList: {
+        styleOverrides: {
+          root: ImageListRootStyleDark()
+        }
+      },
+      MuiImageListItemBar: {
+        styleOverrides: {
+          root: ImageListItemBarRootStyleDark()
+        }
+      },
+      MuiInputAdornment: {
+        styleOverrides: {
+          root: InputAdornmentRootStyleDark()
+        }
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          root: InputBaseRootStyleDark(),
+          input: InputBaseInputStyleDark()
+        }
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: InputLabelRootStyleDark()
+        }
+      },
+      MuiList: {
+        styleOverrides: {
+          root: ListRootStyleDark(),
+          subheader: ListSubheaderStyleDark()
+        }
+      },
+      MuiListItem: {
+        styleOverrides: {
+          root: ListItemRootStyleDark(),
+          selected: ListItemSelectedStyleDark()
+        }
+      },
+      MuiMenu: {
+        styleOverrides: {
+          paper: MenuRootStyleDark()
+        }
+      },
+      MuiMobileStepper: {
+        styleOverrides: {
+          dot: MobileStepperDotStyleDark(),
+          dotActive: MobileStepperDotActiveStyleDark(),
+          progress: MobileStepperProgressStyleDark()
+        }
+      },
+      MuiNativeSelect: {
+        styleOverrides: {
+          root: NativeSelectRootStyleDark(),
+          filled: NativeSelectRootStyleDark(),
+          select: NativeSelectRootStyleDark(),
+          outlined: NativeSelectRootStyleDark()
+        }
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: InputOutlinedRootStyleDark(),
+          multiline: OutlinedInputMultilineStyleDark()
+        }
+      },
+      MuiPaginationItem: {
+        styleOverrides: {
+          root: TablePaginationItemRootStyleDark()
+        }
+      },
+      MuiPaper: {
+        styleOverrides: {
+          root: PaperRootStyleDark()
+        }
+      },
+      MuiPopover: {
+        styleOverrides: {
+          paper: MenuRootStyleDark()
+        }
+      },
+      MuiRadio: {
+        styleOverrides: {
+          root: RadioRootStyleDark()
+        }
+      },
+      MuiSelect: {
+        styleOverrides: {}
+      },
+      MuiSlider: {
+        styleOverrides: {
+          root: SliderRootStyleDark(),
+          thumb: SliderThumbStyleDark(),
+          valueLabel: SliderValueLabelStyleDark(),
+          track: SliderTrackStyleDark(),
+          rail: SliderRailStyleDark(),
+          mark: SliderMarkStyleDark(),
+          markActive: SliderMarkActiveStyleDark()
+        }
+      },
+      MuiSpeedDial: {
+        styleOverrides: {
+          root: SpeedDialIconRootStyleDark(),
+          fab: SpeedDialFabStyleDark()
+        }
+      },
+      MuiSwitch: {
+        styleOverrides: {
+          root: SwitchRootStyleDark()
+        }
+      },
+      MuiTab: {
+        styleOverrides: {
+          root: TabRootStyleDark(),
+          selected: TabSelectedStyleDark(),
+          labelIcon: TabLabelIconStyleDark()
+        }
+      },
+      MuiTabs: {
+        styleOverrides: {
+          root: TabsRootStyleDark(),
+          indicator: TabSelectedStyleDark()
+        }
+      },
+      MuiTablePagination: {
+        styleOverrides: {
+          root: TablePaginationItemRootStyleDark(),
+          selectRoot: TablePaginationSelectRootStyleDark()
+        }
+      },
+      MuiTextField: {
+        styleOverrides: {
+          root: TextAreaRootStyleDark()
+        }
+      },
+      MuiToggleButton: {
+        styleOverrides: {
+          root: ToggleButtonRootStyleDark()
+        }
+      },
+      MuiToggleButtonGroup: {
+        styleOverrides: {
+          root: ToggleButtonGroupRootStyleDark()
+        }
+      },
+      MuiTouchRipple: {
+        styleOverrides: {
+          root: TouchRippleRootStyleDark()
+        }
       }
     },
-    MuiAccordion: {
-      styleOverrides: {
-        root: AccordionRootStyleDark(),
-        expanded: AccordionExpandedStyleDark()
+    palette: {
+      mode: 'dark',
+      background: {
+        default: `#131313`,
+        paper: `#131313`
+      },
+      primary: {
+        main: `#616161`,
+        contrastText: `#e0e0e0`
+      },
+      secondary: {
+        main: `#2196f3`,
+        contrastText: `#ffffff`
+      },
+      contrastThreshold: 3,
+      tonalOffset: 0.2,
+      text: {
+        primary: `#e0e0e0`,
+        secondary: `#C1C1C1`,
+        disabled: `#616161`
       }
     },
-    MuiAlert: {
-      styleOverrides: {
-        root: AlertRootStyleDark()
-      }
-    },
-    MuiAppBar: {
-      styleOverrides: {
-        root: AppBarRootStyleDark()
-      }
-    },
-    MuiAutocomplete: {
-      styleOverrides: {
-        paper: AutocompletePaperStyleDark(),
-        option: AutocompleteOptionStyleDark(),
-        groupLabel: ListSubheaderStyleDark()
-      }
-    },
-    MuiBottomNavigation: {
-      styleOverrides: {
-        root: BottomNavigationRootStyleDark()
-      }
-    },
-    MuiBottomNavigationAction: {
-      styleOverrides: {
-        root: BottomNavigationActionRootStyleDark()
-      }
-    },
-    MuiButton: {
-      styleOverrides: {
-        root: ButtonRootStyleDark(),
-        containedPrimary: ButtonPrimaryStyleDark(),
-        containedSecondary: ButtonSecondaryStyleDark()
-      }
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: CardRootStyleDark()
-      }
-    },
-    MuiCheckbox: {
-      styleOverrides: {
-        root: CheckboxRootStyleDark()
-      }
-    },
-    MuiChip: {
-      styleOverrides: {
-        root: ButtonPrimaryStyleDark()
-      }
-    },
-    MuiCircularProgress: {
-      styleOverrides: {
-        root: CircularProgressRootStyleDark(),
-        colorPrimary: CircularProgressPrimaryStyleDark()
-      }
-    },
-    MuiContainer: {
-      styleOverrides: {
-        root: ContainerRootStyleDark()
-      }
-    },
-    MuiDialog: {
-      styleOverrides: {
-        root: DialogRootStyleDark(),
-        paper: DialogPaperStyleDark()
-      }
-    },
-    MuiDrawer: {
-      styleOverrides: {
-        root: DrawerRootStyleDark(),
-        paper: DrawerPaperStyleDark()
-      }
-    },
-    MuiFab: {
-      styleOverrides: {
-        root: FabRootStyleDark()
-      }
-    },
-    MuiFormControl: {
-      styleOverrides: {
-        root: FormControlRootStyleDark()
-      }
-    },
-    MuiFormControlLabel: {
-      styleOverrides: {
-        root: FormControlLabelRootStyleDark()
-      }
-    },
-    MuiFormHelperText: {
-      styleOverrides: {
-        root: FormHelperTextRootStyleDark()
-      }
-    },
-    MuiIconButton: {
-      styleOverrides: {
-        root: ButtonIconRootStyleDark()
-      }
-    },
-    MuiIcon: {
-      styleOverrides: {
-        root: IconRootStyleDark()
-      }
-    },
-    MuiImageList: {
-      styleOverrides: {
-        root: ImageListRootStyleDark()
-      }
-    },
-    MuiImageListItemBar: {
-      styleOverrides: {
-        root: ImageListItemBarRootStyleDark()
-      }
-    },
-    MuiInputAdornment: {
-      styleOverrides: {
-        root: InputAdornmentRootStyleDark()
-      }
-    },
-    MuiInputBase: {
-      styleOverrides: {
-        root: InputBaseRootStyleDark(),
-        input: InputBaseInputStyleDark()
-      }
-    },
-    MuiInputLabel: {
-      styleOverrides: {
-        root: InputLabelRootStyleDark()
-      }
-    },
-    MuiList: {
-      styleOverrides: {
-        root: ListRootStyleDark(),
-        subheader: ListSubheaderStyleDark()
-      }
-    },
-    MuiListItem: {
-      styleOverrides: {
-        root: ListItemRootStyleDark(),
-        selected: ListItemSelectedStyleDark()
-      }
-    },
-    MuiMenu: {
-      styleOverrides: {
-        paper: MenuRootStyleDark()
-      }
-    },
-    MuiMobileStepper: {
-      styleOverrides: {
-        dot: MobileStepperDotStyleDark(),
-        dotActive: MobileStepperDotActiveStyleDark(),
-        progress: MobileStepperProgressStyleDark()
-      }
-    },
-    MuiNativeSelect: {
-      styleOverrides: {
-        root: NativeSelectRootStyleDark(),
-        filled: NativeSelectRootStyleDark(),
-        select: NativeSelectRootStyleDark(),
-        outlined: NativeSelectRootStyleDark()
-      }
-    },
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: InputOutlinedRootStyleDark(),
-        multiline: OutlinedInputMultilineStyleDark()
-      }
-    },
-    MuiPaginationItem: {
-      styleOverrides: {
-        root: TablePaginationItemRootStyleDark()
-      }
-    },
-    MuiPaper: {
-      styleOverrides: {
-        root: PaperRootStyleDark()
-      }
-    },
-    MuiPopover: {
-      styleOverrides: {
-        paper: MenuRootStyleDark()
-      }
-    },
-    MuiRadio: {
-      styleOverrides: {
-        root: RadioRootStyleDark()
-      }
-    },
-    MuiSelect: {
-      styleOverrides: {}
-    },
-    MuiSlider: {
-      styleOverrides: {
-        root: SliderRootStyleDark(),
-        thumb: SliderThumbStyleDark(),
-        valueLabel: SliderValueLabelStyleDark(),
-        track: SliderTrackStyleDark(),
-        rail: SliderRailStyleDark(),
-        mark: SliderMarkStyleDark(),
-        markActive: SliderMarkActiveStyleDark()
-      }
-    },
-    MuiSpeedDial: {
-      styleOverrides: {
-        root: SpeedDialIconRootStyleDark(),
-        fab: SpeedDialFabStyleDark()
-      }
-    },
-    MuiSwitch: {
-      styleOverrides: {
-        root: SwitchRootStyleDark()
-      }
-    },
-    MuiTab: {
-      styleOverrides: {
-        root: TabRootStyleDark(),
-        selected: TabSelectedStyleDark(),
-        labelIcon: TabLabelIconStyleDark()
-      }
-    },
-    MuiTabs: {
-      styleOverrides: {
-        root: TabsRootStyleDark(),
-        indicator: TabSelectedStyleDark()
-      }
-    },
-    MuiTablePagination: {
-      styleOverrides: {
-        root: TablePaginationItemRootStyleDark(),
-        selectRoot: TablePaginationSelectRootStyleDark()
-      }
-    },
-    MuiTextField: {
-      styleOverrides: {
-        root: TextAreaRootStyleDark()
-      }
-    },
-    MuiToggleButton: {
-      styleOverrides: {
-        root: ToggleButtonRootStyleDark()
-      }
-    },
-    MuiToggleButtonGroup: {
-      styleOverrides: {
-        root: ToggleButtonGroupRootStyleDark()
-      }
-    },
-    MuiTouchRipple: {
-      styleOverrides: {
-        root: TouchRippleRootStyleDark()
+    typography: {
+      fontFamily: [`Alegreya Sans SC`].join(`,`),
+      body1: {
+        color: `#C1C1C1`
+      },
+      body2: {
+        color: `#C1C1C1`
+      },
+      caption: {
+        color: `#9A9A9A`
+      },
+      h1: {
+        color: `#FFFFFF`
+      },
+      h2: {
+        color: `#FFFFFF`
+      },
+      h3: {
+        color: `#E5E5E5`
+      },
+      h4: {
+        color: `#E5E5E5`
+      },
+      h5: {
+        color: `#E5E5E5`
+      },
+      h6: {
+        color: `#E5E5E5`
       }
     }
-  },
-  palette: {
-    mode: 'dark',
-    background: {
-      default: `#131313`,
-      paper: `#131313`
-    },
-    primary: {
-      main: `#616161`,
-      contrastText: `#e0e0e0`
-    },
-    secondary: {
-      main: `#2196f3`,
-      contrastText: `#ffffff`
-    },
-    contrastThreshold: 3,
-    tonalOffset: 0.2,
-    text: {
-      primary: `#e0e0e0`,
-      secondary: `#C1C1C1`,
-      disabled: `#616161`
-    }
-  },
-  typography: {
-    fontFamily: [`Alegreya Sans SC`].join(`,`),
-    body1: {
-      color: `#C1C1C1`
-    },
-    body2: {
-      color: `#C1C1C1`
-    },
-    caption: {
-      color: `#9A9A9A`
-    },
-    h1: {
-      color: `#FFFFFF`
-    },
-    h2: {
-      color: `#FFFFFF`
-    },
-    h3: {
-      color: `#E5E5E5`
-    },
-    h4: {
-      color: `#E5E5E5`
-    },
-    h5: {
-      color: `#E5E5E5`
-    },
-    h6: {
-      color: `#E5E5E5`
-    }
-  }
-})
+  })
