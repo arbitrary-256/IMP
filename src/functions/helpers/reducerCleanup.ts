@@ -4,7 +4,7 @@ import { IIMPProduct } from '../../interfaces/IIMPProduct'
 // react context
 import { IIMPState } from '../../interfaces/IIMPState'
 // helper functions
-import { generateProduct } from '../helpers/generateProduct'
+import { generateProduct } from './generateProduct'
 /**
  * cleans up the application state at the end of a call to ImpReducer
  * @param newState the current IIMPState to be cleaned up

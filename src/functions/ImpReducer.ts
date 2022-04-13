@@ -5,7 +5,7 @@ import { IIMPProduct } from '../interfaces/IIMPProduct'
 import { IIMPAction } from '../interfaces/IIMPAction'
 import { IIMPState } from '../interfaces/IIMPState'
 // helper functions
-import { reducerCleanup } from './cleanup/reducerCleanup'
+import { reducerCleanup } from './helpers/reducerCleanup'
 import { changeAppearance } from './helpers/changeAppearance'
 import { decrementNumber } from './helpers/decrementNumber'
 import { filterSearchResults } from './helpers/filterSearchResults'
