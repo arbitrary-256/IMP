@@ -1,10 +1,12 @@
 /** @format */
+// material-ui components
 import { createTheme, Theme } from '@mui/material'
+// css-in-TypeScript
+import { AlegreyaSansSCFont } from '../../fonts/AlegreyaSansSCFont'
 import { AccordionExpandedStyleDark } from '../../stylesDark/AccordionExpandedStyleDark'
 import { AccordionRootStyleDark } from '../../stylesDark/AccordionRootStyleDark'
 import { AlertRootStyleDark } from '../../stylesDark/AlertRootStyleDark'
 import { AppBarRootStyleDark } from '../../stylesDark/AppBarRootStyleDark'
-import { AlegreyaSansSCFont } from '../../fonts/AlegreyaSansSCFont'
 import { AutocompleteOptionStyleDark } from '../../stylesDark/AutocompleteOptionStyleDark'
 import { AutocompletePaperStyleDark } from '../../stylesDark/AutocompletePaperStyleDark'
 import { BottomNavigationActionRootStyleDark } from '../../stylesDark/BottomNavigationActionRootStyleDark'
