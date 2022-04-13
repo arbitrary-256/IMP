@@ -9,7 +9,7 @@ import imp from '../../images/imp.png'
  * @param toChange the IIMPProductNumber to change
  * @returns the updated product
  */
-export const updateImage: Function = (toChange: IIMPProductImageToChange, images: File[]): IIMPProduct => {
+export const setImage: Function = (toChange: IIMPProductImageToChange, images: File[]): IIMPProduct => {
   console.log(`updateImage called with file named ${images[0].name}`)
   let tempProduct: IIMPProduct = { ...toChange.product }
   toChange.image.data ? void 0 : (toChange.image.data = imp)

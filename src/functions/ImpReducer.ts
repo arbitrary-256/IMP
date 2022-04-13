@@ -18,7 +18,7 @@ import { restockProducts } from './helpers/restockProducts'
 import { setNumber } from './helpers/setNumber'
 import { setString } from './helpers/setString'
 import { purchaseCart } from './helpers/purchaseCart'
-import { updateImage } from './helpers/updateImage'
+import { setImage } from './helpers/setImage'
 import { redo } from './history/redo'
 import { undo } from './history/undo'
 /**
@@ -55,7 +55,7 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
     case `RECEIVE_INVENTORY`:
       return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock), productToReceive: generateProduct() }, state)
     case `UPDATE_IMAGE`:
-      return reducerCleanup({ ...newState, image: updateImage(action.payload) }, state)
+      return reducerCleanup({ ...newState, image: setImage(action.payload) }, state)
     case `DELETE_INVENTORY_ENTRY`: // when clicking delete item button
       // TODO: delete item from SQL database using forgetIt function
       return reducerCleanup(newState, state)
