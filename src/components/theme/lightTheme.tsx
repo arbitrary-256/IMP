@@ -65,7 +65,7 @@ import { TabsRootStyle } from '../../stylesLight/TabsRootStyle'
 import { ToggleButtonGroupRootStyle } from '../../stylesLight/ToggleButtonGroupRootStyle'
 import { ToggleButtonRootStyle } from '../../stylesLight/ToggleButtonRootStyle'
 import { TextAreaRootStyle } from '../../stylesLight/TextAreaRootStyle'
-export const lightTheme: Theme = createTheme({
+export const lightTheme: Function = (): Theme => createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {

@@ -36,7 +36,7 @@ export const DarkModeButton: React.FC = (): React.ReactElement => {
         })
       }}
     >
-      {state.theme === darkTheme ? <DarkMode /> : <LightMode />}
+      {state.theme === darkTheme() ? <DarkMode /> : <LightMode />}
     </IconButton>
   )
 }
