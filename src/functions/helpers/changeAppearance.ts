@@ -11,11 +11,12 @@ import { lightTheme } from '../../components/theme/lightTheme'
  */
 export const changeAppearance: Function = (theme: Theme): Theme => {
   switch (theme) {
-    case darkTheme():
-      return lightTheme()
-    case lightTheme():
-      return darkTheme()
+    case darkTheme:
+      return lightTheme
+    case lightTheme:
+      return darkTheme
     default:
-      return lightTheme()
+      console.log(`theme is not an expected value`)
+      return lightTheme
   }
 }

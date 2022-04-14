@@ -42,6 +42,6 @@ export const generateDefaultState: Function = (): IIMPState => {
     },
     stateFuture: [],
     stateHistory: [],
-    theme: darkTheme()
+    theme: darkTheme
   }
 }

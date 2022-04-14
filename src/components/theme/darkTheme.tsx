@@ -68,7 +68,7 @@ import { TextAreaRootStyleDark } from '../../stylesDark/TextAreaRootStyleDark'
 import { ToggleButtonGroupRootStyleDark } from '../../stylesDark/ToggleButtonGroupRootStyleDark'
 import { ToggleButtonRootStyleDark } from '../../stylesDark/ToggleButtonRootStyleDark'
 import { TouchRippleRootStyleDark } from '../../stylesDark/TouchRippleRootStyleDark'
-export const darkTheme: Function = (): Theme =>
+export const darkTheme: Theme =
   createTheme({
     components: {
       MuiCssBaseline: {
