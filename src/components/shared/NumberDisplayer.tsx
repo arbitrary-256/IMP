@@ -13,8 +13,9 @@ import { IIMPNumber } from '../../interfaces/IIMPNumber'
 export const NumberDisplayer: React.FC<IIMPNumber> = (impNumber: IIMPNumber): React.ReactElement => (
   <TextField
     className={`NumberDisplayer`}
-    type={`number`}
+    type={`text`}
     label={`${impNumber.id}`}
+    disabled={true}
     contentEditable={false}
     fullWidth={true}
     value={
