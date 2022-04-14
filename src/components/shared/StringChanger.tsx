@@ -28,7 +28,7 @@ export const StringChanger: React.FC<IIMPProductStringToChange> = (toChange: IIM
       className={`StringChanger`}
       key={`orderSearch`}
       type={`text`}
-      label={`Product Name`}
+      label={`${toChange.string.id}`}
       fullWidth
       value={toChange.string.text}
       onChange={(textChangeEvent: React.ChangeEvent<HTMLInputElement>): void => {
