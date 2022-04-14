@@ -22,10 +22,11 @@ import { InventoryDeleteButton } from './InventoryDeleteButton'
 export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {
   const upcIdentifier = product.upc.value.toString()
   return product.editingMode === true ? (
-    <TableRow className={`InventoryRow`} key={`InventoryRow${upcIdentifier}`}>
+    <TableRow className={`InventoryRow`} key={`InventoryRow${upcIdentifier}`} sx={{ height: `20vh` }}>
       <TableCell key={`editButtons${upcIdentifier}`} width={`4%`}>
         <Stack direction={`column`}>
           {InventoryEditButton(product)}
+          <p />
           {InventoryDeleteButton(product)}
         </Stack>
       </TableCell>
@@ -55,10 +56,11 @@ export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React
       </TableCell>
     </TableRow>
   ) : (
-    <TableRow className={`InventoryRow`} key={`InventoryRow${upcIdentifier}`}>
+    <TableRow className={`InventoryRow`} key={`InventoryRow${upcIdentifier}`} sx={{ height: `20vh` }}>
       <TableCell key={`editButtons${upcIdentifier}`} width={`4%`}>
         <Stack direction={`column`}>
-          {InventoryEditButton(product)}
+            {InventoryEditButton(product)}
+            <p />
           {InventoryDeleteButton(product)}
         </Stack>
       </TableCell>
