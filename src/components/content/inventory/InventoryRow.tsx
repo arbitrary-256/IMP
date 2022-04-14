@@ -9,6 +9,7 @@ import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringChanger } from '../../shared/StringChanger'
+import { ImageChanger } from '../../shared/ImageChanger'
 /**
  * a row of the inventory table
  * @param product the IIMPProduct to be displayed
@@ -18,10 +19,13 @@ export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React
   const upcIdentifier = product.upc.value.toString()
   return (
     <TableRow className={`InventoryRow`} key={`InventoryRow${upcIdentifier}`}>
-      <TableCell key={`upc${upcIdentifier}`} width={`8%`}>
+      <TableCell key={`image${upcIdentifier}`} width={`8%`}>
+        {ImageChanger(product)}
+      </TableCell>
+      <TableCell key={`upc${upcIdentifier}`} width={`10%`}>
         {NumberDisplayer(product.upc)}
       </TableCell>
-      <TableCell key={`name${upcIdentifier}`} width={`20%`}>
+      <TableCell key={`name${upcIdentifier}`} width={`15%`}>
         {StringChanger({ string: product.name, newValue: product.name.text, product: product })}
       </TableCell>
       <TableCell key={`min${upcIdentifier}`} width={`12%`}>
