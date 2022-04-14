@@ -21,7 +21,7 @@
 
 ### Current version
 
-IMP uses the semantic versioning system.  The current build of IMP is version 0.7.9
+IMP uses the semantic versioning system.  The current build of IMP is version 0.8.3
 
 [](#develop)
 

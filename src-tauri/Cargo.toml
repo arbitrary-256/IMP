@@ -1,10 +1,10 @@
 [package]
 name = "inventory-management-platform"
-version = "0.7.9"
-description = "YOUR_APPLICATION_DESCRIPTION"
+version = "0.8.3"
+description = "Inventory Management Platform"
 authors = ["Brandon Shockley"]
 license = ""
-repository = "https://github.com/Brandon Shockley/IMP"
+repository = "https://github.com/Zindrek/IMP"
 default-run = "inventory-management-platform"
 build = "src/build.rs"
 
