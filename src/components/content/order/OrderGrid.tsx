@@ -2,7 +2,7 @@
 // libraries
 import * as React from 'react'
 // material-ui components
-import { Box, Grid } from '@mui/material'
+import { Box, Grid, Paper } from '@mui/material'
 // interfaces
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 // react context
@@ -29,14 +29,16 @@ export const OrderGrid: React.FC = (): React.ReactElement => {
   })
   return (
     <Box className={`OrderGrid`}>
-      <p />
-      <Grid container spacing={2}>
-        {filteredOrder.map((eachProduct: IIMPProduct) => (
-          <Grid item className={`OrderGridItem`} key={eachProduct.upc.value}>
-            {OrderGridItem(eachProduct)}
-          </Grid>
-        ))}
-      </Grid>
+      <Paper>
+        <p />
+        <Grid container spacing={2}>
+          {filteredOrder.map((eachProduct: IIMPProduct) => (
+            <Grid item className={`OrderGridItem`} key={eachProduct.upc.value}>
+              {OrderGridItem(eachProduct)}
+            </Grid>
+          ))}
+        </Grid>
+      </Paper>
     </Box>
   )
 }
