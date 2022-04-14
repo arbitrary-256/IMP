@@ -2,7 +2,7 @@
 // libraries
 import * as React from 'react'
 // material-ui components
-import { Box, Grid } from '@mui/material'
+import { Box, Grid, Stack } from '@mui/material'
 // interfaces
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { IIMPNumber } from '../../../interfaces/IIMPNumber'
@@ -43,8 +43,10 @@ export const CartView: React.FC = (): React.ReactElement => {
   return (
     <Box className={`CartGrid`} sx={{ display: state.contentAreaView === `Cart` ? `block` : `none` }}>
       <p />
-      <PurchaseCartButton />
-      {NumberDisplayer(cartTotal)}
+      <Stack direction={`row`}>
+        {NumberDisplayer(cartTotal)}
+        {PurchaseCartButton({})}
+      </Stack>
       <p />
       <Grid container spacing={2}>
         {state.cart.map((eachProduct: IIMPProduct) => (
