@@ -88,7 +88,6 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
     case `INCREMENT_NUMBER`:
       return reducerCleanup(newState, state, incrementNumber(action.payload))
     case `SET_NUMBER`: // TODO: remove arrows in text field
-      console.log(action.payload.number.value)
       return reducerCleanup(newState, state, setNumber(action.payload))
     case `SET_STRING`: // TODO: assign an IIMPString.text anywhere in the application
       return reducerCleanup(newState, state, setString(action.payload))
