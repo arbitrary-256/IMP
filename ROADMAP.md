@@ -1,12 +1,9 @@
 # IMP - Inventory Management Platform Features Roadmap
 
 ## current version
-0.8.4
+0.8.9
 
 ## 0.8.0 - local state functionality
-- change `NumberChanger` component to type `text` and add validation RegExes
-- change `SET_NUMBER`, `INCREMENT_NUMBER`, and `DECREMENT_NUMBER` actions to use `text` instead of `number`
-- Error: keep focus on product name input field when editing product name
 
 ## 0.9.0 - database functionality
 - create TypeScript interface to represent database rows
