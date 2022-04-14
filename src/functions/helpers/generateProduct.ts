@@ -44,6 +44,7 @@ export const generateProduct: Function = (): IIMPProduct => {
     randommax = randomQuantityTwo
   }
   return {
+    editingMode: false,
     upc: {
       propertyName: `upc`,
       id: `UPC`,
