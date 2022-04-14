@@ -54,8 +54,15 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       return reducerCleanup(newState)
     case `RECEIVE_INVENTORY`:
       return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock), productToReceive: generateProduct() }, state)
-    case `UPDATE_IMAGE`:
-      return reducerCleanup({ ...newState, image: setImage(action.payload) }, state)
+    case `SET_IMAGE`:
+      if (action.payload.inventoryIndex === undefined) {
+        newState = { ...newState, productToReceive: setImage(action.payload) }
+      } else {
+        let newStock = [...newState.inStock]
+        newStock[action.payload.inventoryIndex] = setImage(action.payload)
+        newState = { ...newState, inStock: newStock }
+      }
+      return reducerCleanup(newState, state)
     case `DELETE_INVENTORY_ENTRY`: // when clicking delete item button
       // TODO: delete item from SQL database using forgetIt function
       return reducerCleanup(newState, state)
