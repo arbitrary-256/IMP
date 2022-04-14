@@ -2,14 +2,11 @@
 // interfaces
 import { IIMPImage } from '../../interfaces/IIMPImage'
 // non-TypeScript data
-import impLady from '../../images/imp.png'
+import imp from '../../images/imp.png'
 /**
  * generates a default image for a product without using the database
- * @returns an IIMPImage object with the lady imp image
+ * @returns an IIMPImage object with the imp logo
  */
 export const generateProductIcon: Function = (): IIMPImage => {
-  return {
-    data: impLady,
-    altText: ``
-  }
+  return { data: imp, altText: `imp` }
 }
