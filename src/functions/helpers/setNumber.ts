@@ -11,9 +11,7 @@ import { IIMPProductNumberToChange } from '../../interfaces/productProperties/II
 export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPProduct => {
   let newProduct: IIMPProduct = { ...payload.product }
   let newNumber: IIMPNumber = { ...payload.number }
-  newNumber.value <= 0 || newNumber.value.toString() === `NaN` ? (newNumber.value = 0) : console.log(`Typed number not changed to 0`) // TODO: change to 'void 0'
-  console.log(newNumber.id)
-  console.log(newNumber.value)
+  newNumber.value <= 0 || newNumber.value.toString() === `NaN` ? (newNumber.value = 0) : void 0
   const isMoreThanMin: boolean = newNumber.value >= newNumber.min
   const isLessThanMax: boolean = newNumber.value <= newNumber.max
   const isInRange: boolean = isMoreThanMin && isLessThanMax
@@ -49,6 +47,5 @@ export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPPro
         break
     }
   }
-  console.log(newProduct)
   return newProduct
 }
