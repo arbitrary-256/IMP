@@ -5,6 +5,6 @@ import { IIMPProductImageToChange } from '../../productProperties/IIMPProductIma
  * an action interface for updating an image with react-dropzone
  */
 export interface IUpdateImageAction {
-  type: `UPDATE_IMAGE`
+  type: `SET_IMAGE`
   payload: IIMPProductImageToChange
 }
