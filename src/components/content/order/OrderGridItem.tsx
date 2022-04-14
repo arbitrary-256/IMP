@@ -47,6 +47,7 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
   return (
     <Card>
       <CardMedia>{ImageDisplayer(product.image)}</CardMedia>
+      <p />
       <Stack direction={`column`} spacing={2}>
         {StringDisplayer(product.name)}
         {NumberDisplayer(product.price)}
