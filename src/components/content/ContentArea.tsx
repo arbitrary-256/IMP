@@ -2,7 +2,7 @@
 // libraries
 import * as React from 'react'
 // material-ui components
-import { Box } from '@mui/material'
+import { Box, Paper } from '@mui/material'
 // custom components
 import { CartView } from './cart/CartView'
 import { InventoryView } from './inventory/InventoryView'
@@ -16,14 +16,16 @@ import { RestockView } from './restock/RestockView'
  */
 export const ContentArea: React.FC = (): React.ReactElement => {
   return (
-    <Box className={`ContentArea`}>
-      <p />
-      {LogoutView({})}
-      {OrderView({})}
-      {ReceivingView({})}
-      {RestockView({})}
-      {InventoryView({})}
-      {CartView({})}
-    </Box>
+    <Paper>
+      <Box className={`ContentArea`}>
+        <p />
+        {LogoutView({})}
+        {OrderView({})}
+        {ReceivingView({})}
+        {RestockView({})}
+        {InventoryView({})}
+        {CartView({})}
+      </Box>
+    </Paper>
   )
 }
