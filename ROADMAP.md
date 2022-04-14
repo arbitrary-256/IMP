@@ -1,7 +1,7 @@
 # IMP - Inventory Management Platform Features Roadmap
 
 ## current version
-0.8.3
+0.8.4
 
 ## 0.8.0 - local state functionality
 - change `NumberChanger` component to type `text` and add validation RegExes
