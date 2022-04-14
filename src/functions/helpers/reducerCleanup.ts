@@ -40,7 +40,7 @@ export const reducerCleanup: Function = (newState: IIMPState, oldState?: IIMPSta
     productIndex === -1 && matchesReceiving ? (newState.productToReceive = product) : void 0
   }
   // if the upc in receiving matches any upc in inventory, set the productToReceive to the product in inventory
-  newState.inStock.find((productToFind) => newState.productToReceive.upc.value === productToFind.upc.value ? newState.productToReceive = productToFind : void 0)
+  newState.inStock.find((productToFind) => (newState.productToReceive.upc.value === productToFind.upc.value ? (newState.productToReceive = productToFind) : void 0))
   // if user is logged out, cleanup user activity
   newState.loggedInUser === `Logged Out` ? logoutCleanup() : void 0
   // if there is an old state, add it to the stateHistory
