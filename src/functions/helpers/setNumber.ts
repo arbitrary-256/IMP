@@ -29,8 +29,8 @@ export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPPro
       case `Sale Price`:
         newProduct.price = { ...newNumber, value: parseFloat(newNumber.value.toFixed(2)) }
         break
-      case `On Hand`:
-        newProduct.onHand = { ...newNumber, value: parseInt(newNumber.value.toString()) }
+      case `In Stock`:
+        newProduct.inStock = { ...newNumber, value: parseInt(newNumber.value.toString()) }
         break
       case `UPC`:
         newProduct.upc = { ...newNumber, value: newNumber.value }
@@ -40,7 +40,7 @@ export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPPro
         break
       case `In Cart`:
         newProduct.inCart = { ...newNumber, value: parseInt(newNumber.value.toString()) }
-        newProduct.inCart.value > newProduct.onHand.value ? (newProduct.inCart.value = parseInt(newProduct.onHand.value.toString())) : void 0
+        newProduct.inCart.value > newProduct.inStock.value ? (newProduct.inCart.value = parseInt(newProduct.inStock.value.toString())) : void 0
         break
       default:
         console.error(`IMPError: could not find matching product while setting number`)

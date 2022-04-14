@@ -9,8 +9,8 @@ import { ISize } from './unionTypes/ISize'
  * @param upc the UPC ofthe product
  * @param name the product's human-readable name
  * @param price the product's price in $USD
- * @param onHand the product's current quantity in stock
- * @param min the minimum quantity on hand before the product should be ordered
+ * @param inStock the product's current quantity in stock
+ * @param min the minimum quantity in stock before the product should be ordered
  * @param max the maximum quantity to be kept in inventory
  * @param image the product's image
  * @param size OPTIONAL the product's size, if it has one
@@ -21,7 +21,7 @@ export interface IIMPProduct {
   upc: IIMPNumber
   cost: IIMPNumber
   price: IIMPNumber
-  onHand: IIMPNumber
+  inStock: IIMPNumber
   inCart: IIMPNumber
   toReceive: IIMPNumber
   min: IIMPNumber

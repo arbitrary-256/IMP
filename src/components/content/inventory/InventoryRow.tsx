@@ -40,8 +40,8 @@ export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React
       <TableCell key={`min${upcIdentifier}`} width={`10%`}>
         {NumberChanger({ number: product.min, product })}
       </TableCell>
-      <TableCell key={`onHand${upcIdentifier}`} width={`10%`}>
-        {NumberChanger({ number: product.onHand, product })}
+      <TableCell key={`inStock${upcIdentifier}`} width={`10%`}>
+        {NumberChanger({ number: product.inStock, product })}
       </TableCell>
       <TableCell key={`max${upcIdentifier}`} width={`10%`}>
         {NumberChanger({ number: product.max, product })}
@@ -72,8 +72,8 @@ export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React
       <TableCell key={`min${upcIdentifier}`} width={`10%`}>
         {NumberDisplayer(product.min)}
       </TableCell>
-      <TableCell key={`onHand${upcIdentifier}`} width={`10%`}>
-        {NumberDisplayer(product.onHand)}
+      <TableCell key={`inStock${upcIdentifier}`} width={`10%`}>
+        {NumberDisplayer(product.inStock)}
       </TableCell>
       <TableCell key={`max${upcIdentifier}`} width={`10%`}>
         {NumberDisplayer(product.max)}

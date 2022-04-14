@@ -37,7 +37,7 @@ export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.
         <p />
         {NumberDisplayer(product.upc)}
         <p />
-        {NumberDisplayer(product.onHand)}
+        {NumberDisplayer(product.inStock)}
         <p />
         {NumberDisplayer(product.min)}
         <p />
@@ -54,7 +54,7 @@ export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.
             })
           }}
         >
-          Restock {product.max.value - product.onHand.value} units
+          Restock {product.max.value - product.inStock.value} units
         </Button>
       </Card>
     </Grid>

@@ -10,7 +10,7 @@ export type INumberDescription =
   | `Maximum Quantity`
   | `Purchase Price`
   | `Sale Price`
-  | `On Hand`
+  | `In Stock`
   | `UPC`
   | `In Cart`
   | `To Cart`

@@ -26,7 +26,7 @@ export const RestockView: React.FC = (): React.ReactElement => {
   } = React.useContext(ImpContext)
   const productsToRestock: IIMPProduct[] = state.inStock
     .filter((product: IIMPProduct): boolean => {
-      return product.onHand.value < product.min.value
+      return product.inStock.value < product.min.value
     })
     .filter((eachProduct: IIMPProduct) => {
       return eachProduct.upc.value.toString().includes(state.restockSearch.toLowerCase()) || eachProduct.name.text.toLowerCase().includes(state.restockSearch.toLowerCase())

@@ -15,9 +15,9 @@ export const receiveInventory: Function = (product: IIMPProduct, inventory: IIMP
     // if product is in inventory, add to quantity in inventory
     newInventory[inventoryIndex] = {
       ...productFromInventory,
-      onHand: {
-        ...productFromInventory.onHand,
-        value: productFromInventory.onHand.value + product.toReceive.value
+      inStock: {
+        ...productFromInventory.inStock,
+        value: productFromInventory.inStock.value + product.toReceive.value
       },
       toReceive: {
         ...productFromInventory.toReceive,
@@ -26,7 +26,7 @@ export const receiveInventory: Function = (product: IIMPProduct, inventory: IIMP
     }
   } else {
     // if product is not in inventory, submit action.payload to inStock
-    newInventory.push({ ...product, onHand: { ...product.onHand, value: product.toReceive.value }, toReceive: { ...product.toReceive, value: 0 } })
+    newInventory.push({ ...product, inStock: { ...product.inStock, value: product.toReceive.value }, toReceive: { ...product.toReceive, value: 0 } })
   }
   // TODO: update inStock in SQL database with holdThis function
   return newInventory

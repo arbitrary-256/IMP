@@ -11,12 +11,12 @@ import { IIMPState } from '../../interfaces/IIMPState'
 export const purchaseCart: Function = (state: IIMPState): IIMPState => {
   let newState: IIMPState = { ...state }
   // TODO: update database entries
-  // map through cart and make database calls to update onHand values for entries with matching UPCs
+  // map through cart and make database calls to update inStock values for entries with matching UPCs
   // cart.map( async (productInCart): Promise<void> => {
   //   updateDatabaseEntry(productInCart)
   // })
   newState.inStock.forEach((product: IIMPProduct) => {
-    product.onHand.value = product.onHand.value - product.inCart.value
+    product.inStock.value = product.inStock.value - product.inCart.value
     product.inCart.value = 0
   })
   newState.stateFuture = []

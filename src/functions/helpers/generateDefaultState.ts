@@ -31,8 +31,8 @@ export const generateDefaultState: Function = (): IIMPState => {
         ...receivingProduct.toReceive,
         value: 0
       },
-      onHand: {
-        ...receivingProduct.onHand,
+      inStock: {
+        ...receivingProduct.inStock,
         value: 0
       },
       inCart: {

@@ -31,7 +31,7 @@ export const generateProduct: Function = (): IIMPProduct => {
     randomSalePrice = randomPriceOne
     randomcost = randomPriceTwo
   }
-  const randomonHand: number = mockThreeDigitInteger()
+  const randominStock: number = mockThreeDigitInteger()
   const randomQuantityOne: number = mockThreeDigitInteger()
   const randomQuantityTwo: number = mockThreeDigitInteger()
   let randommin: number
@@ -61,7 +61,7 @@ export const generateProduct: Function = (): IIMPProduct => {
     image: randomIconImage,
     cost: { id: `Purchase Price`, propertyName: `cost`, value: randomcost, prefix: `$`, min: 0.01, max: 9999.99 },
     price: { id: `Sale Price`, propertyName: `price`, value: randomSalePrice, prefix: `$`, min: 0.01, max: 9999.99 },
-    onHand: { id: `On Hand`, propertyName: `onHand`, value: randomonHand, min: 0, max: 9999 },
+    inStock: { id: `In Stock`, propertyName: `inStock`, value: randominStock, min: 0, max: 9999 },
     inCart: { id: `In Cart`, propertyName: `inCart`, value: 0, min: 0, max: 9999 },
     toReceive: { id: `To Receive`, propertyName: `toReceive`, value: 0, min: 0, max: 9999 },
     min: { id: `Minimum Quantity`, propertyName: `min`, value: randommin, min: mockOneDigitInteger(), max: 9999 },

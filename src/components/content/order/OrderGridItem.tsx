@@ -32,7 +32,7 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
   const numberAvailable: IIMPNumber = {
     id: `Available`,
     propertyName: `Available`,
-    value: product.onHand.value - product.inCart.value,
+    value: product.inStock.value - product.inCart.value,
     prefix: ``,
     min: 0,
     max: 99999,
@@ -58,9 +58,9 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
         variant={`contained`}
         size={`large`}
         color={`success`}
-        disabled={product.onHand.value - product.inCart.value <= 0 ? true : false}
+        disabled={product.inStock.value - product.inCart.value <= 0 ? true : false}
         onClick={() => {
-          if (product.inCart.value < product.onHand.value) {
+          if (product.inCart.value < product.inStock.value) {
             dispatch({
               type: `INCREMENT_NUMBER`,
               payload: { number: product.inCart, product: product }
