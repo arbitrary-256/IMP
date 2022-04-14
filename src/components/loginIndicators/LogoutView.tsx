@@ -82,7 +82,7 @@ export const LogoutView: React.FC = (): React.ReactElement => {
         {StringDisplayer(loginRequiredString)}
       </Box>
       <Box className={`LogoutImage`} height={`50vh`}>
-        {ImageDisplayer({ data: imp, altText: `Imp Lady` }, { height: 450, width: 450 })}
+        {ImageDisplayer({ data: imp, altText: `imp` }, { height: 450, width: 450 })}
       </Box>
       <Stack direction={`row`} spacing={1}>
         {StringDisplayer(impDescriptionString)}
