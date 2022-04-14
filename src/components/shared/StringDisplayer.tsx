@@ -11,5 +11,13 @@ import { IIMPString } from '../../interfaces/IIMPString'
  * @returns a component to display a string in a product
  */
 export const StringDisplayer: React.FC<IIMPString> = (impString: IIMPString): React.ReactElement => (
-  <TextField fullWidth={true} className={`StringDisplayer`} type={`string`} label={`${impString.id}`} contentEditable={false} value={`${impString.prefix}${impString.text}${impString.suffix}`} />
+  <TextField
+    fullWidth={true}
+    disabled={true}
+    className={`StringDisplayer`}
+    type={`text`}
+    label={`${impString.id}`}
+    contentEditable={false}
+    value={`${impString.prefix}${impString.text}${impString.suffix}`}
+  />
 )
