@@ -36,9 +36,7 @@ export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React
       <TableCell key={`upc${upcIdentifier}`} width={`10%`}>
         {NumberChanger({ number: product.upc, product })}
       </TableCell>
-      <TableCell key={`name${upcIdentifier}`}>
-        {StringChanger({ string: product.name, newValue: product.name.text, product: product })}
-      </TableCell>
+      <TableCell key={`name${upcIdentifier}`}>{StringChanger({ string: product.name, newValue: product.name.text, product: product })}</TableCell>
       <TableCell key={`min${upcIdentifier}`} width={`10%`}>
         {NumberChanger({ number: product.min, product })}
       </TableCell>
@@ -59,8 +57,8 @@ export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React
     <TableRow className={`InventoryRow`} key={`InventoryRow${upcIdentifier}`} sx={{ height: `20vh` }}>
       <TableCell key={`editButtons${upcIdentifier}`} width={`4%`}>
         <Stack direction={`column`}>
-            {InventoryEditButton(product)}
-            <p />
+          {InventoryEditButton(product)}
+          <p />
           {InventoryDeleteButton(product)}
         </Stack>
       </TableCell>
@@ -70,9 +68,7 @@ export const InventoryRow: React.FC<IIMPProduct> = (product: IIMPProduct): React
       <TableCell key={`upc${upcIdentifier}`} width={`10%`}>
         {NumberDisplayer(product.upc)}
       </TableCell>
-      <TableCell key={`name${upcIdentifier}`}>
-        {StringDisplayer(product.name)}
-      </TableCell>
+      <TableCell key={`name${upcIdentifier}`}>{StringDisplayer(product.name)}</TableCell>
       <TableCell key={`min${upcIdentifier}`} width={`10%`}>
         {NumberDisplayer(product.min)}
       </TableCell>

@@ -16,8 +16,8 @@ export const ImageDisplayer: React.FC<IIMPImage> = (imageToDisplay: IIMPImage, d
     <img
       src={imageToDisplay.data}
       alt={imageToDisplay.altText}
-      height={dimensions ? dimensions.height ? dimensions.height : 100 : 100}
-      width={dimensions ? dimensions.width ? dimensions.width : 100 : 100}
+      height={dimensions ? (dimensions.height ? dimensions.height : 100) : 100}
+      width={dimensions ? (dimensions.width ? dimensions.width : 100) : 100}
     />
   </Box>
 )

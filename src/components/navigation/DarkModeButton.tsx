@@ -22,7 +22,7 @@ export const DarkModeButton: React.FC = (): React.ReactElement => {
   }: {
     state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
-    } = React.useContext(ImpContext)
+  } = React.useContext(ImpContext)
   return (
     <IconButton
       key={`ThemeButton`}

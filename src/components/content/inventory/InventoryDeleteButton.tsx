@@ -25,7 +25,11 @@ export const InventoryDeleteButton: React.FC<IIMPProduct> = (product: IIMPProduc
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <IconButton key={`${product.upc.value}DeleteButton`} size={`small`} color={`error`} disabled={!product.editingMode}
+    <IconButton
+      key={`${product.upc.value}DeleteButton`}
+      size={`small`}
+      color={`error`}
+      disabled={!product.editingMode}
       onClick={(): void => {
         dispatch({
           type: `DELETE_INVENTORY`,
