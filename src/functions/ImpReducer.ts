@@ -40,11 +40,11 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       return reducerCleanup({ ...newState, loggedInUser: action.payload, contentAreaView: action.payload }, state)
     case `USE_NAV_BAR`:
       return reducerCleanup(navigateTo(action.payload, newState), state)
-    case `UNDO`: // when clicking the undo button
+    case `UNDO`:
       return undo(newState)
-    case `REDO`: // when clicking the redo button
+    case `REDO`:
       return redo(newState)
-    case `PURCHASE_CART`: // when clicking the purchase cart button
+    case `PURCHASE_CART`:
       return reducerCleanup(purchaseCart(newState))
     case `REFRESH_DATABASE`: // when pulling data from the database
       // TODO: should query the database with getDatabaseEntry function
@@ -71,7 +71,7 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       !updatedProduct ? newState.inStock.push(action.payload) : (newState.inStock = newState.inStock.map((product) => (product.upc.value === action.payload.upc.value ? action.payload : product)))
       // TODO: Write item to SQL database using updateDatabaseEntry function
       return reducerCleanup(newState, state)
-    case `RESTOCK_INVENTORY`: // when clicking the restock button
+    case `RESTOCK_INVENTORY`:
       return reducerCleanup({ ...newState, inStock: restockProducts(action.payload.inventory, action.payload.productsToBeRestocked) }, state)
     case `INVENTORY_SEARCH`:
       return reducerCleanup({ ...newState, inventorySearch: action.payload, filteredInventory: filterSearchResults(action.payload, newState.inStock) }, state)
@@ -83,9 +83,10 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       return reducerCleanup(newState, state, decrementNumber(action.payload))
     case `INCREMENT_NUMBER`:
       return reducerCleanup(newState, state, incrementNumber(action.payload))
-    case `SET_NUMBER`:
+    case `SET_NUMBER`: // TODO: remove arrows in text field
+      console.log(action.payload.number.value)
       return reducerCleanup(newState, state, setNumber(action.payload))
-    case `SET_STRING`: // when typing in a text field that accepts strings
+    case `SET_STRING`: // TODO: assign an IIMPString.text anywhere in the application
       return reducerCleanup(newState, state, setString(action.payload))
     default:
       return state
