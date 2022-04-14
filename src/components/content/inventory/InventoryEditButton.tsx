@@ -28,7 +28,7 @@ export const InventoryEditButton: React.FC<IIMPProduct> = (product: IIMPProduct)
     <IconButton
       key={`${product.upc.value}EditButton`}
       size={`small`}
-      color={product.editingMode === false ? `warning` : `primary`}
+      color={product.editingMode === false ? `warning` : `success`}
       onClick={(): void => {
         dispatch({
           type: `EDIT_INVENTORY`,
