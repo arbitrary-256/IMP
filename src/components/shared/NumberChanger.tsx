@@ -24,24 +24,11 @@ export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIM
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <Stack direction={`row`}>
-      <Button
-        size={`small`}
-        style={{ maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px' }}
-        variant={`contained`}
-        onClick={() => {
-          dispatch({
-            type: `DECREMENT_NUMBER`,
-            payload: { number: toChange.number, product: toChange.product }
-          })
-        }}
-      >
-        -
-      </Button>
+    <Stack direction={`column`}>
       <TextField
         className={`NumberChanger`}
         key={`orderSearch`}
-        type={`number`}
+        type={`text`}
         label={`${toChange.number.id}`}
         value={
           toChange.number.propertyName.toString() === `price` || toChange.number.propertyName.toString() === `cost` ? parseFloat(toChange.number.value.toString()).toFixed(2) : toChange.number.value
@@ -53,20 +40,34 @@ export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIM
           })
         }}
       />
-      {`${toChange.number.suffix ? toChange.number.suffix : ``}`}
-      <Button
-        size={`small`}
-        style={{ maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px' }}
-        variant={`contained`}
-        onClick={() => {
-          dispatch({
-            type: `INCREMENT_NUMBER`,
-            payload: { number: toChange.number, product: toChange.product }
-          })
-        }}
-      >
-        +
-      </Button>
+      <Stack direction={`row`}>
+        <Button
+          size={`small`}
+          style={{ maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px' }}
+          variant={`contained`}
+          onClick={() => {
+            dispatch({
+              type: `DECREMENT_NUMBER`,
+              payload: { number: toChange.number, product: toChange.product }
+            })
+          }}
+        >
+          -
+        </Button>
+        <Button
+          size={`small`}
+          style={{ maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px' }}
+          variant={`contained`}
+          onClick={() => {
+            dispatch({
+              type: `INCREMENT_NUMBER`,
+              payload: { number: toChange.number, product: toChange.product }
+            })
+          }}
+        >
+          +
+        </Button>
+      </Stack>
     </Stack>
   )
 }
