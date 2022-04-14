@@ -16,7 +16,6 @@ export const changeAppearance: Function = (theme: Theme): Theme => {
     case lightTheme:
       return darkTheme
     default:
-      console.log(`theme is not an expected value`)
       return lightTheme
   }
 }

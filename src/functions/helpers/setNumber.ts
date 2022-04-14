@@ -43,7 +43,7 @@ export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPPro
         newProduct.inCart.value > newProduct.onHand.value ? (newProduct.inCart.value = parseInt(newProduct.onHand.value.toString())) : void 0
         break
       default:
-        console.error(`IMPError: could not find product with UPC ${newProduct.upc} while setting ${newNumber.id}`)
+        console.error(`IMPError: could not find matching product while setting number`)
         break
     }
   }
