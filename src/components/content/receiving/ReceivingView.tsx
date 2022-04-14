@@ -30,7 +30,7 @@ export const ReceivingView: React.FC = (): React.ReactElement => {
           <TableHead>
             <TableRow>
               <TableCell width={`50%`}>{StringChanger({ string: state.productToReceive.name, newValue: state.productToReceive.name.text, product: state.productToReceive })}</TableCell>
-              <TableCell width={`50%`}>{ImageChanger({ image: state.productToReceive.image, product: state.productToReceive })}</TableCell>
+              <TableCell width={`50%`}>{ImageChanger(state.productToReceive)}</TableCell>
             </TableRow>
           </TableHead>
         </Table>
