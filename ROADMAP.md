@@ -6,13 +6,6 @@
 ## 0.8.0 - local state functionality
 - change `NumberChanger` component to type `text` and add validation RegExes
 - change `SET_NUMBER`, `INCREMENT_NUMBER`, and `DECREMENT_NUMBER` actions to use `text` instead of `number`
-- create `DELETE_PRODUCT` action
-- create `DeleteProductButton` component
-- add `DeleteProductButton` component to inventory row
-- create `EDIT_PRODUCT` action
-- create `EditProductButton` component
-- add `EditProductButton` component to inventory row
-- make inventory row default to being uneditable
 - Error: keep focus on product name input field when editing product name
 
 ## 0.9.0 - database functionality
