@@ -16,6 +16,7 @@ import { ISize } from './unionTypes/ISize'
  * @param size OPTIONAL the product's size, if it has one
  */
 export interface IIMPProduct {
+  editingMode: boolean
   name: IIMPString
   upc: IIMPNumber
   cost: IIMPNumber

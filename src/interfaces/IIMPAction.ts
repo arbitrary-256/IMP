@@ -8,6 +8,7 @@ import { IRefreshDatabaseAction } from './actionInterfaces/database/IRefreshData
 import { IUpdateDatabaseAction } from './actionInterfaces/database/IUpdateDatabaseAction'
 import { IUndoAction } from './actionInterfaces/history/IUndoAction'
 import { IRedoAction } from './actionInterfaces/history/IRedoAction'
+import { IEditInventoryEntryAction } from './actionInterfaces/inventory/IEditInventoryEntryAction'
 import { IReceiveInventoryAction } from './actionInterfaces/inventory/IReceiveInventoryAction'
 import { IDeleteInventoryEntryAction } from './actionInterfaces/inventory/IDeleteInventoryEntryAction'
 import { IUpdateInventoryEntryAction } from './actionInterfaces/inventory/IUpdateInventoryEntryAction'
@@ -35,6 +36,7 @@ export type IIMPAction =
   | IUpdateDatabaseAction // TODO: add business logic
   | IDeleteInventoryEntryAction // TODO: add business logic
   | IUpdateInventoryEntryAction // TODO: add business logic
+  | IEditInventoryEntryAction
   | IReceiveInventoryAction
   | IRestockInventoryEntryAction
   | IInventorySearchAction
