@@ -8,8 +8,6 @@
 ## 0.9.0 - database functionality
 - create TypeScript interface to represent database rows
 - create sql table in live SQL instance
-- create `.env` file template for database connection
-- enable environment variables in database connection at build
 - populate database with production data
 - create sql call functions - in progress
 - create submit inventory changes component
