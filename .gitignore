@@ -13,3 +13,4 @@
 yarn*
 /src-tauri/target
 /**/*/Cargo.lock
+/output
