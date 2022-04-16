@@ -4,12 +4,16 @@
 0.8.9
 
 ## 0.8.0 - local state functionality
-
+- Fix remaining issues with typing in inventory
 ## 0.9.0 - database functionality
 - TypeScript - create interface to represent database rows - in progress
 - TypeScript - create sql call functions - in progress
+- TypeScript - add sql call function to purchase cart button
+- TypeScript - add sql call function to purchase cart button
+- TypeScript - add sql call function to restock cart button
 - TypeScript - create submit inventory changes action
 - TypeScript - create submit inventory changes component for InventoryView
+- TypeScript - change appearance of inventory row to reflect changes not yet saved to the database
 - SQL - create sql table in live SQL instance - SQL server status: online and reachable, but unconfigured
 - SQL - populate database with production data 
 
@@ -18,7 +22,7 @@
 - GIMP - cleanup images/imp.png image matte line
 - Tauri - add menubar entries to tauri application so that it can be quit/minimized/etc via standard keyboard shortcuts
 
-## Other features this program would have
+## Other features this program would have in a production environment
 - _`user.authentication`_ utilize a real authentication system such as [LDAP](https://ldap.com/) or [OAuth](https://oauth.net/) with customizable privilege selection for users and groups
 - _`digital.payments`_ credit card and other digital (_PayPal_, _Apple Pay_, _Google Pay_, bank wires, cryptocurrency, etc.) payment processing functionality
 - _`real.hardware`_ interface with hardware such as cash drawers, inventory scanners, [RFID tags](https://en.wikipedia.org/wiki/Radio_frequency_identification_and_tracking_device), receipt printers, loyalty card writers, etc
