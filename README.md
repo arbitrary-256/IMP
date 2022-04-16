@@ -10,6 +10,7 @@
 - [Build for your OS](#build-for-your-os 'Build for your OS')
 - [Build cross-platform](#build-cross-platform 'Build cross-platform')
 - [Deploy your database](#deploy-your-database 'Deploy your database')
+- [Status and Roadmap](#status-and-roadmap 'Status and Roadmap')
 
 [](#about-imp)
 
@@ -21,7 +22,7 @@
 
 ### Current version
 
-IMP uses the semantic versioning system.  The current build of IMP is version 0.8.9
+IMP uses the semantic versioning system.  The current build of IMP is version `0.8.9`
 
 [](#develop)
 
@@ -97,5 +98,55 @@ You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easil
 ### Docker Swarm
 
 The file `mariadb-stack.yml` contains inline instructions and defines a Docker Swarm stack that deploys a MariaDB database.  This is the simplest way to deploy the database for most users.  If you happen to be a user who knows more about deploying MariaDB, feel free to deploy however you like - IMP does not discriminate.
+
+[ToC](#table-of-contents 'Return to Table of Contents')
+
+## Status and Roadmap
+
+[](#status-and-roadmap)
+
+### current project status
+
+- version `0.8.9`
+- `MariaDB` server status:
+    - ✅ Docker stack deploys
+    - ✅ Docker instance is reachable
+    - ❌ credentials created
+    - ❌ database created
+    - ❌ tables created
+    - ❌ data inserted
+
+## Milestones
+### 0.8.0 - local state functionality
+- Fix remaining cursor issues in price (everywere) and upc fields (inventory row) while typing
+### 0.9.0 - database functionality
+- TypeScript - create interface to represent database rows - in progress
+- TypeScript - create sql call functions - in progress
+- TypeScript - add sql call function to purchase cart button
+- TypeScript - add sql call function to purchase cart button
+- TypeScript - add sql call function to restock cart button
+- TypeScript - create submit inventory changes action
+- TypeScript - create submit inventory changes component for InventoryView
+- TypeScript - change appearance of inventory row to reflect changes not yet saved to the database
+- SQL - create sql table in live SQL instance
+- SQL - populate database with production data 
+
+### 1.0.0 - UI polish & Desktop application, general code cleanup
+- GitHub - add `Tauri Actions` to repo to automate desktop builds
+- GIMP - cleanup images/imp.png image matte line
+- Tauri - implement autoupdater key for desktop builds (see also `yarn sign` script in `package.json`)
+- Tauri - add menubar entries to tauri application so that it can be quit/minimized/etc via standard keyboard shortcuts
+
+### Other features this program would have in a production environment
+- _`v.user.authentication`_ utilize a real authentication system such as [LDAP](https://ldap.com/) or [OAuth](https://oauth.net/) with customizable privilege selection for users and groups
+- _`v.digital.payments`_ credit card and other digital (_PayPal_, _Apple Pay_, _Google Pay_, bank wires, cryptocurrency, etc.) payment processing functionality
+- _`v.real.hardware`_ interface with hardware such as cash drawers, inventory scanners, [RFID tags](https://en.wikipedia.org/wiki/Radio_frequency_identification_and_tracking_device), receipt printers, loyalty card writers, etc
+- _`v.data.reporting`_ provide a reporting system for data analysis of sales, profitability, and data visualization
+- _`v.theme.builder`_ a theme builder that allows the user to create custom MUI [Themes] for IMP to match their brand using the GUI
+- _`v.modern.database`_ utilize a [MongoDB](https://github.com/mongodb/mongo) or [Redis](https://redis.io/) database for data storage
+- _`v.clustered.database`_ cluster the database across an organization's hardware for reliabilty, scalability, redundancy, performance, etc
+- _`v.local.cache`_ bundle an external MongoDB binary into Tauri builds for ease of deployment or local database caching
+- _`v.mobile.version`_ mobile app builds using a Tauri feature (on their roadmap, but not yet implemented) built from one existing codebase
+- _`v.user.training`_ provide a tutorial mode for new users in addition to traditional documentation to familiarize them with IMP's features
 
 [ToC](#table-of-contents 'Return to Table of Contents')
