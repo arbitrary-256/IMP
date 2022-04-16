@@ -2,31 +2,24 @@
 version: '3.8'
 services:
  mariadb:
-# specify version of mariadb here by replacing `latest` with `${version}`
-  image: mariadb:latest
+  image: mariadb:${IMPMARIADBVERSION}
   volumes:
 # 1) make a directory to store your database files with this command: 
 ## mkdir mariadb
-   - ${PWD}/mariadb:/var/lib/mysql
   environment:
-# 2) choose root password below
-   - MYSQL_ROOT_PASSWORD="IMP_MARIADB_ROOT_PASSWORD"
-# 3) choose non-root username
-   - MYSQL_USER="IMP_MARIADB_REGULAR_USER"
-# 4) choose user password for the non-root user
-   - MYSQL_PASSWORD="IMP_MARIADB_REGULAR_PASSWORD"
-# 5) choose database name
-   - MYSQL_DATABASE="IMP_DATABASE_NAME"
-# 6) input values 3 through 5 in src/functions/database/connection.ts
-# 7) you will also need to add the FQDN or IP address of your Docker host
-# 8) save src/functions/database/connection.ts
-# your Docker host must expose port 3306 to the outside world (assuming you
-# want to use IMP from outside your local network) unless you change the port
+   - ${PWD}/mariadb:/var/lib/mysql
+   - MYSQL_ROOT_USER="${IMPROOTUSERNAME}"
+   - MYSQL_ROOT_PASSWORD="${IMPROOTPASSWORD}"
+   - MYSQL_USER="${IMPUSERNAME}"
+   - MYSQL_PASSWORD="${IMPPASSWORD}"
+   - MYSQL_DATABASE="${IMPDATABASE}"
   ports:
-   - '3306:3306'
-# 9) save this file
-# 11) then deploy your database with this command:
-## docker stack deploy -f mariadb-stack.yml ${STACKNAME}
+   - '${IMPEXTERNALPORT}:${IMPCONTAINERPORT}'
+# 2) populate your .env file from template.env
+# your Docker host must expose port ${IMPEXTERNALPORT}
+# (assuming you want to use IMP from outside your local network)
+# 3) then deploy your database with this command:
+## docker stack deploy -f --service-ports mariadb-stack.yml ${STACKNAME}
   networks:
    - mariadb
 networks:
