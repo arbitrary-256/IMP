@@ -25,7 +25,7 @@
     "cleanup-tsnode-script": "cp ./src/scripts/tsnode/regular.tsconfig.json ./tsconfig.json",
     "update-rust": "yarn clean && yarn && cd src-tauri && rustup update && cargo update && cd ..",
     "testEnv": "yarn prep-tsnode-script && yarn ts-node src/scripts/utility/testDotenv.ts && yarn cleanup-tsnode-script",
-    "bundle": "yarn clean && yarn && yarn build && mkdir output && mv src-tauri/target/release/bundle/* output && yarn zip &&",
+    "bundle": "yarn clean && yarn && yarn build && mkdir output && mv src-tauri/target/release/bundle/* output",
     "zip": "yarn clean && yarn && yarn build && yarn prep-tsnode-script && mkdir output && yarn ts-node src/scripts/utility/webzip.ts && yarn cleanup-tsnode-script"
   },
   "dependencies": {
