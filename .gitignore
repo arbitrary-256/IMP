@@ -2,7 +2,6 @@
 /.vscode
 /.VSCodeCounter/
 /binaries
-/build
 /cache
 /coverage
 /dist

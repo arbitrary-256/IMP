@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.Box {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.CartView {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.CartGrid {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.CartGridItem {
+  width: 20%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.Confirmation {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.ContentArea {
+  height: 95%;
+  flex-direction: column;
+  overflow: auto;
+  justify-content: flex-start;
+}
+.LoginAdmin {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.LoginEmployee {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.Logout {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.LogoutMessage {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.ManageInventory {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.NavBar {
+  height: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.NavBarButton {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: bold;
+}
+.OrderGrid {
+  overflow-y: auto;
+  height: 100%;
+  width: 80vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.OrderGridItem {
+  width: 20%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.OrderMiniCart {
+  overflow-y: auto;
+  width: 20vw;
+  text-align: center;
+  align-items: center;
+  align-content: start;
+  justify-content: center;
+}
+.OrderMiniCartItem {
+  height: 30%;
+  width: 90%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.OrderView {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.OrderViewSizer {
+  height: 100vh;
+  overflow: auto;
+}
+.Receiving {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.Restock {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.RestockItem {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.SearchInput {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

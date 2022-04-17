@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4a17c0ba.css",
+    "main.js": "/static/js/main.8ea47f74.js",
+    "static/media/imp.png": "/static/media/imp.ecd482222e8f829da9e7.png",
+    "static/media/alegreya-sans-sc-all-400-normal.woff": "/static/media/alegreya-sans-sc-all-400-normal.95a6bff7de13a7ce4be9.woff",
+    "static/media/alegreya-sans-sc-latin-400-normal.woff2": "/static/media/alegreya-sans-sc-latin-400-normal.719943e899ab2683200e.woff2",
+    "static/media/alegreya-sans-sc-latin-ext-400-normal.woff2": "/static/media/alegreya-sans-sc-latin-ext-400-normal.1a347bb0fd22a2d82aed.woff2",
+    "static/media/alegreya-sans-sc-greek-ext-400-normal.woff2": "/static/media/alegreya-sans-sc-greek-ext-400-normal.4dc955a53715ffec1ec4.woff2",
+    "static/media/alegreya-sans-sc-cyrillic-400-normal.woff2": "/static/media/alegreya-sans-sc-cyrillic-400-normal.5c968dc0319ff6012afc.woff2",
+    "static/media/alegreya-sans-sc-cyrillic-ext-400-normal.woff2": "/static/media/alegreya-sans-sc-cyrillic-ext-400-normal.e5c7073c060c4f39a2ab.woff2",
+    "static/media/alegreya-sans-sc-vietnamese-400-normal.woff2": "/static/media/alegreya-sans-sc-vietnamese-400-normal.f9f283e56b2ed2176d55.woff2",
+    "static/media/alegreya-sans-sc-greek-400-normal.woff2": "/static/media/alegreya-sans-sc-greek-400-normal.8b1c3054a42253034cc6.woff2",
+    "index.html": "/index.html",
+    "main.4a17c0ba.css.map": "/static/css/main.4a17c0ba.css.map",
+    "main.8ea47f74.js.map": "/static/js/main.8ea47f74.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a17c0ba.css",
+    "static/js/main.8ea47f74.js"
+  ]
+}
