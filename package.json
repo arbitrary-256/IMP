@@ -167,13 +167,17 @@
   },
   "prettier": {
     "arrowParens": "always",
+    "bracketSameLine": true,
+    "bracketSpacing": true,
     "jsxBracketSameLine": true,
     "jsxSingleQuote": true,
     "requirePragma": true,
     "printWidth": 200,
     "quoteProps": "consistent",
     "semi": false,
+    "singleAttributePerLine": true,
     "singleQuote": true,
+    "tabWidth": 2,
     "trailingComma": "none"
   }
 }
