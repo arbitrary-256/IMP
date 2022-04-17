@@ -5,6 +5,8 @@
 ## Table of Contents
 
 - [About IMP](#about-imp 'About IMP')
+- [Documentation](#documentation 'Documentation')
+- [Demo](#demo 'Demo')
 - [Develop](#develop 'Develop')
 - [Build for web](#build-for-web 'Build for web')
 - [Build for your OS](#build-for-your-os 'Build for your OS')
@@ -26,6 +28,24 @@ IMP uses the semantic versioning system.  The current build of IMP is version `0
 
 [](#develop)
 
+
+## Documentation
+
+[](#documentation)
+
+[TypeDoc Documentation Page on GitHub Pages](https://zindrek.github.io/IMP/docs/)
+
+[ToC](#table-of-contents 'Return to Table of Contents')
+
+## Demo
+
+[](#demo)
+
+
+[Test the Application on GitHub Pages](https://zindrek.github.io/IMP/build/)
+
+[ToC](#table-of-contents 'Return to Table of Contents')
+
 ## Develop
 
 1. Install your IDE
@@ -34,7 +54,6 @@ IMP uses the semantic versioning system.  The current build of IMP is version `0
 4. Run `yarn start` to start a hot-reloadable development server in a Tauri application
 
 [ToC](#table-of-contents 'Return to Table of Contents')
-
 ### Prerequisites
 
 You will need to install the following things to build IMP:
@@ -44,16 +63,19 @@ You will need to install the following things to build IMP:
 - [Rust](https://www.rust-lang.org/tools/install), as it is a prerequisite for Tauri.
 - [Docker Swarm](https://docs.docker.com/engine/swarm) **_OR_** another way to deploy MariaDB
 
+[ToC](#table-of-contents 'Return to Table of Contents')
 ### Languages
 
 - [Rust version 1.6^](https://www.rust-lang.org/) - for Tauri's backend code
 - [Typescript version 4.6^](https://www.typescriptlang.org/) - for Tauri's frontend code, React.JS, and Material-UI
 
+[ToC](#table-of-contents 'Return to Table of Contents')
 ### Front end technologies
 
 - [React.JS version 18^](https://reactjs.org/) using [create-react-app](https://create-react-app.dev/) - web components library
 - [Material-UI version 5^](https://material-ui.com/) - React.JS component and styling library
 
+[ToC](#table-of-contents 'Return to Table of Contents')
 ### Back end technologies
 
 - [Tauri version 1.0.0-rc.3](https://tauri.studio) - cross-platform desktop framework for compiling web applications
@@ -81,10 +103,12 @@ Run `yarn bundle` to build a double-clickable installer for your operating syste
 
 [](#build-cross-platform)
 
+[ToC](#table-of-contents 'Return to Table of Contents')
 ### Running `yarn bundle` on multiple platforms
 
 You can run `yarn bundle` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.
 
+[ToC](#table-of-contents 'Return to Table of Contents')
 ### Using GitHub Actions
 
 You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `yarn bundle` on multiple OSes at once on GitHub's servers.
@@ -116,9 +140,12 @@ The file `mariadb-stack.yml` contains inline instructions and defines a Docker S
     - ❌ tables created
     - ❌ data inserted
 
+[ToC](#table-of-contents 'Return to Table of Contents')
 ## Milestones
 ### 0.8.0 - local state functionality
 - Fix remaining cursor issues in price (everywere) and upc fields (inventory row) while typing
+
+[ToC](#table-of-contents 'Return to Table of Contents')
 ### 0.9.0 - database functionality
 - TypeScript - create interface to represent database rows - in progress
 - TypeScript - create sql call functions - in progress
@@ -131,11 +158,14 @@ The file `mariadb-stack.yml` contains inline instructions and defines a Docker S
 - SQL - create sql table in live SQL instance
 - SQL - populate database with production data 
 
+[ToC](#table-of-contents 'Return to Table of Contents')
 ### 1.0.0 - UI polish & Desktop application, general code cleanup
 - GitHub - add `Tauri Actions` to repo to automate desktop builds
 - GIMP - cleanup images/imp.png image matte line
 - Tauri - implement autoupdater key for desktop builds (see also `yarn sign` script in `package.json`)
 - Tauri - add menubar entries to tauri application so that it can be quit/minimized/etc via standard keyboard shortcuts
+
+[ToC](#table-of-contents 'Return to Table of Contents')
 
 ### Other features this program would have in a production environment
 - _`v.user.authentication`_ utilize a real authentication system such as [LDAP](https://ldap.com/) or [OAuth](https://oauth.net/) with customizable privilege selection for users and groups
