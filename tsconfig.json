@@ -21,9 +21,10 @@
     "target": "es2022"
   },
   "typedocOptions": {
-    "entryPoints": ["src/"],
+    "entryPoints": ["src/", "mariadb-stack.yml"],
     "entryPointStrategy": "expand",
     "out": "docs"
   },
-  "include": ["src"]
+  "include": ["public", "src/**/*"],
+  "exclude": ["src/scripts"]
 }

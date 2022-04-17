@@ -10,12 +10,20 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
     "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
+    "strictNullChecks": true,
     "target": "ESNext"
+  },
+  "typedocOptions": {
+    "entryPoints": ["src/", "mariadb-stack.yml"],
+    "entryPointStrategy": "expand",
+    "out": "docs"
   },
   "include": ["public", "src/**/*"],
   "exclude": ["src/scripts"]

@@ -20,5 +20,11 @@
     "strictNullChecks": true,
     "target": "es2022"
   },
-  "include": ["src"]
+  "typedocOptions": {
+    "entryPoints": ["src/", "mariadb-stack.yml"],
+    "entryPointStrategy": "expand",
+    "out": "docs"
+  },
+  "include": ["public", "src/**/*"],
+  "exclude": ["src/scripts"]
 }
