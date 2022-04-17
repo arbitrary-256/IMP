@@ -33,8 +33,7 @@ export const EmployeeButton: React.FC<INavBarTarget> = (target: INavBarTarget): 
           payload: target
         })
       }}
-      disabled={state.loggedInUser.includes(`Logged Out`) || state.contentAreaView === target}
-    >
+      disabled={state.loggedInUser.includes(`Logged Out`) || state.contentAreaView === target}>
       {target}
     </Button>
   )

@@ -43,9 +43,13 @@ export const OrderView: React.FC = (): React.ReactElement => {
   }
   cartTotal.value = parseFloat(cartTotal.value.toFixed(2))
   return (
-    <Box className={`OrderView`} sx={{ display: state.contentAreaView === `Order` ? `block` : `none` }}>
+    <Box
+      className={`OrderView`}
+      sx={{ display: state.contentAreaView === `Order` ? `block` : `none` }}>
       <Box className={`SearchInput`}>{SearchOrder({})}</Box>
-      <Stack className={`OrderViewSizer`} direction={`row`}>
+      <Stack
+        className={`OrderViewSizer`}
+        direction={`row`}>
         <Box>{OrderGrid({})}</Box>
         <Box width={`100%`}>
           <p />

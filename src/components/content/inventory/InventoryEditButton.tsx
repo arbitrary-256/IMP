@@ -34,8 +34,7 @@ export const InventoryEditButton: React.FC<IIMPProduct> = (product: IIMPProduct)
           type: `EDIT_INVENTORY`,
           payload: product
         })
-      }}
-    >
+      }}>
       <Edit />
     </IconButton>
   )

@@ -43,10 +43,16 @@ export const OrderMiniCart: React.FC = (): React.ReactElement => {
   return (
     <>
       <p />
-      <Grid container className={`OrderMiniCart`} spacing={2} columns={1}>
+      <Grid
+        container
+        className={`OrderMiniCart`}
+        spacing={2}
+        columns={1}>
         {newCart.map(
           (product: IIMPProduct): React.ReactElement => (
-            <Grid item key={`OrderMiniCart${product.upc.value}`}>
+            <Grid
+              item
+              key={`OrderMiniCart${product.upc.value}`}>
               {OrderMiniCartItem(product)}
             </Grid>
           )

@@ -24,7 +24,9 @@ export const ReceivingView: React.FC = (): React.ReactElement => {
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <Box className={`Receiving`} sx={{ display: state.contentAreaView === `Receiving` ? `block` : `none` }}>
+    <Box
+      className={`Receiving`}
+      sx={{ display: state.contentAreaView === `Receiving` ? `block` : `none` }}>
       <Card>
         <Table>
           <TableHead>
@@ -72,8 +74,7 @@ export const ReceivingView: React.FC = (): React.ReactElement => {
               type: `RECEIVE_INVENTORY`,
               payload: state.productToReceive
             })
-          }}
-        >
+          }}>
           Receive Inventory
         </Button>
       </Card>

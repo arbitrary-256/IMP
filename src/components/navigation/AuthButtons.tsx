@@ -23,7 +23,10 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <Stack className={`AuthButtons`} direction={`row`} spacing={2}>
+    <Stack
+      className={`AuthButtons`}
+      direction={`row`}
+      spacing={2}>
       <p />
       <Button
         size={`large`}
@@ -35,8 +38,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
           })
         }}
         disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
-        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `text` : `contained`}
-      >
+        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `text` : `contained`}>
         {`Login as Manager`}
       </Button>
       <Button
@@ -49,8 +51,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
           })
         }}
         disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
-        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `text` : `contained`}
-      >
+        variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `text` : `contained`}>
         {`Login as Employee`}
       </Button>
       <Button
@@ -63,8 +64,7 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
           })
         }}
         disabled={state.loggedInUser.includes(`Logged Out`)}
-        variant={state.loggedInUser.includes(`Logged Out`) ? `text` : `contained`}
-      >
+        variant={state.loggedInUser.includes(`Logged Out`) ? `text` : `contained`}>
         Log Out
       </Button>
     </Stack>

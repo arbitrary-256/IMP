@@ -27,7 +27,9 @@ export const OrderMiniCartItem: React.FC<IIMPProduct> = (product: IIMPProduct): 
   }
   return (
     <>
-      <Card key={`MiniCart${product.name.text}`} className={`MiniCartItem`}>
+      <Card
+        key={`MiniCart${product.name.text}`}
+        className={`MiniCartItem`}>
         {ImageDisplayer(product.image)}
         <p />
         {StringDisplayer(product.name)}

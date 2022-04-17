@@ -29,8 +29,7 @@ export const PurchaseCartButton: React.FC = (): React.ReactElement => {
           type: `PURCHASE_CART`,
           payload: state.cart
         })
-      }}
-    >
+      }}>
       Purchase Cart
     </Button>
   )

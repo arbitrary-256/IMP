@@ -31,8 +31,7 @@ export const RedoButton: React.FC = (): React.ReactElement => {
         })
       }}
       disabled={!isLoggedIn || state.stateFuture.length === 0}
-      variant={!isLoggedIn || state.stateFuture.length === 0 ? `contained` : `text`}
-    >
+      variant={!isLoggedIn || state.stateFuture.length === 0 ? `contained` : `text`}>
       Redo
     </Button>
   )

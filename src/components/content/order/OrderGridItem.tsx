@@ -48,7 +48,9 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
     <Card>
       <CardMedia>{ImageDisplayer(product.image)}</CardMedia>
       <p />
-      <Stack direction={`column`} spacing={2}>
+      <Stack
+        direction={`column`}
+        spacing={2}>
         {StringDisplayer(product.name)}
         {NumberDisplayer(product.price)}
         {numberAvailable.value > 0 ? NumberDisplayer(numberAvailable) : StringDisplayer(outOfStock)}
@@ -66,8 +68,7 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
               payload: { number: product.inCart, product: product }
             })
           }
-        }}
-      >
+        }}>
         Add to Cart
       </Button>
     </Card>

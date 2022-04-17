@@ -32,7 +32,9 @@ export const RestockView: React.FC = (): React.ReactElement => {
       return eachProduct.upc.value.toString().includes(state.restockSearch.toLowerCase()) || eachProduct.name.text.toLowerCase().includes(state.restockSearch.toLowerCase())
     })
   return (
-    <Box className={`Restock`} sx={{ display: state.contentAreaView === `Restock` ? `block` : `none` }}>
+    <Box
+      className={`Restock`}
+      sx={{ display: state.contentAreaView === `Restock` ? `block` : `none` }}>
       {SearchRestock({})}
       <p />
       <Button
@@ -44,15 +46,19 @@ export const RestockView: React.FC = (): React.ReactElement => {
             type: `RESTOCK_INVENTORY`,
             payload: { inventory: state.inStock, productsToBeRestocked: productsToRestock }
           })
-        }}
-      >
+        }}>
         Restock All Products
       </Button>
       <p />
-      <Grid container spacing={2}>
+      <Grid
+        container
+        spacing={2}>
         {productsToRestock.map((eachProduct: IIMPProduct) => {
           return (
-            <Grid item className={`OrderGridItem`} key={eachProduct.upc.value}>
+            <Grid
+              item
+              className={`OrderGridItem`}
+              key={eachProduct.upc.value}>
               {RestockItem(eachProduct)}
             </Grid>
           )

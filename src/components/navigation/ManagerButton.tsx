@@ -34,8 +34,7 @@ export const ManagerButton: React.FC<INavBarTarget> = (target: INavBarTarget): R
           payload: target
         })
       }}
-      disabled={!state.loggedInUser.includes(`Manager`) || state.contentAreaView === target}
-    >
+      disabled={!state.loggedInUser.includes(`Manager`) || state.contentAreaView === target}>
       {target}
     </Button>
   )

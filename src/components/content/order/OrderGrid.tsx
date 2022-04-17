@@ -31,9 +31,14 @@ export const OrderGrid: React.FC = (): React.ReactElement => {
     <Box className={`OrderGrid`}>
       <Paper>
         <p />
-        <Grid container spacing={2}>
+        <Grid
+          container
+          spacing={2}>
           {filteredOrder.map((eachProduct: IIMPProduct) => (
-            <Grid item className={`OrderGridItem`} key={eachProduct.upc.value}>
+            <Grid
+              item
+              className={`OrderGridItem`}
+              key={eachProduct.upc.value}>
               {OrderGridItem(eachProduct)}
             </Grid>
           ))}

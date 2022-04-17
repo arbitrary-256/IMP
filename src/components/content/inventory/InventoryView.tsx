@@ -27,7 +27,9 @@ export const InventoryView: React.FC = (): React.ReactElement => {
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <Box className={`InventoryView`} sx={{ display: state.contentAreaView === `Inventory` ? `block` : `none` }}>
+    <Box
+      className={`InventoryView`}
+      sx={{ display: state.contentAreaView === `Inventory` ? `block` : `none` }}>
       {SearchInventory({})}
       <Table>
         <TableBody>

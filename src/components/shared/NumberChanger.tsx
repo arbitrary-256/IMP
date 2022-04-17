@@ -50,8 +50,7 @@ export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIM
               type: `DECREMENT_NUMBER`,
               payload: { number: toChange.number, product: toChange.product }
             })
-          }}
-        >
+          }}>
           -
         </Button>
         <Button
@@ -63,8 +62,7 @@ export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIM
               type: `INCREMENT_NUMBER`,
               payload: { number: toChange.number, product: toChange.product }
             })
-          }}
-        >
+          }}>
           +
         </Button>
       </Stack>

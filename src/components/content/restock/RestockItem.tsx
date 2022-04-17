@@ -28,7 +28,10 @@ export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (
-    <Grid item className={`RestockItem`} key={product.upc.value}>
+    <Grid
+      item
+      className={`RestockItem`}
+      key={product.upc.value}>
       <Card>
         <p />
         {StringDisplayer(product.name)}
@@ -52,8 +55,7 @@ export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.
               type: `RESTOCK_INVENTORY`,
               payload: { inventory: state.inStock, productsToBeRestocked: [product] }
             })
-          }}
-        >
+          }}>
           Restock {product.max.value - product.inStock.value} units
         </Button>
       </Card>

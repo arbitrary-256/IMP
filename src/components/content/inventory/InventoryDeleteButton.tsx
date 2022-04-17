@@ -35,8 +35,7 @@ export const InventoryDeleteButton: React.FC<IIMPProduct> = (product: IIMPProduc
           type: `DELETE_INVENTORY`,
           payload: product
         })
-      }}
-    >
+      }}>
       <Delete />
     </IconButton>
   )

@@ -62,8 +62,7 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
             type: `SET_NUMBER`,
             payload: { number: { ...product.inCart, value: 0 }, product: product }
           })
-        }}
-      >
+        }}>
         Remove from Cart
       </Button>
     </Card>

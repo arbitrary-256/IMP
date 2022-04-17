@@ -77,22 +77,33 @@ export const LogoutView: React.FC = (): React.ReactElement => {
     suffix: ``
   }
   return (
-    <Box className={`Logout`} sx={{ display: state.loggedInUser === `Logged Out` ? `block` : `none` }}>
+    <Box
+      className={`Logout`}
+      sx={{ display: state.loggedInUser === `Logged Out` ? `block` : `none` }}>
       <Stack direction={`column`}>
-        <Box className={`LogoutMessage`} width={`30%`} margin={`auto`}>
+        <Box
+          className={`LogoutMessage`}
+          width={`30%`}
+          margin={`auto`}>
           {StringDisplayer(loginRequiredString)}
         </Box>
-        <Box className={`LogoutImage`} height={`50vh`}>
+        <Box
+          className={`LogoutImage`}
+          height={`50vh`}>
           {ImageDisplayer({ data: imp, altText: `imp` }, { height: 450, width: 450 })}
         </Box>
-        <Stack direction={`row`} spacing={1}>
+        <Stack
+          direction={`row`}
+          spacing={1}>
           {StringDisplayer(impDescriptionString)}
           {StringDisplayer(impVersionString)}
           {StringDisplayer(copyrightString)}
           {StringDisplayer(programmingLanguagesString)}
         </Stack>
         <p />
-        <Stack direction={`row`} spacing={1}>
+        <Stack
+          direction={`row`}
+          spacing={1}>
           {StringDisplayer(authorString)}
           {StringDisplayer(documentationString)}
           {StringDisplayer(testingString)}

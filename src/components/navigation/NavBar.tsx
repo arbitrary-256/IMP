@@ -17,7 +17,10 @@ import { UndoButton } from './UndoButton'
 export const NavBar: React.FC = (): React.ReactElement => {
   return (
     <Box className={`NavBar`}>
-      <Stack justifyContent={`center`} direction={`row`} spacing={2}>
+      <Stack
+        justifyContent={`center`}
+        direction={`row`}
+        spacing={2}>
         <p />
         {UndoButton({})}
         {RedoButton({})}

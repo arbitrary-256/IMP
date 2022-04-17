@@ -50,11 +50,15 @@ export const ImageChanger: Function = (product: IIMPProduct) => {
             })
           }
           reader.readAsDataURL(newFile)
-        }}
-      >
+        }}>
         {({ getRootProps, getInputProps }) => (
           <div {...getRootProps()}>
-            <img src={product.image.data} alt={product.image.altText} height={100} width={100} />
+            <img
+              src={product.image.data}
+              alt={product.image.altText}
+              height={100}
+              width={100}
+            />
             <input {...getInputProps()} />
           </div>
         )}
