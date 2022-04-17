@@ -9,6 +9,7 @@
   "keywords": [],
   "private": true,
   "scripts": {
+    "doc": "yarn typedoc && yarn pretty",
     "setup": "npm install -g yarn && yarn && echo 'Frontend Setup complete' && echo run 'yarn setup-rust-nix' for linux / macOS or use the installer from https://win.rustup.rs/x86_64 for 64-bit Windows or https://win.rustup.rs/i686 for 32-bit Windows to finish setup",
     "setup-rust-nix": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && echo 'Rust Installation complete'",
     "setup-rust-win": "echo 'Windows users must install Rust using the installer from https://win.rustup.rs/x86_64 or https://win.rustup.rs/i686'",
@@ -104,11 +105,16 @@
   "jest": {
     "collectCoverageFrom": [
       "**/*.{ts,tsx}",
-      "!**/node_modules/**"
+      "!**/node_modules/**",
+      "!**/build/**",
+      "!**/docs/**",
+      "!**/output/**",
+      "!**/public/**"
     ],
     "coveragePathIgnorePatterns": [
       "/build/",
       "/dist/",
+      "/docs/",
       "/public/",
       "/node_modules/",
       "/src-tauri/",
