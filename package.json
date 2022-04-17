@@ -64,6 +64,7 @@
     "prettier": "latest",
     "react-scripts": "latest",
     "ts-node": "latest",
+    "typedoc": "latest",
     "typescript": "latest",
     "yarn": "latest"
   },

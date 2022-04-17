@@ -20,5 +20,10 @@
     "strictNullChecks": true,
     "target": "es2022"
   },
+  "typedocOptions": {
+    "entryPoints": ["src/"],
+    "entryPointStrategy": "expand",
+    "out": "docs"
+  },
   "include": ["src"]
 }
