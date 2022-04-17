@@ -6,7 +6,6 @@
 
 - [About IMP](#about-imp 'About IMP')
 - [Documentation](#documentation 'Documentation')
-- [Demo](#demo 'Demo')
 - [Develop](#develop 'Develop')
 - [Build for web](#build-for-web 'Build for web')
 - [Build for your OS](#build-for-your-os 'Build for your OS')
@@ -34,15 +33,6 @@ IMP uses the semantic versioning system.  The current build of IMP is version `0
 [](#documentation)
 
 [TypeDoc Documentation Page on GitHub Pages](https://zindrek.github.io/IMP/docs/)
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-
-## Demo
-
-[](#demo)
-
-
-[Test the Application on GitHub Pages](https://zindrek.github.io/IMP/build/)
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
