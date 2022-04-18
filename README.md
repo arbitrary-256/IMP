@@ -23,7 +23,7 @@
 
 ### Current version
 
-IMP uses the semantic versioning system.  The current build of IMP is version `0.8.9`
+IMP uses the semantic versioning system.  The current build of IMP is version `0.9.0`
 
 [](#develop)
 
@@ -121,7 +121,7 @@ The file `mariadb-stack.yml` contains inline instructions and defines a Docker S
 
 ### current project status
 
-- version `0.8.9`
+- version `0.9.0`
 - `MariaDB` server status:
     - ✅ Docker stack deploys
     - ✅ Docker instance is reachable
@@ -132,10 +132,9 @@ The file `mariadb-stack.yml` contains inline instructions and defines a Docker S
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ## Milestones
-### 0.8.0 - local state functionality
-- Fix remaining cursor issues in price (everywere) and upc fields (inventory row) while typing
 
 [ToC](#table-of-contents 'Return to Table of Contents')
+
 ### 0.9.0 - database functionality
 - TypeScript - create interface to represent database rows - in progress
 - TypeScript - create sql call functions - in progress
