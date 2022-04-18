@@ -4,6 +4,7 @@ dotenv.config()
 
 export const testDotenv: Function = (): void => {
   !process.env.IMPSTACKNAME ? console.error(`no IMPSTACKNAME found in .env`) : console.log(`IMPSTACKNAME: ${process.env.IMPSTACKNAME}`)
+  !process.env.IMPMARIADBVERSION ? console.error(`no IMPMARIADBVERSION found in .env`) : console.log(`IMPMARIADBVERSION: ${process.env.IMPMARIADBVERSION}`)
   !process.env.IMPMARIADBHOST ? console.error(`no IMPMARIADBHOST found in .env`) : console.log(`IMPMARIADBHOST: ${process.env.IMPMARIADBHOST}`)
   !process.env.IMPCONTAINERPORT ? console.error(`no IMPCONTAINERPORT found in .env`) : console.log(`IMPCONTAINERPORT: ${process.env.IMPCONTAINERPORT}`)
   !process.env.IMPEXTERNALPORT ? console.error(`no IMPEXTERNALPORT found in .env`) : console.log(`IMPEXTERNALPORT: ${process.env.IMPEXTERNALPORT}`)
