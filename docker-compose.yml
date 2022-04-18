@@ -1,22 +1,23 @@
+# 1) create and populate your .env file from template.env
+# 2) run 'yarn imp-deploy' to deploy webapp and database to local docker compose
 # a simple docker-compose / docker-stack file to setup a MariaDB instance and an nginx server
 version: '3.8'
 services:
-### web server to host the web application
+# web server to host the web application
  webapp:
-  image: nginx:latest
+  image: nginx:${IMPNGINXVERSION}
   volumes:
    - ${PWD}/build:/usr/share/nginx/html
+# your Docker host must expose port ${IMPFRONTENDPORT}
+# if you want to expose the front end to the internet
   ports:
-   - 80:${IMPFRONTENDPORT}
+   - "${IMPFRONTENDPORT}:80"
 
-### backend MariaDB database
+# backend MariaDB database
  database:
   image: mariadb:${IMPMARIADBVERSION}
-# 1) make a directory to store your database files with this command: 
-## mkdir mariadb
-# create the bind mount for local storage of the database on the host
   volumes:
-   - ${PWD}/mariadb:/var/lib/mysql
+   - ${PWD}/mariadbdata:/var/lib/mysql
   environment:
    - MYSQL_ROOT_USER="${IMPROOTUSERNAME}"
    - MYSQL_ROOT_PASSWORD="${IMPROOTPASSWORD}"
@@ -25,13 +26,8 @@ services:
    - MYSQL_DATABASE="${IMPDATABASE}"
   ports:
    - '${IMPEXTERNALPORT}:${IMPCONTAINERPORT}'
-# 2) create and populate your .env file from template.env
 # your Docker host must expose port ${IMPEXTERNALPORT}
-# (assuming you want to use IMP from outside your local network)
-# 3) if your docker node isn't part of a swarm, run
-## docker swarm init
-# 4) then deploy your database with this command:
-## docker stack deploy -f imp-stack.yml ${IMPSTACKNAME}
+# (assuming you want to use the front end from outside your local network)
   networks:
    - impnet
 networks:
