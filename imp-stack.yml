@@ -5,9 +5,9 @@ services:
  webapp:
   image: nginx:latest
   volumes:
-   - ${PWD}/build:/var/www/html
+   - ${PWD}/build:/usr/share/nginx/html
   ports:
-   - 80:3000
+   - 80:${IMPFRONTENDPORT}
 
 ### backend MariaDB database
  database:
