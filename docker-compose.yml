@@ -8,7 +8,7 @@ services:
   image: nginx:${IMPNGINXVERSION}
   volumes:
    - ${PWD}/build:/usr/share/nginx/html
-# your Docker host must expose port ${IMPFRONTENDPORT}
+# your Docker host must expose port ${IMPFRONTENDPORT} from your .env file
 # if you want to expose the front end to the internet
   ports:
    - "${IMPFRONTENDPORT}:80"
@@ -26,8 +26,8 @@ services:
    - MYSQL_DATABASE="${IMPDATABASE}"
   ports:
    - '${IMPEXTERNALPORT}:${IMPCONTAINERPORT}'
-# your Docker host must expose port ${IMPEXTERNALPORT}
-# (assuming you want to use the front end from outside your local network)
+# your Docker host must expose port ${IMPEXTERNALPORT} from your .env file
+# if you want to use a IMP instance hosted outside your local network
   networks:
    - impnet
 networks:
