@@ -111,7 +111,7 @@ You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easil
 
 ### Docker Swarm
 
-The file `mariadb-stack.yml` contains inline instructions and defines a Docker Swarm stack that deploys a MariaDB database.  This is the simplest way to deploy the database for most users.  If you happen to be a user who knows more about deploying MariaDB, feel free to deploy however you like - IMP does not discriminate.
+The file `imp-stack.yml` contains inline instructions and defines a Docker Swarm stack that deploys a MariaDB database.  This is the simplest way to deploy the database for most users.  If you happen to be a user who knows more about deploying MariaDB, feel free to deploy however you like - IMP does not discriminate.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 

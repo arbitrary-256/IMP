@@ -1,0 +1,39 @@
+# a simple docker-compose / docker-stack file to setup a MariaDB instance and an nginx server
+version: '3.8'
+services:
+### web server to host the web application
+ webapp:
+  image: nginx:latest
+  volumes:
+   - ${PWD}/build:/var/www/html
+  ports:
+   - 80:3000
+
+### backend MariaDB database
+ database:
+  image: mariadb:${IMPMARIADBVERSION}
+# 1) make a directory to store your database files with this command: 
+## mkdir mariadb
+# create the bind mount for local storage of the database on the host
+  volumes:
+   - ${PWD}/mariadb:/var/lib/mysql
+  environment:
+   - MYSQL_ROOT_USER="${IMPROOTUSERNAME}"
+   - MYSQL_ROOT_PASSWORD="${IMPROOTPASSWORD}"
+   - MYSQL_USER="${IMPUSERNAME}"
+   - MYSQL_PASSWORD="${IMPPASSWORD}"
+   - MYSQL_DATABASE="${IMPDATABASE}"
+  ports:
+   - '${IMPEXTERNALPORT}:${IMPCONTAINERPORT}'
+# 2) create and populate your .env file from template.env
+# your Docker host must expose port ${IMPEXTERNALPORT}
+# (assuming you want to use IMP from outside your local network)
+# 3) if your docker node isn't part of a swarm, run
+## docker swarm init
+# 4) then deploy your database with this command:
+## docker stack deploy -f imp-stack.yml ${IMPSTACKNAME}
+  networks:
+   - impnet
+networks:
+ impnet:
+  external: false
