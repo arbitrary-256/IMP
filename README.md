@@ -122,13 +122,16 @@ The file `imp-stack.yml` contains inline instructions and defines a Docker Swarm
 ### current project status
 
 - version `0.9.0`
+- `Nginx` server status:
+    - ✅ Docker stack deploys performance-optimized version
+    - ✅ Docker instance is reachable
 - `MariaDB` server status:
     - ✅ Docker stack deploys
     - ✅ Docker instance is reachable
-    - ❌ credentials created
-    - ❌ database created
-    - ❌ tables created
-    - ❌ data inserted
+    - ✅ credentials created from .env file
+    - ✅ database created
+    - ❌ table created
+    - ❌ data rows populated
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ## Milestones
@@ -136,6 +139,7 @@ The file `imp-stack.yml` contains inline instructions and defines a Docker Swarm
 [ToC](#table-of-contents 'Return to Table of Contents')
 
 ### 0.9.0 - database functionality
+- GitHub issue #3 - in progress
 - TypeScript - create interface to represent database rows - in progress
 - TypeScript - create sql call functions - in progress
 - TypeScript - add sql call function to purchase cart button
