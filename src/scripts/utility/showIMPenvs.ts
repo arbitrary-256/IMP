@@ -2,10 +2,11 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
-export const testDotenv: Function = (): void => {
+export const showIMPenvs: Function = (): void => {
   !process.env.IMPSTACKNAME ? console.error(`no IMPSTACKNAME found in .env`) : console.log(`IMPSTACKNAME: ${process.env.IMPSTACKNAME}`)
   !process.env.IMPMARIADBVERSION ? console.error(`no IMPMARIADBVERSION found in .env`) : console.log(`IMPMARIADBVERSION: ${process.env.IMPMARIADBVERSION}`)
   !process.env.IMPMARIADBHOST ? console.error(`no IMPMARIADBHOST found in .env`) : console.log(`IMPMARIADBHOST: ${process.env.IMPMARIADBHOST}`)
+  !process.env.IMPFRONTENDPORT ? console.error(`no IMPFRONTENDPORT found in .env`) : console.log(`IMPFRONTENDPORT: ${process.env.IMPFRONTENDPORT}`)
   !process.env.IMPCONTAINERPORT ? console.error(`no IMPCONTAINERPORT found in .env`) : console.log(`IMPCONTAINERPORT: ${process.env.IMPCONTAINERPORT}`)
   !process.env.IMPEXTERNALPORT ? console.error(`no IMPEXTERNALPORT found in .env`) : console.log(`IMPEXTERNALPORT: ${process.env.IMPEXTERNALPORT}`)
   !process.env.IMPROOTUSERNAME ? console.error(`no IMPROOTUSERNAME found in .env`) : console.log(`IMPROOTUSERNAME: ${process.env.IMPROOTUSERNAME}`)
@@ -15,4 +16,4 @@ export const testDotenv: Function = (): void => {
   !process.env.IMPDATABASE ? console.error(`no DATABASE found in .env`) : console.log(`IMPDATABASE: ${process.env.IMPDATABASE}`)
 }
 
-testDotenv()
+showIMPenvs()
