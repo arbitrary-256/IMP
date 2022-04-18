@@ -143,7 +143,6 @@ The file `imp-stack.yml` contains inline instructions and defines a Docker Swarm
 - TypeScript - create interface to represent database rows - in progress
 - TypeScript - create sql call functions - in progress
 - TypeScript - add sql call function to purchase cart button
-- TypeScript - add sql call function to purchase cart button
 - TypeScript - add sql call function to restock cart button
 - TypeScript - create submit inventory changes action
 - TypeScript - create submit inventory changes component for InventoryView
