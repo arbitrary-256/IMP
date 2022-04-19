@@ -10,7 +10,7 @@ const mariaUserCredentials: Function = (): mariadb.ConnectionConfig => {
   dotenv.config()
   return {
     // the host address of the mariadb or mysql server - defaults to port 3306, set as ${IP}:${PORT}
-    host: process.env.IMPHOST,
+    host: process.env.IMPMARIADBHOST,
     // the user name to authenticate as
     user: process.env.IMPUSERNAME,
     // the password to use to authenticate
@@ -22,7 +22,7 @@ const mariaUserCredentials: Function = (): mariadb.ConnectionConfig => {
 const mariaRootCredentials: Function = (): mariadb.ConnectionConfig => {
   return {
     // the host address of the mariadb or mysql server - defaults to port 3306, set as ${IP}:${PORT}
-    host: process.env.IMPHOST,
+    host: process.env.IMPMARIADBHOST,
     // the user name to authenticate as
     user: process.env.IMPROOTUSERNAME,
     // the password to use to authenticate

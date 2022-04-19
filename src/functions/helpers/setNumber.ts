@@ -33,7 +33,7 @@ export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPPro
         newProduct.inStock = { ...newNumber, value: parseInt(newNumber.value.toString()) }
         break
       case `UPC`:
-        newProduct.upc = { ...newNumber, value: newNumber.value }
+        newProduct.upc = { ...newNumber, value: parseInt(newNumber.value.toString()) }
         break
       case `To Receive`:
         newProduct.toReceive = { ...newNumber, value: parseInt(newNumber.value.toString()) }

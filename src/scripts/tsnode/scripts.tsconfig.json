@@ -21,7 +21,7 @@
     "target": "ESNext"
   },
   "typedocOptions": {
-    "entryPoints": ["src/", "mariadb-stack.yml"],
+    "entryPoints": ["src/"],
     "entryPointStrategy": "expand",
     "out": "docs"
   },

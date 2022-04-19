@@ -2,9 +2,11 @@
 /.vscode
 /.VSCodeCounter/
 /binaries
+/build
 /cache
 /coverage
 /dist
+/mariadbdata
 /node_modules
 /output
 /src-tauri/target

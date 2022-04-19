@@ -12,7 +12,7 @@ import { generateProductIcon } from './generateProductIcon'
  * @returns a mocked product
  */
 export const generateProduct: Function = (): IIMPProduct => {
-  const mockOneDigitInteger: Function = (): number => Math.floor(Math.random() * 9)
+  // const mockOneDigitInteger: Function = (): number => Math.floor(Math.random() * 9)
   const mockTwoDigitInteger: Function = (): number => Math.floor(Math.random() * 99)
   const mockThreeDigitInteger: Function = (): number => Math.floor(Math.random() * 999)
   const mockFourDigitInteger: Function = (): number => Math.floor(Math.random() * 9999)
@@ -64,7 +64,7 @@ export const generateProduct: Function = (): IIMPProduct => {
     inStock: { id: `In Stock`, propertyName: `inStock`, value: randominStock, min: 0, max: 9999 },
     inCart: { id: `In Cart`, propertyName: `inCart`, value: 0, min: 0, max: 9999 },
     toReceive: { id: `To Receive`, propertyName: `toReceive`, value: 0, min: 0, max: 9999 },
-    min: { id: `Minimum Quantity`, propertyName: `min`, value: randommin, min: mockOneDigitInteger(), max: 9999 },
-    max: { id: `Maximum Quantity`, propertyName: `max`, value: randommax, min: mockTwoDigitInteger(), max: 9999 }
+    min: { id: `Minimum Quantity`, propertyName: `min`, value: randommin, min: 0, max: 9999 },
+    max: { id: `Maximum Quantity`, propertyName: `max`, value: randommax, min: 0, max: 9999 }
   }
 }

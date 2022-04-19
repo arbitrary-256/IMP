@@ -6,7 +6,6 @@
 
 - [About IMP](#about-imp 'About IMP')
 - [Documentation](#documentation 'Documentation')
-- [Demo](#demo 'Demo')
 - [Develop](#develop 'Develop')
 - [Build for web](#build-for-web 'Build for web')
 - [Build for your OS](#build-for-your-os 'Build for your OS')
@@ -24,7 +23,7 @@
 
 ### Current version
 
-IMP uses the semantic versioning system.  The current build of IMP is version `0.8.9`
+IMP uses the semantic versioning system.  The current build of IMP is version `0.9.0`
 
 [](#develop)
 
@@ -34,15 +33,6 @@ IMP uses the semantic versioning system.  The current build of IMP is version `0
 [](#documentation)
 
 [TypeDoc Documentation Page on GitHub Pages](https://zindrek.github.io/IMP/docs/)
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-
-## Demo
-
-[](#demo)
-
-
-[Test the Application on GitHub Pages](https://zindrek.github.io/IMP/build/)
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
@@ -121,7 +111,7 @@ You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easil
 
 ### Docker Swarm
 
-The file `mariadb-stack.yml` contains inline instructions and defines a Docker Swarm stack that deploys a MariaDB database.  This is the simplest way to deploy the database for most users.  If you happen to be a user who knows more about deploying MariaDB, feel free to deploy however you like - IMP does not discriminate.
+The file `imp-stack.yml` contains inline instructions and defines a Docker Swarm stack that deploys a MariaDB database.  This is the simplest way to deploy the database for most users.  If you happen to be a user who knows more about deploying MariaDB, feel free to deploy however you like - IMP does not discriminate.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
@@ -131,25 +121,27 @@ The file `mariadb-stack.yml` contains inline instructions and defines a Docker S
 
 ### current project status
 
-- version `0.8.9`
+- version `0.9.0`
+- `Nginx` server status:
+    - ✅ Docker stack deploys performance-optimized version
+    - ✅ Docker instance is reachable
 - `MariaDB` server status:
     - ✅ Docker stack deploys
     - ✅ Docker instance is reachable
-    - ❌ credentials created
-    - ❌ database created
-    - ❌ tables created
-    - ❌ data inserted
+    - ✅ credentials created from .env file
+    - ✅ database created
+    - ❌ table created
+    - ❌ data rows populated
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ## Milestones
-### 0.8.0 - local state functionality
-- Fix remaining cursor issues in price (everywere) and upc fields (inventory row) while typing
 
 [ToC](#table-of-contents 'Return to Table of Contents')
+
 ### 0.9.0 - database functionality
+- GitHub issue #3 - in progress
 - TypeScript - create interface to represent database rows - in progress
 - TypeScript - create sql call functions - in progress
-- TypeScript - add sql call function to purchase cart button
 - TypeScript - add sql call function to purchase cart button
 - TypeScript - add sql call function to restock cart button
 - TypeScript - create submit inventory changes action
