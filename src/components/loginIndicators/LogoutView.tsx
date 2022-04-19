@@ -30,51 +30,35 @@ export const LogoutView: React.FC = (): React.ReactElement => {
   } = React.useContext(ImpContext)
   const programmingLanguagesString: IIMPString = {
     id: `Written in`,
-    text: `TypeScript, React, and SQL`,
-    prefix: ``,
-    suffix: ``
+    text: `TypeScript, React, and SQL`
   }
   const authorString: IIMPString = {
     id: `Coding`,
-    text: `${appInfo.author.split(` `)[0]} ${appInfo.author.split(` `)[1]}`,
-    prefix: ``,
-    suffix: ``
+    text: `${appInfo.author.split(` `)[0]} ${appInfo.author.split(` `)[1]}`
   }
   const documentationString: IIMPString = {
     id: `Documentation`,
-    text: `AJ Sclove`,
-    prefix: ``,
-    suffix: ``
+    text: `AJ Sclove`
   }
   const testingString: IIMPString = {
     id: `Testing`,
-    text: `Mark Murrell`,
-    prefix: ``,
-    suffix: ``
+    text: `Mark Murrell`
   }
   const copyrightString: IIMPString = {
     id: `Copyright Date`,
-    text: `${appInfo.copyright}`,
-    prefix: ``,
-    suffix: ``
+    text: `${appInfo.copyright}`
   }
   const impDescriptionString: IIMPString = {
     id: `Description`,
-    text: `${appInfo.description}`,
-    prefix: ``,
-    suffix: ``
+    text: `${appInfo.description}`
   }
   const impVersionString: IIMPString = {
     id: `Version`,
-    text: `${appInfo.version}`,
-    prefix: ``,
-    suffix: ``
+    text: `${appInfo.version}`
   }
   const loginRequiredString: IIMPString = {
     id: `Login Required`,
-    text: `You must login to use IMP.`,
-    prefix: ``,
-    suffix: ``
+    text: `You must login to use IMP.`
   }
   return (
     <Box

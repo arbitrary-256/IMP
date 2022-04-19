@@ -3,10 +3,9 @@
 import { IIMPImage } from './IIMPImage'
 import { IIMPNumber } from './IIMPNumber'
 import { IIMPString } from './IIMPString'
-import { ISize } from './unionTypes/ISize'
 /**
- * the interface for a product in the application
- * @param upc the UPC ofthe product
+ * the interface for a product in the frontend of the application
+ * @param upc the UPC of the product
  * @param name the product's human-readable name
  * @param price the product's price in $USD
  * @param inStock the product's current quantity in stock
@@ -27,5 +26,4 @@ export interface IIMPProduct {
   min: IIMPNumber
   max: IIMPNumber
   image: IIMPImage
-  size?: ISize
 }

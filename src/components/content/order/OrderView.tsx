@@ -34,8 +34,6 @@ export const OrderView: React.FC = (): React.ReactElement => {
   }, 0)
   let cartTotal: IIMPNumber = {
     value: total,
-    prefix: `$`,
-    suffix: ``,
     min: 0,
     max: 0,
     id: `Cart Total`,

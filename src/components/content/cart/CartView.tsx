@@ -33,8 +33,6 @@ export const CartView: React.FC = (): React.ReactElement => {
   const totalPrice: number = totalPrices.reduce((accumulator: number, value: number): number => accumulator + value, 0)
   let cartTotal: IIMPNumber = {
     value: parseFloat(totalPrice.toFixed(2)),
-    prefix: `$`,
-    suffix: ``,
     min: 0,
     max: 0,
     id: `Cart Total`,

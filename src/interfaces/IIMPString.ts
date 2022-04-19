@@ -9,7 +9,5 @@ import { IStringDescription } from './unionTypes/IStringDescription'
  */
 export interface IIMPString {
   id: IStringDescription
-  prefix: string
   text: string
-  suffix: string
 }

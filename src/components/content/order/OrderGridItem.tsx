@@ -33,16 +33,12 @@ export const OrderGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): Reac
     id: `Available`,
     propertyName: `Available`,
     value: product.inStock.value - product.inCart.value,
-    prefix: ``,
     min: 0,
-    max: 99999,
-    suffix: ``
+    max: 99999
   }
   const outOfStock: IIMPString = {
     id: `Out of Stock`,
-    prefix: ``,
-    text: `Out of Stock`,
-    suffix: ``
+    text: `Out of Stock`
   }
   return (
     <Card>

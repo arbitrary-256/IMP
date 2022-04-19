@@ -18,6 +18,4 @@ export interface IIMPNumber {
   max: number
   propertyName: INumberPropertyName
   value: number
-  prefix?: string
-  suffix?: string
 }

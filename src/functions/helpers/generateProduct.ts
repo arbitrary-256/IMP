@@ -46,21 +46,19 @@ export const generateProduct: Function = (): IIMPProduct => {
   return {
     editingMode: false,
     upc: {
-      propertyName: `upc`,
+      propertyName: `UPC`,
       id: `UPC`,
       value: randomUpc,
       min: 0,
       max: 99999999999
     },
     name: {
-      id: `name`,
-      suffix: ``,
-      prefix: ``,
+      id: `Product Name`,
       text: `${productName}`
     },
     image: randomIconImage,
-    cost: { id: `Purchase Price`, propertyName: `cost`, value: randomcost, prefix: `$`, min: 0.01, max: 9999.99 },
-    price: { id: `Sale Price`, propertyName: `price`, value: randomSalePrice, prefix: `$`, min: 0.01, max: 9999.99 },
+    cost: { id: `Purchase Price`, propertyName: `cost`, value: randomcost, min: 0.01, max: 9999.99 },
+    price: { id: `Sale Price`, propertyName: `price`, value: randomSalePrice, min: 0.01, max: 9999.99 },
     inStock: { id: `In Stock`, propertyName: `inStock`, value: randominStock, min: 0, max: 9999 },
     inCart: { id: `In Cart`, propertyName: `inCart`, value: 0, min: 0, max: 9999 },
     toReceive: { id: `To Receive`, propertyName: `toReceive`, value: 0, min: 0, max: 9999 },

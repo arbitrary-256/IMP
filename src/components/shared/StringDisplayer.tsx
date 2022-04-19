@@ -18,6 +18,6 @@ export const StringDisplayer: React.FC<IIMPString> = (impString: IIMPString): Re
     type={`text`}
     label={`${impString.id}`}
     contentEditable={false}
-    value={`${impString.prefix}${impString.text}${impString.suffix}`}
+    value={`${impString.text}`}
   />
 )

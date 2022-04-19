@@ -33,8 +33,6 @@ export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React
     id: `Item Total`,
     propertyName: `Item Total`,
     value: parseFloat((product.price.value * product.inCart.value).toFixed(2)),
-    prefix: `$`,
-    suffix: ``,
     min: 0,
     max: 0
   }
