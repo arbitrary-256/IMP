@@ -1,6 +1,6 @@
 /** @format */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
-import { rootConnection } from './connection'
+import { rootConnection } from './rootConnection'
 /**
  * deletes a database entry for a given product
  * @param product the product to delete from the database

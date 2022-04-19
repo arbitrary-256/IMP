@@ -1,6 +1,6 @@
 /** @format */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
-import { userConnection } from './connection'
+import { userConnection } from './userConnection'
 /**
  * updates a database entry for a given product
  * @param product the product to update in the database

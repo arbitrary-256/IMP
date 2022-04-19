@@ -1,5 +1,5 @@
 /** @format */
-import { rootConnection } from './connection'
+import { rootConnection } from './rootConnection'
 /**
  * creates the database on a fresh MariaDB instance
  * @returns a promise that resolves when the product is created in the database

@@ -1,6 +1,6 @@
 /** @format */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
-import { userConnection } from './connection'
+import { userConnection } from './userConnection'
 /**
  * issues a query to the database
  * @param query the query to run against the database
