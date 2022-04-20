@@ -3,8 +3,8 @@
 import { IIMPDatabaseRow } from '../../interfaces/IIMPDatabaseRow'
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /**
- * converts a product to a database row
- * @param toContext a product to be stored in the database
+ * converts a product between database and context
+ * @param toContext a product to be stored in context
  * @param toDatabase a product to be stored in the database
  * @returns the converted version of the product passed, or void if a non-0 number of products are passed
  */
@@ -92,5 +92,11 @@ export const convert: Function = (toDatabase?: IIMPProduct, toContext?: IIMPData
         max: 99999
       }
     }
+  }
+  if (toDatabase && toContext) {
+    return
+  }
+  if (!toDatabase && !toContext) {
+    return
   }
 }
