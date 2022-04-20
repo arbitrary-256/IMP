@@ -12,8 +12,8 @@ const envs: IIMPEnvFile = {
   portNumber: parseInt(process.env.IMPCONTAINERPORT!),
   rootUserNameString: process.env.IMPROOTUSERNAME!,
   rootPasswordString: process.env.IMPROOTPASSWORD!,
-  userNameString: process.env.IMPUSERNAME!,
-  passwordString: process.env.IMPPASSWORD!,
+  userNameString: ``,
+  passwordString: ``,
   databaseNameString: process.env.IMPDATABASE!
 }
 
