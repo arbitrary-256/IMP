@@ -1,19 +1,19 @@
-# 1) create and populate your .env file from template.env
-# 2) run 'yarn imp-deploy' to deploy webapp and database to local docker compose
-# a simple docker-compose / docker-stack file to setup a MariaDB instance and an nginx server
+# 1) create and populate a .env file made from template.env
+# 2) point your desired firewall ports at your docker host:
+## ${IMPFRONTENDPORT} exposes the front end web client to the internet
+## ${IMPEXTERNALPORT} exposes the backend database to the internet
+# 3) run 'yarn imp-compose' to deploy webapp and database with docker compose
 version: '3.8'
 services:
-# web server to host the web application
+# nginx web server to host the web application
  webapp:
   image: nginx:${IMPNGINXVERSION}
   volumes:
    - ${PWD}/build:/usr/share/nginx/html
-# your Docker host must expose port ${IMPFRONTENDPORT} from your .env file
-# if you want to expose the front end to the internet
   ports:
    - "${IMPFRONTENDPORT}:80"
 
-# backend MariaDB database
+# MariaDB database to host the backend data
  database:
   image: mariadb:${IMPMARIADBVERSION}
   volumes:
@@ -26,8 +26,6 @@ services:
    - MYSQL_DATABASE="${IMPDATABASE}"
   ports:
    - '${IMPEXTERNALPORT}:${IMPCONTAINERPORT}'
-# your Docker host must expose port ${IMPEXTERNALPORT} from your .env file
-# if you want to use a IMP instance hosted outside your local network
   networks:
    - impnet
 networks:
