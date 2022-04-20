@@ -41,7 +41,7 @@ IMP uses the semantic versioning system.  The current build of IMP is version `0
 1. Install your IDE
 2. Fork this repository and clone it to your development machine
 3. Run `npm run setup` and follow the instructions in your terminal.  This process will install the prerequisites except for your IDE, and should only be required once.
-4. Run `yarn start` to start a hot-reloadable development server in a Tauri application
+4. Run `yarn tart` to start a hot-reloadable development server in a Tauri application
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ### Prerequisites
@@ -77,7 +77,7 @@ You will need to install the following things to build IMP:
 
 ### Build for web
 
-Run `yarn zip` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
+Run `yarn tart-zip` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
@@ -85,7 +85,7 @@ Run `yarn zip` to build and zip a servable web directory to the `output` directo
 
 [](#build-for-your-os)
 
-Run `yarn bundle` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These artifacts are meant for end users to install the application.
+Run `yarn tart-bundle` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These artifacts are meant for end users to install the application.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
@@ -94,14 +94,14 @@ Run `yarn bundle` to build a double-clickable installer for your operating syste
 [](#build-cross-platform)
 
 [ToC](#table-of-contents 'Return to Table of Contents')
-### Running `yarn bundle` on multiple platforms
+### Running `yarn tart-bundle` on multiple platforms
 
-You can run `yarn bundle` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.
+You can run `yarn tart-bundle` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ### Using GitHub Actions
 
-You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `yarn bundle` on multiple OSes at once on GitHub's servers.
+You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `yarn tart-bundle` on multiple OSes at once on GitHub's servers.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
@@ -154,7 +154,7 @@ The file `imp-stack.yml` contains inline instructions and defines a Docker Swarm
 ### 1.0.0 - UI polish & Desktop application, general code cleanup
 - GitHub - add `Tauri Actions` to repo to automate desktop builds
 - GIMP - cleanup images/imp.png image matte line
-- Tauri - implement autoupdater key for desktop builds (see also `yarn sign` script in `package.json`)
+- Tauri - implement autoupdater key for desktop builds (see also `yarn tart-updater-sign` script in `package.json`)
 - Tauri - add menubar entries to tauri application so that it can be quit/minimized/etc via standard keyboard shortcuts
 
 [ToC](#table-of-contents 'Return to Table of Contents')
