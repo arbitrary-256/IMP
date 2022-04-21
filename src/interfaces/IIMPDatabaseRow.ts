@@ -12,8 +12,8 @@
  * @param size OPTIONAL the product's size, if it has one
  */
 export interface IIMPDatabaseRow {
-  nameText: string // name.text
   upcValue: number // upc.value
+  nameText: string // name.text
   costValue: number // cost.value
   priceValue: number // price.value
   inStockMin: number // inStock.min

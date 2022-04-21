@@ -1,3 +1,4 @@
-/build/**
-/node_modules/**
-/src-tauri/target/**
+build/**
+docs/**
+node_modules/**
+src-tauri/target/**

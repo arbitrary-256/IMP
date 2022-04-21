@@ -4,9 +4,7 @@ import { IIMPEnvFile } from '../../interfaces/IIMPEnvFile'
 // libraries
 import mariadb from 'mariadb'
 import dotenv from 'dotenv'
-
 dotenv.config()
-
 const userEnvs: IIMPEnvFile = {
   hostnameString: process.env.IMPMARIADBHOST!,
   portNumber: parseInt(process.env.IMPCONTAINERPORT!),
@@ -16,7 +14,6 @@ const userEnvs: IIMPEnvFile = {
   passwordString: process.env.IMPPASSWORD!,
   databaseNameString: process.env.IMPDATABASE!
 }
-
 /**
  * creates a connection to the database with appropriate credentials
  * @returns a connection to the database
@@ -35,5 +32,4 @@ const mariaUserCredentials: Function = (): mariadb.ConnectionConfig => {
     database: userEnvs.databaseNameString
   }
 }
-
-export const userConnection: mariadb.Connection = await mariadb.createConnection(mariaUserCredentials())
+export const connectAsUser: mariadb.Connection = await mariadb.createConnection(mariaUserCredentials())

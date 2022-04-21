@@ -9,8 +9,8 @@ import { reducerCleanup } from './helpers/reducerCleanup'
 import { changeAppearance } from './helpers/changeAppearance'
 import { decrementNumber } from './helpers/decrementNumber'
 import { filterSearchResults } from './helpers/filterSearchResults'
-import { generateDefaultState } from './helpers/generateDefaultState'
-import { generateProduct } from './helpers/generateProduct'
+import { mockState } from '../mockData/mockState'
+import { createEmptyProduct } from './helpers/createEmptyProduct'
 import { incrementNumber } from './helpers/incrementNumber'
 import { navigateTo } from './helpers/navigateTo'
 import { receiveInventory } from './helpers/receiveInventory'
@@ -35,7 +35,7 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
   switch (action.type) {
     case `APPLICATION_START`: // at launch of application
       // TODO: should get inventory from SQL database with getDatabaseInventory function
-      return generateDefaultState()
+      return mockState()
     case `CHANGE_APPEARANCE`:
       return reducerCleanup({ ...newState, theme: changeAppearance(action.payload) }, state)
     case `CHANGE_LOGIN`:
@@ -55,7 +55,7 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       // TODO: should change the database with updateDatabaseEntry function or createDatabaseEntry function
       return reducerCleanup(newState)
     case `RECEIVE_INVENTORY`:
-      return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock), productToReceive: generateProduct() }, state)
+      return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock), productToReceive: createEmptyProduct() }, state)
     case `SET_IMAGE`:
       if (action.payload.inventoryIndex === undefined) {
         newState = { ...newState, productToReceive: setImage(action.payload) }

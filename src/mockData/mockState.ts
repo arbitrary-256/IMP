@@ -1,18 +1,18 @@
 /** @format */
 // interfaces
-import { IIMPProduct } from '../../interfaces/IIMPProduct'
-import { IIMPState } from '../../interfaces/IIMPState'
+import { IIMPProduct } from '../interfaces/IIMPProduct'
+import { IIMPState } from '../interfaces/IIMPState'
 // css-in-TypeScript themes
-import { darkTheme } from '../../components/theme/darkTheme'
+import { darkTheme } from '../components/theme/darkTheme'
 // helper functions
-import { generateProduct } from './generateProduct'
-import { mockInventory } from '../../mockData/mockInventory'
+import { mockInventory } from './mockInventory'
+import { mockProduct } from './mockProduct'
 /**
- * generates a mocked state for the application without using the database
+ * mocks a React Context state for the application without using the database
  * @returns the default state for the application
  */
-export const generateDefaultState: Function = (): IIMPState => {
-  const receivingProduct: IIMPProduct = generateProduct()
+export const mockState: Function = (): IIMPState => {
+  const receivingProduct: IIMPProduct = mockProduct()
   const inventory: IIMPProduct[] = mockInventory(30)
   return {
     cart: [],

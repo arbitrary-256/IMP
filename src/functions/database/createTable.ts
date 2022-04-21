@@ -1,19 +1,21 @@
 /** @format */
-import { rootConnection } from './rootConnection'
+import dotenv from 'dotenv'
+import { connectAsRoot } from './connectAsRoot'
 import { IIMPDatabaseColumn } from '../../interfaces/IIMPDatabaseColumn'
 /**
  * creates the database table on a fresh MariaDB instance
  * @returns a promise that resolves when the table is created in the database
  */
 export const createTable = async (): Promise<void> => {
+  dotenv.config()
   const rowHeaders: IIMPDatabaseColumn[] = [
-    {
-      colName: `nameText`,
-      type: `VARCHAR(255)`
-    },
     {
       colName: `upcValue`,
       type: `INT(12)`
+    },
+    {
+      colName: `nameText`,
+      type: `VARCHAR(255)`
     },
     {
       colName: `costValue`,
@@ -22,6 +24,10 @@ export const createTable = async (): Promise<void> => {
     {
       colName: `priceValue`,
       type: `DECIMAL(5,2)`
+    },
+    {
+      colName: `minValue`,
+      type: `INT(6)`
     },
     {
       colName: `inStockMin`,
@@ -36,10 +42,6 @@ export const createTable = async (): Promise<void> => {
       type: `INT(6)`
     },
     {
-      colName: `minValue`,
-      type: `INT(6)`
-    },
-    {
       colName: `maxValue`,
       type: `INT(6)`
     },
@@ -50,33 +52,10 @@ export const createTable = async (): Promise<void> => {
     {
       colName: `imageText`,
       type: `VARCHAR(255)`
-    },
-    {
-      colName: `dateAdded`,
-      type: `DATE`
-    },
-    {
-      colName: `timeAdded`,
-      type: `TIME`
-    },
-    {
-      colName: `dateModified`,
-      type: `DATE`
-    },
-    {
-      colName: `timeModified`,
-      type: `TIME`
-    },
-    {
-      colName: `dateLastSold`,
-      type: `DATE`
-    },
-    {
-      colName: `timeLastSold`,
-      type: `TIME`
     }
   ]
-  console.log(rowHeaders.toString())
-  await rootConnection.query(``)
-  rootConnection.end()
+  const makeMariaDBColumn: Function = (columnInfo: IIMPDatabaseColumn): string => `${columnInfo.colName} ${columnInfo.type}`
+  const createTableResult: string = await connectAsRoot.query(`CREATE TABLE IF NOT EXISTS products ( ${rowHeaders.map(makeMariaDBColumn()).join(`, `)} )`)
+  console.log(createTableResult)
+  connectAsRoot.end()
 }

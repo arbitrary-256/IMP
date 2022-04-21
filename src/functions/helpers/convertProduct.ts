@@ -8,7 +8,7 @@ import { IIMPProduct } from '../../interfaces/IIMPProduct'
  * @param toDatabase a product to be stored in the database
  * @returns the converted version of the product passed, or void if a non-0 number of products are passed
  */
-export const convert: Function = (toDatabase?: IIMPProduct, toContext?: IIMPDatabaseRow): IIMPProduct | IIMPDatabaseRow | void => {
+export const convertProduct: Function = (toDatabase?: IIMPProduct, toContext?: IIMPDatabaseRow): IIMPProduct | IIMPDatabaseRow | void => {
   if (toDatabase && !toContext) {
     return {
       upcValue: toDatabase.upc.value,

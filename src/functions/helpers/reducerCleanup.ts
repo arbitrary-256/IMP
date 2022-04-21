@@ -4,7 +4,7 @@ import { IIMPProduct } from '../../interfaces/IIMPProduct'
 // react context
 import { IIMPState } from '../../interfaces/IIMPState'
 // helper functions
-import { generateProduct } from './generateProduct'
+import { createEmptyProduct } from './createEmptyProduct'
 /**
  * cleans up the application state at the end of a call to ImpReducer
  * @param newState the current IIMPState to be cleaned up
@@ -18,7 +18,7 @@ export const reducerCleanup: Function = (newState: IIMPState, oldState?: IIMPSta
    * empties the cart and generates a new productToReceive
    */
   const logoutCleanup: Function = (): void => {
-    newState.productToReceive = generateProduct()
+    newState.productToReceive = createEmptyProduct()
     newState.inStock.forEach((product) => {
       product.inCart.value = 0
     })
