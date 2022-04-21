@@ -7,7 +7,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const envs: IIMPEnvFile = {
+const userEnvs: IIMPEnvFile = {
   hostnameString: process.env.IMPMARIADBHOST!,
   portNumber: parseInt(process.env.IMPCONTAINERPORT!),
   rootUserNameString: ``,
@@ -24,15 +24,15 @@ const envs: IIMPEnvFile = {
 const mariaUserCredentials: Function = (): mariadb.ConnectionConfig => {
   return {
     // the host address of the mariadb or mysql server
-    host: envs.hostnameString,
+    host: userEnvs.hostnameString,
     // the SQL connection port of the mariadb or mysql server
-    port: envs.portNumber,
+    port: userEnvs.portNumber,
     // the user name to authenticate as
-    user: envs.userNameString,
+    user: userEnvs.userNameString,
     // the password to use to authenticate
-    password: envs.passwordString,
+    password: userEnvs.passwordString,
     // the database to connect to
-    database: envs.databaseNameString
+    database: userEnvs.databaseNameString
   }
 }
 
