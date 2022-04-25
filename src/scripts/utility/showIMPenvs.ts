@@ -1,19 +1,19 @@
 /** @format */
-import dotenv from 'dotenv'
-dotenv.config()
+// import dotenv from 'dotenv'
+// dotenv.config()
 
 export const showIMPenvs: Function = (): void => {
-  !process.env.IMPFRONTENDPORT ? console.error(`no IMPFRONTENDPORT found in .env`) : console.log(`webapp access port: ${process.env.IMPFRONTENDPORT}`)
-  !process.env.IMPEXTERNALPORT ? console.error(`no IMPEXTERNALPORT found in .env`) : console.log(`MariaDB access port: ${process.env.IMPEXTERNALPORT}`)
-  !process.env.IMPCONTAINERPORT ? console.error(`no IMPCONTAINERPORT found in .env`) : console.log(`MariaDB internal container port: ${process.env.IMPCONTAINERPORT}`)
-  !process.env.IMPNGINXVERSION ? console.error(`no IMPNGINXVERSION found in .env`) : console.log(`Nginx docker image version: ${process.env.IMPNGINXVERSION}`)
-  !process.env.IMPMARIADBVERSION ? console.error(`no IMPMARIADBVERSION found in .env`) : console.log(`MariaDB docker image version: ${process.env.IMPMARIADBVERSION}`)
-  !process.env.IMPMARIADBHOST ? console.error(`no IMPMARIADBHOST found in .env`) : console.log(`MariaDB FQDN or IP address: ${process.env.IMPMARIADBHOST}`)
-  !process.env.IMPDATABASE ? console.error(`no DATABASE found in .env`) : console.log(`MariaDB IMP Database: ${process.env.IMPDATABASE}`)
-  !process.env.IMPROOTUSERNAME ? console.error(`no IMPROOTUSERNAME found in .env`) : console.log(`MariaDB root user name: ${process.env.IMPROOTUSERNAME}`)
-  !process.env.IMPROOTPASSWORD ? console.error(`no IMPROOTPASSWORD found in .env`) : console.log(`MariaDB root password: ${process.env.IMPROOTPASSWORD}`)
-  !process.env.IMPUSERNAME ? console.error(`no IMPUSERNAME found in .env`) : console.log(`MariaDB IMP bot user name: ${process.env.IMPUSERNAME}`)
-  !process.env.IMPPASSWORD ? console.error(`no IMPPASSWORD found in .env`) : console.log(`MariaDB IMP bot password: ${process.env.IMPPASSWORD}`)
+  !process.env.REACT_APP_FRONTENDPORT ? console.error(`no REACT_APP_FRONTENDPORT found in .env`) : console.log(`webapp access port: ${process.env.REACT_APP_FRONTENDPORT}`)
+  !process.env.REACT_APP_MARIADBPORT ? console.error(`no REACT_APP_MARIADBPORT found in .env`) : console.log(`MariaDB access port: ${process.env.REACT_APP_MARIADBPORT}`)
+  !process.env.REACT_APP_INTERNALPORT ? console.error(`no REACT_APP_INTERNALPORT found in .env`) : console.log(`MariaDB internal container port: ${process.env.REACT_APP_INTERNALPORT}`)
+  !process.env.REACT_APP_NGINXVERSION ? console.error(`no REACT_APP_NGINXVERSION found in .env`) : console.log(`Nginx docker image version: ${process.env.REACT_APP_NGINXVERSION}`)
+  !process.env.REACT_APP_MARIADBVERSION ? console.error(`no REACT_APP_MARIADBVERSION found in .env`) : console.log(`MariaDB docker image version: ${process.env.REACT_APP_MARIADBVERSION}`)
+  !process.env.REACT_APP_MARIADBHOST ? console.error(`no REACT_APP_MARIADBHOST found in .env`) : console.log(`MariaDB FQDN or IP address: ${process.env.REACT_APP_MARIADBHOST}`)
+  !process.env.REACT_APP_DATABASENAME ? console.error(`no DATABASE found in .env`) : console.log(`MariaDB IMP Database: ${process.env.REACT_APP_DATABASENAME}`)
+  !process.env.REACT_APP_ROOTUSER ? console.error(`no REACT_APP_ROOTUSER found in .env`) : console.log(`MariaDB root user name: ${process.env.REACT_APP_ROOTUSER}`)
+  !process.env.REACT_APP_ROOTPASSWORD ? console.error(`no REACT_APP_ROOTPASSWORD found in .env`) : console.log(`MariaDB root password: ${process.env.REACT_APP_ROOTPASSWORD}`)
+  !process.env.REACT_APP_USER ? console.error(`no REACT_APP_USER found in .env`) : console.log(`MariaDB IMP bot user name: ${process.env.REACT_APP_USER}`)
+  !process.env.REACT_APP_PASSWORD ? console.error(`no REACT_APP_PASSWORD found in .env`) : console.log(`MariaDB IMP bot password: ${process.env.REACT_APP_PASSWORD}`)
 }
 
 showIMPenvs()

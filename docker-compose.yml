@@ -1,31 +1,31 @@
 # 1) create and populate a .env file made from template.env
 # 2) point your desired firewall ports at your docker host:
-## ${IMPFRONTENDPORT} exposes the front end web client to the internet
-## ${IMPEXTERNALPORT} exposes the backend database to the internet
+## ${REACT_APP_FRONTENDPORT} exposes the front end web client to the internet
+## ${REACT_APP_MARIADBPORT} exposes the backend database to the internet
 # 3) run 'yarn imp-compose' to deploy webapp and database with docker compose
 version: '3.8'
 services:
 # nginx web server to host the web application
  webapp:
-  image: nginx:${IMPNGINXVERSION}
+  image: nginx:${REACT_APP_NGINXVERSION}
   volumes:
    - ${PWD}/build:/usr/share/nginx/html
   ports:
-   - "${IMPFRONTENDPORT}:80"
+   - "${REACT_APP_FRONTENDPORT}:80"
 
 # MariaDB database to host the backend data
  database:
-  image: mariadb:${IMPMARIADBVERSION}
+  image: mariadb:${REACT_APP_MARIADBVERSION}
   volumes:
    - ${PWD}/mariadbdata:/var/lib/mysql
   environment:
-   - MYSQL_ROOT_USER="${IMPROOTUSERNAME}"
-   - MYSQL_ROOT_PASSWORD="${IMPROOTPASSWORD}"
-   - MYSQL_USER="${IMPUSERNAME}"
-   - MYSQL_PASSWORD="${IMPPASSWORD}"
-   - MYSQL_DATABASE="${IMPDATABASE}"
+   - MYSQL_ROOT_USER="${REACT_APP_ROOTUSER}"
+   - MYSQL_ROOT_PASSWORD="${REACT_APP_ROOTPASSWORD}"
+   - MYSQL_USER="${REACT_APP_USER}"
+   - MYSQL_PASSWORD="${REACT_APP_PASSWORD}"
+   - MYSQL_DATABASE="${REACT_APP_DATABASENAME}"
   ports:
-   - '${IMPEXTERNALPORT}:${IMPCONTAINERPORT}'
+   - '${REACT_APP_MARIADBPORT}:${REACT_APP_INTERNALPORT}'
   networks:
    - impnet
 networks:

@@ -5,24 +5,24 @@ import { IIMPProduct } from '../interfaces/IIMPProduct'
 import { IIMPAction } from '../interfaces/IIMPAction'
 import { IIMPState } from '../interfaces/IIMPState'
 // helper functions
-import { reducerCleanup } from './helpers/reducerCleanup'
 import { changeAppearance } from './helpers/changeAppearance'
-import { decrementNumber } from './helpers/decrementNumber'
-import { filterSearchResults } from './helpers/filterSearchResults'
-import { mockState } from '../mockData/mockState'
 import { createEmptyProduct } from './helpers/createEmptyProduct'
+import { decrementNumber } from './helpers/decrementNumber'
+import { deleteProduct } from './helpers/deleteProduct'
+import { editProduct } from './helpers/editProduct'
+import { filterSearchResults } from './helpers/filterSearchResults'
 import { incrementNumber } from './helpers/incrementNumber'
 import { navigateTo } from './helpers/navigateTo'
+import { purchaseCart } from './helpers/purchaseCart'
 import { receiveInventory } from './helpers/receiveInventory'
+import { reducerCleanup } from './helpers/reducerCleanup'
 import { restockProducts } from './helpers/restockProducts'
 import { setNumber } from './helpers/setNumber'
 import { setString } from './helpers/setString'
-import { purchaseCart } from './helpers/purchaseCart'
 import { setImage } from './helpers/setImage'
 import { redo } from './history/redo'
 import { undo } from './history/undo'
-import { editProduct } from './helpers/editProduct'
-import { deleteProduct } from './helpers/deleteProduct'
+import { createEmptyContext } from './helpers/createEmptyContext'
 /**
  * Updates application state based on the passed action.
  * All business logic lives in this file or in a function this file imports.
@@ -33,9 +33,9 @@ import { deleteProduct } from './helpers/deleteProduct'
 export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
   let newState: IIMPState = { ...state }
   switch (action.type) {
-    case `APPLICATION_START`: // at launch of application
-      // TODO: should get inventory from SQL database with getDatabaseInventory function
-      return mockState()
+    case `APPLICATION_START`: // in progress: read from database
+    // get data from MariaDB server
+    return createEmptyContext() // + inventory from database
     case `CHANGE_APPEARANCE`:
       return reducerCleanup({ ...newState, theme: changeAppearance(action.payload) }, state)
     case `CHANGE_LOGIN`:

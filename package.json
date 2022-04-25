@@ -22,7 +22,7 @@
     "readme-imp": "echo && echo imp scripts perform convenience features for this project && echo imp-env-check verifies your .env file && echo imp-env-set applies your .env file to your current shell && echo imp-up deploys this repo using docker-compose.yml and your .env file  && echo imp-up-new deploys through docker-compose with a fresh mariadb instance && echo imp-down ends that deployment",
     "imp-env-check": "yarn tart-prep && yarn ts-node src/scripts/utility/showIMPenvs.ts && yarn tart-cleanup",
     "imp-env-set": "export $(cat .env)",
-    "imp-up": "yarn tart-clean && yarn && [ -d mariadbdata ] || mkdir mariadbdata && yarn imp-env-set && yarn react-scripts build && docker-compose up -d",
+    "imp-up": "yarn tart-clean && yarn && [ -d mariadbdata ] || mkdir mariadbdata && yarn imp-env-set && yarn tart-build && docker-compose up -d",
     "imp-up-new": "yarn imp-down && rm -rf mariadbdata && yarn imp-up",
     "imp-down": "docker-compose down",
     "readme-tart": "echo && echo tart scripts perform convenience features for the tart template && echo tart starts a live development environment tauri app && echo tart-build builds the optimized frontend && echo tart-bundle builds the distributable tauri binary for your OS && echo tart-zip zips the build folder for transfer to a production webserver && echo tart-clean cleans the repo artifacts && echo tart-rustup updates the rust dependencies && echo tart-icon builds icon files from the image at src-tauri/icons/app-icon.png && echo tart-updater-sign creates the signature for the tauri autoupdater && echo tart-prep changes the tsconfig.json to run ts-node scripts && echo tart-pretty runs prettier && echo tart-cleanup changes the tsconfig.json back to the original tsconfig.json",
@@ -49,11 +49,11 @@
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
-    "mariadb": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-dropzone": "latest",
     "source-map-support": "latest",
+    "typeorm": "latest",
     "typescript": "latest"
   },
   "devDependencies": {
