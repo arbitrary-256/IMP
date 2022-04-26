@@ -32,6 +32,8 @@ export const OrderMiniCartItem: React.FC<IIMPProduct> = (product: IIMPProduct): 
         <p />
         {StringDisplayer(product.name)}
         <p />
+        {NumberDisplayer(product.price)}
+        <p />
         {NumberChanger({ number: product.inCart, product: product })}
         <p />
         {NumberDisplayer(itemTotal)}
