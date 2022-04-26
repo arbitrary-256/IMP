@@ -40,8 +40,6 @@ export const mockState: Function = (): IIMPState => {
         value: 0
       }
     },
-    stateFuture: [],
-    stateHistory: [],
     theme: darkTheme
   }
 }

@@ -19,7 +19,5 @@ export const purchaseCart: Function = (state: IIMPState): IIMPState => {
     product.inStock.value = product.inStock.value - product.inCart.value
     product.inCart.value = 0
   })
-  newState.stateFuture = []
-  newState.stateHistory = []
   return newState
 }

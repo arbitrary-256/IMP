@@ -23,8 +23,6 @@ export const createEmptyContext: Function = (): IIMPState => {
     contentAreaView: `Logged Out`,
     loggedInUser: `Logged Out`,
     productToReceive: createEmptyProduct(),
-    stateFuture: [],
-    stateHistory: [],
     theme: darkTheme
   }
 }

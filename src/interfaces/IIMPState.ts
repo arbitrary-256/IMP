@@ -18,8 +18,6 @@ import { INavBarTarget } from './unionTypes/INavBarTarget'
  * @orderSearch the user's current search string in the order tab
  * @productToReceive an IIMPProduct to be received into inventory
  * @restockSearch the user's current search string in the restock tab
- * @stateFuture an array of previous application states that have been undone
- * @stateHistory an array of previous application states
  * @theme the current theme of the application
  */
 export interface IIMPState {
@@ -34,7 +32,5 @@ export interface IIMPState {
   orderSearch: string
   productToReceive: IIMPProduct
   restockSearch: string
-  stateFuture: IIMPState[]
-  stateHistory: IIMPState[]
   theme: Theme
 }

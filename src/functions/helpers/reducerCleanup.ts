@@ -22,8 +22,6 @@ export const reducerCleanup: Function = (newState: IIMPState, oldState?: IIMPSta
     newState.inStock.forEach((product) => {
       product.inCart.value = 0
     })
-    newState.stateFuture = []
-    newState.stateHistory = []
   }
   /**
    * locates a product in state
@@ -44,7 +42,7 @@ export const reducerCleanup: Function = (newState: IIMPState, oldState?: IIMPSta
   // if user is logged out, cleanup user activity
   newState.loggedInUser === `Logged Out` ? logoutCleanup() : void 0
   // if there is an old state, add it to the stateHistory
-  oldState ? newState.stateHistory.push(oldState) : void 0
+  // oldState ? newState.stateHistory.push(oldState) : void 0
   // if there is a product, place it in the correct place in newState
   product ? locateAndPlaceProduct(product) : void 0
   // rebuild the contents of the cart

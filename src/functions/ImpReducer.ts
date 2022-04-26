@@ -20,8 +20,6 @@ import { restockProducts } from './helpers/restockProducts'
 import { setNumber } from './helpers/setNumber'
 import { setString } from './helpers/setString'
 import { setImage } from './helpers/setImage'
-import { redo } from './history/redo'
-import { undo } from './history/undo'
 import { createEmptyContext } from './helpers/createEmptyContext'
 /**
  * Updates application state based on the passed action.
@@ -42,10 +40,6 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       return reducerCleanup({ ...newState, loggedInUser: action.payload, contentAreaView: action.payload }, state)
     case `USE_NAV_BAR`:
       return reducerCleanup(navigateTo(action.payload, newState), state)
-    case `UNDO`:
-      return undo(newState)
-    case `REDO`:
-      return redo(newState)
     case `PURCHASE_CART`:
       return reducerCleanup(purchaseCart(newState))
     case `REFRESH_DATABASE`: // when pulling data from the database

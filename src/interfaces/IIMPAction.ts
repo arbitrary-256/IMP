@@ -6,8 +6,6 @@ import { IUseNavBarAction } from './actionInterfaces/core/IUseNavBarAction'
 import { IApplicationStartAction } from './actionInterfaces/core/IApplicationStartAction'
 import { IRefreshDatabaseAction } from './actionInterfaces/database/IRefreshDatabaseAction'
 import { IUpdateDatabaseAction } from './actionInterfaces/database/IUpdateDatabaseAction'
-import { IUndoAction } from './actionInterfaces/history/IUndoAction'
-import { IRedoAction } from './actionInterfaces/history/IRedoAction'
 import { IEditInventoryEntryAction } from './actionInterfaces/inventory/IEditInventoryEntryAction'
 import { IReceiveInventoryAction } from './actionInterfaces/inventory/IReceiveInventoryAction'
 import { IDeleteInventoryEntryAction } from './actionInterfaces/inventory/IDeleteInventoryEntryAction'
@@ -26,8 +24,6 @@ import { IUpdateImageAction } from './actionInterfaces/shared/IUpdateImageAction
  * a union type of every interface in src/interfaces/actionInterfaces
  */
 export type IIMPAction =
-  | IUndoAction
-  | IRedoAction
   | IPurchaseCartAction
   | IChangeLoginAction
   | IApplicationStartAction
