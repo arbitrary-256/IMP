@@ -64,12 +64,13 @@ You will need to install the following things to build IMP:
 
 - [React.JS version 18^](https://reactjs.org/) using [create-react-app](https://create-react-app.dev/) - web components library
 - [Material-UI version 5^](https://material-ui.com/) - React.JS component and styling library
+- [Tauri version 1.0.0-rc.3](https://tauri.studio) - cross-platform desktop framework for compiling web applications
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ### Back end technologies
 
-- [Tauri version 1.0.0-rc.3](https://tauri.studio) - cross-platform desktop framework for compiling web applications
 - [MariaDB version 10.7.3^](https://mariadb.org/) - MySQL-compatible database
+- [Express.js](https://expressjs.com/) - REST API to interact with the database via traditional CRUD HTTP fetch requests
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 

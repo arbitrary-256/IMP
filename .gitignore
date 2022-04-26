@@ -2,6 +2,7 @@
 /.eslintcache
 /.vscode
 /.VSCodeCounter/
+/backend
 /binaries
 /build
 /cache
@@ -12,6 +13,8 @@
 /output
 /src-tauri/target
 yarn*
+**/*.js
+**/*.jsx
 **/*/.DS_Store
 .DS_Store
 **/*/Cargo.lock

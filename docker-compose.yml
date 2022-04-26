@@ -1,9 +1,9 @@
 # 1) create and populate a .env file made from template.env
 # 2) point your desired firewall ports at your docker host:
-## ${REACT_APP_FRONTENDPORT} exposes the front end web client to the internet
-## ${REACT_APP_MARIADBPORT} exposes the backend database to the internet
-# 3) run 'yarn imp-compose' to deploy webapp and database with docker compose
-version: '3.8'
+## ${REACT_APP_EXPRESSPORT} exposes the api to the internet
+## ${REACT_APP_REACTPORT} exposes the front end web client to the internet
+# 3) run 'yarn imp-up' to deploy webapp and database with docker compose
+version: '3.9'
 services:
 # nginx web server to host the web application
  webapp:
@@ -24,10 +24,21 @@ services:
    - MYSQL_USER="${REACT_APP_USER}"
    - MYSQL_PASSWORD="${REACT_APP_PASSWORD}"
    - MYSQL_DATABASE="${REACT_APP_DATABASENAME}"
-  ports:
-   - '${REACT_APP_MARIADBPORT}:${REACT_APP_INTERNALPORT}'
   networks:
-   - impnet
+   - impbackend
+
+ api:
+  image: express:${REACT_APP_EXPRESSVERSION}
+  volumes:
+   - ${PWD}/backend:/usr/src/app
+  networks:
+   - impbackend
+   - impfrontend
+  ports:
+   - ${REACT_APP_EXPRESSPORT}:${REACT_APP_EXPRESSPORT}
+   
 networks:
- impnet:
+ impfrontend:
+  external: false
+ impbackend:
   external: false
