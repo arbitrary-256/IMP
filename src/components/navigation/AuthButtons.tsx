@@ -36,6 +36,10 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
             type: `CHANGE_LOGIN`,
             payload: `Manager`
           })
+          dispatch({
+            type: `USE_NAV_BAR`,
+            payload: `Inventory`
+          })
         }}
         disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
         variant={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`) ? `text` : `contained`}>
@@ -48,6 +52,10 @@ export const AuthButtons: React.FC<ILoginValue> = (user: ILoginValue): React.Rea
           dispatch({
             type: `CHANGE_LOGIN`,
             payload: `Employee`
+          })
+          dispatch({
+            type: `USE_NAV_BAR`,
+            payload: `Order`
           })
         }}
         disabled={state.loggedInUser.includes(`Manager`) || state.loggedInUser.includes(`Employee`)}
