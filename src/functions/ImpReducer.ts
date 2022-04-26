@@ -32,8 +32,8 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
   let newState: IIMPState = { ...state }
   switch (action.type) {
     case `APPLICATION_START`: // in progress: read from database
-    // get data from MariaDB server
-    return createEmptyContext() // + inventory from database
+      // get data from MariaDB server
+      return createEmptyContext() // + inventory from database
     case `CHANGE_APPEARANCE`:
       return reducerCleanup({ ...newState, theme: changeAppearance(action.payload) }, state)
     case `CHANGE_LOGIN`:
