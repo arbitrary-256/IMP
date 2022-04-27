@@ -12,7 +12,7 @@
   "scripts": {
     "readme": "echo use these commands to learn more about a topic: && echo 'yarn readme-doc' && echo 'yarn readme-setup' && echo 'yarn readme-imp' && echo 'yarn readme-tart' && echo 'yarn readme-test'",
     "readme-setup": "echo && echo setup scripts configure project dependencies && echo setup-yarn installs yarn && echo setup-rust-nix installs rust for macOS and linux && echo setup-rust-win prints the URLs to for Windows rust installers",
-    "setup-yarn": "npm install -g yarn && yarn --cpu-prof && yarn && echo run 'yarn setup-rust-nix' for linux / macOS or use the installer from https://win.rustup.rs/x86_64 for 64-bit Windows or https://win.rustup.rs/i686 for 32-bit Windows to finish setup",
+    "setup-yarn": "npm install -g yarn && yarn && echo run 'yarn setup-rust-nix' for linux / macOS or use the installer from https://win.rustup.rs/x86_64 for 64-bit Windows or https://win.rustup.rs/i686 for 32-bit Windows to finish setup",
     "setup-rust-nix": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
     "setup-rust-win": "echo 'Windows users must install Rust using the installer from https://win.rustup.rs/x86_64 or https://win.rustup.rs/i686'",
     "readme-doc": "echo && echo doc scripts facilitate documentation of the project && echo doc generates automatic documentation using the typedoc npm library",
@@ -53,12 +53,8 @@
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
-    "express": "latest",
-    "mysql2": "latest",
-    "node": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "sharp": "latest",
     "react-dropzone": "latest",
     "source-map-support": "latest",
     "typeorm": "latest",
@@ -71,7 +67,6 @@
     "@mui/types": "latest",
     "@tauri-apps/cli": "1.0.0-rc.8",
     "@tauri-apps/tauricon": "github:tauri-apps/tauricon",
-    "@types/express": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",
     "@types/prettier": "latest",
@@ -80,7 +75,6 @@
     "async": "latest",
     "jest": "latest",
     "jszip": "latest",
-    "nodemon": "latest",
     "prettier": "latest",
     "react-scripts": "latest",
     "ts-node": "latest",
@@ -116,7 +110,6 @@
     ]
   },
   "eslintConfig": {
-    "ignorePatterns": "node_modules/",
     "extends": [
       "react-app",
       "react-app/jest"
@@ -137,8 +130,6 @@
       "/docs/",
       "/public/",
       "/node_modules/",
-      "/api/dist/",
-      "/api/node_modules/",
       "/src-tauri/",
       "/src/index.tsx",
       "/src/interfaces/",

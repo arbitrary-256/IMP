@@ -70,8 +70,7 @@ You will need to install the following things to build IMP:
 ### Back end technologies
 
 - [MariaDB version 10.7.3^](https://mariadb.org/) - MySQL-compatible database
-- [Express.js](https://expressjs.com/) - REST API to interact with the database via traditional CRUD HTTP fetch requests
-
+- [API]() - REST API to make CRUD calls to the MariaDB database
 [ToC](#table-of-contents 'Return to Table of Contents')
 
 [](#build-for-web)

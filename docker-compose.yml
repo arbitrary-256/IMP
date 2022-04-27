@@ -28,7 +28,8 @@ services:
    - impbackend
 
  api:
-  image: express:${REACT_APP_EXPRESSVERSION}
+  image: ubuntu:latest
+  # should be #: express:${REACT_APP_EXPRESSVERSION}
   volumes:
    - ${PWD}/backend:/usr/src/app
   networks:
