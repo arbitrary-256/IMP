@@ -12,6 +12,8 @@ services:
    - ${PWD}/build:/usr/share/nginx/html
   ports:
    - "${REACT_APP_FRONTENDPORT}:80"
+  networks:
+   - frontend
 
 # MariaDB database to host the backend data
  database:
@@ -25,7 +27,7 @@ services:
    - MYSQL_PASSWORD="${REACT_APP_PASSWORD}"
    - MYSQL_DATABASE="${REACT_APP_DATABASENAME}"
   networks:
-   - impbackend
+   - backend
 
  api:
   image: ubuntu:latest
@@ -33,13 +35,13 @@ services:
   volumes:
    - ${PWD}/backend:/usr/src/app
   networks:
-   - impbackend
-   - impfrontend
+   - backend
+   - frontend
   ports:
    - ${REACT_APP_EXPRESSPORT}:${REACT_APP_EXPRESSPORT}
    
 networks:
- impfrontend:
+ frontend:
   external: false
- impbackend:
+ backend:
   external: false
