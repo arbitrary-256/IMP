@@ -29,16 +29,16 @@ services:
   networks:
    - backend
 
- api:
-  image: ubuntu:latest
-  # should be #: express:${REACT_APP_EXPRESSVERSION}
-  volumes:
-   - ${PWD}/backend:/usr/src/app
-  networks:
-   - backend
-   - frontend
-  ports:
-   - ${REACT_APP_EXPRESSPORT}:${REACT_APP_EXPRESSPORT}
+# api:
+#  image: ubuntu:latest
+#  # should be #: express:${REACT_APP_EXPRESSVERSION}
+#  volumes:
+#   - ${PWD}/backend:/usr/src/app
+#  networks:
+#   - backend
+#   - frontend
+#  ports:
+#   - ${REACT_APP_EXPRESSPORT}:${REACT_APP_EXPRESSPORT}
    
 networks:
  frontend:
