@@ -29,16 +29,19 @@ services:
   networks:
    - backend
 
-# api:
-#  image: ubuntu:latest
-#  # should be #: express:${REACT_APP_EXPRESSVERSION}
-#  volumes:
-#   - ${PWD}/backend:/usr/src/app
-#  networks:
-#   - backend
-#   - frontend
-#  ports:
-#   - ${REACT_APP_EXPRESSPORT}:${REACT_APP_EXPRESSPORT}
+# api server to connect webapp to database
+ api:
+  image: node:${REACT_APP_EXPRESSVERSION}
+  depends_on:
+   - database
+   - webapp
+  volumes:
+   - ${PWD}/backend:/usr/src/app
+  networks:
+   - backend
+   - frontend
+  ports:
+   - ${REACT_APP_EXPRESSPORT}:${REACT_APP_EXPRESSPORT}
    
 networks:
  frontend:
