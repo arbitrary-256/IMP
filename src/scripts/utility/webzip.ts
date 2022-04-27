@@ -6,7 +6,7 @@ import path from 'path'
 // non-TypeScript data
 import * as packageJson from '../../../package.json'
 /**
- * a node script for developrs that gets the paths to all subdirectories within a given directory
+ * gets all subdirectorie paths within a given directory
  * @param directoryPath the root directory to be searched
  * @returns a string[] of all subdirectories within the root directory
  */
@@ -28,21 +28,21 @@ const getFilePathsRecursively = (directoryPath: string): string[] => {
   return filePaths
 }
 /**
- * a node script for developrs that zips a given directory
- * @param directory the directory to zip
+ * zips the build directory to a given directory
+ * @param outputDirectory the directory to zip
  * @returns void and writes a zip file to the output directory
  */
-const getZipOfFolder = (directory: string): void => {
-  const allPaths: string[] = getFilePathsRecursively(directory)
+const getZipOfFolder = (outputDirectory: string): void => {
+  const allPaths: string[] = getFilePathsRecursively(outputDirectory)
   let zip = new JSZip()
   for (let filePath of allPaths) {
     if (fs.lstatSync(filePath).isSymbolicLink()) {
-      zip.file(path.relative(path.join(directory, `..`), filePath), fs.readlinkSync(filePath), {
+      zip.file(path.relative(path.join(outputDirectory, `..`), filePath), fs.readlinkSync(filePath), {
         unixPermissions: parseInt(`120755`, 8),
         dir: fs.lstatSync(filePath).isDirectory()
       })
     } else {
-      zip.file(path.relative(path.join(directory, `..`), filePath), fs.readFileSync(filePath), {
+      zip.file(path.relative(path.join(outputDirectory, `..`), filePath), fs.readFileSync(filePath), {
         unixPermissions: fs.lstatSync(filePath).mode,
         dir: fs.lstatSync(filePath).isDirectory()
       })
