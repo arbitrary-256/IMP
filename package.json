@@ -11,7 +11,7 @@
   "private": true,
   "scripts": {
     "readme": "echo use these commands to learn more about a topic: && echo 'yarn readme-doc' && echo 'yarn readme-setup' && echo 'yarn readme-imp' && echo 'yarn readme-tart' && echo 'yarn readme-test'",
-    "readme-setup": "echo && echo setup scripts configure project dependencies && echo setup-m1 installs homebrew and a few project dependencies for Apple Silicon && echo setup-yarn installs yarn && echo setup-rust-nix installs rust for macOS and linux && echo setup-m1 builds a few required npm binaries from source for Apple Silicon",
+    "readme-setup": "echo && echo setup scripts configure project dependencies && echo setup-m1 installs homebrew and builds a few project dependencies from source for Apple Silicon && echo setup-yarn installs yarn && echo setup-rust installs rust for macOS and linux",
     "setup-m1": "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)\" && echo 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' >> ~/.zprofile && eval \"$(/opt/homebrew/bin/brew shellenv)\" && arch -arm64 brew install cairo giflib jpeg libpng librsvg pango pkg-config vips && echo setup Apple Silicon build environment",
     "setup-yarn": "npm install -g yarn && yarn && echo to finish setup run 'yarn setup-rust' for linux / macOS or && echo use the graphical installer for 64-bit Windows https://win.rustup.rs/x86_64 or 32-bit Windows https://win.rustup.rs/i686",
     "setup-rust": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
