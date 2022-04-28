@@ -1,0 +1,23 @@
+{
+  "name": "inventory-management-platform",
+  "version": "0.9.0",
+  "license": "Unlicense",
+  "description": "Inventory Management Platform API Handler",
+  "productName": "IMP",
+  "author": "Brandon Shockley <bms1991@gmail.com> (https://github.com/Zindrek)",
+  "repository": "https://github.com/Zindrek/IMP/tree/main/src-api",
+  "copyright": "© 2022",
+  "keywords": [],
+  "private": true,
+  "main": "api.js",
+  "dependencies": {
+    "@types/express": "latest",
+    "@types/node": "latest",
+    "express": "latest",
+    "mysql2": "latest",
+    "typedoc": "latest",
+    "typeorm": "latest",
+    "nodemon": "latest",
+    "typescript": "latest"
+  }
+}
