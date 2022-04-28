@@ -81,7 +81,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "async": "latest",
-    "dotenv": "^16.0.0",
+    "dotenv": "latest",
     "jest": "latest",
     "jszip": "latest",
     "nodemon": "latest",
