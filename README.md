@@ -23,7 +23,7 @@
 
 ### Current version
 
-IMP uses the semantic versioning system.  The current build of IMP is version `0.9.0`
+IMP uses the semantic versioning system.  The current build of IMP is version `0.9.1`
 
 [](#develop)
 
@@ -122,7 +122,7 @@ The file `imp-stack.yml` contains inline instructions and defines a Docker Swarm
 
 ### current project status
 
-- version `0.9.0`
+- version `0.9.1`
 - `Nginx` server status:
     - ✅ Docker stack deploys performance-optimized version
     - ✅ Docker instance is reachable
