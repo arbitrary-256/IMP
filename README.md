@@ -56,21 +56,22 @@ You will need to install the following things to build IMP:
 [ToC](#table-of-contents 'Return to Table of Contents')
 ### Languages
 
-- [Rust version 1.6^](https://www.rust-lang.org/) - for Tauri's backend code
-- [Typescript version 4.6^](https://www.typescriptlang.org/) - for Tauri's frontend code, React.JS, and Material-UI
+- [Rust version 1.60.0^](https://www.rust-lang.org/) - for Tauri's backend code
+- [Typescript version 4.6.4^](https://www.typescriptlang.org/) - for Tauri's frontend code, React.JS, and Material-UI
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ### Front end technologies
 
-- [React.JS version 18^](https://reactjs.org/) using [create-react-app](https://create-react-app.dev/) - web components library
-- [Material-UI version 5^](https://material-ui.com/) - React.JS component and styling library
-- [Tauri version 1.0.0-rc.4](https://tauri.studio) - cross-platform desktop framework for compiling web applications
+- [React.JS version 18.1.0^](https://reactjs.org/) using [create-react-app](https://create-react-app.dev/) - web components library
+- [Material-UI version 5.6.3^](https://mui.com/) - a styling library for React.JS components
+- [Tauri version 1.0.0-rc.4](https://tauri.studio) - cross-platform framework for building desktop applications from web applications
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ### Back end technologies
 
 - [MariaDB version 10.7.3^](https://mariadb.org/) - MySQL-compatible database
-- [API]() - REST API to make CRUD calls to the MariaDB database
+- [Express version 4.18.0^](https://expressjs.com/) - a Node.JS REST API to connect the front end to the MariaDB database
+
 [ToC](#table-of-contents 'Return to Table of Contents')
 
 [](#build-for-web)
