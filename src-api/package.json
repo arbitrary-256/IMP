@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/express": "latest",
     "@types/node": "latest",
+    "dotenv": "latest",
     "express": "latest",
     "mysql2": "latest",
     "typedoc": "latest",

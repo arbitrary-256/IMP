@@ -19,12 +19,5 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "esnext"
-  },
-  "typedocOptions": {
-    "entryPoints": ["src/"],
-    "entryPointStrategy": "expand",
-    "out": "docs"
-  },
-  "include": ["public", "src/**/*"],
-  "exclude": ["src/scripts"]
+  }
 }
