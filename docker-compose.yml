@@ -13,7 +13,7 @@ services:
   ports:
    - "${REACT_APP_FRONTENDPORT}:80"
   networks:
-   - frontend
+   - react
 
 # MariaDB database to host the backend data
  database:
@@ -27,7 +27,7 @@ services:
    - MYSQL_PASSWORD="${REACT_APP_PASSWORD}"
    - MYSQL_DATABASE="${REACT_APP_DATABASENAME}"
   networks:
-   - backend
+   - maria
   expose:
    - 3306
 
@@ -38,13 +38,13 @@ services:
    - database
    - webapp
   networks:
-   - backend
-   - frontend
+   - maria
+   - react
   ports:
    - ${REACT_APP_APIPORT}:${REACT_APP_APIPORT}
    
 networks:
- frontend:
+ react:
   external: false
- backend:
+ maria:
   external: false
