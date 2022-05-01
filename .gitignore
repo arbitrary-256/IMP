@@ -18,5 +18,5 @@ yarn*
 **/*/.DS_Store
 .DS_Store
 **/*/Cargo.lock
+**/*/.env
 .env
-
