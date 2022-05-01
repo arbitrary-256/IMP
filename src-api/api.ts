@@ -98,6 +98,19 @@ apiServer.get(`/showRoutes`, (req: express.Request, res: express.Response): void
 apiServer.get(`/beRoot`, async (req: express.Request, res: express.Response): Promise<void> => getConnection(`root`))
 apiServer.get(`/beUser`, async (req: express.Request, res: express.Response): Promise<void> => getConnection(`regular`))
 
+// handle apiServer errors to prevent crashes
+apiServer.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction): void => {
+  console.log(`error: ${err}`)
+  res.status(500).send(`error: ${err}`)
+})
+// handle api server responses that are valid without errors
+apiServer.use((req: express.Request, res: express.Response, next: express.NextFunction): void => {
+  res.status(200).send(`OK`).json(req.body)
+})
+// handle responses for routes with no matching path by returning a 404 error page
+apiServer.use((req: express.Request, res: express.Response, next: express.NextFunction): void => {
+  res.status(404).send(`Error 404: page ${req.url} not found`)
+})
 // start server
 apiServer.listen(parseInt(`${process.env.REACT_APP_APIPORT}`), () => {
   console.log(`${new Date().toLocaleString()}: IMP API server listening on port ${process.env.REACT_APP_APIPORT}`)
