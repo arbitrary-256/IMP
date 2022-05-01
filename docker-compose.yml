@@ -16,21 +16,6 @@ services:
    - react
 
 # MariaDB database to host the backend data
- database:
-  image: mariadb:${REACT_APP_MARIADBVERSION}
-  volumes:
-   - ${PWD}/mariadbdata:/var/lib/mysql
-  environment:
-   - MYSQL_ROOT_USER="${REACT_APP_ROOTUSER}"
-   - MYSQL_ROOT_PASSWORD="${REACT_APP_ROOTPASSWORD}"
-   - MYSQL_USER="${REACT_APP_USER}"
-   - MYSQL_PASSWORD="${REACT_APP_PASSWORD}"
-   - MYSQL_DATABASE="${REACT_APP_DATABASENAME}"
-  networks:
-   - maria
-  expose:
-   - 3306
-
 # api server to connect webapp to database
  api:
   build: src-api
@@ -41,8 +26,23 @@ services:
    - maria
    - react
   ports:
-   - ${REACT_APP_APIPORT}:${REACT_APP_APIPORT}
+   - "${REACT_APP_APIPORT}:${REACT_APP_APIPORT}"
    
+ database:
+  image: mariadb:${REACT_APP_MARIADBVERSION}
+  volumes:
+   - ${PWD}/mariadbdata:/var/lib/mysql
+  environment:
+   - MYSQL_ROOT_USER=${REACT_APP_ROOTUSER}
+   - MYSQL_ROOT_PASSWORD=${REACT_APP_ROOTPASSWORD}
+   - MYSQL_USER=${REACT_APP_USER}
+   - MYSQL_PASSWORD=${REACT_APP_PASSWORD}
+   - MYSQL_DATABASE=${REACT_APP_DATABASENAME}
+  networks:
+   - maria
+  expose:
+   - 3306
+
 networks:
  react:
   external: false
