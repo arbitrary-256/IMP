@@ -13,9 +13,8 @@ config()
  */
 const connectAsRoot: Function = async (): Promise<Connection | undefined> => {
   try {
-    console.log(`awaiting connection promise`)
+    console.log(`awaiting root connection promise`)
     const connection: Connection = await mariaConnectAs(mariaConfigureAs(`root`))
-    console.log(connection.config)
     console.log(`connected to MariaDB as root user: ${connection.config.user}`)
     return connection
   } catch (error) {
@@ -35,20 +34,22 @@ const showDatabases: Function = async (): Promise<void> => {
   })
   // add basic listeners to the connection
   rootConnection.on('end', (): void => {
-    console.log(`end of query`)
+    console.log(`hit 'end' event on query`)
   }).on('error', (error: Error): void => {
+    console.log(`hit 'error' event on query`)
     console.log(`error: ${error}`)
   }).on('fields', (fields: any): void => {
+    console.log(`hit 'fields' event on query`)
     console.log(`fields: ${fields}`)
   }).on('result', (row: any): void => {
+    console.log(`hit 'result' event on query`)
     console.log(`row: ${row}`)
   }).on('resultset', (resultSet: any): void => {
+    console.log(`hit 'resultset' event on query`)
     console.log(`resultSet: ${resultSet}`)
-  }).on('row', (row: any): void => {
-    console.log(`row: ${row}`)
   })
   // use rootConnection to execute the sql query
-  console.log(`executing query`)
+  console.log(`executing query: ${showDatabasesQuery.sql}`)
   rootConnection.execute(showDatabasesQuery)
 }
 
