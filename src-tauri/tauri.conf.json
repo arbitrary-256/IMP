@@ -6,8 +6,8 @@
   "build": {
     "distDir": "../build",
     "devPath": "http://localhost:3000",
-    "beforeDevCommand": "NODE_ENV=development node_modules/react-scripts/bin/react-scripts.js start",
-    "beforeBuildCommand": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js build && echo '> React application built successfully' && cd src-tauri && cargo update && cd .. && echo '> updated Cargo crates successfully'"
+    "beforeDevCommand": "node node_modules/react-scripts/bin/react-scripts.js start",
+    "beforeBuildCommand": "node node_modules/react-scripts/bin/react-scripts.js build && echo '> React application built successfully' && cd src-tauri && cargo update && cd .. && echo '> updated Cargo crates successfully'"
   },
   "tauri": {
     "bundle": {
