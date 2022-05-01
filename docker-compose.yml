@@ -9,7 +9,7 @@ services:
  webapp:
   image: nginx:${REACT_APP_NGINXVERSION}
   volumes:
-   - ${PWD}/build:/usr/share/nginx/html
+   - ${PWD}/build:/usr/share/nginx/html:ro
   ports:
    - "${REACT_APP_FRONTENDPORT}:80"
   networks:
