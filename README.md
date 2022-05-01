@@ -40,7 +40,7 @@ IMP uses the semantic versioning system.  The current build of IMP is version `0
 
 1. Install your IDE
 2. Fork this repository and clone it to your development machine
-3. Run `npm run setup` and follow the instructions in your terminal.  This process will install the prerequisites except for your IDE, and should only be required once.
+3. Run `npm run setup-yarn` and follow the instructions in your terminal.  This process will install the prerequisites except for your IDE, and should only be required once.
 4. Run `yarn tart` to start a hot-reloadable development server in a Tauri application
 
 [ToC](#table-of-contents 'Return to Table of Contents')
@@ -123,16 +123,30 @@ The file `imp-stack.yml` contains inline instructions and defines a Docker Swarm
 ### current project status
 
 - version `0.9.1`
-- `Nginx` server status:
+- `React` server status:
     - ✅ Docker stack deploys performance-optimized version
     - ✅ Docker instance is reachable
-- `MariaDB` server status:
-    - ✅ Docker stack deploys
+    - ✅ Nginx can communicate with Express
+    - ❌ UI behavior is 100% consistent - we will be changing all variables in the front end into HTML strings
+    - ❌ Nginx sends all needed messages to Express
+    - ❌ Nginx receives all needed messages from Express
+- `Express` server status:
+    - ✅ Docker stack deploys performance-optimized version
     - ✅ Docker instance is reachable
-    - ✅ credentials created from .env file
-    - ✅ database created
-    - ❌ table created
-    - ❌ data rows populated
+    - ✅ API can successfully communicate with React
+    - ❌ API sends all needed messages to React
+    - ❌ API receives all needed messages from React
+    - ✅ API can communicate with MariaDB
+    - ❌ API sends all needed messages to MariaDB
+    - ❌ API receives all needed messages from MariaDB
+- `MariaDB` server status:
+    - ✅ Docker stack deploys performance-optimized version
+    - ✅ Docker instance is reachable
+    - ✅ MariaDB can communicate with Express
+    - ❌ MariaDB sends all needed messages to Express
+    - ❌ MariaDB receives all needed messages from Express
+    - ❌ tables created at configure
+    - ❌ data rows populated in [Docker instance](http://megadocker.net:3000)
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ## Milestones
