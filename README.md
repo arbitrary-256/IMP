@@ -41,7 +41,8 @@ IMP uses the semantic versioning system.  The current build of IMP is version `0
 1. Install your IDE
 2. Fork this repository and clone it to your development machine
 3. Run `npm run setup-yarn` and follow the instructions in your terminal.  This process will install the prerequisites except for your IDE, and should only be required once.
-4. Run `yarn tart` to start a hot-reloadable development server in a Tauri application
+4. On Windows, you will need to install the [Visual C++ Build Tools](https://aka.ms/vs/17/release/vs_BuildTools.exe), selecting the _C++ Build tools_ and _Node.JS_ options.  This is required to compile the IMP binaries.
+5. Run scripts in `package.json`'s `scripts` section with the command `yarn <script-name>`.  For example, `yarn readme` will explain what the most commonly used scripts do.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ### Prerequisites
