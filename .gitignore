@@ -12,6 +12,7 @@
 /node_modules
 /output
 /src-tauri/target
+/src-tauri/WixTools
 yarn*
 **/*.js
 **/*.jsx
@@ -20,3 +21,5 @@ yarn*
 **/*/Cargo.lock
 **/*/.env
 .env
+React
+updated
