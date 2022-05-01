@@ -11,7 +11,7 @@ config()
  * connects to the MariaDB database as the root user in .env
  * @returns a root connection ready to use
  */
-const connectAsRoot: Function = async (): Promise<Connection | undefined> => {
+const getConnection: Function = async (user: `root` | `regular`): Promise<Connection | undefined> => {
   try {
     console.log(`awaiting root connection promise`)
     const connection: Connection = await mariaConnectAs(mariaConfigureAs(`root`))
@@ -22,10 +22,9 @@ const connectAsRoot: Function = async (): Promise<Connection | undefined> => {
     return undefined
   }
 }
-const showDatabases: Function = async (): Promise<void> => {
-  console.log(`connecting to MariaDB as root`)
-  rootConnection = await connectAsRoot()
-  console.log(`connected to MariaDB as root user: ${rootConnection.config.user}`)
+
+const showDatabases: Function = async (user: `root` | `regular`): Promise<void> => {
+  rootConnection = await getConnection(user)
   console.log(`getting database names`)
   const showDatabasesQuery: Query = rootConnection.query(`SHOW DATABASES`).on('error', (error: Error) => {
     console.log(`error: ${error}`)
@@ -56,11 +55,10 @@ const showDatabases: Function = async (): Promise<void> => {
 console.log(`starting IMP api.ts logs:`)
 
 // let regularConnection: Connection
-let rootConnection: Connection
 showDatabases()
 
 
-rootConnection = connectAsRoot()
+let rootConnection: Connection = getConnection(`root`)
 console.log(rootConnection)
 
 // const disconnectUser: Function = (connectionToEnd: Connection): void => {
@@ -97,14 +95,8 @@ apiServer.get(`/showRoutes`, (req: express.Request, res: express.Response): void
         .send()
     console.log(`returned showRoutes JSON`)
 })
-// apiServer.get(`/beRoot`, async (req: express.Request, res: express.Response): Promise<void> => {
-//     console.log(`${new Date().toLocaleString()}: validating connection as root`)
-//     await mariaConnectAs(mariaConfigureAs(`root`))
-// })
-// apiServer.get(`/beUser`, async (req: express.Request, res: express.Response): Promise<void> => {
-//     console.log(`${new Date().toLocaleString()}: validating connection as user`)
-//     await mariaConnectAs(mariaConfigureAs(`user`))
-// })
+apiServer.get(`/beRoot`, async (req: express.Request, res: express.Response): Promise<void> => getConnection(`root`))
+apiServer.get(`/beUser`, async (req: express.Request, res: express.Response): Promise<void> => getConnection(`regular`))
 
 // start server
 apiServer.listen(parseInt(`${process.env.REACT_APP_APIPORT}`), () => {
