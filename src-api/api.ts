@@ -23,40 +23,47 @@ const getConnection: Function = async (user: `root` | `regular`): Promise<Connec
   }
 }
 
-const showDatabases: Function = async (user: `root` | `regular`): Promise<void> => {
-  rootConnection = await getConnection(user)
+const showDatabases: Function = async (user: `root` | `regular`, query: Query): Promise<void> => {
+  const connection = await getConnection(user)
+  // create a query on the connection to SHOW DATABASES
+  const showDatabasesQuery: Query = connection
+    .query(`SHOW DATABASES`)
+    .on('error', (error: Error) => {
+      console.error(`error showing databases: ${error}`)
+    })
+    .on('result', (row: any) => {
+      console.log(`database: ${row.Database}`)
+    })
+
+  // add basic handlers to the root connection
+  connection
+    .on('end', (): void => {
+      console.log(`hit 'end' event on query`)
+    })
+    .on('error', (error: Error): void => {
+      console.log(`hit 'error' event on query`)
+      console.log(`error: ${error}`)
+    })
+    .on('fields', (fields: any): void => {
+      console.log(`hit 'fields' event on query`)
+      console.log(`fields: ${fields}`)
+    })
+    .on('result', (row: any): void => {
+      console.log(`hit 'result' event on query`)
+      console.log(`row: ${row}`)
+    })
+    .on('resultset', (resultSet: any): void => {
+      console.log(`hit 'resultset' event on query`)
+      console.log(`resultSet: ${resultSet}`)
+    })
+  // and execute the query
   console.log(`getting database names`)
-  const showDatabasesQuery: Query = rootConnection.query(`SHOW DATABASES`).on('error', (error: Error) => {
-    console.log(`error: ${error}`)
-  }).on('result', (row: any) => {
-    console.log(`database: ${row.Database}`)
-  })
-  // add basic listeners to the connection
-  rootConnection.on('end', (): void => {
-    console.log(`hit 'end' event on query`)
-  }).on('error', (error: Error): void => {
-    console.log(`hit 'error' event on query`)
-    console.log(`error: ${error}`)
-  }).on('fields', (fields: any): void => {
-    console.log(`hit 'fields' event on query`)
-    console.log(`fields: ${fields}`)
-  }).on('result', (row: any): void => {
-    console.log(`hit 'result' event on query`)
-    console.log(`row: ${row}`)
-  }).on('resultset', (resultSet: any): void => {
-    console.log(`hit 'resultset' event on query`)
-    console.log(`resultSet: ${resultSet}`)
-  })
-  // use rootConnection to execute the sql query
-  console.log(`executing query: ${showDatabasesQuery.sql}`)
-  rootConnection.execute(showDatabasesQuery)
+  connection.execute(showDatabasesQuery)
 }
 
-console.log(`starting IMP api.ts logs:`)
-
 // let regularConnection: Connection
-showDatabases()
-
+showDatabases(`root`)
+showDatabases(`regular`)
 
 let rootConnection: Connection = getConnection(`root`)
 console.log(rootConnection)
@@ -85,15 +92,16 @@ apiServer.head(`/`, (req: express.Request, res: express.Response) => {
 })
 // create GET endpoint at `/hello`
 apiServer.get(`/hello`, (req: express.Request, res: express.Response): void => {
-    res.status(200).send(`/hey there!`)
+  res.status(200).send(`/hey there!`)
   console.log(`printed hello world`)
 })
 // create GET endpoint at /showRoutes
 apiServer.get(`/showRoutes`, (req: express.Request, res: express.Response): void => {
-    res.status(200)
-        .json({ routes: [`/hello`, `/routes`] })
-        .send()
-    console.log(`returned showRoutes JSON`)
+  res
+    .status(200)
+    .json({ routes: [`/hello`, `/routes`] })
+    .send()
+  console.log(`returned showRoutes JSON`)
 })
 apiServer.get(`/beRoot`, async (req: express.Request, res: express.Response): Promise<void> => getConnection(`root`))
 apiServer.get(`/beUser`, async (req: express.Request, res: express.Response): Promise<void> => getConnection(`regular`))
