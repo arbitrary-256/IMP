@@ -23,3 +23,5 @@ yarn*
 .env
 React
 updated
+**/*/*.zip
+**/*/_template.ts
