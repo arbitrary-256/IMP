@@ -6,25 +6,28 @@ import { ConnectionOptions } from 'mysql2'
 config()
 // get values from environment variables
 const getHost: Function = (): string => `imp-${process.env.REACT_APP_MARIADBHOST}-1`
-// const getMariaPort: Function = (): number => parseInt(`${process.env.REACT_APP_MARIADBPORT}`) ?? 3306
+const getMariaPort: Function = (): number => parseInt(`${process.env.REACT_APP_MARIADBPORT}`)
 const getDatabase: Function = (): string => `${process.env.REACT_APP_DATABASENAME}`
 const getUser: Function = (): string => `${process.env.REACT_APP_USER}`
 const getPassword: Function = (): string => `${process.env.REACT_APP_PASSWORD}`
 const getRootUser: Function = (): string => `${process.env.REACT_APP_ROOTUSER}`
-const getRootPassword: Function = (): string => `${process.env.REACT_APP_ROOTPASSWORD}` ?? `defaultrootpassword`
+const getRootPassword: Function = (): string => `${process.env.REACT_APP_ROOTPASSWORD}`
 /**
  * creates a MariaDB connection configuration for the IMP database
- * @param mariaUser either `root` or `regular`
+ * @param asRoot optional boolean boolean 
  * @returns a mysql2.ConnectionOptions for the user passed in
  */
-export const mariaConfigureAs: Function = (mariaUser: `root` | `regular`): ConnectionOptions => {
+export const configureMaria: Function = (asRoot?: boolean): ConnectionOptions => {
+  const rootUser: string = getRootUser()
+  const rootPassword: string = getRootPassword()
+  const regularUser: string = getUser()
+  const regularPassword: string = getPassword()
   const mariaConfig: ConnectionOptions = {
     host: getHost(),
-    // port: getMariaPort(),
+    port: getMariaPort(),
     database: getDatabase(),
-    user: mariaUser === `root` ? getRootUser() : getUser(),
-    password: mariaUser === `root` ? getRootPassword() : getPassword()
+    user: asRoot === true ? rootUser : regularUser,
+    password: asRoot === true ? rootPassword : regularPassword
   }
-  console.log(`MariaDB connection configuration: ${JSON.stringify(mariaConfig)}`)
   return mariaConfig
 }

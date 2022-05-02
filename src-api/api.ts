@@ -3,123 +3,96 @@
 import { config } from 'dotenv'
 import * as express from 'express'
 import { Connection, Query } from 'mysql2'
-import { mariaConfigureAs } from './src/mariaConfigureAs'
-import { mariaConnectAs } from './src/mariaConnectAs'
+import { configureMaria } from './src/configureMaria'
+import { connectToMaria } from './src/connectToMaria'
 // use .env values in this file
 config()
 /**
- * connects to the MariaDB database as the root user in .env
+ * connects to the MariaDB database
+ * @param asRoot optional boolean
  * @returns a root connection ready to use
  */
-const getConnection: Function = async (user: `root` | `regular`): Promise<Connection | undefined> => {
+const activateConnection: Function = async (asRoot?: boolean): Promise<Connection | undefined> => {
   try {
-    console.log(`awaiting root connection promise`)
-    const connection: Connection = await mariaConnectAs(mariaConfigureAs(`root`))
-    console.log(`connected to MariaDB as root user: ${connection.config.user}`)
+    const connection: Connection = await connectToMaria(configureMaria(asRoot))
     return connection
   } catch (error) {
     console.log(`error: ${error}`)
     return undefined
   }
 }
-
-const showDatabases: Function = async (user: `root` | `regular`, query: Query): Promise<void> => {
-  const connection = await getConnection(user)
+/**
+ * lists databases
+ * @param asRoot optional boolean
+ * @returns a list of databases as a string[], or JSON, hopefully
+ */
+const showDatabases: Function = async (asRoot?: boolean): Promise<void> => {
+  console.log(`showing Databases`)
+  const connection = await activateConnection(asRoot)
   // create a query on the connection to SHOW DATABASES
   const showDatabasesQuery: Query = connection
     .query(`SHOW DATABASES`)
     .on('error', (error: Error) => {
-      console.error(`error showing databases: ${error}`)
+      console.error(`error showing databases:
+${error}`)
     })
     .on('result', (row: any) => {
-      console.log(`database: ${row.Database}`)
+//      console.log(`row:
+//${ row }`)
     })
-
-  // add basic handlers to the root connection
-  connection
-    .on('end', (): void => {
-      console.log(`hit 'end' event on query`)
-    })
-    .on('error', (error: Error): void => {
-      console.log(`hit 'error' event on query`)
-      console.log(`error: ${error}`)
-    })
-    .on('fields', (fields: any): void => {
-      console.log(`hit 'fields' event on query`)
-      console.log(`fields: ${fields}`)
-    })
-    .on('result', (row: any): void => {
-      console.log(`hit 'result' event on query`)
-      console.log(`row: ${row}`)
-    })
-    .on('resultset', (resultSet: any): void => {
-      console.log(`hit 'resultset' event on query`)
-      console.log(`resultSet: ${resultSet}`)
-    })
-  // and execute the query
-  console.log(`getting database names`)
   connection.execute(showDatabasesQuery)
+  connection.end()
 }
-
-// let regularConnection: Connection
-showDatabases(`root`)
-showDatabases(`regular`)
-
-let rootConnection: Connection = getConnection(`root`)
-console.log(rootConnection)
-
-// const disconnectUser: Function = (connectionToEnd: Connection): void => {
-//   try {
-//     connectionToEnd.end()
-//     console.log(`disconnected from MariaDB as user: ${connectionToEnd.threadId}`)
-//   } catch (error) {
-//     console.log(`error: ${error}`)
-//   }
-// }
-
-// disconnectUser(rootConnection)
-// disconnectUser(regularConnection)
 
 // create express application
 const apiServer: express.Application = express.application
 // enable json responses
 apiServer.use(express.json)
-// create api response header
-apiServer.head(`/`, (req: express.Request, res: express.Response) => {
-  res.set(`Content-Type`, `application/json`)
-  res.set(`Access-Control-Allow-Methods`, `GET, POST, PUT, DELETE`)
-  res.send(`OK`)
+
+// endpoints
+
+// create a GET endpoint at / to show available routes
+apiServer.get(`/`, async (request: express.Request, response: express.Response) => {
+  console.log(`someone asked for / (to show routes)`)
+  response.status(200).json({
+    message: `available routes:`,
+    routes: [
+      `/`,
+      `/hello`,
+      `/showDatabases`
+    ]
+  })
 })
+
 // create GET endpoint at `/hello`
 apiServer.get(`/hello`, (req: express.Request, res: express.Response): void => {
-  res.status(200).send(`/hey there!`)
-  console.log(`printed hello world`)
+  console.log(`someone asked for /hello`)
+  res.status(200).json({message: `/hey there, stranger!`}).send()
 })
-// create GET endpoint at /showRoutes
-apiServer.get(`/showRoutes`, (req: express.Request, res: express.Response): void => {
-  res
-    .status(200)
-    .json({ routes: [`/hello`, `/routes`] })
-    .send()
-  console.log(`returned showRoutes JSON`)
-})
-apiServer.get(`/beRoot`, async (req: express.Request, res: express.Response): Promise<void> => getConnection(`root`))
-apiServer.get(`/beUser`, async (req: express.Request, res: express.Response): Promise<void> => getConnection(`regular`))
+
+// create a GET endpoint to show databases
+apiServer.get(`/showDatabases`, async (request: express.Request, response: express.Response) => {
+  console.log(`someone asked for /showDatabases`)
+  try {
+    response = await showDatabases(false)
+    response.json({ message: response.json }).send()
+  } catch (error) {
+    response.send(`error: ${error}`)
+  }  
+})  
 
 // handle apiServer errors to prevent crashes
-apiServer.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction): void => {
+apiServer.use((err: Error, request: express.Request, res: express.Response, next: express.NextFunction): void => {
   console.log(`error: ${err}`)
-  res.status(500).send(`error: ${err}`)
+  res
+    .status(500)
+    .json({
+      message: `error: ${err}`
+    })
+    .send()
 })
-// handle api server responses that are valid without errors
-apiServer.use((req: express.Request, res: express.Response, next: express.NextFunction): void => {
-  res.status(200).send(`OK`).json(req.body)
-})
-// handle responses for routes with no matching path by returning a 404 error page
-apiServer.use((req: express.Request, res: express.Response, next: express.NextFunction): void => {
-  res.status(404).send(`Error 404: page ${req.url} not found`)
-})
+
 // start server
 apiServer.listen(parseInt(`${process.env.REACT_APP_APIPORT}`), () => {
-  console.log(`${new Date().toLocaleString()}: IMP API server listening on port ${process.env.REACT_APP_APIPORT}`)
+  console.log(`${new Date().toLocaleString()}: API listening on port ${process.env.REACT_APP_APIPORT}`)
 })

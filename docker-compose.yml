@@ -11,7 +11,7 @@ services:
   volumes:
    - ${PWD}/build:/usr/share/nginx/html:ro
   ports:
-   - "${REACT_APP_FRONTENDPORT}:80"
+   - ${REACT_APP_FRONTENDPORT}:80
   networks:
    - react
 
@@ -27,18 +27,21 @@ services:
    - maria
    - react
   ports:
-   - "${REACT_APP_APIPORT}:${REACT_APP_APIPORT}"
+   - ${REACT_APP_APIPORT}:${REACT_APP_APIPORT}
    
  database:
   image: mariadb:${REACT_APP_MARIADBVERSION}
   volumes:
    - ${PWD}/mariadbdata:/var/lib/mysql
   environment:
-   - MYSQL_ROOT_USER=${REACT_APP_ROOTUSER}
-   - MYSQL_ROOT_PASSWORD=${REACT_APP_ROOTPASSWORD}
-   - MYSQL_USER=${REACT_APP_USER}
-   - MYSQL_PASSWORD=${REACT_APP_PASSWORD}
-   - MYSQL_DATABASE=${REACT_APP_DATABASENAME}
+   - MARIADB_ROOT_USER=${REACT_APP_ROOTUSER}
+   - MARIADB_ROOT_PASSWORD=${REACT_APP_ROOTPASSWORD}
+   - MARIADB_USER=${REACT_APP_USER}
+   - MARIADB_PASSWORD=${REACT_APP_PASSWORD}
+   - MARIADB_DATABASE=${REACT_APP_DATABASENAME}
+   - MARIADB_ROOT_HOST=imp-api-1
+   - REACT_APP_APIPORT=${REACT_APP_APIPORT}
+
   networks:
    - maria
   expose:
