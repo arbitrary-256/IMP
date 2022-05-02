@@ -9,16 +9,17 @@
   "copyright": "© 2022",
   "keywords": [],
   "private": true,
-  "main": "apiServer.js",
+  "main": "impAPI.js",
   "dependencies": {
+    "dotenv": "latest",
+    "express": "latest",
+    "mysql": "latest"
+  },
+  "devDependencies": {
     "@types/express": "latest",
     "@types/mysql": "latest",
     "@types/node": "latest",
-    "body-parser": "latest",
-    "dotenv": "latest",
-    "express": "latest",
-    "mysql": "latest",
-    "typedoc": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "typedoc": "latest"
   }
 }

@@ -2,11 +2,11 @@
 # 2) point your desired firewall ports at your docker host:
 ## ${REACT_APP_APIPORT} exposes the api to the internet
 ## ${REACT_APP_FRONTENDPORT} exposes the front end web client to the internet
-# 3) run 'yarn imp-up' to deploy webapp and database with docker compose
+# 3) run 'yarn imp-up' to deploy frontend and database with docker compose
 version: '3.9'
 services:
 # nginx web server to host the web application
- webapp:
+ frontend:
   image: nginx:alpine
   volumes:
    - ${PWD}/build:/usr/share/nginx/html:ro
@@ -16,19 +16,19 @@ services:
    - react
 
 # MariaDB database to host the backend data
-# api server to connect webapp to database
+# api server to connect frontend to database
  api:
   build: src-api
   image: imp_api:alpine
   depends_on:
    - database
-   - webapp
+   - frontend
   networks:
    - maria
    - react
   ports:
    - ${REACT_APP_APIPORT}:${REACT_APP_APIPORT}
-   
+
  database:
   image: mariadb:${REACT_APP_MARIADBVERSION}
   volumes:
@@ -41,11 +41,12 @@ services:
    - MARIADB_DATABASE=${REACT_APP_MARIADBDATABASENAME}
    - MARIADB_ROOT_HOST=${REACT_APP_MARIADBHOST}
    - REACT_APP_APIPORT=${REACT_APP_APIPORT}
-
   networks:
    - maria
-  expose:
-   - ${REACT_APP_MARIADBPORT}
+#   expose:
+#    - ${REACT_APP_MARIADBPORT}
+  ports:
+   - ${REACT_APP_MARIADBPORT}:${REACT_APP_MARIADBPORT}
 
 networks:
  react:
