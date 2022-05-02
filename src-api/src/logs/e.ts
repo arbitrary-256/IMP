@@ -7,4 +7,4 @@ import { punchClock } from './punchClock'
  * @param message string - the log message
  * @param object optional any - the object to log
  */
-export const e = (type: logType, message: string, object?: any) => (object ? console.error(`${punchClock()}: ${type} ${message}`, object) : console.error(`${punchClock()}: ${type} ${message}`))
+export const e = (type: logType, message: string, object?: any) => (object ? console.error(`${punchClock()} - ${type}>  ${message}`, object) : console.error(`${punchClock()} - ${type}>  ${message}`))
