@@ -1,22 +1,23 @@
 /** @format */
-// libraries
-import { createServer } from 'http'
-import { application, Application, json, Request, Response, urlencoded } from 'express'
-// src-api
-import { environment, i, punchClock } from './src'
+import { application, Application, Request, Response } from 'express'
+import { i } from './src'
+// import { environment, i } from './src'
+// import * as sql from 'mysql'
+
 const impAPI: Application = application
-impAPI.use(urlencoded({ extended: true }))
-impAPI.use(json())
+// const config = {
+//   host: environment.mariaServer.host,
+//   database: environment.mariaServer.database,
+//   port: environment.mariaServer.port,
+//   user: environment.mariaRegular.user,
+//   password: environment.mariaRegular.password
+// }
+// const regularConnection = sql.createConnection(config)
 
-// place routes below this comment
-
-// GET requests
-impAPI.get(`/get`, async (request: Request, response: Response) => {
-  i(`api`, `${punchClock()}:GET /get`)
-  return response.status(200).json({ page: `domain root` }).send()
+impAPI.route(`/`).get( async (request: Request, response: Response) => {
+  return response.status(200).send(`Hello World!`)
 })
-// place routes above this comment
 
-const httpServer = createServer(impAPI)
-i(`api`, `Starting server on '${environment.apiServer.host}:${environment.apiServer.port}'`)
-httpServer.listen(environment.apiServer.port, async () => i(`api`, `Express.js server is listening`))
+impAPI.listen(3333, () => {
+  i(`api`, `impAPI is running on port 3333`)
+})

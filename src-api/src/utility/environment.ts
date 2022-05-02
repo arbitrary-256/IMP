@@ -1,5 +1,6 @@
 /** @format */
 import { config } from 'dotenv'
+import { i } from '../logs/i'
 // import { e } from '../'
 config()
 /**
@@ -15,7 +16,6 @@ export interface IServerInfo {
 export interface IMariaServerInfo extends IServerInfo {
   database: string
 }
-
 export interface IMariaUserCredentials {
   user: string
   password: string
@@ -41,32 +41,11 @@ const mariaServer: IMariaServerInfo = {
   port: mariaDBPort,
   database: mariaDBDatabase
 }
-const apiHost = process.env.REACT_APP_APIHOST ? process.env.REACT_APP_APIHOST : `defaultApiHost`
 const apiPort = process.env.REACT_APP_APIPORT ? getEnvNumber(process.env.REACT_APP_APIPORT) : 3333
-const apiServer: IServerInfo = { host: apiHost, port: apiPort }
-// const checktypes: any[] = [mariaDBHost, mariaDBDatabase, mariaDBRegularUser, mariaDBRegularPassword, mariaDBRootUser, mariaDBRootPassword, mariaDBPort, apiPort, apiHost]
-
-// checktypes.map((toCheck: string | number | boolean): string | number | boolean => {
-//   switch (typeof toCheck) {
-//     case `string`:
-//       return toCheck as string
-//     case `number`:
-//       return toCheck as number
-//     case `boolean`:
-//       return toCheck as boolean
-//     case `undefined`:
-//       e(`development`, `${toCheck} is undefined.`)
-//       break
-//     default:
-//       e(`development`, `${toCheck} is not a string, number, or boolean.`)
-//       process.exit(1)
-//   }
-//   return toCheck
-// })
-// console.log(mariaServer, mariaRoot, mariaRegular, apiServer)
 export const environment = {
   mariaRegular,
   mariaRoot,
   mariaServer,
-  apiServer
+  apiPort
 }
+i(`development`, `environment: ${JSON.stringify(environment)}`)

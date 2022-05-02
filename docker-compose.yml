@@ -1,6 +1,6 @@
-# 1) create and populate a .env file made from template.env
-# 2) point your desired firewall ports at your docker host:
-## ${REACT_APP_APIPORT} exposes the api to the internet
+# 1) populate a .env file made from template.env
+# 2) open your desired firewall ports at your docker host:
+## ${REACT_APP_APIPORT} exposes the express api to the internet
 ## ${REACT_APP_FRONTENDPORT} exposes the front end web client to the internet
 # 3) run 'yarn imp-up' to deploy frontend and database with docker compose
 version: '3.9'
@@ -9,9 +9,9 @@ services:
  frontend:
   image: nginx:alpine
   volumes:
-   - ${PWD}/build:/usr/share/nginx/html:ro
+   - $PWD/build:/usr/share/nginx/html:ro
   ports:
-   - ${REACT_APP_FRONTENDPORT}:80
+   - $REACT_APP_FRONTENDPORT:80
   networks:
    - frontend
 
@@ -22,37 +22,41 @@ services:
   image: imp_api:alpine
   environment:
    - NODE_ENV=production
-   - DB_HOST=${REACT_APP_MARIADBHOST}
-   - DB_PORT=${REACT_APP_MARIADBPORT}
-   - DB_USER=${REACT_APP_MARIADBUSER}
-   - DB_PASSWORD=${REACT_APP_MARIADBPASSWORD}
-   - DB_NAME=${REACT_APP_MARIADBDATABASENAME}
+   - DB_HOST=$REACT_APP_MARIADBHOST
+   - DB_PORT=$REACT_APP_MARIADBPORT
+   - DB_USER=$REACT_APP_MARIADBUSER
+   - DB_PASSWORD=$REACT_APP_MARIADBPASSWORD
+   - DB_NAME=$REACT_APP_MARIADBDATABASENAME
   depends_on:
    - database
    - frontend
   networks:
    - maria
    - frontend
-  ports:
-   - ${REACT_APP_APIPORT}:${REACT_APP_APIPORT}
+  expose:
+   - $REACT_APP_APIPORT
+#   ports:
+#    - $REACT_APP_APIPORT:$REACT_APP_APIPORT
+#   stdin_open: true
+#   tty: true
 
  database:
-  image: mariadb:${REACT_APP_MARIADBVERSION}
+  image: mariadb:latest
   volumes:
-   - ${PWD}/mariadbdata:/var/lib/mysql
+   - $PWD/mariadbdata:/var/lib/mysql
   environment:
-   - MARIADB_ROOT_USER=${REACT_APP_MARIADBROOTUSER}
-   - MARIADB_ROOT_PASSWORD=${REACT_APP_MARIADBROOTPASSWORD}
-   - MARIADB_USER=${REACT_APP_MARIADBUSER}
-   - MARIADB_PASSWORD=${REACT_APP_MARIADBPASSWORD}
-   - MARIADB_DATABASE=${REACT_APP_MARIADBDATABASENAME}
-   - MARIADB_ROOT_HOST=${REACT_APP_MARIADBHOST}
-   - REACT_APP_APIPORT=${REACT_APP_APIPORT}
-   - MARIADB_ROOT_HOST=%  # needs to be enclosed with quotes
+   - MARIADB_ROOT_USER=$REACT_APP_MARIADBROOTUSER
+   - MARIADB_ROOT_PASSWORD=$REACT_APP_MARIADBROOTPASSWORD
+   - MARIADB_USER=$REACT_APP_MARIADBUSER
+   - MARIADB_PASSWORD=$REACT_APP_MARIADBPASSWORD
+   - MARIADB_DATABASE=$REACT_APP_MARIADBDATABASENAME
+   - REACT_APP_APIPORT=$REACT_APP_APIPORT
   networks:
    - maria
-#   expose:
-#    - ${REACT_APP_MARIADBPORT}
+  expose:
+   - $REACT_APP_MARIADBPORT
+#   ports:
+#    - $REACT_APP_MARIADBPORT:$REACT_APP_MARIADBPORT
 
 networks:
  frontend:
