@@ -3,7 +3,13 @@ import { NextFunction, Request, Response } from 'express'
 import { e, i } from '..'
 import { connectToMaria, queryMaria } from '../'
 import { Connection } from 'mysql'
-
+/**
+ * lists databases in the MariaDB server
+ * @param request express Request
+ * @param response express Response
+ * @param next express NextFunction
+ * @returns hopefully a list of databases
+ */
 export const listDatabases = async (request: Request, response: Response, next: NextFunction) => {
   i(`mariadb`, `listing databases.`)
   let query = `SHOW DATABASES`

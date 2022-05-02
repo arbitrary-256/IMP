@@ -1,19 +1,22 @@
 /** @format */
 import { config } from 'dotenv'
-import { e } from '../'
+// import { e } from '../'
 config()
 /**
  * extracts numbers from env vars
  * @param envVariable the env var to extract from
  * @returns the number
  */
-const getEnvNumber: Function = (envVariable: string): number => parseInt(envVariable)
-interface IServerInfo {
+export const getEnvNumber: Function = (envVariable: string): number => parseInt(envVariable)
+export interface IServerInfo {
   host: string
   port: number
-  database?: string
 }
-interface IMariaUserCredentials {
+export interface IMariaServerInfo extends IServerInfo {
+  database: string
+}
+
+export interface IMariaUserCredentials {
   user: string
   password: string
 }
@@ -30,39 +33,36 @@ const mariaRoot: IMariaUserCredentials = {
   password: mariaDBRootPassword
 }
 const mariaDBHost = process.env.REACT_APP_MARIADBHOST ? process.env.REACT_APP_MARIADBHOST : `defaultMariaDBHost`
-const mariaDBDatabase = process.env.REACT_APP_MARIADBDATABASENAME ? process.env.REACT_APP_MARIADBDATABASENAME : `defaultRootUser`
+const mariaDBDatabase = process.env.REACT_APP_MARIADBDATABASENAME ? process.env.REACT_APP_MARIADBDATABASENAME : `defaultDatabaseName`
 const mariaDBPort = process.env.REACT_APP_MARIADBPORT ? getEnvNumber(process.env.REACT_APP_MARIADBPORT) : 3306
 
-const mariaServer: IServerInfo = {
+const mariaServer: IMariaServerInfo = {
   host: mariaDBHost,
   port: mariaDBPort,
   database: mariaDBDatabase
 }
 const apiHost = process.env.REACT_APP_APIHOST ? process.env.REACT_APP_APIHOST : `defaultApiHost`
-const apiPort = process.env.REACT_APP_APIPORT ? getEnvNumber(process.env.REACT_APP_APIPORT) : 3000
-const apiServer: IServerInfo = {
-  host: apiHost,
-  port: apiPort
-}
-const checktypes: any[] = [mariaDBHost, mariaDBDatabase, mariaDBRegularUser, mariaDBRegularPassword, mariaDBRootUser, mariaDBRootPassword, mariaDBPort, apiPort, apiHost]
+const apiPort = process.env.REACT_APP_APIPORT ? getEnvNumber(process.env.REACT_APP_APIPORT) : 3333
+const apiServer: IServerInfo = { host: apiHost, port: apiPort }
+// const checktypes: any[] = [mariaDBHost, mariaDBDatabase, mariaDBRegularUser, mariaDBRegularPassword, mariaDBRootUser, mariaDBRootPassword, mariaDBPort, apiPort, apiHost]
 
-checktypes.map((toCheck: string | number | boolean): string | number | boolean => {
-  switch (typeof toCheck) {
-    case `string`:
-      return toCheck as string
-    case `number`:
-      return toCheck as number
-    case `boolean`:
-      return toCheck as boolean
-    case `undefined`:
-      e(`development`, `${toCheck} is undefined.`)
-      break
-    default:
-      e(`development`, `${toCheck} is not a string, number, or boolean.`)
-      process.exit(1)
-  }
-  return toCheck
-})
+// checktypes.map((toCheck: string | number | boolean): string | number | boolean => {
+//   switch (typeof toCheck) {
+//     case `string`:
+//       return toCheck as string
+//     case `number`:
+//       return toCheck as number
+//     case `boolean`:
+//       return toCheck as boolean
+//     case `undefined`:
+//       e(`development`, `${toCheck} is undefined.`)
+//       break
+//     default:
+//       e(`development`, `${toCheck} is not a string, number, or boolean.`)
+//       process.exit(1)
+//   }
+//   return toCheck
+// })
 // console.log(mariaServer, mariaRoot, mariaRegular, apiServer)
 export const environment = {
   mariaRegular,
