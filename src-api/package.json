@@ -9,7 +9,7 @@
   "copyright": "© 2022",
   "keywords": [],
   "private": true,
-  "main": "api.js",
+  "main": "apiServer.js",
   "dependencies": {
     "@types/express": "latest",
     "@types/mysql": "latest",
@@ -19,8 +19,6 @@
     "express": "latest",
     "mysql": "latest",
     "typedoc": "latest",
-    "typeorm": "latest",
-    "nodemon": "latest",
     "typescript": "latest"
   }
 }
