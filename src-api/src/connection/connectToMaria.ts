@@ -14,13 +14,13 @@ export const connectToMaria = async (asRoot: boolean = false): Promise<Connectio
         asRoot
           ? {
               user: environment.mariaRoot.user,
-              password: environment.mariaRoot.pass,
+              password: environment.mariaRoot.password,
               host: environment.mariaServer.host,
               database: environment.mariaServer.database
             }
           : {
               user: environment.mariaRegular.user,
-              password: environment.mariaRegular.pass,
+              password: environment.mariaRegular.password,
               host: environment.mariaServer.host,
               database: environment.mariaServer.database
             }

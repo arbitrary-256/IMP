@@ -23,7 +23,7 @@
     "readme-imp": "echo && echo imp scripts perform convenience features for this project && echo && echo imp-up deploys this repo using docker-compose.yml && echo imp-new clears your data and deploys a fresh copy && echo imp-down ends that deployment && echo imp-clean-db deletes the database && echo imp-clean-api deletes the built api && echo imp-clean deletes the database and the built api && echo imp-api-watch transpiles the TypeScript API in watch mode for development && echo imp-api-build outputs an API build optimized suitable for use in production",
     "imp": "yarn react-scripts start & docker-compose up -d",
     "imp-up": "yarn imp-clean-docker && docker-compose up -d",
-    "imp-down": "docker-compose down --remove-orphans",
+    "imp-down": "docker-compose down --remove-orphans && yarn imp-clean-docker",
     "imp-api": "yarn imp-down && yarn imp-up && docker-compose logs -f",
     "imp-api-build": "tsc src-api/api.ts --skipLibCheck --removeComments --outDir ./backend",
     "imp-api-logs": "docker logs -f imp-api-1",

@@ -7,11 +7,7 @@ config()
  * @param envVariable the env var to extract from
  * @returns the number
  */
-const getEnvNumber: Function = (envVariable: string): number => {
-  const portNumber: number = parseInt(envVariable)
-  !isNaN(portNumber) && e(`development`, `${envVariable} is not a number.`)
-  return portNumber
-}
+const getEnvNumber: Function = (envVariable: string): number => parseInt(envVariable)
 interface IServerInfo {
   host: string
   port: number
