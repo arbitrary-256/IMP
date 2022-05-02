@@ -19,7 +19,7 @@ services:
 # api server to connect webapp to database
  api:
   build: src-api
-  image: imp_api
+  image: imp_api:alpine
   depends_on:
    - database
    - webapp
