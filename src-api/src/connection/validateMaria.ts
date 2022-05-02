@@ -22,18 +22,20 @@ export const validateMaria: Function = (params: {
   host: string | Error
   database: string | Error
   port: string | Error
-}): {
-  user: string
-  password: string
-  host: string
-  database: string
-  port: number
-  } | undefined => {
-    return {
-      user: params.user.toString(),
-      password: params.password.toString(),
-      host: params.host.toString(),
-      database: params.database.toString(),
-      port: parseInt(params.port.toString())
+}):
+  | {
+      user: string
+      password: string
+      host: string
+      database: string
+      port: number
     }
+  | undefined => {
+  return {
+    user: params.user.toString(),
+    password: params.password.toString(),
+    host: params.host.toString(),
+    database: params.database.toString(),
+    port: parseInt(params.port.toString())
+  }
 }
