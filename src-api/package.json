@@ -12,10 +12,12 @@
   "main": "api.js",
   "dependencies": {
     "@types/express": "latest",
+    "@types/mysql": "latest",
     "@types/node": "latest",
+    "body-parser": "latest",
     "dotenv": "latest",
     "express": "latest",
-    "mysql2": "latest",
+    "mysql": "latest",
     "typedoc": "latest",
     "typeorm": "latest",
     "nodemon": "latest",

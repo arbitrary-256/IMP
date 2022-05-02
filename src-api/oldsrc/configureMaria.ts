@@ -1,7 +1,7 @@
 /** @format */
 // libraries
 import { config } from 'dotenv'
-import { ConnectionOptions } from 'mysql2'
+import { ConnectionOptions, ConnectionConfig } from 'mysql'
 // load .env file
 config()
 // get values from environment variables
@@ -14,7 +14,7 @@ const getRootUser: Function = (): string => `${process.env.REACT_APP_ROOTUSER}`
 const getRootPassword: Function = (): string => `${process.env.REACT_APP_ROOTPASSWORD}`
 /**
  * creates a MariaDB connection configuration for the IMP database
- * @param asRoot optional boolean boolean 
+ * @param asRoot optional boolean boolean
  * @returns a mysql2.ConnectionOptions for the user passed in
  */
 export const configureMaria: Function = (asRoot?: boolean): ConnectionOptions => {
@@ -22,12 +22,12 @@ export const configureMaria: Function = (asRoot?: boolean): ConnectionOptions =>
   const rootPassword: string = getRootPassword()
   const regularUser: string = getUser()
   const regularPassword: string = getPassword()
-  const mariaConfig: ConnectionOptions = {
+  const mariaConfig: ConnectionConfig = {
     host: getHost(),
     port: getMariaPort(),
     database: getDatabase(),
-    user: asRoot === true ? rootUser : regularUser,
-    password: asRoot === true ? rootPassword : regularPassword
+    user: asRoot ? rootUser : regularUser,
+    password: asRoot ? rootPassword : regularPassword
   }
   return mariaConfig
 }
