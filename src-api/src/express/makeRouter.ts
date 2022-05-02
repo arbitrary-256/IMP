@@ -1,5 +1,5 @@
 /** @format */
-import { i, e } from '../logs'
+import { i, e } from '..'
 import { prepareRouter } from './prepareRouter'
 import { Router } from 'express'
 /**

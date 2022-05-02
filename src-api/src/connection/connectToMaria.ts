@@ -1,7 +1,7 @@
 /** @format */
 import { Connection, createConnection, MysqlError } from 'mysql'
 import { environment } from '../utility/environment'
-import { validateMaria } from '../utility/validateMaria'
+import { validateMaria } from './validateMaria'
 /**
  * connects to MariaDB
  * @param asRoot boolean, set to true to connect to MariaDB as root

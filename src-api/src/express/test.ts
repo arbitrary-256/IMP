@@ -1,5 +1,5 @@
 /** @format */
-import { i, e } from '../logs'
+import { i, e } from '..'
 export const test = async (request: Request, response: Response) => {
   try {
     i(`routing`, `test`, { ...request.body })

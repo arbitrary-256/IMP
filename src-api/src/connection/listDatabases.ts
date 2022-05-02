@@ -1,7 +1,7 @@
 /** @format */
 import { NextFunction, Request, Response } from 'express'
-import { e, i } from '../logs'
-import { connectToMaria, queryMaria } from '.'
+import { e, i } from '..'
+import { connectToMaria, queryMaria } from '../'
 import { Connection } from 'mysql'
 
 export const listDatabases = async (request: Request, response: Response, next: NextFunction) => {

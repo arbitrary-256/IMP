@@ -1,7 +1,7 @@
 /** @format */
 import { Request, Response, Router } from 'express'
 import { MysqlError } from 'mysql'
-import { e, i } from '../logs'
+import { e, i } from '..'
 import { connectToMaria } from '../connection/connectToMaria'
 import { queryMaria } from '../connection/queryMaria'
 

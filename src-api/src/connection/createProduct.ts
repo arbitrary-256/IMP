@@ -1,6 +1,6 @@
 /** @format */
 import { Request, Response } from 'express'
-import { e, i } from '../logs'
+import { e, i } from '..'
 import { connectToMaria } from './connectToMaria'
 import { queryMaria } from './queryMaria'
 import { Connection, MysqlError } from 'mysql'
