@@ -17,8 +17,7 @@ export const incrementNumber: Function = (toChange: IIMPProductNumberToChange): 
   }
   const incrementPrice: Function = (): void => {
     mutable.number.value = parseFloat(mutable.number.value.toFixed(2))
-    isMaxOrLess && parseFloat((mutable.number.value += 0.01).toFixed(2)
-    )
+    isMaxOrLess && parseFloat((mutable.number.value += 0.01).toFixed(2))
   }
   if (isMaxOrLess) {
     !isPrice && !isInStock && mutable.number.value++
