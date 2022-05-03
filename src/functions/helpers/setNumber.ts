@@ -3,7 +3,6 @@
 import { IIMPNumber } from '../../interfaces/IIMPNumber'
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'
-import { e } from '../../../src-api/src/logs'
 /**
  * changes the number in a product to a value typed in by the user
  * @param payload number, an IIMPNumber, and product, an IIMPProduct
@@ -44,7 +43,6 @@ export const setNumber: Function = (payload: IIMPProductNumberToChange): IIMPPro
         newProduct.inCart.value > newProduct.inStock.value ? (newProduct.inCart.value = parseInt(newProduct.inStock.value.toString())) : void 0
         break
       default:
-        e(`mariadb`, `IMPError: could not find matching product while setting number`)
         break
     }
   }

@@ -27,6 +27,10 @@ services:
    - DB_USER=$REACT_APP_MARIADBUSER
    - DB_PASSWORD=$REACT_APP_MARIADBPASSWORD
    - DB_NAME=$REACT_APP_MARIADBDATABASENAME
+  volumes:
+   - $PWD/src-api/src:/app/src:ro
+   - $PWD/src-api/impAPI.ts:/app/impAPI.ts:ro
+   - $PWD/node_modules:/app/node_modules:rw
   depends_on:
    - database
    - frontend
@@ -37,8 +41,6 @@ services:
    - $REACT_APP_APIPORT
 #   ports:
 #    - $REACT_APP_APIPORT:$REACT_APP_APIPORT
-#   stdin_open: true
-#   tty: true
 
  database:
   image: mariadb:latest

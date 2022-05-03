@@ -8,15 +8,28 @@ import { IIMPProductNumberToChange } from '../../interfaces/productProperties/II
  * @returns the updated product
  */
 export const incrementNumber: Function = (toChange: IIMPProductNumberToChange): IIMPProduct => {
-  let tempProductNumber: IIMPProductNumberToChange = { ...toChange }
-  const isMaxOrLess: boolean = tempProductNumber.number.value <= tempProductNumber.number.max
-  const isPrice: boolean = tempProductNumber.number.propertyName.toString().includes(`price`) || tempProductNumber.number.propertyName.toString().includes(`cost`)
-  !isMaxOrLess ? (tempProductNumber.number.value = tempProductNumber.number.max) : void 0
-  isPrice && isMaxOrLess ? (tempProductNumber.number.value += 0.01) : void 0
-  isPrice ? (tempProductNumber.number.value = parseFloat(tempProductNumber.number.value.toFixed(2))) : void 0
-  !isPrice && isMaxOrLess ? tempProductNumber.number.value++ : void 0
+  let mutable: IIMPProductNumberToChange = { ...toChange }
+  const isInStock: boolean = mutable.number.propertyName === `inStock`
+  const isPrice: boolean = mutable.number.propertyName.toString().includes(`price`) || mutable.number.propertyName.toString().includes(`cost`)
+  const isMaxOrLess: boolean = mutable.number.value <= mutable.number.max
+  const incrementInStock: Function = (): void => {
+    mutable.number.value < mutable.product.max.value && isMaxOrLess && mutable.number.value++
+  }
+  const incrementPrice: Function = (): void => {
+    mutable.number.value = parseFloat(mutable.number.value.toFixed(2))
+    isMaxOrLess && parseFloat((mutable.number.value += 0.01).toFixed(2)
+    )
+  }
+  if (isMaxOrLess) {
+    !isPrice && !isInStock && mutable.number.value++
+    isPrice && incrementPrice(mutable.number.value)
+    isInStock && incrementInStock()
+  } else {
+    mutable.number.value = mutable.number.max
+  }
+  console.log(mutable.number)
   return {
     ...toChange.product,
-    [tempProductNumber.number.propertyName]: tempProductNumber.number
+    [mutable.number.propertyName]: mutable.number
   }
 }

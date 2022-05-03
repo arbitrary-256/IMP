@@ -7,7 +7,6 @@
   "author": "Brandon Shockley <bms1991@gmail.com> (https://github.com/Zindrek)",
   "repository": "https://github.com/Zindrek/IMP",
   "copyright": "© 2022",
-  "keywords": [],
   "private": true,
   "scripts": {
     "readme": "echo && echo use these commands to learn more: && echo && echo 'yarn readme-doc' && echo 'yarn readme-setup' && echo 'yarn readme-imp' && echo 'yarn readme-tart' && echo 'yarn readme-test'",
@@ -68,6 +67,7 @@
     "react-dom": "latest",
     "react-dropzone": "latest",
     "source-map-support": "latest",
+    "ts-node": "latest",
     "typescript": "latest"
   },
   "devDependencies": {
@@ -91,8 +91,7 @@
     "nodemon": "latest",
     "prettier": "latest",
     "react-scripts": "latest",
-    "rimraf": "latest",
-    "ts-node": "latest",
+    "rimraf": "^3.0.2",
     "typedoc": "latest",
     "typescript": "latest",
     "yarn": "latest"

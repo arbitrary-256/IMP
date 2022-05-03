@@ -7,19 +7,20 @@
   "author": "Brandon Shockley <bms1991@gmail.com> (https://github.com/Zindrek)",
   "repository": "https://github.com/Zindrek/IMP/tree/main/src-api",
   "copyright": "© 2022",
-  "keywords": [],
   "private": true,
-  "main": "impAPI.js",
-  "dependencies": {
-    "dotenv": "latest",
-    "express": "latest",
-    "mysql": "latest"
+  "main": "impAPI.ts",
+  "scripts":{
+    "serve": "cd /app && nodemon --legacy-watch --watch 'lib/*.ts' --exec 'ts-node' lib/server.ts"
   },
-  "devDependencies": {
+  "dependencies": {
     "@types/express": "latest",
     "@types/mysql": "latest",
     "@types/node": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "mysql": "latest",
     "nodemon": "latest",
+    "ts-node": "latest",
     "typescript": "latest",
     "typedoc": "latest"
   }
