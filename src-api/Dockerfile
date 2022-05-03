@@ -10,4 +10,4 @@ RUN yarn tsc impAPI.ts --removeComments --skipLibCheck
 # RUN cd app \
 #     && yarn \
 #     && yarn tsc impAPI.ts --removeComments --skipLibCheck
-ENTRYPOINT ["node", "impAPI.js"]
+ENTRYPOINT ["nodemon", "--inspect=0.0.0.0", "impAPI.js"]

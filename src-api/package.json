@@ -19,6 +19,7 @@
     "@types/express": "latest",
     "@types/mysql": "latest",
     "@types/node": "latest",
+    "nodemon": "latest",
     "typescript": "latest",
     "typedoc": "latest"
   }

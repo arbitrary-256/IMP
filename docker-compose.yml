@@ -61,5 +61,7 @@ services:
 networks:
  frontend:
   external: false
+  driver: bridge
  maria:
   external: false
+  driver: bridge

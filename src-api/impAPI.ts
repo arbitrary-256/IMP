@@ -1,23 +1,24 @@
 /** @format */
-import { application, Application, Request, Response } from 'express'
-import { i } from './src'
-// import { environment, i } from './src'
-// import * as sql from 'mysql'
+import { application, Application, Response, Request } from 'express'
+import { deleteRouter, environment, getRouter, postRouter, putRouter, updateRouter } from './src'
 
 const impAPI: Application = application
-// const config = {
-//   host: environment.mariaServer.host,
-//   database: environment.mariaServer.database,
-//   port: environment.mariaServer.port,
-//   user: environment.mariaRegular.user,
-//   password: environment.mariaRegular.password
-// }
-// const regularConnection = sql.createConnection(config)
-
-impAPI.route(`/`).get( async (request: Request, response: Response) => {
-  return response.status(200).send(`Hello World!`)
-})
-
-impAPI.listen(3333, () => {
-  i(`api`, `impAPI is running on port 3333`)
-})
+impAPI
+  .route(`*`)
+  .head((request: Request, response: Response) =>
+    response
+      .header(`Access-Control-Allow-Origin`, `*`)
+      .header(`Access-Control-Allow-Headers`, `Origin, X-Requested-With, Content-Type, Accept`)
+      .header(`Access-Control-Allow-Methods`, `GET, POST, PUT, DELETE, OPTIONS`)
+      .header(`Access-Control-Allow-Credentials`, `true`)
+      .header(`Access-Control-Max-Age`, `86400`)
+  )
+impAPI
+  .use(`/delete`, deleteRouter)
+  .use(`/get`, getRouter)
+  .use(`/post`, postRouter)
+  .use(`/put`, putRouter)
+  .use(`/update`, updateRouter)
+  .get(`/`, (request: Request, response: Response) => response.status(200).send(`this is impAPI/${request.originalUrl}`))
+impAPI.listen(environment.apiPort, () => console.log(`impAPI is running on port ${environment.apiPort}`))
+console.log(impAPI._router.stack)

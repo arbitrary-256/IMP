@@ -1,6 +1,5 @@
 /** @format */
 import { config } from 'dotenv'
-import { i } from '../logs/i'
 // import { e } from '../'
 config()
 /**
@@ -48,4 +47,3 @@ export const environment = {
   mariaServer,
   apiPort
 }
-i(`development`, `environment: ${JSON.stringify(environment)}`)

@@ -1,7 +1,6 @@
 /** @format */
 import { NextFunction, Request, Response } from 'express'
-import { e, i } from '..'
-import { connectToMaria, queryMaria } from '../'
+import { connectToMaria, queryMaria } from '..'
 import { Connection } from 'mysql'
 /**
  * lists databases in the MariaDB server
@@ -11,7 +10,6 @@ import { Connection } from 'mysql'
  * @returns hopefully a list of databases
  */
 export const listDatabases = async (request: Request, response: Response, next: NextFunction) => {
-  i(`mariadb`, `listing databases.`)
   let query = `SHOW DATABASES`
   // put commecnted stuff back here
   connectToMaria().then(async (connection: Connection) => {
@@ -19,7 +17,7 @@ export const listDatabases = async (request: Request, response: Response, next: 
       let result = await queryMaria(connection, query)
       response.status(200).json(result).send()
     } catch (error: unknown) {
-      e(`mariadb`, `listing databases.`, error)
+      console.error(error)
       response.status(500).json({ error: error }).send()
     }
   })
