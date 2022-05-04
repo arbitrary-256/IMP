@@ -13,13 +13,12 @@ services:
   ports:
    - $REACT_APP_FRONTENDPORT:80
   networks:
-   - frontend
+   - react
 
-# MariaDB database to host the backend data
 # api server to connect frontend to database
- api:
+ express:
   build: src-api
-  image: imp_api:alpine
+  image: imp_express:alpine
   environment:
    - NODE_ENV=production
    - DB_HOST=$REACT_APP_MARIADBHOST
@@ -32,16 +31,17 @@ services:
    - $PWD/src-api/impAPI.ts:/app/impAPI.ts:ro
    - $PWD/node_modules:/app/node_modules:rw
   depends_on:
-   - database
-   - frontend
+   - maria
+   - react
   networks:
    - maria
-   - frontend
+   - react
   expose:
    - $REACT_APP_APIPORT
 #   ports:
 #    - $REACT_APP_APIPORT:$REACT_APP_APIPORT
 
+# MariaDB database to store data in production
  database:
   image: mariadb:latest
   volumes:
@@ -61,7 +61,7 @@ services:
 #    - $REACT_APP_MARIADBPORT:$REACT_APP_MARIADBPORT
 
 networks:
- frontend:
+ react:
   external: false
   driver: bridge
  maria:

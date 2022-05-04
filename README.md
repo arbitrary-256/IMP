@@ -79,7 +79,7 @@ You will need to install the following things to build IMP:
 
 ### Build for web
 
-Run `yarn tart-zip` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
+Run `yarn zip` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
@@ -87,7 +87,7 @@ Run `yarn tart-zip` to build and zip a servable web directory to the `output` di
 
 [](#build-for-your-os)
 
-Run `yarn tart-bundle` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These artifacts are meant for end users to install the application.
+Run `yarn bundle` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These artifacts are meant for end users to install the application.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 
@@ -96,9 +96,9 @@ Run `yarn tart-bundle` to build a double-clickable installer for your operating 
 [](#build-cross-platform)
 
 [ToC](#table-of-contents 'Return to Table of Contents')
-### Running `yarn tart-bundle` on multiple platforms
+### Running `yarn bundle` on multiple platforms
 
-You can run `yarn tart-bundle` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.
+You can run `yarn bundle` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.
 
 [ToC](#table-of-contents 'Return to Table of Contents')
 ### Using GitHub Actions

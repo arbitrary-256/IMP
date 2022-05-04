@@ -1,10 +1,10 @@
 /** @format */
 /* libraries */
-import fs from 'fs'
-import JSZip from 'jszip'
-import path from 'path'
-/* non-TypeScript data */
-import * as packageJson from '../../../package.json'
+const fs = require('fs')
+const JSZip = require('jszip')
+const path = require('path')
+/* package.json file */
+const packageJson = require('../../package.json')
 /**
  * gets all subdirectorie paths within a given directory
  * @param directoryPath the root directory to be searched
@@ -55,7 +55,7 @@ const getZipOfFolder = (outputDirectory: string): void => {
       platform: `UNIX`,
       type: `nodebuffer`
     })
-    .then(function (content) {
+    .then(function (content: any) {
       fs.writeFileSync(`./output/${packageJson.productName}-${packageJson.version}-web.zip`, content)
     })
 }

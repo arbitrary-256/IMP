@@ -10,7 +10,7 @@ import { mockProduct } from './mockProduct'
  */
 export const mockInventory: Function = (numberOfProducts: number = 5): IIMPProduct[] => {
   const tempInventory: IIMPProduct[] = []
-  for (let i = 0; i < numberOfProducts; i++) {
+  while (tempInventory.length < numberOfProducts) {
     tempInventory.push(mockProduct())
   }
   return tempInventory

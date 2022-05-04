@@ -10,7 +10,7 @@
   "private": true,
   "main": "impAPI.ts",
   "scripts":{
-    "serve": "cd /app && nodemon --legacy-watch --watch 'lib/*.ts' --exec 'ts-node' lib/server.ts"
+    "serve-imp-express-api": "cd /app && nodemon --legacy-watch --watch 'lib/*.ts' --exec 'ts-node' lib/server.ts"
   },
   "dependencies": {
     "@types/express": "latest",
