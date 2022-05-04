@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPState } from '../../interfaces/IIMPState'
 import { INavBarTarget } from '../../interfaces/unionTypes/INavBarTarget'
 /**

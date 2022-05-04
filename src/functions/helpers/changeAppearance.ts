@@ -1,7 +1,7 @@
 /** @format */
-// material-ui components
+/* material-ui components */
 import { Theme } from '@mui/material'
-// css-in-TypeScript themes
+/* css-in-TypeScript themes */
 import { darkTheme } from '../../components/theme/darkTheme'
 import { lightTheme } from '../../components/theme/lightTheme'
 /**

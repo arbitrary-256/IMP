@@ -1,16 +1,15 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Button, Card } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { IIMPNumber } from '../../../interfaces/IIMPNumber'
-// react context
+/* react context */
 import { IIMPAction } from '../../../interfaces/IIMPAction'
-import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-// custom components
+/* custom components */
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
@@ -22,11 +21,8 @@ import { StringDisplayer } from '../../shared/StringDisplayer'
  */
 export const CartGridItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    state,
     dispatch
   }: {
-    state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   const itemTotal: IIMPNumber = {

@@ -1,9 +1,9 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Button } from '@mui/material'
-// react context
+/* react context */
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'

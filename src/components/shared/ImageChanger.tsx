@@ -1,12 +1,12 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Card } from '@mui/material'
 import Dropzone from 'react-dropzone'
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
-// react context
+/* react context */
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
@@ -33,8 +33,7 @@ export const ImageChanger: Function = (product: IIMPProduct) => {
       <Dropzone
         onDrop={(acceptedFiles: File[]) => {
           const newFile: File = acceptedFiles[0]
-          // read contents of newFile
-          const reader: FileReader = new FileReader()
+          const reader: FileReader = new FileReader() /* read contents of newFile */
           reader.onload = (event: ProgressEvent) => {
             const imageData = (event.target as FileReader).result
             dispatch({

@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPImage } from '../IIMPImage'
 import { IIMPProduct } from '../IIMPProduct'
 export interface IIMPProductImageToChange {

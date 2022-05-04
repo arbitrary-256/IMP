@@ -1,7 +1,7 @@
 /** @format */
-// material-ui components
+/* material-ui components */
 import { createTheme, Theme } from '@mui/material'
-// css-in-TypeScript
+/* css-in-TypeScript themes */
 import { AlegreyaSansSCFont } from '../../fonts/AlegreyaSansSCFont'
 import { AccordionExpandedStyleDark } from '../../stylesDark/AccordionExpandedStyleDark'
 import { AccordionRootStyleDark } from '../../stylesDark/AccordionRootStyleDark'

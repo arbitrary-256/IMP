@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /**
  * adds inventory to the local application state
@@ -12,7 +12,7 @@ export const receiveInventory: Function = (product: IIMPProduct, inventory: IIMP
   const productFromInventory: IIMPProduct | undefined = newInventory.find((productToFind) => productToFind.upc.value === product.upc.value)
   const inventoryIndex: number = newInventory.findIndex((productToFindIndexOf) => productToFindIndexOf.upc === product.upc)
   if (productFromInventory && inventoryIndex !== -1) {
-    // if product is in inventory, add to quantity in inventory
+    /* if product exists, add to quantity in inventory */
     newInventory[inventoryIndex] = {
       ...productFromInventory,
       inStock: {
@@ -25,9 +25,9 @@ export const receiveInventory: Function = (product: IIMPProduct, inventory: IIMP
       }
     }
   } else {
-    // if product is not in inventory, submit action.payload to inStock
+    /* if product is not in inventory, submit action.payload to inStock */
     newInventory.push({ ...product, inStock: { ...product.inStock, value: product.toReceive.value }, toReceive: { ...product.toReceive, value: 0 } })
   }
-  // TODO: update inStock in SQL database with holdThis function
+  /* TODO: update inStock in SQL database with holdThis function */
   return newInventory
 }

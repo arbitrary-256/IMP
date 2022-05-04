@@ -1,8 +1,8 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPState } from '../../interfaces/IIMPState'
-// css-in-TypeScript themes
+/* css-in-TypeScript themes */
 import { darkTheme } from '../../components/theme/darkTheme'
 import { createEmptyProduct } from './createEmptyProduct'
 /**

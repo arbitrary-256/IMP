@@ -1,13 +1,12 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Button, TextField, Stack } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'
-// react context
+/* react context */
 import { IIMPAction } from '../../interfaces/IIMPAction'
-import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
 /**
  * a component to change a number in a product
@@ -16,11 +15,8 @@ import { ImpContext } from '../ImpContext'
  */
 export const NumberChanger: React.FC<IIMPProductNumberToChange> = (toChange: IIMPProductNumberToChange): React.ReactElement => {
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    state,
     dispatch
   }: {
-    state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (

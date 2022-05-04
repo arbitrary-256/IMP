@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../IIMPProduct'
 /**
  * an action interface for restocking an array of inventory items

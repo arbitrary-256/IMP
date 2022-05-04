@@ -1,9 +1,9 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Box, Paper } from '@mui/material'
-// custom components
+/* custom components */
 import { CartView } from './cart/CartView'
 import { InventoryView } from './inventory/InventoryView'
 import { LogoutView } from '../loginIndicators/LogoutView'

@@ -1,15 +1,14 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Box, Grid, Paper } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
-// react context
-import { IIMPAction } from '../../../interfaces/IIMPAction'
+/* react context */
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-// custom components
+/* custom components */
 import { OrderGridItem } from './OrderGridItem'
 /**
  * the order tab's left div that displays the products available to sell
@@ -17,12 +16,9 @@ import { OrderGridItem } from './OrderGridItem'
  */
 export const OrderGrid: React.FC = (): React.ReactElement => {
   const {
-    state,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    dispatch
+    state
   }: {
     state: IIMPState
-    dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   const filteredOrder: IIMPProduct[] = state.inStock.filter((eachProduct: IIMPProduct) => {
     return eachProduct.upc.value.toString().includes(state.orderSearch.toLowerCase()) || eachProduct.name.text.toLowerCase().includes(state.orderSearch.toLowerCase())

@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPNumber } from '../../interfaces/IIMPNumber'
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'

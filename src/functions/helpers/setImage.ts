@@ -1,9 +1,9 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPProductImageToChange } from '../../interfaces/productProperties/IIMPProductImageToChange'
-// non-TypeScript data
-// import imp from '../../images/imp.png'
+/* non-TypeScript data */
+/* import imp from '../../images/imp.png'
 /**
  * updates the image for a product
  * @param toChange the IIMPProductImageToChange

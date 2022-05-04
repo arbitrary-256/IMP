@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPImage } from './IIMPImage'
 import { IIMPNumber } from './IIMPNumber'
 import { IIMPString } from './IIMPString'

@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPDatabaseRow } from '../../interfaces/IIMPDatabaseRow'
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /**

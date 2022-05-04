@@ -1,9 +1,9 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { TextField } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPString } from '../../interfaces/IIMPString'
 /**
  * a component to display a string

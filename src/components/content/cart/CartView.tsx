@@ -1,32 +1,28 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Box, Grid, Stack } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 import { IIMPNumber } from '../../../interfaces/IIMPNumber'
-// react context
-import { IIMPAction } from '../../../interfaces/IIMPAction'
+/* react context */
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-// custom components
+/* custom components */
 import { CartGridItem } from './CartGridItem'
 import { PurchaseCartButton } from './PurchaseCartButton'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
-// helper functions
+/* helper functions */
 /**
  * the cart tab
  * @returns a React.FC that displays the Cart tab of the UI
  */
 export const CartView: React.FC = (): React.ReactElement => {
   const {
-    state,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    dispatch
+    state
   }: {
     state: IIMPState
-    dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   const newCart: IIMPProduct[] = state.cart
   const totalPrices: number[] = newCart.map((product: IIMPProduct): number => product.price.value * product.inCart.value)

@@ -1,7 +1,7 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
-// non-TypeScript data
+/* non-TypeScript data */
 /**
  * toggles the editability of a product
  * @param product the product to make editable or not
@@ -10,8 +10,6 @@ import { IIMPProduct } from '../../interfaces/IIMPProduct'
 export const editProduct: Function = (product: IIMPProduct, inventory: IIMPProduct[]): IIMPProduct[] => {
   const toggledMode: boolean = !product.editingMode
   const toggledProduct: IIMPProduct = { ...product, editingMode: toggledMode }
-  // find index of product in inventory
-  const index: number = inventory.findIndex((item: IIMPProduct) => item.upc.value === product.upc.value)
-  // replace product in inventory
-  return [...inventory.slice(0, index), toggledProduct, ...inventory.slice(index + 1)]
+  const index: number = inventory.findIndex((item: IIMPProduct) => item.upc.value === product.upc.value) /* find index of product in inventory */
+  return [...inventory.slice(0, index), toggledProduct, ...inventory.slice(index + 1)] /* replace product in inventory */
 }

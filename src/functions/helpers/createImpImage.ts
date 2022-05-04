@@ -1,7 +1,7 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPImage } from '../../interfaces/IIMPImage'
-// non-TypeScript data
+/* non-TypeScript data */
 import imp from '../../images/imp.png'
 /**
  * mocks an image for a product without using the database

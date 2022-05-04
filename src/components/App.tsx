@@ -1,11 +1,11 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Paper } from '@mui/material'
-// react context
+/* react context */
 import { ImpProvider } from './ImpContext'
-// custom components
+/* custom components */
 import { ContentArea } from './content/ContentArea'
 import { NavBar } from './navigation/NavBar'
 /**

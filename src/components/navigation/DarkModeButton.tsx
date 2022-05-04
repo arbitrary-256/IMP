@@ -1,14 +1,14 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { DarkMode, LightMode } from '@mui/icons-material'
 import { IconButton, Theme } from '@mui/material'
-// react context
+/* react context */
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
-// non-TypeScript data
+/* non-TypeScript data */
 import { darkTheme } from '../theme/darkTheme'
 /**
  * a dark mode switch component that toggles the dark mode of the application
@@ -16,7 +16,6 @@ import { darkTheme } from '../theme/darkTheme'
  */
 export const DarkModeButton: React.FC = (): React.ReactElement => {
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state,
     dispatch
   }: {

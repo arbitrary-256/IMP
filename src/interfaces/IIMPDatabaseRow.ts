@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 /**
  * the interface for a product stored in the database
  * @param upc the UPC of the product
@@ -12,15 +12,15 @@
  * @param size OPTIONAL the product's size, if it has one
  */
 export interface IIMPDatabaseRow {
-  upcValue: number // upc.value
-  nameText: string // name.text
-  costValue: number // cost.value
-  priceValue: number // price.value
-  inStockMin: number // inStock.min
-  inStockValue: number // inStock.value
-  inStockMax: number // inStock.max
-  minValue: number // min.value
-  maxValue: number // max.value
-  imageData: string // image.data
-  imageText: string // image.altText
+  upcValue: number /* upc.value */
+  nameText: string /* name.text */
+  costValue: number /* cost.value */
+  priceValue: number /* price.value */
+  inStockMin: number /* inStock.min */
+  inStockValue: number /* inStock.value */
+  inStockMax: number /* inStock.max */
+  minValue: number /* min.value */
+  maxValue: number /* max.value */
+  imageData: string /* image.data */
+  imageText: string /* image.altText */
 }

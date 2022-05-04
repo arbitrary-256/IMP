@@ -1,13 +1,13 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Box, Button, Card, Table, TableHead, TableBody, TableCell, TableRow, Stack } from '@mui/material'
-// react context
+/* react context */
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-// custom components
+/* custom components */
 import { ImageChanger } from '../../shared/ImageChanger'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { StringChanger } from '../../shared/StringChanger'

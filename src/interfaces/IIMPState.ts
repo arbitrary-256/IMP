@@ -1,7 +1,7 @@
 /** @format */
-// material-ui components
+/* material-ui components */
 import { Theme } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPProduct } from './IIMPProduct'
 import { ILoginValue } from './unionTypes/ILoginValue'
 import { INavBarTarget } from './unionTypes/INavBarTarget'

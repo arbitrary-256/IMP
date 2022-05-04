@@ -7,8 +7,8 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "commonjs",
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
+    "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitThis": true,
@@ -21,7 +21,7 @@
     "target": "esnext"
   },
   "typedocOptions": {
-    "entryPoints": ["src/", "imp-stack.yml"],
+    "entryPoints": ["src/", "src-api"],
     "entryPointStrategy": "expand",
     "out": "docs"
   },

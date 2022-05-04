@@ -1,15 +1,15 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Button, Card, Grid } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
-// react context
+/* react context */
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-// custom components
+/* custom components */
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
@@ -20,7 +20,6 @@ import { StringDisplayer } from '../../shared/StringDisplayer'
  */
 export const RestockItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state,
     dispatch
   }: {

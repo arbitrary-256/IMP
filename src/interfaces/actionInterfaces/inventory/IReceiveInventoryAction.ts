@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../IIMPProduct'
 /**
  * an action interface for receiving an inventory item

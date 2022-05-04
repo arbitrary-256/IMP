@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /**
  * updates every product.inStock.value in the IIMPProduct[] to the product.max.value

@@ -1,15 +1,15 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Box, Button, Grid } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
-// react context
+/* react context */
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-// custom components
+/* custom components */
 import { RestockItem } from './RestockItem'
 import { SearchRestock } from './SearchRestock'
 /**

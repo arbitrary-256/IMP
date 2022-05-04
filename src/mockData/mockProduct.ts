@@ -1,11 +1,11 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPImage } from '../interfaces/IIMPImage'
 import { IIMPProduct } from '../interfaces/IIMPProduct'
-// non-TypeScript data
+/* non-TypeScript data */
 import { adjectives } from '../mockData/adjectives'
 import { nouns } from '../mockData/nouns'
-// helper functions
+/* helper functions */
 import { createImpImage } from '../functions/helpers/createImpImage'
 /**
  * mocks a product in ReactContext

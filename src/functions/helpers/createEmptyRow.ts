@@ -1,7 +1,7 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPDatabaseRow } from '../../interfaces/IIMPDatabaseRow'
-// helper functions
+/* helper functions */
 import { createEmptyProduct } from './createEmptyProduct'
 import { convertProduct } from './convertProduct'
 /**

@@ -1,12 +1,12 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Card } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPNumber } from '../../../interfaces/IIMPNumber'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
-// custom components
+/* custom components */
 import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'

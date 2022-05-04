@@ -1,16 +1,15 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Grid } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPNumber } from '../../../interfaces/IIMPNumber'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
-// react context
-import { IIMPAction } from '../../../interfaces/IIMPAction'
+/* react context */
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
-// custom components
+/* custom components */
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { OrderMiniCartItem } from './OrderMiniCartItem'
 /**
@@ -19,12 +18,9 @@ import { OrderMiniCartItem } from './OrderMiniCartItem'
  */
 export const OrderMiniCart: React.FC = (): React.ReactElement => {
   const {
-    state,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    dispatch
+    state
   }: {
     state: IIMPState
-    dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   const newCart: IIMPProduct[] = [...state.cart]
   const total: number = newCart.reduce((accumulator: number, currentValue: IIMPProduct): number => {

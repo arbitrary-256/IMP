@@ -1,7 +1,7 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProduct } from '../interfaces/IIMPProduct'
-// helper functions
+/* helper functions */
 import { mockProduct } from './mockProduct'
 /**
  * mocks an entire inventory of products

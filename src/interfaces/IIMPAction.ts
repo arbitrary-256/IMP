@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IChangeLoginAction } from './actionInterfaces/authorization/IChangeLoginAction'
 import { IPurchaseCartAction } from './actionInterfaces/cart/IPurchaseCartAction'
 import { IUseNavBarAction } from './actionInterfaces/core/IUseNavBarAction'
@@ -28,10 +28,10 @@ export type IIMPAction =
   | IChangeLoginAction
   | IApplicationStartAction
   | IUseNavBarAction
-  | IRefreshDatabaseAction // TODO: add business logic
-  | IUpdateDatabaseAction // TODO: add business logic
-  | IDeleteInventoryEntryAction // TODO: add business logic
-  | IUpdateInventoryEntryAction // TODO: add business logic
+  | IRefreshDatabaseAction /* TODO: add business logic */
+  | IUpdateDatabaseAction /* TODO: add business logic */
+  | IDeleteInventoryEntryAction /* TODO: add business logic */
+  | IUpdateInventoryEntryAction /* TODO: add business logic */
   | IEditInventoryEntryAction
   | IReceiveInventoryAction
   | IRestockInventoryEntryAction

@@ -47,7 +47,7 @@
     "tart-updater-sign": "tauri signer generate",
     "tart-prep": "echo running ts-node script && cp ./src/scripts/tsnode/scripts.tsconfig.json ./tsconfig.json",
     "tart-cleanup": "cp ./src/scripts/tsnode/regular.tsconfig.json ./tsconfig.json",
-    "tart-pretty": "node node_modules/.bin/prettier --write ."
+    "tart-pretty": "onchange \"**/*\" -- node node_modules/.bin/prettier --write --ignore-unknown {{changed}} ."
   },
   "dependencies": {
     "@emotion/react": "latest",
@@ -89,9 +89,10 @@
     "jest": "latest",
     "jszip": "latest",
     "nodemon": "latest",
+    "onchange": "latest",
     "prettier": "latest",
     "react-scripts": "latest",
-    "rimraf": "^3.0.2",
+    "rimraf": "latest",
     "typedoc": "latest",
     "typescript": "latest",
     "yarn": "latest"
@@ -197,6 +198,7 @@
     "arrowParens": "always",
     "bracketSameLine": true,
     "bracketSpacing": true,
+    "filepath": ".",
     "jsxSingleQuote": true,
     "requirePragma": true,
     "printWidth": 200,
@@ -205,6 +207,11 @@
     "singleAttributePerLine": true,
     "singleQuote": true,
     "tabWidth": 2,
-    "trailingComma": "none"
+    "trailingComma": "none",
+    "plugins": [
+      "prettier-plugin-react",
+      "prettier-eslint"
+    ]
+
   }
 }

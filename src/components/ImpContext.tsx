@@ -1,13 +1,13 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { ThemeProvider } from '@mui/material/styles'
-// interfaces
+/* interfaces */
 import { IIMPState } from '../interfaces/IIMPState'
-// react context
+/* react context */
 import { ImpReducer } from '../functions/ImpReducer'
-// helper functions
+/* helper functions */
 import { createEmptyContext } from '../functions/helpers/createEmptyContext'
 const defaultState: IIMPState = createEmptyContext()
 /**

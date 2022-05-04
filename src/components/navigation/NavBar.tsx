@@ -1,9 +1,9 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Box, Stack } from '@mui/material'
-// custom components
+/* custom components */
 import { AuthButtons } from './AuthButtons'
 import { DarkModeButton } from './DarkModeButton'
 import { EmployeeButton } from './EmployeeButton'

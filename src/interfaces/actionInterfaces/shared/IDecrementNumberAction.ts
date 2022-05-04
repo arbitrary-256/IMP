@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProductNumberToChange } from '../../productProperties/IIMPProductNumberToChange'
 /**
  * an action interface for decrementing a number

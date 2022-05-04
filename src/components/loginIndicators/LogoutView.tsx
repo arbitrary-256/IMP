@@ -1,32 +1,28 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Box, Stack } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPString } from '../../interfaces/IIMPString'
-// react context
-import { IIMPAction } from '../../interfaces/IIMPAction'
+/* react context */
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
-// custom components
+/* custom components */
 import { ImageDisplayer } from '../shared/ImageDisplayer'
 import { StringDisplayer } from '../shared/StringDisplayer'
-// non-TypeScript data
+/* non-TypeScript data */
 import appInfo from '../../../package.json'
 import imp from '../../images/imp.png'
 /**
- * a logout confirmation
+ * a logout confirmation view
  * @returns a React.FC that indicates the user is logged out
  */
 export const LogoutView: React.FC = (): React.ReactElement => {
   const {
-    state,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    dispatch
+    state
   }: {
     state: IIMPState
-    dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   const programmingLanguagesString: IIMPString = {
     id: `Written in`,

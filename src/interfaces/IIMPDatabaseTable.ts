@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPDatabaseRow } from './IIMPDatabaseRow'
 import { IMariaDBColumnName } from './unionTypes/IMariaDBColumnName'
 /**

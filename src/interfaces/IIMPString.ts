@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IStringDescription } from './unionTypes/IStringDescription'
 /**
  * the interface for a string in a product

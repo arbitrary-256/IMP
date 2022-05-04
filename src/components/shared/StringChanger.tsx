@@ -1,11 +1,11 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { TextField } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPProductStringToChange } from '../../interfaces/productProperties/IIMPProductStringToChange'
-// react context
+/* react context */
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
@@ -16,8 +16,6 @@ import { ImpContext } from '../ImpContext'
  */
 export const StringChanger: React.FC<IIMPProductStringToChange> = (toChange: IIMPProductStringToChange): React.ReactElement => {
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    state,
     dispatch
   }: {
     state: IIMPState

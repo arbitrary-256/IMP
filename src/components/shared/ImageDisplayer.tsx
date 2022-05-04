@@ -1,9 +1,9 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Box } from '@mui/material'
-// interfaces
+/* interfaces */
 import { IIMPImage } from '../../interfaces/IIMPImage'
 /**
  * a component that displays an image in a product

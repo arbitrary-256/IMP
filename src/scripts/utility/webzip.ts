@@ -1,9 +1,9 @@
 /** @format */
-// libraries
+/* libraries */
 import fs from 'fs'
 import JSZip from 'jszip'
 import path from 'path'
-// non-TypeScript data
+/* non-TypeScript data */
 import * as packageJson from '../../../package.json'
 /**
  * gets all subdirectorie paths within a given directory

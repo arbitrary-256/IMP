@@ -1,12 +1,11 @@
 /** @format */
-// libraries
+/* libraries */
 import * as React from 'react'
-// material-ui components
+/* material-ui components */
 import { Delete } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
-// react context
+/* react context */
 import { IIMPAction } from '../../../interfaces/IIMPAction'
-import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
 import { IIMPProduct } from '../../../interfaces/IIMPProduct'
 /**
@@ -16,12 +15,8 @@ import { IIMPProduct } from '../../../interfaces/IIMPProduct'
  */
 export const InventoryDeleteButton: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    state,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     dispatch
   }: {
-    state: IIMPState
     dispatch: React.Dispatch<IIMPAction>
   } = React.useContext(ImpContext)
   return (

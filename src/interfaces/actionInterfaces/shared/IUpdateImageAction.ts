@@ -1,5 +1,5 @@
 /** @format */
-// interfaces
+/* interfaces */
 import { IIMPProductImageToChange } from '../../productProperties/IIMPProductImageToChange'
 /**
  * an action interface for updating an image with react-dropzone
