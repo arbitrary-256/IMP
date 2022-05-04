@@ -1,6 +1,6 @@
 /** @format */
 import { config } from 'dotenv'
-/* import { e } from '../'
+/* import { e } from '../' */
 config()
 /**
  * extracts numbers from env vars
