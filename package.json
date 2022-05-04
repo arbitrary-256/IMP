@@ -37,7 +37,7 @@
     "imp-clean-docker": "docker rmi -f imp_api:alpine",
     "imp-clean": "yarn imp-clean-maria && yarn imp-clean-api && yarn imp-clean-docker",
     "readme-tart": "echo && echo tart scripts perform convenience features for the tart template && echo && echo tart starts a live development environment tauri app && echo tart-build builds the optimized frontend && echo tart-bundle builds the distributable tauri binary for your OS && echo tart-zip zips the build folder for transfer to a production webserver && echo tart-clean deletes common build artifacts && echo tart-rustup updates the rust dependencies && echo tart-icon builds icon files from the image at src-tauri/icons/app-icon.png && echo tart-updater-sign creates the signature for the tauri autoupdater && echo tart-prep changes the tsconfig.json to run ts-node scripts && echo tart-pretty runs prettier && echo tart-cleanup changes the tsconfig.json back to the original tsconfig.json",
-    "tart": "tauri dev",
+    "tart": "tauri dev & yarn tart-pretty",
     "tart-build": "tauri build",
     "tart-bundle": "yarn tart-rustup && yarn tart-build && mkdir output && mv src-tauri/target/release/bundle/* output && yarn tart-zip",
     "tart-zip": "yarn tart-prep && yarn ts-node src/scripts/utility/webzip.ts && yarn tart-cleanup",
@@ -47,7 +47,7 @@
     "tart-updater-sign": "tauri signer generate",
     "tart-prep": "echo running ts-node script && cp ./src/scripts/tsnode/scripts.tsconfig.json ./tsconfig.json",
     "tart-cleanup": "cp ./src/scripts/tsnode/regular.tsconfig.json ./tsconfig.json",
-    "tart-pretty": "onchange \"**/*\" -- node node_modules/.bin/prettier --write --ignore-unknown {{changed}} ."
+    "tart-pretty": "onchange \"**/*src\" -- node node_modules/.bin/prettier --write --ignore-unknown {{changed}} ."
   },
   "dependencies": {
     "@emotion/react": "latest",
@@ -201,17 +201,13 @@
     "filepath": ".",
     "jsxSingleQuote": true,
     "requirePragma": true,
+    "parser": "babel-ts",
     "printWidth": 200,
     "quoteProps": "consistent",
     "semi": false,
     "singleAttributePerLine": true,
     "singleQuote": true,
     "tabWidth": 2,
-    "trailingComma": "none",
-    "plugins": [
-      "prettier-plugin-react",
-      "prettier-eslint"
-    ]
-
+    "trailingComma": "none"
   }
 }

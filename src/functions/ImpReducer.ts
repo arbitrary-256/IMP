@@ -34,7 +34,7 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
   switch (action.type) {
     case `APPLICATION_START` /* in progress: read from database */:
       return mockState() /* mock inventory contents in local state */
-    // return createEmptyContext() /* get data from MariaDB server */
+    // return createEmptyContext() /* should get data from MariaDB server, this is a placeholder for working on the MariaDB / Express connections */
     case `CHANGE_APPEARANCE`:
       return reducerCleanup({ ...newState, theme: changeAppearance(action.payload) }, state)
     case `CHANGE_LOGIN`:

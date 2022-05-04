@@ -8,7 +8,7 @@ import { validateMaria } from './validateMaria'
  * @returns a usable mysql.Connection
  */
 export const connectToMaria = async (asRoot: boolean = false): Promise<Connection> =>
-  new Promise<Connection>((resolve, reject): void => {
+  new Promise()<Connection>((resolve, reject): void => {
     const connection = createConnection(
       validateMaria(
         asRoot
