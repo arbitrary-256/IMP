@@ -1,13 +1,15 @@
 # 1) populate a .env file made from template.env
 # 2) open your desired firewall ports at your docker host:
-## ${REACT_APP_APIPORT} exposes the express api to the internet
+## ${REACT_APP_API_PORT} exposes the Express api to the internet
 ## ${REACT_APP_FRONTENDPORT} exposes the front end web client to the internet
-# 3) run 'yarn imp-up' to deploy frontend and database with docker compose
+# 3) run 'yarn docker:up' to deploy frontend and database with docker compose
 version: '3.9'
 services:
 # nginx web server to host the web application
  frontend:
   image: nginx:alpine
+#   build: src-ui
+#   image: imp_interface:alpine
   volumes:
    - $PWD/build:/usr/share/nginx/html:ro
   ports:
@@ -16,54 +18,48 @@ services:
    - react
 
 # api server to connect frontend to database
- express:
+ api:
   build: src-api
-  image: imp_express:alpine
+  image: imp_api:alpine
   environment:
    - NODE_ENV=production
-   - DB_HOST=$REACT_APP_MARIADBHOST
-   - DB_PORT=$REACT_APP_MARIADBPORT
-   - DB_USER=$REACT_APP_MARIADBUSER
-   - DB_PASSWORD=$REACT_APP_MARIADBPASSWORD
-   - DB_NAME=$REACT_APP_MARIADBDATABASENAME
+   - DB_HOST=$REACT_APP_SQL_HOST
+   - DB_PORT=$REACT_APP_SQL_PORT
+   - DB_USER=$REACT_APP_SQL_USER
+   - DB_PASSWORD=$REACT_APP_SQL_PASSWORD
+   - DB_NAME=$REACT_APP_SQL_DATABASE
   volumes:
-   - $PWD/src-api/src:/app/src:ro
-   - $PWD/src-api/impAPI.ts:/app/impAPI.ts:ro
-   - $PWD/node_modules:/app/node_modules:rw
+   - $PWD/src-api:/app:ro
   depends_on:
-   - maria
+   - sql
    - react
   networks:
-   - maria
+   - sql
    - react
-  expose:
-   - $REACT_APP_APIPORT
-#   ports:
-#    - $REACT_APP_APIPORT:$REACT_APP_APIPORT
+  ports:
+   - $REACT_APP_API_PORT:$REACT_APP_API_PORT
 
-# MariaDB database to store data in production
- database:
+# sql database to store data in production
+ sql:
   image: mariadb:latest
   volumes:
-   - $PWD/mariadbdata:/var/lib/mysql
+   - $PWD/database:/var/lib/mysql
   environment:
-   - MARIADB_ROOT_USER=$REACT_APP_MARIADBROOTUSER
-   - MARIADB_ROOT_PASSWORD=$REACT_APP_MARIADBROOTPASSWORD
-   - MARIADB_USER=$REACT_APP_MARIADBUSER
-   - MARIADB_PASSWORD=$REACT_APP_MARIADBPASSWORD
-   - MARIADB_DATABASE=$REACT_APP_MARIADBDATABASENAME
-   - REACT_APP_APIPORT=$REACT_APP_APIPORT
+   - MYSQL_ROOT_USER=$REACT_APP_SQL_RUSER
+   - MYSQL_ROOT_PASSWORD=$REACT_APP_SQL_RPASSWORD
+   - MYSQL_USER=$REACT_APP_SQL_USER
+   - MYSQL_PASSWORD=$REACT_APP_SQL_PASSWORD
+   - MYSQL_DATABASE=$REACT_APP_SQL_DATABASE
+   - REACT_APP_API_PORT=$REACT_APP_API_PORT
   networks:
-   - maria
+   - sql
   expose:
-   - $REACT_APP_MARIADBPORT
-#   ports:
-#    - $REACT_APP_MARIADBPORT:$REACT_APP_MARIADBPORT
+   - $REACT_APP_SQL_PORT
 
 networks:
  react:
   external: false
   driver: bridge
- maria:
+ sql:
   external: false
   driver: bridge

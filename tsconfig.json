@@ -21,11 +21,17 @@
     "target": "esnext"
   },
   "typedocOptions": {
-    "entryPoints": ["src/", "docker-compose.yml"],
+    "categorizeByGroup": true,
+    "categoryOrder": ["Category Name", "Other Category", "*"],
+    "cleanOutputDir": true,
+    "entryPoints": ["src-api/", "src-ui/", "src-ui/scripts/webzip.ts"],
     "entryPointStrategy": "expand",
+    "exclude": ["**/node_modules/**", "**/dist/**", "**/docs/**", "**/test/**", "**/__tests__/**"],
     "logLevel": "Error",
-    "out": "docs"
+    "out": "docs",
+    "readme": "README.md",
+    "sort": ["source-order"],
   },
-  "include": ["public", "src/**/*"],
-  "exclude": ["src/scripts"]
+  "include": ["public/**/*", "src-api/**/*", "src-ui/**/*"],
+  "exclude": ["src-ui/scripts"],
 }

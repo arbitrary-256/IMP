@@ -1,190 +1,74 @@
 # IMP - Inventory Management Platform
 
-[](#table-of-contents)
+[](#table-of-contents)Version `0.9.1` - Table of Contents
 
-## Table of Contents
+- [What is IMP?](#what-is-imp "This section contains information most useful to newcomers.  If you don't know what IMP is, click here.")
+- [Documentation](#documentation "This section contains full documentation for IMP.  If your question wasn't covered in the 'What is Imp?' section above, probably click this next.")
+- [Languages, libraries, and tools](#languages-libraries-and-tools "This section contains information about the languages, libraries, and tools that IMP uses.")
+- [Client Applications](#client "The IMP frontend application written in TypeScript and ReactJS")
+- [Distributable Installers](#distributable-installers "How to package desktop installers to install IMP")
+- [Deploying the IMP's Backend](#deploy "How to deploy IMP's backend services")
 
-- [About IMP](#about-imp 'About IMP')
-- [Documentation](#documentation 'Documentation')
-- [Develop](#develop 'Develop')
-- [Build for web](#build-for-web 'Build for web')
-- [Build for your OS](#build-for-your-os 'Build for your OS')
-- [Build cross-platform](#build-cross-platform 'Build cross-platform')
-- [Deploy your database](#deploy-your-database 'Deploy your database')
-- [Status and Roadmap](#status-and-roadmap 'Status and Roadmap')
+[](#what-is-imp)
 
-[](#about-imp)
+## What is IMP?
 
-## About IMP
-
-### What is IMP?
-
-**_IMP_** is an open-source cross-platform **_I_** nventory **_M_** anagement **_P_** latform with integrated Point of Sale (PoS) written with the goal of being entirely platform-agnostic.  To facilitate this, IMP utilizes the Tauri framework to create lightweight and secure cross-platform binaries from a TypeScript/React frontend for every desktop OS.  While the Tauri framework is still at the release candidate stage and does not yet support compiling mobile (iOS and Android) binaries these features are on the Tauri roadmap, so it should eventually be simple to build for all 5 platforms in the future from one codebase without any platform-specific code.
-
-### Current version
-
-IMP uses the semantic versioning system.  The current build of IMP is version `0.9.1`
-
-[](#develop)
-
+**_IMP_** is an open-source cross-platform **_I_** nventory **_M_** anagement **_P_** latform with integrated Point of Sale (PoS) written to be entirely platform-agnostic to both developers and end users.  To facilitate this, IMP utilizes the Tauri framework to compile lightweight and secure cross-platform client application binaries and installers from a TypeScript/React frontend for every desktop OS.
 
 ## Documentation
 
 [](#documentation)
 
-[TypeDoc Documentation Page on GitHub Pages](https://zindrek.github.io/IMP/docs/)
+[TypeDoc Documentation Page on GitHub Pages](https://zindrek.github.io/IMP/docs/ "This is where IMP's automated documentation is hosted.  If you're looking for the documentation for IMP, this could be a good click for you.")
 
-[ToC](#table-of-contents 'Return to Table of Contents')
+[ToC](#table-of-contents "Return to Table of Contents")
 
-## Develop
+### Languages, Libraries, and Tools
 
-1. Install your IDE
-2. Fork this repository and clone it to your development machine
-3. Run `npm run setup-yarn` and follow the instructions in your terminal.  This process will install the prerequisites except for your IDE, and should only be required once.
-4. On Windows, you will need to install the [Visual C++ Build Tools](https://aka.ms/vs/17/release/vs_BuildTools.exe), selecting the _C++ Build tools_ and _Node.JS_ options.  This is required to compile the IMP binaries.
-5. Run scripts in `package.json`'s `scripts` section with the command `yarn <script-name>`.  For example, `yarn readme` will explain what the most commonly used scripts do.
+1. Install prerequisite software packages:
 
-[ToC](#table-of-contents 'Return to Table of Contents')
-### Prerequisites
+- [VS Code](https://code.visualstudio.com/download  "You need something to edit and lint code in") **_OR_** a different IDE / text editor that supports both Typescript and Rust
+- [Docker](https://www.docker.com/products/personal/ "I just really love smiling magic whales with shipping containers on their heads wat more than configuring database connections manually.") **_OR_** another way to deploy MySQL and an api to connect the frontend to it
+- [Rust version 1.60.0^](https://www.rust-lang.org/tools/install "Rust is a prerequisite for Tauri's Desktop application framework")
+- [Typescript version 4.6.4^](https://www.typescriptlang.org/ "for Tauri's frontend code, React.JS, and Material-UI")
+- [Node.js](https://nodejs.org/en/download/ "NodeJS is a major part of our toolchain for React and TypeScript.  Theoretically one day this will be Deno instead, because it's much better.")
 
-You will need to install the following things to build IMP:
+2. Fork this repository and clone your fork to your development machine
 
-- [VS Code](https://code.visualstudio.com/download) to edit and lint code **_OR_** a different IDE / text editor that supports both Typescript and Rust
-- [Node.js](https://nodejs.org/en/download/), as it is a prerequisite for most of the frontend code (but [Deno](https://deno.land) might also work)
-- [Rust](https://www.rust-lang.org/tools/install), as it is a prerequisite for Tauri.
-- [Docker Swarm](https://docs.docker.com/engine/swarm) **_OR_** another way to deploy MariaDB
+- On Windows, you must install the [Visual C++ Build Tools](https://aka.ms/vs/17/release/vs_BuildTools.exe "You literally must install these libraries to develop for IMP: 'C++ Build Tools' and 'Node.JS'"), selecting the _C++ Build tools_ and _Node.JS_ options.  These packages are required to compile the IMP desktop applications.
 
-[ToC](#table-of-contents 'Return to Table of Contents')
-### Languages
+3. Run `yarn setup` and follow the instructions in your terminal.  This process will install the prerequisites except for your IDE, and should only be required once.
 
-- [Rust version 1.60.0^](https://www.rust-lang.org/) - for Tauri's backend code
-- [Typescript version 4.6.4^](https://www.typescriptlang.org/) - for Tauri's frontend code, React.JS, and Material-UI
+- on macOS with Apple Silicon, you must install [Xcode](https://developer.apple.com/xcode/ "Xcode is required to develop IMP on macOS.") to compile the IMP desktop applications.
 
-[ToC](#table-of-contents 'Return to Table of Contents')
-### Front end technologies
+4. Run scripts in `package.json`'s `scripts` section with the command `yarn <scriptCategory:identifier>`.  For example, `yarn documentation:readme` explains what some of these scripts do.
 
-- [React.JS version 18.1.0^](https://reactjs.org/) using [create-react-app](https://create-react-app.dev/) - web components library
-- [Material-UI version 5.6.3^](https://mui.com/) - a styling library for React.JS components
-- [Tauri version 1.0.0-rc.4](https://tauri.studio) - cross-platform framework for building desktop applications from web applications
+### Project Dependencies
 
-[ToC](#table-of-contents 'Return to Table of Contents')
-### Back end technologies
+- [React.JS version 18.1.0^](https://reactjs.org/ "Meta's web components library renders the ui and enforces immutable state in the client") using [create-react-app](https://create-react-app.dev/ "Meta's CLI tool for rapid React.JS bootstrapping")
+- [Material-UI version 5.6.3^](https://mui.com/ "Google's styling library for Material Design components in React.JS ")
+- [Tauri version 1.0.0-rc.8](https://tauri.studio "lightweight framework for building desktop applications from web applications")
+- [Express version 4.18.1^](https://expressjs.com/ "a Node.JS REST API to connect the frontend to the sql database")
+- [MariaDB version 10.7.3^](https://mariadb.org/ "or another MySQL-compatible database")
 
-- [MariaDB version 10.7.3^](https://mariadb.org/) - MySQL-compatible database
-- [Express version 4.18.1^](https://expressjs.com/) - a Node.JS REST API to connect the front end to the MariaDB database
+[ToC](#table-of-contents "Return to Table of Contents")
 
-[ToC](#table-of-contents 'Return to Table of Contents')
+[](#client)
+### Client applications
 
-[](#build-for-web)
+Run `yarn package:react` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
 
-### Build for web
+[](#distributable-installers)
+### Packaging distributable installers
 
-Run `yarn zip` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
+Run `yarn package:installer` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These installers are suitable for end users to install the React client as a native desktop application.
 
-[ToC](#table-of-contents 'Return to Table of Contents')
+### Packaging distributable installers on other operating systems with GitHub Actions
 
-### Build for your OS
+You can run `yarn package:installer` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.  You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `yarn tart-bundle` on multiple OSes at once on GitHub"s servers.
 
-[](#build-for-your-os)
+### Deploying the IMP's backend
 
-Run `yarn bundle` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These artifacts are meant for end users to install the application.
+The file `docker-compose.yml` contains inline instructions and defines a Docker Swarm stack that deploys a SQL database.  This is the simplest way to deploy the database for most users.
 
-[ToC](#table-of-contents 'Return to Table of Contents')
-
-### Build cross platform
-
-[](#build-cross-platform)
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-### Running `yarn bundle` on multiple platforms
-
-You can run `yarn bundle` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-### Using GitHub Actions
-
-You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `yarn tart-bundle` on multiple OSes at once on GitHub's servers.
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-
-## Deploy your database
-
-[](#deploy-your-database)
-
-### Docker Swarm
-
-The file `imp-stack.yml` contains inline instructions and defines a Docker Swarm stack that deploys a MariaDB database.  This is the simplest way to deploy the database for most users.  If you happen to be a user who knows more about deploying MariaDB, feel free to deploy however you like - IMP does not discriminate.
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-
-## Status and Roadmap
-
-[](#status-and-roadmap)
-
-### current project status
-
-- version `0.9.1`
-- `React` server status:
-    - ✅ Docker stack deploys performance-optimized version
-    - ✅ Docker instance is reachable
-    - ✅ Nginx can communicate with Express
-    - ❌ UI behavior is 100% consistent - we will be changing all variables in the front end into HTML strings
-    - ❌ Nginx sends all needed messages to Express
-    - ❌ Nginx receives all needed messages from Express
-- `Express` server status:
-    - ✅ Docker stack deploys performance-optimized version
-    - ✅ Docker instance is reachable
-    - ✅ API can successfully communicate with React
-    - ❌ API sends all needed messages to React
-    - ❌ API receives all needed messages from React
-    - ✅ API can communicate with MariaDB
-    - ❌ API sends all needed messages to MariaDB
-    - ❌ API receives all needed messages from MariaDB
-- `MariaDB` server status:
-    - ✅ Docker stack deploys performance-optimized version
-    - ✅ Docker instance is reachable
-    - ✅ MariaDB can communicate with Express
-    - ❌ MariaDB sends all needed messages to Express
-    - ❌ MariaDB receives all needed messages from Express
-    - ❌ tables created at configure
-    - ❌ data rows populated in [Docker instance](http://megadocker.net:3000)
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-## Milestones
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-
-### 0.9.0 - database functionality
-- GitHub issue #3 - in progress
-- TypeScript - create interface to represent database rows - in progress
-- TypeScript - create sql call functions - in progress
-- TypeScript - add sql call function to purchase cart button
-- TypeScript - add sql call function to restock cart button
-- TypeScript - create submit inventory changes action
-- TypeScript - create submit inventory changes component for InventoryView
-- TypeScript - change appearance of inventory row to reflect changes not yet saved to the database
-- SQL - create sql table in live SQL instance
-- SQL - populate database with production data 
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-### 1.0.0 - UI polish & Desktop application, general code cleanup
-- GitHub - add `Tauri Actions` to repo to automate desktop builds
-- GIMP - cleanup images/imp.png image matte line
-- Tauri - implement autoupdater key for desktop builds (see also `yarn tart-updater-sign` script in `package.json`)
-- Tauri - add menubar entries to tauri application so that it can be quit/minimized/etc via standard keyboard shortcuts
-
-[ToC](#table-of-contents 'Return to Table of Contents')
-
-### Other features this program would have in a production environment
-- _`v.user.authentication`_ utilize a real authentication system such as [LDAP](https://ldap.com/) or [OAuth](https://oauth.net/) with customizable privilege selection for users and groups
-- _`v.digital.payments`_ credit card and other digital (_PayPal_, _Apple Pay_, _Google Pay_, bank wires, cryptocurrency, etc.) payment processing functionality
-- _`v.real.hardware`_ interface with hardware such as cash drawers, inventory scanners, [RFID tags](https://en.wikipedia.org/wiki/Radio_frequency_identification_and_tracking_device), receipt printers, loyalty card writers, etc
-- _`v.data.reporting`_ provide a reporting system for data analysis of sales, profitability, and data visualization
-- _`v.theme.builder`_ a theme builder that allows the user to create custom MUI [Themes] for IMP to match their brand using the GUI
-- _`v.modern.database`_ utilize a [MongoDB](https://github.com/mongodb/mongo) or [Redis](https://redis.io/) database for data storage
-- _`v.clustered.database`_ cluster the database across an organization's hardware for reliabilty, scalability, redundancy, performance, etc
-- _`v.local.cache`_ bundle an external MongoDB binary into Tauri builds for ease of deployment or local database caching
-- _`v.mobile.version`_ mobile app builds using a Tauri feature (on their roadmap, but not yet implemented) built from one existing codebase
-- _`v.user.training`_ provide a tutorial mode for new users in addition to traditional documentation to familiarize them with IMP's features
-
-[ToC](#table-of-contents 'Return to Table of Contents')
+[ToC](#table-of-contents "Return to Table of Contents")
