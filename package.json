@@ -12,6 +12,7 @@
   "scripts": {
     "readme": "echo 'run the following command:' && echo 'npm run setup' && echo 'and then run the appropriate command below:' && echo 'Windows: yarn install:rust-win' && echo 'Linux: yarn install:rust' && echo 'Intel Macs: yarn install:rust' && echo 'Apple Silicon Macs: yarn install:rust-m1'",
     "setup": "npm install -g yarn rimraf typescript && yarn && yarn readme",
+    "setup:m1-deps": "npm_config_sharp_binary_host=\"https://npmmirror.com/mirrors/sharp\" \"npm_config_sharp_libvips_binary_host=\"https://npmmirror.com/mirrors/sharp-libvips\" && npm install sharp",
     "install:rust": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
     "install:rust-m1": "redrun -s install:rust-m1-dependencies install:rust",
     "install:rust-m1-dependencies": "echo 'This will take a few interactions and several minutes, please be patient...' && /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)\" && echo 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' >> ~/.zprofile && eval \"$(/opt/homebrew/bin/brew shellenv)\" && arch -arm64 brew uninstall --ignore-dependencies cairo giflib jpeg libpng librsvg libvips pango pkg-config vips && arch -arm64 brew install -s cairo giflib jpeg libpng librsvg libvips pango pkg-config vips",
