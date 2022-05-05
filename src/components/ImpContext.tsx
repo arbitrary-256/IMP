@@ -8,8 +8,9 @@ import { IIMPState } from '../interfaces/IIMPState'
 /* react context */
 import { ImpReducer } from '../functions/ImpReducer'
 /* helper functions */
-import { createEmptyContext } from '../functions/helpers/createEmptyContext'
-const defaultState: IIMPState = createEmptyContext()
+// import { createEmptyContext } from '../functions/helpers/createEmptyContext'
+import { mockState } from '../mockData/mockState'
+const defaultState: IIMPState = mockState()
 /**
  * the React Context
  */

@@ -6,7 +6,6 @@ import { IIMPAction } from '../interfaces/IIMPAction'
 import { IIMPState } from '../interfaces/IIMPState'
 /* helper functions */
 import { changeAppearance } from './helpers/changeAppearance'
-import { createEmptyProduct } from './helpers/createEmptyProduct'
 import { decrementNumber } from './helpers/decrementNumber'
 import { deleteProduct } from './helpers/deleteProduct'
 import { editProduct } from './helpers/editProduct'
@@ -20,8 +19,8 @@ import { restockProducts } from './helpers/restockProducts'
 import { setNumber } from './helpers/setNumber'
 import { setString } from './helpers/setString'
 import { setImage } from './helpers/setImage'
-/* import { createEmptyContext } from './helpers/createEmptyContext' */
 import { mockState } from '../mockData/mockState'
+import { mockProduct } from '../mockData/mockProduct'
 /**
  * Updates application state based on the passed action.
  * All business logic lives in this file or in a function this file imports.
@@ -32,9 +31,8 @@ import { mockState } from '../mockData/mockState'
 export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
   let newState: IIMPState = { ...state }
   switch (action.type) {
-    case `APPLICATION_START` /* in progress: read from database */:
-      return mockState() /* mock inventory contents in local state */
-    // return createEmptyContext() /* should get data from MariaDB server, this is a placeholder for working on the MariaDB / Express connections */
+    case `APPLICATION_START`:
+      return mockState()
     case `CHANGE_APPEARANCE`:
       return reducerCleanup({ ...newState, theme: changeAppearance(action.payload) }, state)
     case `CHANGE_LOGIN`:
@@ -43,14 +41,12 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       return reducerCleanup(navigateTo(action.payload, newState), state)
     case `PURCHASE_CART`:
       return reducerCleanup(purchaseCart(newState))
-    case `REFRESH_DATABASE` /* when pulling data from the database */:
-      /* TODO: should query the database with getDatabaseEntry function */
+    case `REFRESH_DATABASE`:
       return reducerCleanup(newState)
-    case `UPDATE_DATABASE` /* when pushing data to the database */:
-      /* TODO: should change the database with updateDatabaseEntry function or createDatabaseEntry function */
+    case `UPDATE_DATABASE`:
       return reducerCleanup(newState)
     case `RECEIVE_INVENTORY`:
-      return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock), productToReceive: createEmptyProduct() }, state)
+      return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock), productToReceive: mockProduct()/*createEmptyProduct()*/ }, state)
     case `SET_IMAGE`:
       if (action.payload.inventoryIndex === undefined) {
         newState = { ...newState, productToReceive: setImage(action.payload) }
@@ -60,13 +56,11 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
         newState = { ...newState, inStock: newStock }
       }
       return reducerCleanup(newState, state)
-    case `DELETE_INVENTORY` /* when clicking delete item button */:
-      /* TODO: delete item from SQL database using forgetIt function */
-      return reducerCleanup({ ...newState, inStock: deleteProduct(action.payload, newState.inStock) }, state)
-    case `UPDATE_INVENTORY` /* when clicking a submit update button in the inventory control menu */:
+    case `DELETE_INVENTORY`:
+      return reducerCleanup({ ...newState, inStock: deleteProduct(action.payload, newState.inStock) }, state) 
+    case `UPDATE_INVENTORY`:
       let updatedProduct: IIMPProduct | undefined = newState.inStock.find((product) => product.upc.value === action.payload.upc.value)
       !updatedProduct ? newState.inStock.push(action.payload) : (newState.inStock = newState.inStock.map((product) => (product.upc.value === action.payload.upc.value ? action.payload : product)))
-      /* TODO: Write item to SQL database using updateDatabaseEntry function */
       return reducerCleanup(newState, state)
     case `EDIT_INVENTORY`:
       return reducerCleanup({ ...newState, inStock: editProduct(action.payload, newState.inStock) }, state)
@@ -82,9 +76,9 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       return reducerCleanup(newState, state, decrementNumber(action.payload))
     case `INCREMENT_NUMBER`:
       return reducerCleanup(newState, state, incrementNumber(action.payload))
-    case `SET_NUMBER` /* TODO: remove arrows in text field */:
+    case `SET_NUMBER`:
       return reducerCleanup(newState, state, setNumber(action.payload))
-    case `SET_STRING` /* TODO: assign an IIMPString.text anywhere in the application */:
+    case `SET_STRING`:
       return reducerCleanup(newState, state, setString(action.payload))
     default:
       return state

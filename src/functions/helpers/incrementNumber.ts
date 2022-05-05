@@ -26,7 +26,6 @@ export const incrementNumber: Function = (toChange: IIMPProductNumberToChange): 
   } else {
     mutable.number.value = mutable.number.max
   }
-  console.log(mutable.number)
   return {
     ...toChange.product,
     [mutable.number.propertyName]: mutable.number

@@ -1,6 +1,5 @@
 /** @format */
 /* interfaces */
-import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPState } from '../../interfaces/IIMPState'
 /* css-in-TypeScript themes */
 import { darkTheme } from '../../components/theme/darkTheme'
@@ -10,10 +9,9 @@ import { createEmptyProduct } from './createEmptyProduct'
  * @returns the default state for the application
  */
 export const createEmptyContext: Function = (): IIMPState => {
-  const inventory: IIMPProduct[] = []
   return {
     cart: [],
-    inStock: inventory,
+    inStock: [],
     inventorySearch: ``,
     filteredInventory: [],
     orderSearch: ``,
