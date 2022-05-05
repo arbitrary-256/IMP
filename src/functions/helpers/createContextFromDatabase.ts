@@ -23,7 +23,7 @@ export const createContextFromDatabase: Function = async (): Promise<IIMPState> 
   /* create the Context state */
   const context: IIMPState = {
     //...createContextFromDatabase(),
-    ...mockState(),
+    ...mockState()
     // inStock: tempInStock
   }
   /* return the Context state */

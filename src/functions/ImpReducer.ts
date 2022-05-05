@@ -46,7 +46,7 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
     case `UPDATE_DATABASE`:
       return reducerCleanup(newState)
     case `RECEIVE_INVENTORY`:
-      return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock), productToReceive: mockProduct()/*createEmptyProduct()*/ }, state)
+      return reducerCleanup({ ...newState, inStock: receiveInventory(action.payload, newState.inStock), productToReceive: mockProduct() /*createEmptyProduct()*/ }, state)
     case `SET_IMAGE`:
       if (action.payload.inventoryIndex === undefined) {
         newState = { ...newState, productToReceive: setImage(action.payload) }
@@ -57,7 +57,7 @@ export const ImpReducer = (state: IIMPState, action: IIMPAction): IIMPState => {
       }
       return reducerCleanup(newState, state)
     case `DELETE_INVENTORY`:
-      return reducerCleanup({ ...newState, inStock: deleteProduct(action.payload, newState.inStock) }, state) 
+      return reducerCleanup({ ...newState, inStock: deleteProduct(action.payload, newState.inStock) }, state)
     case `UPDATE_INVENTORY`:
       let updatedProduct: IIMPProduct | undefined = newState.inStock.find((product) => product.upc.value === action.payload.upc.value)
       !updatedProduct ? newState.inStock.push(action.payload) : (newState.inStock = newState.inStock.map((product) => (product.upc.value === action.payload.upc.value ? action.payload : product)))
