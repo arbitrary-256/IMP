@@ -9,7 +9,7 @@
   "copyright": "© 2022",
   "private": true,
   "main": "impAPI.ts",
-  "scripts":{
+  "scripts": {
     "serve-imp-express-api": "cd /app && nodemon --legacy-watch --watch 'lib/*.ts' --exec 'ts-node' lib/server.ts"
   },
   "dependencies": {
