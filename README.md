@@ -41,7 +41,7 @@
 
 - on macOS with Apple Silicon, you must install [Xcode](https://developer.apple.com/xcode/ "Xcode is required to develop IMP on macOS.") to compile the IMP desktop applications.
 
-4. Run scripts in `package.json`'s `scripts` section with the command `npm run <scriptCategory:identifier>`.  For example, `npm run documentation:readme` explains what some of these scripts do.
+4. Run scripts in `package.json`'s `scripts` section with the command `yarn <scriptCategory:identifier>`.  For example, `yarn docs:readme` explains what some of these scripts do.
 
 ### Project Dependencies
 
@@ -56,16 +56,16 @@
 [](#client)
 ### Client applications
 
-Run `npm run package:ui` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
+Run `yarn package:ui` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
 
 [](#distributable-installers)
 ### Packaging distributable installers
 
-Run `npm run package:bin` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These installers are suitable for end users to install the React client as a native desktop application.
+Run `yarn package:bin` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These installers are suitable for end users to install the React client as a native desktop application.
 
 ### Packaging distributable binary installers on other operating systems with GitHub Actions
 
-You can run `npm run package:bin` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.  You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `npm run package: bin` on multiple OSes at once on GitHub's servers.
+You can run `yarn package:bin` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.  You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `yarn package: bin` on multiple OSes at once on GitHub's servers.
 
 ### Deploying the IMP's backend
 

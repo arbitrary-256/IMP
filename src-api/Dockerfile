@@ -1,9 +1,7 @@
 FROM node:alpine as builder
 COPY . /app
-RUN cd /app && npm install
-
-
+RUN cd /app && yarn
 FROM builder as builder
 COPY --from=builder /app /app
-ENTRYPOINT ["npm run", "serve-imp-api"]
+ENTRYPOINT ["yarn", "serve-imp-api"]
 
