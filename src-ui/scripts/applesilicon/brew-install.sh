@@ -4,7 +4,6 @@ echo 'installed Homebrew'
 arch -x86_64 brew install -s -d -v gcc
 arch -x86_64 brew install -s -d -v pkg-config
 arch -x86_64 brew install -s -d -v node
-arch -x86_64 brew install -s -d -v yarn
 arch -x86_64 brew install -s -d -v rustup-init
 echo 'compiled toolchain'
 arch -x86_64 brew install -s -d -v libpng
@@ -16,6 +15,3 @@ arch -x86_64 brew install -s -d -v librsvg
 arch -x86_64 brew install -s -d -v vips
 echo 'compiled libraries'
 arch -x86_64 npm i -g redrun rimraf typescript
-arch -x86_64 brew link yarn
-yarn
-

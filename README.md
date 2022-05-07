@@ -37,11 +37,11 @@
 
 - On Windows, you must install the [Visual C++ Build Tools](https://aka.ms/vs/17/release/vs_BuildTools.exe "You literally must install these libraries to develop for IMP: 'C++ Build Tools' and 'Node.JS'"), selecting the _C++ Build tools_ and _Node.JS_ options.  These packages are required to compile the IMP desktop applications.
 
-3. Run `yarn setup` and follow the instructions in your terminal.  This process will install the prerequisites except for your IDE, and should only be required once.
+3. Run `npm run autoconfigure` and follow the instructions in your terminal.  This process will install the prerequisites except for your IDE, and should only be required once.
 
 - on macOS with Apple Silicon, you must install [Xcode](https://developer.apple.com/xcode/ "Xcode is required to develop IMP on macOS.") to compile the IMP desktop applications.
 
-4. Run scripts in `package.json`'s `scripts` section with the command `yarn <scriptCategory:identifier>`.  For example, `yarn documentation:readme` explains what some of these scripts do.
+4. Run scripts in `package.json`'s `scripts` section with the command `npm run <scriptCategory:identifier>`.  For example, `npm run documentation:readme` explains what some of these scripts do.
 
 ### Project Dependencies
 
@@ -56,16 +56,16 @@
 [](#client)
 ### Client applications
 
-Run `yarn package:react` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
+Run `npm run package:ui` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
 
 [](#distributable-installers)
 ### Packaging distributable installers
 
-Run `yarn package:installer` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These installers are suitable for end users to install the React client as a native desktop application.
+Run `npm run package:bin` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These installers are suitable for end users to install the React client as a native desktop application.
 
-### Packaging distributable installers on other operating systems with GitHub Actions
+### Packaging distributable binary installers on other operating systems with GitHub Actions
 
-You can run `yarn package:installer` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.  You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `yarn tart-bundle` on multiple OSes at once on GitHub"s servers.
+You can run `npm run package:bin` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.  You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `npm run package: bin` on multiple OSes at once on GitHub's servers.
 
 ### Deploying the IMP's backend
 

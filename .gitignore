@@ -15,7 +15,6 @@
 /src-bin/target/**
 /src-bin/WixTools/**
 updated
-yarn*
 **/*/Cargo.lock
 **/*.js
 **/*.jsx

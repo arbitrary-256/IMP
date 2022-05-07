@@ -2,7 +2,7 @@
 # 2) open your desired firewall ports at your docker host:
 ## ${REACT_APP_API_PORT} exposes the Express api to the internet
 ## ${REACT_APP_FRONTENDPORT} exposes the front end web client to the internet
-# 3) run 'yarn docker:up' to deploy frontend and database with docker compose
+# 3) run 'npm run docker:up' to deploy frontend and database with docker compose
 version: '3.9'
 services:
 # nginx web server to host the web application
