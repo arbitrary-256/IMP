@@ -20,12 +20,12 @@
     "strictNullChecks": true,
     "target": "esnext"
   },
-  "typedocOptions": {
-    "entryPoints": ["src/", "docker-compose.yml"],
-    "entryPointStrategy": "expand",
-    "logLevel": "Error",
-    "out": "docs"
-  },
-  "include": ["public", "src/**/*"],
+"typedocOptions": {
+  "entryPoints": ["src-api/", "src-bin", "src-ui/index.tsx"],
+  "entryPointStrategy": "expand",
+  "logLevel": "Error",
+  "out": "docs"
+},
+  "include": ["public", "src-api/**/*", "src-bin/**/*", "src-ui/**/*"],
   "exclude": ["src/scripts"]
 }

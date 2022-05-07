@@ -5,10 +5,10 @@
     "alwaysStrict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "commonjs",
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
+    "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitThis": true,
@@ -21,7 +21,7 @@
     "target": "esnext"
   },
   "typedocOptions": {
-    "entryPoints": ["src-api/", "src-bin", "src-ui/index.tsx"],
+    "entryPoints": ["src-api/impAPI.ts", "src-bin/", "src-ui/index.tsx"],
     "entryPointStrategy": "expand",
     "logLevel": "Error",
     "out": "docs"
