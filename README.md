@@ -56,16 +56,16 @@
 [](#client)
 ### Client applications
 
-Run `yarn package:ui` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
+Run `yarn pack:ui` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
 
 [](#distributable-installers)
 ### Packaging distributable installers
 
-Run `yarn package:bin` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These installers are suitable for end users to install the React client as a native desktop application.
+Run `yarn pack:bin` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These installers are suitable for end users to install the React client as a native desktop application.
 
 ### Packaging distributable binary installers on other operating systems with GitHub Actions
 
-You can run `yarn package:bin` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.  You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `yarn package: bin` on multiple OSes at once on GitHub's servers.
+You can run `yarn pack:bin` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.  You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `yarn pack: bin` on multiple OSes at once on GitHub's servers.
 
 ### Deploying the IMP's backend
 

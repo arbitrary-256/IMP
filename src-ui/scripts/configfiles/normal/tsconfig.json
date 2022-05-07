@@ -12,8 +12,9 @@
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "noEmit": true,
+    "noEmit": false,
     "noFallthroughCasesInSwitch": true,
+    "outDir": "build",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,11 +22,11 @@
     "target": "esnext"
   },
   "typedocOptions": {
-    "entryPoints": ["src/", "docker-compose.yml"],
+    "entryPoints": ["src-ui/"],
     "entryPointStrategy": "expand",
     "logLevel": "Error",
     "out": "docs"
   },
-  "include": ["public", "src/**/*"],
-  "exclude": ["src/scripts"]
+  "include": ["src-ui/**/*"],
+  "exclude": ["src-ui/scripts"]
 }
