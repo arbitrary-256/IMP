@@ -5,10 +5,10 @@
     "alwaysStrict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "jsx": "react-jsx",
-    "lib": ["es6", "dom", "dom.iterable", "esnext"],
-    "module": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitThis": true,
@@ -21,17 +21,11 @@
     "target": "esnext"
   },
   "typedocOptions": {
-    "categorizeByGroup": true,
-    "categoryOrder": ["Category Name", "Other Category", "*"],
-    "cleanOutputDir": true,
-    "entryPoints": ["src-api/", "src-ui/", "src-ui/scripts/webzip.ts"],
+    "entryPoints": ["src-api/", "src-bin", "src-ui/index.tsx"],
     "entryPointStrategy": "expand",
-    "exclude": ["**/node_modules/**", "**/dist/**", "**/docs/**", "**/test/**", "**/__tests__/**"],
     "logLevel": "Error",
-    "out": "docs",
-    "readme": "README.md",
-    "sort": ["source-order"],
+    "out": "docs"
   },
-  "include": ["public/**/*", "src-api/**/*", "src-ui/**/*"],
-  "exclude": ["src-ui/scripts"],
+  "include": ["public", "src-api/**/*", "src-bin/**/*", "src-ui/**/*"],
+  "exclude": ["src/scripts"]
 }
