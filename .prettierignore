@@ -1,4 +1,4 @@
 react/**
 docs/**
 node_modules/**
-src-bin/target/**
+tauri/target/**

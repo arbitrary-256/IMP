@@ -4,8 +4,6 @@ import { IChangeLoginAction } from './actionInterfaces/authorization/IChangeLogi
 import { IPurchaseCartAction } from './actionInterfaces/cart/IPurchaseCartAction'
 import { IUseNavBarAction } from './actionInterfaces/core/IUseNavBarAction'
 import { IApplicationStartAction } from './actionInterfaces/core/IApplicationStartAction'
-import { IRefreshDatabaseAction } from './actionInterfaces/database/IRefreshDatabaseAction'
-import { IUpdateDatabaseAction } from './actionInterfaces/database/IUpdateDatabaseAction'
 import { IEditInventoryEntryAction } from './actionInterfaces/inventory/IEditInventoryEntryAction'
 import { IReceiveInventoryAction } from './actionInterfaces/inventory/IReceiveInventoryAction'
 import { IDeleteInventoryEntryAction } from './actionInterfaces/inventory/IDeleteInventoryEntryAction'
@@ -28,10 +26,8 @@ export type IIMPAction =
   | IChangeLoginAction
   | IApplicationStartAction
   | IUseNavBarAction
-  | IRefreshDatabaseAction /* TODO: add business logic */
-  | IUpdateDatabaseAction /* TODO: add business logic */
-  | IDeleteInventoryEntryAction /* TODO: add business logic */
-  | IUpdateInventoryEntryAction /* TODO: add business logic */
+  | IDeleteInventoryEntryAction
+  | IUpdateInventoryEntryAction
   | IEditInventoryEntryAction
   | IReceiveInventoryAction
   | IRestockInventoryEntryAction

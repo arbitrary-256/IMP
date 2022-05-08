@@ -12,22 +12,21 @@
   "main": "dist/index.js",
   "scripts": {
     "readme": "echo '(👺readme)' && echo '(👺readme) install rust for your operating system' && echo '(👺readme)' && echo '(👺readme) Windows:' && echo '(👺readme) https://win.rustup.rs/x86_64' && echo '(👺readme) https://win.rustup.rs/i686' && echo '(👺readme)' && echo '(👺readme) Linux / macOS with Intel processors:' && echo '(👺readme) npm run iRust' && echo '(👺readme)' && echo '(👺readme) Linux / macOS with ARM processors:' && echo '(👺readme) not yet supported' && echo '(👺readme)' && echo '(👺readme) then run `npm run auto`' && echo '(👺readme)' ",
-    "clean": "npm rm -g rimraf && npm install -g rimraf && rimraf src-bin/target src-bin/Cargo.lock build output .VSCodeCounter package-lock.json node_modules && mkdir build output node_modules",
+    "write": "tauri dev",
+    "build": "tauri build",
+    "clean": "npm rm -g rimraf && npm install -g rimraf && rimraf tauri/target tauri/Cargo.lock build output .VSCodeCounter package-lock.json node_modules && mkdir build output node_modules",
     "gYarn": "npm remove -g yarn && npm install -g yarn && yarn",
     "iRust": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
-    "uRust": "cd src-bin && rustup update && cargo update && cd ..",
-    "build": "tauri build",
-    "bundle": "copyfiles --error --up 5 ./src-bin/target/release/bundle/**/* ./output",
+    "uRust": "cd tauri && rustup update && cargo update && cd ..",
+    "bundle": "copyfiles --error --up 5 ./tauri/target/release/bundle/**/* ./output",
     "Smode": "copyfiles --error --up 4 ./src/scripts/configfiles/script/* ./&& echo '(👺) scripting mode' && sleep 3",
     "Nmode": "copyfiles --error --up 4 ./src/scripts/configfiles/normal/* ./ && echo '(👺) normal mode' && sleep 3'",
     "zip": "ts-node-dev -- src/scripts/webzip.ts && echo '(👺zip) output zipped web directory'",
-    "start": "docker-compose up --build -d",
-    "stop": "docker-compose down --remove-orphans",
-    "auto": "npm install -g redrun && redrun -s auto-prep auto-output",
+    "auto": "npm install -g redrun && redrun -s auto-prep auto-output auto-message",
     "auto-prep": "clear && echo '(👺auto) Step 1 of 2: Cleaning and rebuilding development environment' && npm run clean && npm run gYarn && npm run uRust",
     "auto-output": "clear && echo '(👺auto) Step 2 of 2: Building local operating system binaries into distributable installer' && redrun -s build bundle",
     "auto-message": "clear && echo '(👺auto) Complete:' && npm run readme && echo '(👺auto) Run `npm run auto` to start the application'",
-    "icon": "yarn tauricon --log src-bin/icons/app-icon.png --target src-bin/icons",
+    "icon": "yarn tauricon --log tauri/icons/app-icon.png --target tauri/icons",
     "sign": "tauri signer generate"
   },
   "dependencies": {
@@ -123,7 +122,7 @@
       "/docs/",
       "/public/",
       "/node_modules/",
-      "/src-bin/",
+      "/tauri/",
       "/src-ui/index.tsx",
       "/src-ui/interfaces/",
       "/src-ui/react-app-env.d.ts",
@@ -145,7 +144,7 @@
     },
     "moduleDirectories": [
       "node_modules",
-      "src-bin",
+      "tauri",
       "src-ui"
     ],
     "moduleFileExtensions": [

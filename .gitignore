@@ -1,25 +1,23 @@
 /.eslintcache
 /.vscode
 /.VSCodeCounter/
-/binaries
-/build
 /cache
-/coverage
-/database
-/docs
+## npm artifacts
+/build
 /node_modules
 /output
-/react
-/db
-/src-bin/target/**
-/src-bin/WixTools/**
-updated
+## Tauri artifacts
+/tauri/target/**
+/tauri/WixTools/**
 **/*/Cargo.lock
+
+## typsecript trasnpiled file
 **/*.js
 **/*.jsx
+
 **/*/.DS_Store
 .DS_Store
+
+## .env files that could contain sensitive information
 **/*/.env
 .env
-**/*/*.zip
-**/*/_template.ts
