@@ -6,8 +6,8 @@
   "build": {
     "distDir": "../build",
     "devPath": "http://localhost:3000",
-    "beforeDevCommand": "yarn react-scripts start",
-    "beforeBuildCommand": "yarn react-scripts build"
+    "beforeDevCommand": "time yarn react-scripts start",
+    "beforeBuildCommand": "time yarn react-scripts build"
   },
   "tauri": {
     "bundle": {

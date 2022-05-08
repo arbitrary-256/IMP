@@ -7,10 +7,9 @@
 /node_modules
 /output
 ## Tauri artifacts
-/tauri/target/**
-/tauri/WixTools/**
-**/*/Cargo.lock
-
+/tauri/target
+/tauri/WixTools
+/tauri/Cargo.lock
 ## typsecript trasnpiled file
 **/*.js
 **/*.jsx
@@ -18,6 +17,5 @@
 **/*/.DS_Store
 .DS_Store
 
-## .env files that could contain sensitive information
-**/*/.env
+## .env file, because they could contain sensitive information
 .env
