@@ -28,7 +28,6 @@
 1. Install prerequisite software packages:
 
 - [VS Code](https://code.visualstudio.com/download  "You need something to edit and lint code in") **_OR_** a different IDE / text editor that supports both Typescript and Rust
-- [Docker](https://www.docker.com/products/personal/ "I just really love smiling magic whales with shipping containers on their heads wat more than configuring database connections manually.") **_OR_** another way to deploy MySQL and an api to connect the frontend to it
 - [Rust version 1.60.0^](https://www.rust-lang.org/tools/install "Rust is a prerequisite for Tauri's Desktop application framework")
 - [Typescript version 4.6.4^](https://www.typescriptlang.org/ "for Tauri's frontend code, React.JS, and Material-UI")
 - [Node.js](https://nodejs.org/en/download/ "NodeJS is a major part of our toolchain for React and TypeScript.  Theoretically one day this will be Deno instead, because it's much better.")
@@ -37,35 +36,31 @@
 
 - On Windows, you must install the [Visual C++ Build Tools](https://aka.ms/vs/17/release/vs_BuildTools.exe "You literally must install these libraries to develop for IMP: 'C++ Build Tools' and 'Node.JS'"), selecting the _C++ Build tools_ and _Node.JS_ options.  These packages are required to compile the IMP desktop applications.
 
-3. Run `npm run autoconfigure` and follow the instructions in your terminal.  This process will install the prerequisites except for your IDE, and should only be required once.
+3. Run `npm run readme` and follow the instructions in your terminal.
 
-- on macOS with Apple Silicon, you must install [Xcode](https://developer.apple.com/xcode/ "Xcode is required to develop IMP on macOS.") to compile the IMP desktop applications.
-
-4. Run scripts in `package.json`'s `scripts` section with the command `npm run <scriptCategory:identifier>`.  For example, `npm run documentation:readme` explains what some of these scripts do.
+4. Run scripts in `package.json`'s `scripts` section with the command `npm run <SCRIPT>`.  For example, `npm run make-installer` compiles everything into an installer
 
 ### Project Dependencies
 
 - [React.JS version 18.1.0^](https://reactjs.org/ "Meta's web components library renders the ui and enforces immutable state in the client") using [create-react-app](https://create-react-app.dev/ "Meta's CLI tool for rapid React.JS bootstrapping")
 - [Material-UI version 5.6.3^](https://mui.com/ "Google's styling library for Material Design components in React.JS ")
 - [Tauri version 1.0.0-rc.8](https://tauri.studio "lightweight framework for building desktop applications from web applications")
-- [Express version 4.18.1^](https://expressjs.com/ "a Node.JS REST API to connect the frontend to the sql database")
-- [MariaDB version 10.7.3^](https://mariadb.org/ "or another MySQL-compatible database")
 
 [ToC](#table-of-contents "Return to Table of Contents")
 
 [](#client)
 ### Client applications
 
-Run `npm run package:ui` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
+Run `npm run pack:ui` to build and zip a servable web directory to the `output` directory with the extension `.zip`.  This directory is meant for deployment to a web server such as [NGINX](https://nginx.org/en/) or [Apache](https://httpd.apache.org/).
 
 [](#distributable-installers)
 ### Packaging distributable installers
 
-Run `npm run package:bin` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These installers are suitable for end users to install the React client as a native desktop application.
+Run `npm run pack:bin` to build a double-clickable installer for your operating system to the `output` directory with the extension `.dmg` (macOS), `.msi`  (Windows), or `.deb`(Debian-like linux distros).  These installers are suitable for end users to install the React client as a native desktop application.
 
 ### Packaging distributable binary installers on other operating systems with GitHub Actions
 
-You can run `npm run package:bin` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.  You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `npm run package: bin` on multiple OSes at once on GitHub's servers.
+You can run `npm run pack:bin` on multiple OSes and produce the installer on each of them.  We recommend automating this process with [GitHub Actions](https://github.com/actions/) for ease of use and to lower processor load on developer machines.  You can use [Tauri Actions](https://github.com/tauri-apps/tauri-action) to easily build for linux, macOS, and Windows.  Fundamentally, this is just a way to run `npm run pack: bin` on multiple OSes at once on GitHub's servers.
 
 ### Deploying the IMP's backend
 

@@ -8,7 +8,7 @@ import { IIMPImage } from '../../interfaces/IIMPImage'
 /**
  * a component that displays an image in a product
  * @param imageToDisplay the IIMPImage to be displayed
- * @param dimensions OPTIONAL { height: number, width: number }
+ * @param dimensions? { height: number, width: number }
  * @returns a React.FC that displays an image
  */
 export const ImageDisplayer: React.FC<IIMPImage> = (imageToDisplay: IIMPImage, dimensions?: { height: number; width: number }): React.ReactElement => (

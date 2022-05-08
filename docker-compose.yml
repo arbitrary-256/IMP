@@ -1,7 +1,6 @@
 # 1) populate a .env file made from template.env
 # 2) open your desired firewall ports at your docker host:
-## ${REACT_APP_API_PORT} exposes the Express api to the internet
-## ${REACT_APP_FRONTENDPORT} exposes the front end web client to the internet
+## ${REACT_APP_WEB_PORT} exposes the front end web client to the internet
 # 3) run 'npm run docker:up' to deploy frontend and database with docker compose
 version: '3.9'
 services:
@@ -13,53 +12,11 @@ services:
   volumes:
    - $PWD/build:/usr/share/nginx/html:ro
   ports:
-   - $REACT_APP_FRONTENDPORT:80
+   - $REACT_APP_WEB_PORT:80
   networks:
    - react
-
-# api server to connect frontend to database
- api:
-  build: src-api
-  image: imp_api:alpine
-  environment:
-   - NODE_ENV=production
-   - DB_HOST=$REACT_APP_SQL_HOST
-   - DB_PORT=$REACT_APP_SQL_PORT
-   - DB_USER=$REACT_APP_SQL_USER
-   - DB_PASSWORD=$REACT_APP_SQL_PASSWORD
-   - DB_NAME=$REACT_APP_SQL_DATABASE
-  volumes:
-   - $PWD/src-api:/app:ro
-  depends_on:
-   - sql
-   - react
-  networks:
-   - sql
-   - react
-  ports:
-   - $REACT_APP_API_PORT:$REACT_APP_API_PORT
-
-# sql database to store data in production
- sql:
-  image: mariadb:latest
-  volumes:
-   - $PWD/database:/var/lib/mysql
-  environment:
-   - MYSQL_ROOT_USER=$REACT_APP_SQL_RUSER
-   - MYSQL_ROOT_PASSWORD=$REACT_APP_SQL_RPASSWORD
-   - MYSQL_USER=$REACT_APP_SQL_USER
-   - MYSQL_PASSWORD=$REACT_APP_SQL_PASSWORD
-   - MYSQL_DATABASE=$REACT_APP_SQL_DATABASE
-   - REACT_APP_API_PORT=$REACT_APP_API_PORT
-  networks:
-   - sql
-  expose:
-   - $REACT_APP_SQL_PORT
 
 networks:
  react:
-  external: false
-  driver: bridge
- sql:
   external: false
   driver: bridge

@@ -8,8 +8,8 @@ import { createEmptyProduct } from './createEmptyProduct'
 /**
  * cleans up the application state at the end of a call to ImpReducer
  * @param newState the current IIMPState to be cleaned up
- * @param oldState OPTIONAL the previous state to be added to state.stateHistory
- * @param product OPTIONAL the product to be cleaned up
+ * @param oldState? the previous state to be added to state.stateHistory
+ * @param product? the product to be cleaned up
  * @returns the cleaned up application state
  */
 export const reducerCleanup: Function = (newState: IIMPState, oldState?: IIMPState, product?: IIMPProduct): IIMPState => {

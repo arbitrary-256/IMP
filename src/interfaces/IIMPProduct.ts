@@ -12,7 +12,7 @@ import { IIMPString } from './IIMPString'
  * @param min the minimum quantity in stock before the product should be ordered
  * @param max the maximum quantity to be kept in inventory
  * @param image the product's image
- * @param size OPTIONAL the product's size, if it has one
+ * @param size? the product's size, if it has one
  */
 export interface IIMPProduct {
   editingMode: boolean
