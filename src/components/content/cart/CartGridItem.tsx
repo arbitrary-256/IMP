@@ -16,6 +16,9 @@ import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
  * an item in the cart tab
+ * 
+ * satisfies Requirements 8.1, 8.2, 8.3.
+ * 
  * @param product the IIMPProduct to be displayed
  * @returns a React.FC that displays a single item in the Cart tab of the UI
  */

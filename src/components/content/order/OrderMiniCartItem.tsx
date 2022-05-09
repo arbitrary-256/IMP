@@ -13,6 +13,9 @@ import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
  * an item in the minicart view
+ * 
+ * satisfies requirements 8.1, 8.2, 8.3
+ * 
  * @returns a React.FC that displays a small version of the cart
  */
 export const OrderMiniCartItem: React.FC<IIMPProduct> = (product: IIMPProduct): React.ReactElement => {

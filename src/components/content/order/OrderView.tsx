@@ -16,6 +16,9 @@ import { OrderMiniCart } from './OrderMiniCart'
 import { SearchOrder } from './SearchOrder'
 /**
  * the order tab
+ * 
+ * satisfies requirements 3, 8, 10, 11
+ * 
  * @returns a React.FC that displays the order tab of the UI
  */
 export const OrderView: React.FC = (): React.ReactElement => {

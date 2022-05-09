@@ -13,6 +13,9 @@ import { NumberChanger } from '../../shared/NumberChanger'
 import { StringChanger } from '../../shared/StringChanger'
 /**
  * the receiving tab
+ * 
+ * satisfies requirements 4, 14.
+ * 
  * @returns a React.FC that displays a form to receive a product
  */
 export const ReceivingView: React.FC = (): React.ReactElement => {

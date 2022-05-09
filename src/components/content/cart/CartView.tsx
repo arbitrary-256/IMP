@@ -16,6 +16,9 @@ import { NumberDisplayer } from '../../shared/NumberDisplayer'
 /* helper functions */
 /**
  * the cart tab
+ * 
+ * satisfies requirements 3, 8. Only module to satisfy 8.5.
+ * 
  * @returns a React.FC that displays the Cart tab of the UI
  */
 export const CartView: React.FC = (): React.ReactElement => {

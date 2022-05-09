@@ -11,6 +11,9 @@ import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
 /**
  * the login buttons component
+ * 
+ * satisfies requirements 7, 13
+ * 
  * @param user the ILoginValue of the user to login as
  * @returns a react component that displays the buttons used to log in or out
  */

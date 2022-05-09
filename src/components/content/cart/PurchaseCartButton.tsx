@@ -9,6 +9,9 @@ import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
 /**
  * a button that purchases the items in the cart when clicked
+ * 
+ * satisfies requirement 8.5.
+ * 
  * @returns a React.FC that renders the Purchase Cart button
  */
 export const PurchaseCartButton: React.FC = (): React.ReactElement => {

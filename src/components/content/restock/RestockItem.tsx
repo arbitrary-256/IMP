@@ -15,6 +15,9 @@ import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
  * an item in the restock tab
+ * 
+ * satisfies requirement 15.
+ * 
  * @param product the IIMPProduct to be displayed
  * @returns a React.FC that displays a form to receive a product
  */

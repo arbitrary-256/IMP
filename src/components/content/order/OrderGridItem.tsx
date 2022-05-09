@@ -16,6 +16,9 @@ import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
  * an item in the order tab's main view
+ * 
+ * satisfies requirements 8.1.1, 8.2, 10, 11.
+ * 
  * @param product the IIMPProduct to be displayed
  * @returns a React.FC that displays one product available to sell
  */

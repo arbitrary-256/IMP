@@ -16,6 +16,9 @@ import { InventoryEditButton } from './InventoryEditButton'
 import { InventoryDeleteButton } from './InventoryDeleteButton'
 /**
  * a row of the inventory table
+ * 
+ * satisfies requirements 14, 16.
+ * 
  * @param product the IIMPProduct to be displayed
  * @returns a React.FC that displays one row of the Inventory tab
  */

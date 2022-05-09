@@ -14,6 +14,9 @@ import { InventoryRow } from './InventoryRow'
 import { SearchInventory } from './SearchInventory'
 /**
  * the inventory tab
+ * 
+ * satisfies requirements 4, 14, 16.
+ * 
  * @returns a React.FC that displays the Inventory tab of the UI
  */
 export const InventoryView: React.FC = (): React.ReactElement => {

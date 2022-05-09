@@ -14,6 +14,9 @@ import { RestockItem } from './RestockItem'
 import { SearchRestock } from './SearchRestock'
 /**
  * the restock tab
+ * 
+ * satisfies requirements 4, 15.
+ * 
  * @returns a React.FC that displays the Restock tab of the UI
  */
 export const RestockView: React.FC = (): React.ReactElement => {
