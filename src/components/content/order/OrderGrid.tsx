@@ -11,6 +11,9 @@ import { ImpContext } from '../../ImpContext'
 /* custom components */
 import { OrderGridItem } from './OrderGridItem'
 /**
+ * 1.7.2.1.	Order Grid Module
+ */
+/**
  * the order tab's left div that displays the products available to sell
  * @returns a React.FC that displays the products available to sell
  */

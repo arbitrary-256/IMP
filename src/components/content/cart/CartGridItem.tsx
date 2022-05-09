@@ -14,6 +14,10 @@ import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
+
+/**
+ * 1.7.3.1.	Cart Grid Item
+ */
 /**
  * an item in the cart tab
  * 

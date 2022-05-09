@@ -3,6 +3,7 @@
 import { INumberDescription } from './unionTypes/INumberDescription'
 import { INumberPropertyName } from './unionTypes/INumberPropertyName'
 /**
+ * Module 2.1.1.3
  * the interface for a number in a product
  * @param id a label for the number to be displayed in the UI
  * @param min the minimum value for the number

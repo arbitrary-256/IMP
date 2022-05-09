@@ -2,6 +2,7 @@
 /* interfaces */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /**
+ * Module 2.2.2.17
  * updates every product.inStock.value in the IIMPProduct[] to the product.max.value
  * @param productsToBeRestocked an IIMPProduct[] of products with inStock.value <= min.value
  */

@@ -12,6 +12,9 @@ import { ImageChanger } from '../../shared/ImageChanger'
 import { NumberChanger } from '../../shared/NumberChanger'
 import { StringChanger } from '../../shared/StringChanger'
 /**
+ * 1.7.5.	Receiving View Module
+ */
+/**
  * the receiving tab
  * 
  * satisfies requirements 4, 14.

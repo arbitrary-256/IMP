@@ -3,6 +3,7 @@
 import { IIMPState } from '../../interfaces/IIMPState'
 import { INavBarTarget } from '../../interfaces/unionTypes/INavBarTarget'
 /**
+ * Module 2.2.2.13
  * navigates to a new tab in the application
  * @param tab the tab to navigate to
  * @param state the current state of the application

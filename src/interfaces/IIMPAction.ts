@@ -19,6 +19,7 @@ import { ISetStringAction } from './actionInterfaces/shared/ISetStringAction'
 import { IChangeAppearanceAction } from './actionInterfaces/core/IChangeAppearanceAction'
 import { IUpdateImageAction } from './actionInterfaces/shared/IUpdateImageAction'
 /**
+ * Module 2.1.3.9
  * a union type of every interface in src/interfaces/actionInterfaces
  */
 export type IIMPAction =

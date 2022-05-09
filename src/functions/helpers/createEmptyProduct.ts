@@ -3,6 +3,7 @@
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { createImpImage } from './createImpImage'
 /**
+ * Module 2.2.2.4
  * creates an empty product row for the React Context
  * @returns a product row with all values set to default
  */

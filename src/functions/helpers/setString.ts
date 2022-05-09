@@ -3,6 +3,7 @@
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPProductStringToChange } from '../../interfaces/productProperties/IIMPProductStringToChange'
 /**
+ * Module 2.2.2.20
  * changes the string in a product to a value typed in by the user
  * @param toChange { string, an IIMPString, value, a string primitive, and product, an IIMPProduct }
  * @returns the updated product

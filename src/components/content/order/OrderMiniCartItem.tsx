@@ -12,6 +12,9 @@ import { NumberChanger } from '../../shared/NumberChanger'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
+ * 1.7.2.4.	Compact Cart Display Item
+ */
+/**
  * an item in the minicart view
  * 
  * satisfies requirements 8.1, 8.2, 8.3

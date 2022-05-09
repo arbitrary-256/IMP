@@ -13,6 +13,9 @@ import { ImpContext } from '../../ImpContext'
 import { RestockItem } from './RestockItem'
 import { SearchRestock } from './SearchRestock'
 /**
+ * 1.7.6.	Restock View Module
+ */
+/**
  * the restock tab
  * 
  * satisfies requirements 4, 15.

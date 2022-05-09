@@ -5,6 +5,7 @@ import { IIMPState } from '../../interfaces/IIMPState'
 import { darkTheme } from '../../components/theme/darkTheme'
 import { createEmptyProduct } from './createEmptyProduct'
 /**
+ * Module 2.2.2.3
  * mocks a React Context state for the application without using the database
  * @returns the default state for the application
  */

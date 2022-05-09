@@ -7,6 +7,9 @@ import { TextField } from '@mui/material'
 import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
+/**`
+ * 1.7.2.5.	Order Search Module
+ */
 /**
  * the search component for the order tab
  * @returns a React.FC that displays a search field for the order tab

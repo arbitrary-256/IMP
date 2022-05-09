@@ -1,3 +1,5 @@
+
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -11,6 +13,12 @@ import { ImpReducer } from '../functions/ImpReducer'
 // import { createEmptyContext } from '../functions/helpers/createEmptyContext'
 import { mockState } from '../mockData/mockState'
 const defaultState: IIMPState = mockState()
+/**
+ * Module 1.4.	Context Module
+ *Provides a “source of truth” on application state for all other components in UI Module. *Defines an IMP-specific version of React’s Context API. 
+
+ */
+
 /**
  * the React Context
  */

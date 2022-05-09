@@ -1,3 +1,4 @@
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -10,6 +11,11 @@ import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
 /* non-TypeScript data */
 import { darkTheme } from '../theme/darkTheme'
+/**
+ * Module 1.6.1.	Dark Mode Toggle
+ * Allows the user to toggle a darker theme of the user interface, to reduce eyestrain.
+ */
+
 /**
  * a dark mode switch component that toggles the dark mode of the application
  * @returns a component to toggle the dark mode of the application

@@ -1,3 +1,4 @@
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -9,6 +10,10 @@ import { IIMPProductStringToChange } from '../../interfaces/productProperties/II
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
+/**
+ * 1.5.6.	String Change Module
+ * Provides an interface to input a string to replace an existing string.
+ */
 /**
  * a component to change a string in a product
  * @param toChange an IIMPString, a string primitive, and an IIMPProduct

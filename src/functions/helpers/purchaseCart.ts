@@ -4,6 +4,7 @@ import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPState } from '../../interfaces/IIMPState'
 /* import { updateDatabaseEntry } from '../database/updateDatabaseEntry'
 /**
+ * Module 2.2.2.14
  * purchases the items in the cart
  * @param state newState
  * @returns void

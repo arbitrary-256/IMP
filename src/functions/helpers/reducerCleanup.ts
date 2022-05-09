@@ -6,6 +6,7 @@ import { IIMPState } from '../../interfaces/IIMPState'
 /* helper functions */
 import { createEmptyProduct } from './createEmptyProduct'
 /**
+ * Module 2.2.2.16
  * cleans up the application state at the end of a call to ImpReducer
  * @param newState the current IIMPState to be cleaned up
  * @param oldState? the previous state to be added to state.stateHistory

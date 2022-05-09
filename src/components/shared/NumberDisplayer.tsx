@@ -1,3 +1,4 @@
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -5,6 +6,11 @@ import * as React from 'react'
 import { TextField } from '@mui/material'
 /* interfaces */
 import { IIMPNumber } from '../../interfaces/IIMPNumber'
+/**
+ * Module 1.5.3.	Number Display Module
+ * Displays a number as part of a larger component
+
+ */
 /**
  * a component to display a number in a product
  * @param impNumber the IIMPNumber to display

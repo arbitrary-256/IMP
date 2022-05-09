@@ -15,6 +15,9 @@ import { OrderGrid } from './OrderGrid'
 import { OrderMiniCart } from './OrderMiniCart'
 import { SearchOrder } from './SearchOrder'
 /**
+ * 1.7.2.	Order View Module
+*/
+/**
  * the order tab
  * 
  * satisfies requirements 3, 8, 10, 11

@@ -1,3 +1,7 @@
+/**
+ * Module 1.3.2
+ * Defines light theme
+ */
 /** @format */
 /* material-ui components */
 import { createTheme, Theme } from '@mui/material'

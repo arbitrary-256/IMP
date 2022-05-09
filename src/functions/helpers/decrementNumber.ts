@@ -3,6 +3,7 @@
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'
 /**
+ * Module 2.2.2.7
  * decrements a number in a product
  * @param toChange the IIMPProductNumber to change
  * @returns the updated product

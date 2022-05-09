@@ -8,6 +8,9 @@ import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
 /**
+ * 1.7.3.2.	Purchase Button
+ */
+/**
  * a button that purchases the items in the cart when clicked
  * 
  * satisfies requirement 8.5.

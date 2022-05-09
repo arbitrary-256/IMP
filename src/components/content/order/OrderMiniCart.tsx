@@ -13,6 +13,9 @@ import { ImpContext } from '../../ImpContext'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { OrderMiniCartItem } from './OrderMiniCartItem'
 /**
+ * 1.7.2.3.	Compact Cart Display
+ */
+/**
  * the order tab's right div that displays a small version of the cart
  * @returns a React.FC that displays a small version of the cart
  */

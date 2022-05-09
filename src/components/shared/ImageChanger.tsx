@@ -1,3 +1,5 @@
+
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -10,6 +12,10 @@ import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
+/**
+ * Module 1.5.2 Image Change Module
+ * Provides user interface to input a new image of a product.
+ */
 /**
  * a React Component that displays the image changer
  * @param product the product to change the image of

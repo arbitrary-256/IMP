@@ -2,6 +2,7 @@
 /* interfaces */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /**
+ * Module 2.2.2.15
  * adds inventory to the local application state
  * @param product state.productToReceive
  * @param inventory state.inStock

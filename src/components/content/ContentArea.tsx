@@ -11,6 +11,9 @@ import { OrderView } from './order/OrderView'
 import { ReceivingView } from './receiving/ReceivingView'
 import { RestockView } from './restock/RestockView'
 /**
+ * 1.7.	Content Area Module
+ */
+/**
  * the bottom div of the application that contains the tabs selected in the NavBar
  * @returns a React.FC that displays the main content area of the UI
  */

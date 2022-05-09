@@ -3,6 +3,7 @@
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /* non-TypeScript data */
 /**
+ * Module 2.2.2.9
  * toggles the editability of a product
  * @param product the product to make editable or not
  * @returns the new inventory Array

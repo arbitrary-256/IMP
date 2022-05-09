@@ -1,5 +1,6 @@
 /** @format */
 /**
+ * Module 6.5
  * an array of product types to be used in mocked products
  */
 export const nouns: string[] = [

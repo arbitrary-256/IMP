@@ -1,3 +1,8 @@
+/**
+ * Module 1.3.1
+ * Defines dark theme.
+ */
+
 /** @format */
 /* material-ui components */
 import { createTheme, Theme } from '@mui/material'

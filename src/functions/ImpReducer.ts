@@ -19,6 +19,7 @@ import { setImage } from './helpers/setImage'
 import { mockState } from '../mockData/mockState'
 import { mockProduct } from '../mockData/mockProduct'
 /**
+ * Module 2.2.1
  * Updates application state based on the passed action.
  * All business logic lives in this file or in a function this file imports.
  * @param state the current application state

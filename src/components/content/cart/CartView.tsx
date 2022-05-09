@@ -14,6 +14,10 @@ import { CartGridItem } from './CartGridItem'
 import { PurchaseCartButton } from './PurchaseCartButton'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 /* helper functions */
+
+/**`
+ * 1.7.3.	Cart View Module
+ */
 /**
  * the cart tab
  * 

@@ -4,6 +4,7 @@ import { IIMPNumber } from '../../interfaces/IIMPNumber'
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 import { IIMPProductNumberToChange } from '../../interfaces/productProperties/IIMPProductNumberToChange'
 /**
+ * Module 2.2.2.19
  * changes the number in a product to a value typed in by the user
  * @param payload number, an IIMPNumber, and product, an IIMPProduct
  * @returns the updated product

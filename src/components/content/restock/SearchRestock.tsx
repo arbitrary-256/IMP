@@ -8,6 +8,8 @@ import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
 /**
+ * 1.7.6.2.	Restock Search Module
+ * 
  * the search component for the restock tab
  * @returns a React.FC that displays a search field for the restock tab
  */

@@ -15,6 +15,8 @@ import { StringDisplayer } from '../shared/StringDisplayer'
 import appInfo from '../../../package.json'
 import imp from '../../images/imp.png'
 /**
+ * 1.7.7.	Logout View
+ * 
  * a logout confirmation view
  * @returns a React.FC that indicates the user is logged out
  */

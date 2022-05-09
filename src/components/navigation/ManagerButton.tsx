@@ -10,6 +10,10 @@ import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
 /**
+ * 1.6.5.	Inventory Management Buttons
+Provides the interface for a manager user to select between and access the Inventory, Receiving, and Restock views. Usable only by a user in the manager role.
+ */
+/**
  * a button accessible to users logged in as an manager
  * @param target the INavBarTarget of the tab to navigate to
  * @returns a React.FC that displays a button only usable by a logged in Manager

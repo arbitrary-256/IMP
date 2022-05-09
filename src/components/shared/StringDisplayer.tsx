@@ -1,3 +1,4 @@
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -5,6 +6,11 @@ import * as React from 'react'
 import { TextField } from '@mui/material'
 /* interfaces */
 import { IIMPString } from '../../interfaces/IIMPString'
+/**
+ * 1.5.5.	String Display Module
+ * Displays a string as part of a larger component.
+
+ */
 /**
  * a component to display a string
  * @param impString the IIMPString to change

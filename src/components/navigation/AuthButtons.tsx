@@ -1,3 +1,5 @@
+
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -9,6 +11,11 @@ import { ILoginValue } from '../../interfaces/unionTypes/ILoginValue'
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { IIMPState } from '../../interfaces/IIMPState'
 import { ImpContext } from '../ImpContext'
+
+/**
+ * Module 1.6.3.	Role Selection Interface
+ * Satisfies Requirements 7, 13. Provides the interface for a user to select the role in which to use 
+ */
 /**
  * the login buttons component
  * 

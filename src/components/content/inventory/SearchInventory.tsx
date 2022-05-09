@@ -8,6 +8,9 @@ import { IIMPAction } from '../../../interfaces/IIMPAction'
 import { IIMPState } from '../../../interfaces/IIMPState'
 import { ImpContext } from '../../ImpContext'
 /**
+ * 1.7.4.4.	Inventory Search Module
+ */
+/**
  * the search component in the inventory tab
  * @returns a React.FC that displays a search field for the inventory tab
  */

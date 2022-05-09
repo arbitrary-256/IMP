@@ -5,6 +5,7 @@ import { IIMPProductImageToChange } from '../../interfaces/productProperties/IIM
 /* non-TypeScript data */
 /* import imp from '../../images/imp.png'
 /**
+ * Module 2.2.2.18
  * updates the image for a product
  * @param toChange the IIMPProductImageToChange
  * @returns the updated product

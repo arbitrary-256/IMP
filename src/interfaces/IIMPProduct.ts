@@ -4,6 +4,7 @@ import { IIMPImage } from './IIMPImage'
 import { IIMPNumber } from './IIMPNumber'
 import { IIMPString } from './IIMPString'
 /**
+ * Module 2.1.1.4
  * the interface for a product in the frontend of the application
  * @param upc the UPC of the product
  * @param name the product's human-readable name

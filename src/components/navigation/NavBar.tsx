@@ -1,3 +1,4 @@
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -8,6 +9,13 @@ import { AuthButtons } from './AuthButtons'
 import { DarkModeButton } from './DarkModeButton'
 import { EmployeeButton } from './EmployeeButton'
 import { ManagerButton } from './ManagerButton'
+/**
+ * Module 1.6.2.	Navigation Bar
+ * A container component that contains the navigation and role selection interface components.
+
+ */
+
+
 /**
  * the top div of the application that contains the navigation and authorization button components
  * @returns a React.FC that displays the navbar

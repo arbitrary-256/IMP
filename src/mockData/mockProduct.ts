@@ -8,6 +8,7 @@ import { nouns } from './nouns'
 /* helper functions */
 import { createImpImage } from '../functions/helpers/createImpImage'
 /**
+ * Module 6.3
  * mocks a product in ReactContext
  * @returns a mocked product
  */

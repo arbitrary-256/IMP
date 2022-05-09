@@ -1,5 +1,6 @@
 /** @format */
 /**
+ * Module 2.1.3.6   
  * a union type of all possible property names for an IIMPNumber in an IIMPProduct
  */
 export type INumberPropertyName =

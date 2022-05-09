@@ -14,6 +14,9 @@ import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { NumberDisplayer } from '../../shared/NumberDisplayer'
 import { StringDisplayer } from '../../shared/StringDisplayer'
 /**
+ * 1.7.6.1.	Restock View Item Module
+ */
+/**
  * an item in the restock tab
  * 
  * satisfies requirement 15.

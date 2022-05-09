@@ -7,6 +7,7 @@ import { darkTheme } from '../components/theme/darkTheme'
 import { mockInventory } from './mockInventory'
 import { mockProduct } from './mockProduct'
 /**
+ * Module 6.4
  * mocks a React Context state for the application without using the database
  * @returns the default state for the application
  */

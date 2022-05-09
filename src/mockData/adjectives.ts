@@ -1,5 +1,6 @@
 /** @format */
 /**
+ * Module 6.1
  * an array of product descriptions to be used in mocked products
  */
 export const adjectives: string[] = [

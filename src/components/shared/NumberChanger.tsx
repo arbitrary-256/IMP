@@ -1,3 +1,4 @@
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -8,6 +9,12 @@ import { IIMPProductNumberToChange } from '../../interfaces/productProperties/II
 /* react context */
 import { IIMPAction } from '../../interfaces/IIMPAction'
 import { ImpContext } from '../ImpContext'
+/**
+ * Module 1.5.4.	Number Change Module
+ * Provides user interface to change a number by incrementing, decrementing, or inputting a new value as a string.
+ * 
+ */
+
 /**
  * a component to change a number in a product
  * @param toChange an IIMPNumber and an IIMPProduct

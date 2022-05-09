@@ -2,6 +2,7 @@
 /* interfaces */
 import { IIMPProduct } from '../../interfaces/IIMPProduct'
 /**
+ * Module 2.2.2.10
  * filters the array of products by matching a searchString against the product's name or upc
  * @param searchString the string to search for
  * @param products the products to search

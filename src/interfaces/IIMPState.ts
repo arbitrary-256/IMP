@@ -6,6 +6,7 @@ import { IIMPProduct } from './IIMPProduct'
 import { ILoginValue } from './unionTypes/ILoginValue'
 import { INavBarTarget } from './unionTypes/INavBarTarget'
 /**
+ * Module 2.1.1.5
  * the interface for the state of the application
  * @cart the user's current shopping cart contents
  * @contentAreaView the current application view displayed in the main part of the window

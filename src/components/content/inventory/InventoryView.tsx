@@ -13,6 +13,9 @@ import { InventoryRow } from './InventoryRow'
 /* helper functions */
 import { SearchInventory } from './SearchInventory'
 /**
+ * 1.7.4.	Inventory View Module
+ */
+/**
  * the inventory tab
  * 
  * satisfies requirements 4, 14, 16.

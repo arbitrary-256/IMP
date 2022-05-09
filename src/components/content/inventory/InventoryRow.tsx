@@ -15,6 +15,9 @@ import { ImageDisplayer } from '../../shared/ImageDisplayer'
 import { InventoryEditButton } from './InventoryEditButton'
 import { InventoryDeleteButton } from './InventoryDeleteButton'
 /**
+ * 1.7.4.1.	Inventory Table Row Module
+ */
+/**
  * a row of the inventory table
  * 
  * satisfies requirements 14, 16.

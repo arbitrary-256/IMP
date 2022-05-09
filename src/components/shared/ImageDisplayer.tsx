@@ -1,3 +1,4 @@
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -5,6 +6,10 @@ import * as React from 'react'
 import { Box } from '@mui/material'
 /* interfaces */
 import { IIMPImage } from '../../interfaces/IIMPImage'
+/**
+ * Module 1.5.1	Image Display Module
+ * Displays an image of a product as part of a larger component.
+ */
 /**
  * a component that displays an image in a product
  * @param imageToDisplay the IIMPImage to be displayed

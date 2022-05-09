@@ -1,3 +1,4 @@
+
 /** @format */
 /* libraries */
 import * as React from 'react'
@@ -8,6 +9,13 @@ import { ImpProvider } from './ImpContext'
 /* custom components */
 import { ContentArea } from './content/ContentArea'
 import { NavBar } from './navigation/NavBar'
+/**
+ * Module 1.2.	App Module
+ * Container component around entire application – renders application.
+
+ */
+
+
 /**
  * a component to render the React application
  * @returns the React application
